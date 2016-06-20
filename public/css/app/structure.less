@@ -17,12 +17,12 @@ body {
 header {
 	background: @bgd-blue;
 	padding: 8px 16px;
-	color: lighten(@bgd-blue, 40%);
+	color: @title-black;
 	font-weight: 900;
 	a {
-		color: lighten(@bgd-blue, 40%);
+		color: @title-black;
 		&:hover {
-			color: #fff;
+			color: @title-black;
 		}
 	}
 	.brand {
@@ -33,7 +33,7 @@ header {
 		padding: 0 10px;
 	}
 	.a-project {
-		color: #fff;
+		color: #000;
 	}
 	.a-menu, .nav-bar {
 		display: none;
@@ -46,10 +46,10 @@ header {
 			height: 2px;
 			display: block;
 			margin-bottom: 4px;
-			background: lighten(@bgd-blue, 40%);
+			background: #000;
 		}
 		&:hover .bar {
-			background: #fff;
+			background: lighten(#000, 20%);
 		}
 	}
 	.header-inner {
@@ -81,28 +81,28 @@ header {
 	display: none;
 	padding: 6px;
 	background: @bgd-blue;
-	color: lighten(@bgd-blue, 40%);
+	color: #000;
 	font-weight: 900;
 	word-wrap: break-word;
 	line-height: 0.8em;
-	font-size: 1.2em;
+	font-size: 1.3em;	/* 1.3em is required that each letter is in one line */
 	text-align: center;
 	cursor: pointer;
 	.border-radius(0 6px 6px 0);
 	&:hover {
-		color: #fff;
+		color: lighten(#000, 30%);
 	}
 }
 .main-right-inner {
 	width: @width-aside - 24px;
 	background: @bgd-blue;
 	padding: 12px;
-	a { color: lighten(@bgd-blue, 40%); }
-	a:hover { color: #fff; }
+	a { color: #000; }
+	a:hover { color: lighten(#000, 30%); }
 	.active a {
-		color: #fff;
+		color: #000;
 		&:before, &:after {
-			color: #fff;
+			color: #000;
 		}
 	}
 	nav {
@@ -144,7 +144,7 @@ header {
 	}
 	.form-log-out {
 		text-align: center;
-		color: lighten(@bgd-blue, 40%);
+		color: #000;
 		a {
 			font-weight: 900;
 		}
