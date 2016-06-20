@@ -20,7 +20,7 @@
 			}
 			$cut = $config['length_preview_project'];
 			$projects .= '<div class="div-preview-project">'
-				.'<a href="'.Url::parse($k.'/dashboard').'">'
+				.'<a href="'.Url::parse($k.'/issues').'">'
 					.'<span>'.$k.'</span>'
 					.Text::intro($v['description'], $cut, false)
 					.'</a>'
