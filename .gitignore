@@ -2,3 +2,4 @@
 *.sublime-project
 database/
 .htaccess
+config.codekit
