@@ -473,7 +473,7 @@ if (canAccess('settings')) {
 				<span class="brand"><?php
 					echo '<a href="'.Url::parse('home').'">'.$config['title'].'</a>';
 					if (getProject() && !onlyDefaultProject()) {
-						echo '<span class="slash">/</span><a class="a-project" href="'.Url::parse(getProject().'/dashboard').'">'.getProject().'</a>';
+						echo '<span class="slash">/</span><a class="a-project" href="'.Url::parse(getProject().'/issues').'">'.getProject().'</a>';
 					}
 				?></span>
 			</div>
