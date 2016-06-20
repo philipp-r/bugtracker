@@ -1,28 +1,9 @@
-# Bumpy Booby 0.3
+# Bumpy Booby
 
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking
 system.
 
-![Bumpy Booby logo](http://uploads.derivoile.fr/bumpy-booby.png)
-
-Features:
-
-- **no database required**
-- statuses and tags highly customizable
-- file attachements
-- syntax highlighting for code blocks
-- permissions & groups highly customizable
-- multiple projects management
-- easy backup (one folder)
-- protection against too many failed login attempts
-- url rewriting
-- email notifications
-- various languages supported ( _fr_ and _en_ for now)
-- RSS feeds
-- …
-
-To get more information or to see it in action:
-<http://bumpy-booby.derivoile.fr>.
+Forked from Pierre Monchalin <https://github.com/piero-la-lune/Bumpy-Booby>. Edited by Spamty <https://spamty.eu/>.
 
 ## Running
 
