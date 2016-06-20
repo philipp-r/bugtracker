@@ -567,7 +567,7 @@ if (canAccess('settings')) {
 		</div>
 
 		<script src="<?php echo Url::parse('public/js/highlighter.js'); ?>"></script>
-		<script src="<?php echo Url::parse('public/js/jquery-1.9.1.min.js'); ?>"></script>
+		<script src="<?php echo Url::parse('public/js/jquery.min.js'); ?>"></script>
 		<script>
 			var ajax = "<?php echo Url::parse('public/ajax'); ?>",
 				token = "<?php echo getToken(); ?>",
