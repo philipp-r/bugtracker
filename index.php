@@ -546,13 +546,13 @@ if (canAccess('settings')) {
 					<div class="div-copyright">
 						<?php
 							if (getProject()) {
-								echo '<a href="'.Url::parse(getProject().'/rss').'">'
+								echo '<a href="'.Url::parse(getProject().'/rss').'" target="_blank">'
 									.Trad::W_RSS
 									.'</a><br />';
 							}
 							echo str_replace(
 								'%name%',
-								'<a href="'.URL.'">'.NAME.'</a>',
+								'<a href="'.URL.'" target="_blank">'.NAME.'</a>',
 								Trad::S_COPYRIGHT
 							);
 						?>
