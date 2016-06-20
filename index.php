@@ -32,8 +32,8 @@ set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
 define('VERSION', '0.3');
-define('AUTHOR', 'Pierre Monchalin');
-define('URL', 'http://bumpy-booby.derivoile.fr');
+define('AUTHOR', 'Pierre Monchalin, Spamty.eu');
+define('URL', 'https://github.com/Spamty/Bumpy-Booby');
 
 ### Languages
 define('LANGUAGES', 'en,fr'); # Separated by a comma
