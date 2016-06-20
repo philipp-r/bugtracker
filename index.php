@@ -495,7 +495,7 @@ if (canAccess('settings')) {
 					<form action="<?php echo Url::parse(getProject().'/search'); ?>" method="post" class="form-search">
 						<input type="hidden" name="action" value="search" />
 						<input type="text" name="q" value="<?php echo (isset($_GET['q'])) ? htmlspecialchars($_GET['q']) : ''; ?>" placeholder="<?php echo Trad::S_SEARCH; ?>" class="input-left" />
-						<button type="submit" class="a-icon-hover"><i class="icon-white icon-search"></i></button>
+						<button type="submit" class="a-icon-hover"><i class="icon-search"></i></button>
 					</form>
 					<?php
 						}
@@ -526,7 +526,7 @@ if (canAccess('settings')) {
 						?>
 						<input type="text" name="username" placeholder="<?php echo Trad::F_USERNAME2; ?>" />
 						<input type="password" name="password" placeholder="<?php echo Trad::F_PASSWORD2; ?>" class="input-left" />
-						<button type="submit" class="a-icon-hover"><i class="icon-white icon-circle-arrow-right"></i></button>
+						<button type="submit" class="a-icon-hover"><i class="icon-circle-arrow-right"></i></button>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
 						<input type="hidden" name="login" value="1" />
 					</form>
@@ -538,7 +538,7 @@ if (canAccess('settings')) {
 						<p><?php echo str_replace('%user%', '<a href="'.Url::parse('users/'.intval($_SESSION['id'])).'">'.htmlspecialchars($_SESSION['username']).'</a>', Trad::S_WELCOME); ?></p>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
 						<input type="hidden" name="logout" value="1" />
-						<button type="submit" class="a-icon-hover"><i class="icon-white icon-off"></i></button>
+						<button type="submit" class="a-icon-hover"><i class="icon-off"></i></button>
 					</form>
 					<?php
 						}
