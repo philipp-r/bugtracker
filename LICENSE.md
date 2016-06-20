@@ -1,4 +1,5 @@
-Bumpy Booby
+# Bumpy Booby
+
 Copyright (c) 2013-2015 Pierre Monchalin
 <http://bumpy-booby.derivoile.fr>
 
