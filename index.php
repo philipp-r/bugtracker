@@ -552,7 +552,7 @@ if (canAccess('settings')) {
 							}
 							echo str_replace(
 								'%name%',
-								'<a href="'.URL.'">'.NAME.' '.VERSION.'</a>',
+								'<a href="'.URL.'">'.NAME.'</a>',
 								Trad::S_COPYRIGHT
 							);
 						?>
