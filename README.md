@@ -15,6 +15,8 @@ Note : you can delete folder "./public/css/app/", it is useless.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
+**Installation on Spamty server with "build-sites"**
+
 ### Backup
 
 Before any update, it's highly recommended to make a backup. You only need to
