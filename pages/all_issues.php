@@ -4,6 +4,7 @@
 $projectList = array_keys($config['projects']);
 
 $content = '<h1>'.Trad::T_BROWSE_ALL_ISSUES.'</h1>';
+$content .= '<p>'.Trad::T_ALL_ISSUES_DESCRIPTION.'</p>';
 
 $title = Trad::T_BROWSE_ALL_ISSUES;
 
