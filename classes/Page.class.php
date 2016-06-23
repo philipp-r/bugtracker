@@ -13,6 +13,7 @@ class Page {
 		'install',
 		'dashboard',
 		'issues',
+		'all_issues',
 		'search',
 		'view_issue',
 		'new_issue',
