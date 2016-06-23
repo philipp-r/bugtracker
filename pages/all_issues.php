@@ -44,14 +44,6 @@ foreach( $projectList as $projectItem ){
 		$html = '<p>&nbsp;</p><p>'.Trad::S_NO_ISSUE.'</p><p>&nbsp;</p>';
 	}
 	
-	if (!canAccess('new_issue')
-		&& !$config['loggedin']
-		&& canAccess('signup')
-		&& in_array(DEFAULT_GROUP, $config['permissions']['post_comment'])
-	) {
-		$content .= '<p>'.Trad::A_PLEASE_LOGIN_ISSUE.'</p><p>&nbsp;</p>';
-	}
-	
 	$content .= '
 		<div class="div-table-issues">
 			<div class="div-issues">'.$html.'</div>';
