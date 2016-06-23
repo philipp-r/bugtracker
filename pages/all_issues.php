@@ -9,7 +9,8 @@ $title = Trad::T_BROWSE_ISSUES." ALL ISSUES";
 
 
 foreach( $projectList as $projectItem ){
-
+	
+	// set project
 	$_GET['project'] = $projectItem;
 	
 	$issues = Issues::getInstance();
@@ -17,7 +18,10 @@ foreach( $projectList as $projectItem ){
 	$a = $issues->getAll();
 	
 	$error404 = false;
-	$url = new Url(getProject().'/all_issues');
+	$url = new Url(getProject().'/issues');
+	
+	// subtitle for each project with link
+	$content .= '<h2><a href="'.$url->get().'">'.$projectItem.'</a></h2>';
 	
 	$open = 'open';
 	OrderFilter::$filter = array(true);
@@ -26,19 +30,12 @@ foreach( $projectList as $projectItem ){
 	$sort = array(0 => 'id', 1 => 'desc');
 	uasort($a, array('OrderFilter', 'order_'.implode('_', $sort)));
 	
-	$perpage = $config['issues_per_page'];
-	if (isset($_GET['perpage'])) {
-		$perpage = intval($_GET['perpage']);
-		if ($perpage <= 1) { $perpage = $config['issues_per_page']; }
-		$url->addParam('perpage', $perpage);
-	}
-	
 	$pager = new Pager();
 	$html = $pager->get(
 		$a,
 		$url,
 		array($issues, 'html_list'),
-		$perpage
+		false // display "more" link instead of pagination, see Pager.class line 8
 	);
 	$nb = count($a);
 	
