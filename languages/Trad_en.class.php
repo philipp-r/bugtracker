@@ -361,7 +361,7 @@ This is another one : &lt;http://example.com&gt;.</code></pre>
 	private static $permissions = array(
 		'home' => array(
 			'title' => 'Home:',
-			'description' => 'Can access to the home page.'
+			'description' => 'Can access to the home page and view list of all open issues for his projects.'
 		),
 		'dashboard' => array(
 			'title' => 'Dashboards:',

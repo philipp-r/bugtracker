@@ -111,6 +111,7 @@ function onlyDefaultProject() {
 ### Check permissions
 function canAccess($page) {
 	global $config;
+	if($page == "all_issues"){ $page = "home"; } // "all_issues" has same permissions as "home"
 	if ($config['last_update'] === false) { return true; }
 	if (!isset($config['permissions'][$page])) { return true; }
 	if (!$config['loggedin']) { $group = 'none'; }
