@@ -211,6 +211,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_BROWSE_ISSUES = 'Parcourir les demandes';
 	const T_BROWSE_ALL_ISSUES = 'Browse all issues'; // je ne parle pas français
 	const T_NEW_ISSUE = 'Nouvelle demande';
+	const T_ALL_ISSUES = 'All issues'; // je ne parle pas français
 	const T_PROJECTS = 'Projets';
 	const T_DASHBOARD = 'Tableau de bord';
 	const T_LAST_UPDATES = 'Dernières mises à jour';

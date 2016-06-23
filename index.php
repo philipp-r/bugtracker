@@ -387,6 +387,9 @@ elseif (canAccess('home')) {
 	$menu = '<li class="m_home">'
 		.'<a href="'.Url::parse('home').'">'.Trad::T_PROJECTS.'</a>'
 	.'</li>';
+	$menu .= '<li class="m_all_issues">'
+		.'<a href="'.Url::parse('all_issues').'">'.Trad::T_PROJECTS.'</a>'
+	.'</li>';
 }
 if (canAccess('settings')) {
 	$menu .= '<li class="m_settings">'

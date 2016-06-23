@@ -58,3 +58,6 @@ foreach( $projectList as $projectItem ){
 	$content .= '</div>';
 
 }
+
+// reset project, so we dont have it in title or navigation
+$_GET['project'] = "";
