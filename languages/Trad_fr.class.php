@@ -43,6 +43,7 @@ class Trad {
 
 	const W_PREVIOUS = 'Précédente';
 	const W_NEXT = 'Suivante';
+	const W_MORE = 'MORE'; // je ne parle pas français
 	const W_CURRENT = 'Page %nb1% sur %nb2%';
 
 	const W_NOT_LOGGED = 'Non connecté';
@@ -208,6 +209,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_GROUPS = 'Groupes';
 	const T_USERS = 'Utilisateurs';
 	const T_BROWSE_ISSUES = 'Parcourir les demandes';
+	const T_BROWSE_ALL_ISSUES = 'Browse all issues'; // je ne parle pas français
 	const T_NEW_ISSUE = 'Nouvelle demande';
 	const T_PROJECTS = 'Projets';
 	const T_DASHBOARD = 'Tableau de bord';

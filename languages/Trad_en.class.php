@@ -43,6 +43,7 @@ class Trad {
 
 	const W_PREVIOUS = 'Previous';
 	const W_NEXT = 'Next';
+	const W_MORE = 'MORE';
 	const W_CURRENT = 'Page %nb1% of %nb2%';
 
 	const W_NOT_LOGGED = 'Not logged in';
@@ -208,6 +209,7 @@ This is an automated email, please do not reply.
 	const T_GROUPS = 'Groups';
 	const T_USERS = 'Users';
 	const T_BROWSE_ISSUES = 'Browse issues';
+	const T_BROWSE_ALL_ISSUES = 'Browse all issues';
 	const T_NEW_ISSUE = 'New issue';
 	const T_PROJECTS = 'Projects';
 	const T_DASHBOARD = 'Dashboard';

@@ -53,8 +53,8 @@ class Pager {
 			if ($page < $nbpages) {
 				$url->addParam('pagen', $page+1);
 				$html .= '<a href="'.$url->get().'" class="next a-icon-hover">'
-					.Trad::W_NEXT
-					.' <i class="icon-chevron-right"></i>'
+					.Trad::W_MORE
+					.' <i class="icon-forward"></i>'
 				.'</a>';
 			}
 		}

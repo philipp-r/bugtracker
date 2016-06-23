@@ -3,9 +3,9 @@
 // get keys from projects array
 $projectList = array_keys($config['projects']);
 
-$content = '<h1>'.Trad::T_BROWSE_ISSUES.'</h1>';
+$content = '<h1>'.Trad::T_BROWSE_ALL_ISSUES.'</h1>';
 
-$title = Trad::T_BROWSE_ISSUES." ALL ISSUES";
+$title = Trad::T_BROWSE_ALL_ISSUES;
 
 
 foreach( $projectList as $projectItem ){
