@@ -16,6 +16,10 @@ class Url {
 			'redirect' => 'index.php?page=home'
 		),
 		array(
+			'rule' => '^all_issues$',
+			'redirect' => 'index.php?page=all_issues'
+		),
+		array(
 			'rule' => '^install$',
 			'redirect' => 'index.php?page=install'
 		),
