@@ -12,6 +12,10 @@ class Url {
 			'redirect' => 'index.php?page=home'
 		),
 		array(
+			'rule' => '^([a-zA-Z0-9-]+)/api$',
+			'redirect' => 'index.php?project=$1&page=api'
+		),
+		array(
 			'rule' => '^api$',
 			'redirect' => 'index.php?page=api'
 		),
