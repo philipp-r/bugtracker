@@ -199,34 +199,39 @@ class Issues {
 		return $ret;
 	}
 
-	public function new_issue($post) {
+	public function new_issue($post, $withApi) {
 		global $config;
-		if (!canAccess('new_issue')
-			|| !isset($post['issue_summary'])
-			|| !isset($post['issue_text'])
-			|| !isset($post['uploads'])
-			|| !isset($post['token'])
-			|| empty($post['issue_summary'])
-			|| empty($post['issue_text'])
-		) { return Trad::A_ERROR_FORM; }
-		if (canAccess('update_issue')
-			&& (!isset($post['issue_status'])
-				|| !isset($post['issue_assignedto'])
-				|| !isset($post['issue_dependencies'])
-				|| !isset($post['issue_labels'])
-				|| !array_key_exists($post['issue_status'], $config['statuses'])
-			)
-		) { return Trad::A_ERROR_FORM; }
-		if (!tokenOk($post['token'])) {
-			return Trad::A_ERROR_TOKEN;
-		}
+		// if request is not done with API, check permission
+		if( !$withApi ){
+			if (!canAccess('new_issue')
+				|| !isset($post['issue_summary'])
+				|| !isset($post['issue_text'])
+				|| !isset($post['uploads'])
+				|| !isset($post['token'])
+				|| empty($post['issue_summary'])
+				|| empty($post['issue_text'])
+			) { return Trad::A_ERROR_FORM; }
+			if (canAccess('update_issue')
+				&& (!isset($post['issue_status'])
+					|| !isset($post['issue_assignedto'])
+					|| !isset($post['issue_dependencies'])
+					|| !isset($post['issue_labels'])
+					|| !array_key_exists($post['issue_status'], $config['statuses'])
+				)
+			) { return Trad::A_ERROR_FORM; }
+			if (!tokenOk($post['token'])) {
+				return Trad::A_ERROR_TOKEN;
+			}
+			if ($config['loggedin']
+				&& isset($config['users'][$_SESSION['id']])
+			) {
+				$by = intval($_SESSION['id']);
+			}
+			else { $by = NULL; }
 
-		if ($config['loggedin']
-			&& isset($config['users'][$_SESSION['id']])
-		) {
-			$by = intval($_SESSION['id']);
 		}
-		else { $by = NULL; }
+		// request with API, check API key
+		// this is done in api.php
 
 		$uploads = array();
 		if (canAccess('upload') && !empty($post['uploads'])) {
@@ -264,7 +269,7 @@ class Issues {
 				}
 			}
 		}
-
+		
 		$id = Text::newKey($this->issues);
 
 		$this->issues[$id] = array(

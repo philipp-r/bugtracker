@@ -25,7 +25,7 @@ $token = getToken();
 
 if (isset($_POST['new_issue'])) {
 	$issues = Issues::getInstance();
-	$ans = $issues->new_issue($_POST);
+	$ans = $issues->new_issue($_POST, false);
 	if ($ans === true) {
 		header('Location: '
 			.Url::parse(getProject().'/issues/'.$issues->lastissue));
