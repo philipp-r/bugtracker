@@ -74,7 +74,7 @@
         <attribute name="name" type="string">My API</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z103 z106"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z103 z106 z110"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z103">
         <attribute name="value" type="string">06e946bc4ad63412b0b24b43314186ea18d23e82486fb66bdf425e1cb7269242</attribute>

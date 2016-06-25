@@ -62,20 +62,24 @@ if( $_GET['XMODE'] != "travisci" ){
 
 	
 	// check authentication
+	$validUser = false;
 	foreach ($config['users'] as $u) {
 		if ($u['username'] == $_POST['api_username']) {
 			if(
 				// Only users of API group can login
-				$u['group'] != "bbapi" || 
+				$u['group'] == "bbapi" &&
 				// check if password is correct
-				$u['hash'] != Text::getHash($_POST['api_password'], $_POST['api_username'])
+				$u['hash'] == Text::getHash($_POST['api_password'], $_POST['api_username'])
 			){
-				$returns['status'] = 0;
-				$returns['statusDetails'] = "Invalid username or password.";
-				endApi( $returns, 403 );
+				$validUser = true;
+				$_POST['api_userid'] = $u['id'];
 			}
-			$_POST['api_userid'] = $u['id'];
 		}
+	}
+	if(!$validUser){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid username or password.";
+		endApi( $returns, 403 );
 	}
 	
 	
@@ -125,21 +129,25 @@ else{
 	$headers = apache_request_headers(); // see http://stackoverflow.com/a/2902713
 
 	// check all users
+	$validUser = false;
 	foreach ($config['users'] as $u) {
 		// check where username matches travis-REPOSITORY
 		if ($u['username'] == "travis-".$travis['repository']['name']) {
 			if(
 				// Only users of API group can login
-				$u['group'] != "bbapi" || 
+				$u['group'] == "bbapi" || 
 				// check if password is correct
-				$u['hash'] != Text::getHash($headers["Authorization"], "travis-".$travis['repository']['name'])
+				$u['hash'] == Text::getHash($headers["Authorization"], "travis-".$travis['repository']['name'])
 			){
-				$returns['status'] = 0;
-				$returns['statusDetails'] = "Invalid username or password.";
-				endApi( $returns, 403 );
+				$validUser = true;
+				$_POST['api_userid'] = $u['id'];
 			}
-			$_POST['api_userid'] = $u['id'];
 		}
+	}
+	if(!$validUser){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid username or password.";
+		endApi( $returns, 403 );
 	}
 
 	
