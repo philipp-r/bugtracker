@@ -54,6 +54,7 @@ class Trad {
 	const W_USER = 'User';
 	const W_DEVELOPPER = 'Developper';
 	const W_SUPERUSER = 'Superuser';
+	const W_APIGROUP = 'API';
 	const W_S_NEW = 'New';
 	const W_S_CONFIRMED = 'Confirmed';
 	const W_S_ASSIGNED = 'Assigned to %user%';
@@ -304,8 +305,6 @@ This is an automated email, please do not reply.
 	const F_TIP_ID_LABEL = '<b>Tip:</b> be careful when changing the IDs, because each label of one issue keeps its old ID (except if this ID does not exist anymore: in this case, the label is removed from the issue).';
 	const F_TIP_ID_GROUP = '<b>Tip:</b> be careful when changing the IDs, because each user keeps its old group ID (except if this ID does not exist anymore: in this case, the default group will be used).';
 
-	const F_API_KEY = 'API Key';
-	const F_API_KEY_HELP = 'Choose some random key for authentication with the API (recommended to use: [A-Za-z0-9])';
 	const F_API_ENABLE = 'Enable the API';
 
 	const HELP_MARKDOWN = '

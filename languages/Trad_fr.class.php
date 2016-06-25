@@ -54,6 +54,7 @@ class Trad {
 	const W_USER = 'Utilisateur';
 	const W_DEVELOPPER = 'Développeur';
 	const W_SUPERUSER = 'Superutilisateur';
+	const W_APIGROUP = 'API';
 	const W_S_NEW = 'Nouveau';
 	const W_S_CONFIRMED = 'Confirmé';
 	const W_S_ASSIGNED = 'Assigné à %user%';
@@ -304,8 +305,6 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_TIP_ID_LABEL = '<b>Attention :</b> les étiquettes des demandes ne seront pas mis à jour, elles pointeront donc toujours vers les anciens ID. Dans le cas où une étiquette d\'une demande ne correspondrait plus à aucun des nouveaux ID, la demande perdrait cette étiquette.';
 	const F_TIP_ID_GROUP = '<b>Attention :</b> le groupe de chaque utilisateur ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce groupe ne correspondrait plus à aucun des nouveaux ID, l\'utilisateur rejoindrait le groupe par défaut.';
 
-	const F_API_KEY = 'API Key'; // je ne parle pas français
-	const F_API_KEY_HELP = 'Choose some random key for authentication with the API (recommended to use: [A-Za-z0-9])'; // je ne parle pas français
 	const F_API_ENABLE = 'Enable the API'; // je ne parle pas français
 
 	const HELP_MARKDOWN = '

@@ -108,9 +108,6 @@ class Settings {
 				$this->config['api_enabled'] = false;
 			}
 		}
-		if (isset($post['api_key'])) {
-			$this->config['api_key'] = htmlspecialchars($post['api_key']);
-		}
 		return true;
 	}
 
@@ -630,12 +627,11 @@ class Settings {
 			'nb_last_activity_user' => 5,
 			'nb_last_activity_rss' => 20,
 			'logs_enabled' => false,
-			'api_key' => 'CHANGE_TO_RANDOM_KEY',
 			'api_enabled' => false,
 			'projects' => array(
 				'default' => array(
 					'description' => '',
-					'can_access' => array('none', 'default', 'developper', 'superuser')
+					'can_access' => array('none', 'default', 'developper', 'superuser', 'bbapi')
 				)
 			),
 			'permissions' => array(
@@ -659,7 +655,8 @@ class Settings {
 			'groups' => array(
 				'default' => Trad::W_USER,
 				'developper' => Trad::W_DEVELOPPER,
-				'superuser' => Trad::W_SUPERUSER
+				'superuser' => Trad::W_SUPERUSER,
+				'bbapi' => Trad::W_APIGROUP
 			),
 			'statuses' => array(
 				'default' => array(
