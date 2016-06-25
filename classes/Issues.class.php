@@ -201,6 +201,8 @@ class Issues {
 
 	public function new_issue($post, $withApi) {
 		global $config;
+
+
 		// if request is not done with API, check permission
 		if( !$withApi ){
 			if (!canAccess('new_issue')
@@ -230,9 +232,12 @@ class Issues {
 			else { $by = NULL; }
 
 		}
-		// request with API, check API key
-		// this is done in api.php
-
+		// request with API
+		// check API key is done in api.php
+		else{
+			$by = $post['api_username'];
+		}
+		
 		$uploads = array();
 		if (canAccess('upload') && !empty($post['uploads'])) {
 			$uploader = Uploader::getInstance();
@@ -244,12 +249,15 @@ class Issues {
 			}
 		}
 
+
 		$status = DEFAULT_STATUS;
 		$assignedto = NULL;
 		$dependencies = array();
 		$labels = array();
-		if (canAccess('update_issue')) {
-			$status = $post['issue_status'];
+		if (canAccess('update_issue') || $withApi) {
+			if(!empty($post['issue_status'])){
+				$status = $post['issue_status'];
+			}
 			if (array_key_exists($post['issue_assignedto'], $config['users'])) {
 				$assignedto = $post['issue_assignedto'];
 			}
@@ -269,6 +277,7 @@ class Issues {
 				}
 			}
 		}
+
 		
 		$id = Text::newKey($this->issues);
 
