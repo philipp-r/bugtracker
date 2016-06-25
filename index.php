@@ -197,11 +197,17 @@ if (isset($_POST['login'])
 		foreach ($config['users'] as $u) {
 			if ($u['username'] == $_POST['username']) {
 				$wait = max($wait, $u['wait_until']);
-				if ($u['hash'] ==
+				// Users of API group cannot login
+				if($u['group'] == "bbapi"){
+					$settings->login_failed($u['id']);
+				}
+				// check if password is correct
+				elseif ($u['hash'] ==
 					Text::getHash($_POST['password'], $_POST['username'])
 				) {
 					$matching_user = $u;
 				}
+				// password is wrong
 				else {
 					$settings->login_failed($u['id']);
 				}
