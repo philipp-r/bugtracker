@@ -12,6 +12,10 @@ class Url {
 			'redirect' => 'index.php?page=home'
 		),
 		array(
+			'rule' => '^api$',
+			'redirect' => 'index.php?page=api'
+		),
+		array(
 			'rule' => '^home$',
 			'redirect' => 'index.php?page=home'
 		),
