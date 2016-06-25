@@ -346,6 +346,10 @@ else {
 		require dirname(__FILE__).'/pages/rss.php';
 		exit;
 	}
+	if ($_GET['page'] == 'api') {
+		require dirname(__FILE__).'/pages/api.php';
+		exit;
+	}
 	elseif ($_GET['page'] == 'identicons') {
 		require dirname(__FILE__).'/pages/identicons.php';
 		exit;

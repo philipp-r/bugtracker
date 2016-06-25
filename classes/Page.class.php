@@ -9,6 +9,7 @@ class Page {
 	protected $errors = array();
 
 	private $pages = array(
+		'api',
 		'home',
 		'install',
 		'dashboard',
