@@ -25,6 +25,7 @@ class Page {
 		'signup'
 	);
 	private $need_project = array(
+		'api',
 		'dashboard',
 		'issues',
 		'search',
