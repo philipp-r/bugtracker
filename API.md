@@ -1,5 +1,6 @@
 # Bumpy Booby API
 
+API can be tested with Mac App Paw and *api.paw* file.
 
 ## Enable the API
 
@@ -69,8 +70,6 @@ Example of an successful request response:
 
 The API has two modes: `default` and `travisci` to use Travis CI webhooks (docs: <https://docs.travis-ci.com/user/notifications/#Webhook-notification>). 
 You can choose this mode by setting the the GET parameter `XMODE` of your request to `travisci`. This parameter is not required if you use the default mode (see above).
-
-API can be tested with Mac App Paw and *api-travisci.paw* file.
 
 ### Request
 
