@@ -56,65 +56,9 @@ if( !in_array( "bbapi", $config['projects'][$_GET['project']]['can_access'] ) ){
 
 
 /*
- Default API
-*/
-if( $_GET['XMODE'] != "travisci" ){
-
-	
-	// check authentication
-	$validUser = false;
-	foreach ($config['users'] as $u) {
-		if ($u['username'] == $_POST['api_username']) {
-			if(
-				// Only users of API group can login
-				$u['group'] == "bbapi" &&
-				// check if password is correct
-				$u['hash'] == Text::getHash($_POST['api_password'], $_POST['api_username'])
-			){
-				$validUser = true;
-				$_POST['api_userid'] = $u['id'];
-			}
-		}
-	}
-	if(!$validUser){
-		$returns['status'] = 0;
-		$returns['statusDetails'] = "Invalid username or password.";
-		endApi( $returns, 403 );
-	}
-	
-	
-	// validate POST
-	if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
-		$returns['status'] = 0;
-		$returns['statusDetails'] = "issue_summary and issue_text are required.";
-		endApi( $returns, 403 );
-	}
-	
-	
-	if($_POST['action'] == "new_issue") {
-		// create issue
-		$issues = Issues::getInstance($_GET['project']);
-		$ans = $issues->new_issue($_POST, true);
-		// return success
-		$returns['status'] = 1;
-		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
-		$returns['ID'] = $issues->lastissue;
-		endApi( $returns, 200 );
-	
-	}
-	else{
-		$returns['status'] = 0;
-		$returns['statusDetails'] = "Invalid value for action.";
-		endApi( $returns, 403 );
-	}
-
-}
-
-
-/*
  Travis CI API
 */
-else{
+if( $_GET['XMODE'] == "travisci" ){
 	
 	// We get JSON in $_POST['payload'] which is decoded in array
 	// see https://docs.travis-ci.com/user/notifications/#Webhooks-Delivery-Format
@@ -194,4 +138,67 @@ else{
 
 
 }
+
+
+
+
+/*
+ Default API
+*/
+else{
+
+	
+	// check authentication
+	$validUser = false;
+	foreach ($config['users'] as $u) {
+		if ($u['username'] == $_POST['api_username']) {
+			if(
+				// Only users of API group can login
+				$u['group'] == "bbapi" &&
+				// check if password is correct
+				$u['hash'] == Text::getHash($_POST['api_password'], $_POST['api_username'])
+			){
+				$validUser = true;
+				$_POST['api_userid'] = $u['id'];
+			}
+		}
+	}
+	if(!$validUser){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid username or password.";
+		endApi( $returns, 403 );
+	}
+	
+	
+	// validate POST
+	if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "issue_summary and issue_text are required.";
+		endApi( $returns, 403 );
+	}
+	
+	
+	if($_POST['action'] == "new_issue") {
+		// create issue
+		$issues = Issues::getInstance($_GET['project']);
+		$ans = $issues->new_issue($_POST, true);
+		// return success
+		$returns['status'] = 1;
+		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['ID'] = $issues->lastissue;
+		endApi( $returns, 200 );
+	
+	}
+	else{
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid value for action.";
+		endApi( $returns, 403 );
+	}
+
+}
+
+
+
+
+
 exit;
