@@ -2,7 +2,6 @@
 
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
 
-[![ghit.me](https://ghit.me/badge.svg?repo=Spamty/Bumpy-Booby)](https://ghit.me/repo/Spamty/Bumpy-Booby)
 [![Flattr this](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2FSpamty%2FBumpy-Booby)
 
 ## Running
@@ -30,6 +29,7 @@ Bumpy Booby doesn't support IE 6 & 7. It requires JavaScript to work properly.
 Report bugs & feature requests for the original software here: <http://bumpy-booby.derivoile.fr>.
 
 Report issues with this fork here: <https://bugs.spamty.eu/index.php?project=Bumpy-Booby&page=issues>. Authenticate with username: `public` and password: `bugs`.
+Or send us an email: <https://3q3.de/spamty>
 
 ## About Booby Bumpy
 
