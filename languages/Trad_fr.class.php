@@ -219,6 +219,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_LAST_ACTIVITY = 'Activité récente';
 	const T_UPLOADS = 'Fichiers';
 	const T_SEARCH = 'Recherche';
+	const T_API_SETTINGS = 'API';
 
 
 		# FORMS
@@ -302,6 +303,10 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_TIP_ID_STATUS = '<b>Attention :</b> le statut de chaque demande ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce statut ne correspondrait plus à aucun des nouveaux ID, la demande retrouverait l\'état par défaut.';
 	const F_TIP_ID_LABEL = '<b>Attention :</b> les étiquettes des demandes ne seront pas mis à jour, elles pointeront donc toujours vers les anciens ID. Dans le cas où une étiquette d\'une demande ne correspondrait plus à aucun des nouveaux ID, la demande perdrait cette étiquette.';
 	const F_TIP_ID_GROUP = '<b>Attention :</b> le groupe de chaque utilisateur ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce groupe ne correspondrait plus à aucun des nouveaux ID, l\'utilisateur rejoindrait le groupe par défaut.';
+
+	const F_API_KEY = 'API Key'; // je ne parle pas français
+	const F_API_KEY_HELP = 'Choose some random key for authentication with the API (recommended to use: [A-Za-z0-9])'; // je ne parle pas français
+	const F_API_ENABLE = 'Enable the API'; // je ne parle pas français
 
 	const HELP_MARKDOWN = '
 		<h2>Syntaxe Markdown :</h2>

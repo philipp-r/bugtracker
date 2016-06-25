@@ -383,6 +383,7 @@ $content = '
 		<li><a href="#t3">'.Trad::T_ISSUES.'</a></li>
 		<li><a href="#t4">'.Trad::T_GROUPS.'</a></li>
 		<li><a href="#t5">'.Trad::T_USERS.'</a></li>
+		<li><a href="#t9">TRANSLATION_REQUIRED API</a></li>
 	</ul>
 
 <form method="post" action="'.Url::parse('settings').'">
@@ -621,6 +622,30 @@ $content = '
 
 	<input type="hidden" name="action" value="save" />
 	<input type="hidden" name="token" value="'.getToken().'" />
+
+	<h2 id="t9" class="first">'.Trad::T_API_SETTINGS.'</h2>
+
+	<div class="box box-settings">
+		<div class="top a-icon-hover">
+			<i class="icon-chevron-down"></i>'.Trad::T_API_SETTINGS.'
+		</div>
+		<div class="inner-form" style="display:none">
+			<label for="title">'.Trad::F_API_KEY.'</label>
+			<input type="text" name="api_key" id="api_key" class="input-medium" value="'.$config['api_key'].'" required />
+			<p class="help">'.Trad::F_API_KEY_HELP.'</p>
+
+			<label for="api_enabled">'.Trad::F_API_ENABLE.'</label>
+			<select name="api_enabled" id="api_enabled" class="input-medium">'.Text::options(array('true' => Trad::W_ENABLED, 'false' => Trad::W_DISABLED), ($config['api_enabled'] ? 'true' : 'false')).'</select>
+		</div>
+	</div>
+	
+	<div class="form-actions">
+		<a href="'.Url::parse('settings').'" class="btn">'.Trad::V_CANCEL.'</a>
+		<button type="submit" class="btn btn-primary">'.Trad::V_SAVE_CONFIG.'</button>
+	</div>
+
+
+
 
 </form>
 ';
