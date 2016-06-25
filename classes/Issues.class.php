@@ -235,7 +235,7 @@ class Issues {
 		// request with API
 		// check API key is done in api.php
 		else{
-			$by = $post['api_username'];
+			$by = $post['api_userid'];
 		}
 		
 		$uploads = array();

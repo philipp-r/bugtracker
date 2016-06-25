@@ -59,6 +59,7 @@ foreach ($config['users'] as $u) {
 			$returns['statusDetails'] = "Invalid username or password.";
 			endApi( $returns, 403 );
 		}
+		$_POST['api_userid'] = $u['id'];
 	}
 }
 
@@ -76,7 +77,6 @@ if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
 	$returns['statusDetails'] = "issue_summary and issue_text are required.";
 	endApi( $returns, 403 );
 }
-
 
 
 if($_POST['action'] == "new_issue") {
