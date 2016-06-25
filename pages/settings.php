@@ -630,8 +630,8 @@ $content = '
 			<i class="icon-chevron-down"></i>'.Trad::T_API_SETTINGS.'
 		</div>
 		<div class="inner-form" style="display:none">
-			<label for="title">TRANSLATION_REQUIRED API access</label>
-			<p>TRANSLATION_REQUIRED  Create a new user and add him to group "bbapi". Give the group "bbapi" permission for every project you want to use with API - you do not need to set any other permissions, just the projects. This user can only use the API, he cannot login.</p>
+			<label for="title">'.Trad::T_API_ACCESS_SETTINGS.'</label>
+			<p>'.Trad::T_API_ACCESS_HELP.'</p>
 
 			<label for="api_enabled">'.Trad::F_API_ENABLE.'</label>
 			<select name="api_enabled" id="api_enabled" class="input-medium">'.Text::options(array('true' => Trad::W_ENABLED, 'false' => Trad::W_DISABLED), ($config['api_enabled'] ? 'true' : 'false')).'</select>
