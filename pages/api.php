@@ -110,9 +110,29 @@ if( $_GET['XMODE'] != "travisci" ){
 else{
 
 
-	var_dump($_GET);
-	var_dump($_POST);
-	var_dump($_SERVER);
+
+ob_start();
+var_dump($_GET);
+$APIPOST['issue_text'] = ob_get_clean();
+$APIPOST['issue_summary'] = "GET";
+$issues = Issues::getInstance("Bumpy-Booby");
+$ans = $issues->new_issue($APIPOST, true);
+
+ob_start();
+var_dump($_POST);
+$APIPOST['issue_text'] = ob_get_clean();
+$APIPOST['issue_summary'] = "POST";
+$issues = Issues::getInstance("Bumpy-Booby");
+$ans = $issues->new_issue($APIPOST, true);
+
+ob_start();
+var_dump($_SERVER);
+$APIPOST['issue_text'] = ob_get_clean();
+$APIPOST['issue_summary'] = "SERVER";
+$issues = Issues::getInstance("Bumpy-Booby");
+$ans = $issues->new_issue($APIPOST, true);
+
+
 
 }
 exit;
