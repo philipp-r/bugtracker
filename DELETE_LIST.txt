@@ -1,5 +1,6 @@
 .git
 .gitignore
+api-travisci.paw
 API.md
 README.md
 LICENSE.md
