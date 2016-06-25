@@ -28,7 +28,7 @@ Bumpy Booby doesn't support IE 6 & 7. It requires JavaScript to work properly.
 
 Report bugs & feature requests for the original software here: <http://bumpy-booby.derivoile.fr>.
 
-Report issues with this fork here: <https://bugs.spamty.eu/index.php?project=Bumpy-Booby&page=issues>. Authenticate with username: `public` and password: `bugs`.
+Report issues with this fork here: <https://bugs.spamty.eu/index.php?project=Bumpy-Booby&page=issues>. 
 Or send us an email: <https://3q3.de/spamty>
 
 ## About Booby Bumpy
