@@ -68,7 +68,6 @@ if( $_GET['XMODE'] == "travisci" ){
 	//var_dump($travis);exit;
 	
 	
-	// authentication
 	// read headers, so we get $headers["Authorization"]
 	$headers = apache_request_headers(); // see http://stackoverflow.com/a/2902713
 
@@ -133,12 +132,71 @@ if( $_GET['XMODE'] == "travisci" ){
 	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
 	$returns['ID'] = $issues->lastissue;
 	endApi( $returns, 200 );
-	
-
-
 
 }
 
+
+
+
+
+
+/*
+ GitHub API
+*/
+if( $_GET['XMODE'] == "github" ){
+	
+	// decode the JSON payload
+	$post_data_json = file_get_contents('php://input');
+	$post_data = json_decode($post_data_json, true);
+
+	// authentication
+	$validUser = false;
+	// check if password is set
+	if(!empty($_GET["githubpassword"])){
+		// check all users
+		foreach ($config['users'] as $u) {
+			// check where username matches github-REPOSITORY
+			if ($u['username'] == "github-".$post_data['repository']['name']) {
+				if(
+					// Only users of API group can login
+					$u['group'] == "bbapi" || 
+					// check if password is correct
+					$u['hash'] == Text::getHash($_GET["githubpassword"], "github-".$post_data['repository']['name'])
+				){
+					// check webhook secret which is stored as user email address $u['email']
+					$signature = hash_hmac('sha1', $post_data_json, $u['email']); // https://gist.github.com/jplitza/88d64ce351d38c2f4198
+					if( $signature == $_SERVER['HTTP_X_HUB_SIGNATURE'] ){
+						$validUser = true;
+						$_POST['api_userid'] = $u['id'];
+					}
+				}
+			}
+		}
+	}
+	if(!$validUser){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid username or password.";
+		endApi( $returns, 403 );
+	}
+	
+	// build POST parameters
+	$travisPost = array(
+		'api_userid' => $_POST['api_userid'],
+		'issue_summary' => "Building repository ".$travis['repository']['name']." branch ".$travis['branch']." ".$travis['status_message'],
+		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."** 
+\n \n Status *".$travis['status_message']."*: ".$travis['status_message_details']."
+\n \n Commit ".$travis['commit']." by ".$travis['committer_name']." at ".$travis['committed_at'].": *".$travis['message']."* "
+	);
+	// create issue
+	$issues = Issues::getInstance($_GET['project']);
+	$ans = $issues->new_issue($travisPost, true);
+	// return success
+	$returns['status'] = 1;
+	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+	$returns['ID'] = $issues->lastissue;
+	endApi( $returns, 200 );
+
+}
 
 
 

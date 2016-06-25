@@ -15,7 +15,7 @@ Give the group "bbapi" permission for every project you want to use with API and
 
 ## Default API
 
-The API has two modes. This is the default mode. To use `travisci` mode for Travis CI webhooks see below. 
+The API has different modes. This is the default mode. To use `travisci` mode for Travis CI webhooks or `github` mode see below. 
 
 ### Request
 
@@ -68,7 +68,7 @@ Example of an successful request response:
 
 ## Travis CI API
 
-The API has two modes: `default` and `travisci` to use Travis CI webhooks (docs: <https://docs.travis-ci.com/user/notifications/#Webhook-notification>). 
+The API has different modes: `travisci` is to use Travis CI webhooks (docs: <https://docs.travis-ci.com/user/notifications/#Webhook-notification>). 
 You can choose this mode by setting the the GET parameter `XMODE` of your request to `travisci`. This parameter is not required if you use the default mode (see above).
 
 ### Request
@@ -100,6 +100,48 @@ sha256('USERNAME/REPOSITORYTRAVIS_TOKEN')
 
 Create a new user with the name `travis-REPOSITORY` where you replace *REPOSITORY* with the name of your GitHub repository. 
 The user has to use the *Authorization* header as password (the sha256 hash above).
+Add this user to the group "bbapi".
+
+### Response
+
+Same response as for default API (see above).
+
+
+
+
+## GitHub API
+
+The API has different modes: `github` is to use GitHub webhooks.
+You can choose this mode by setting the the GET parameter `XMODE` of your request to `github`. This parameter is not required if you use the default mode (see above).
+
+### Request
+
+Use this URL for your webhook:
+
+```
+http://example.com/index.php?project=PROJECTNAME&page=api&XMODE=github&githubpassword=ABC
+```
+
+Webhooks are delivered with a `application/json` content type using HTTP POST. The body is the JSON `payload` that depends on the event.
+All payloads: <https://developer.github.com/v3/activity/events/types/>
+
+HTTP requests made to your webhook's configured URL endpoint will contain several special headers:
+
+ * `X-GitHub-Event`: Name of the event that triggered this delivery.
+ * `X-Hub-Signature`: HMAC hex digest of the payload, using the hook's secret as the key (if configured).
+ * `X-GitHub-Delivery`: Unique ID for this delivery.
+
+
+### Authentication
+
+GitHub webhook sends a header called `X-Hub-Signature` which is generated with:
+
+```
+hash_hmac( 'sha1', JSON-PAYLOAD, WEBHOOK-SECRET );
+```
+
+Create a new user with the name `github-REPOSITORY` where you replace *REPOSITORY* with the name of your GitHub repository. 
+The user has to use the *secret* of the webhook as **email address** (just a dirty workaround until I have a better solution, but your secret has to contain an @-sign to pass the validation in *classes/Settings.class.php* line 82). Choose a password for the user which will be passed as GET parameter `githubpassword`.
 Add this user to the group "bbapi".
 
 ### Response
