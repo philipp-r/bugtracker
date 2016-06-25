@@ -1,7 +1,7 @@
 <?php
 
 /*
-Terminate Script
+ Function to terminate script
 */
 function endApi( $returnValues, $httpStatus ){
 	// The HTTP status is currently not implemented.
@@ -80,15 +80,22 @@ if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
 
 
 if($_POST['action'] == "new_issue") {
+	// create issue
 	$issues = Issues::getInstance($_GET['project']);
 	$ans = $issues->new_issue($_POST, true);
-	var_dump($ans);
+	// return success
+	$returns['status'] = 1;
+	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+	$returns['ID'] = $issues->lastissue;
+	endApi( $returns, 200 );
+
 }
 else{
 	$returns['status'] = 0;
 	$returns['statusDetails'] = "Invalid value for action.";
 	endApi( $returns, 403 );
 }
+
 
 
 exit;
