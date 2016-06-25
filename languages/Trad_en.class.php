@@ -222,7 +222,7 @@ This is an automated email, please do not reply.
 	const T_SEARCH = 'Search';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
-	const T_API_ACCESS_HELP = 'Create a new user and add him to group "bbapi". Give the group "bbapi" permission for every project you want to use with API and to create new issues. This user can only use the API, he cannot login.'
+	const T_API_ACCESS_HELP = 'Create a new user and add him to group "bbapi". Give the group "bbapi" permission for every project you want to use with API and to create new issues. This user can only use the API, he cannot login.';
 
 		# FORMS
 
