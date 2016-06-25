@@ -8,8 +8,6 @@ To enable the Bumpy Booby API log in and go to *Settings -> API* and choose *Ena
 Then create a new group named `bbapi` if it not exists yet.
 Give the group "bbapi" permission for every project you want to use with API and for *New issue*.
 
-Create a new user with password and add him to group "bbapi". This user can now use the API but he cannot login.
-
 
 
 
@@ -29,6 +27,8 @@ https://example.com/index.php?project=PROJECTNAME&page=api
 Replace `PROJECTNAME` with the project you want to use. This is required even if you only have the default project.
 
 ### Authentication
+
+Create a new user with password and add him to group "bbapi". This user can now use the API but he cannot login.
 
 Pass `api_username` with the user you created in "bbapi" group and `api_password` parameter with the user's password as HTTP POST data.
 
@@ -64,13 +64,44 @@ Example of an successful request response:
 
 
 
+
 ## Travis CI API
 
 The API has two modes: `default` and `travisci` to use Travis CI webhooks (docs: <https://docs.travis-ci.com/user/notifications/#Webhook-notification>). 
 You can choose this mode by setting the the GET parameter `XMODE` of your request to `travisci`. This parameter is not required if you use the default mode (see above).
 
 
-UNDER CONSTRUCTION
+### Request
 
+Add the URL to your `.travis.yml` file for a webhook:
 
+```
+notifications:
+  webhooks:
+    urls:
+      - https://example.com/index.php?project=PROJECTNAME&page=api&XMODE=travisci
+    on_success: [always|never|change] # default: always
+    on_failure: [always|never|change] # default: always
+    on_start: [always|never|change] # default: never
+```
 
+Webhooks are delivered with a `application/x-www-form-urlencoded` content type using HTTP POST, with the body including a `payload` parameter that contains the JSON webhook payload in a URL-encoded format.
+Example payload: <https://gist.github.com/roidrage/9272064#file-gistfile1-json>
+
+See also <https://docs.travis-ci.com/user/notifications/#Webhook-notification>
+
+### Authentication
+
+When Travis CI makes the POST request, a header named `Authorization` is included. Its value is the SHA2 hash of the GitHub username (see below), the name of the repository, and your Travis CI token.
+
+```
+sha256('USERNAME/REPOSITORYTRAVIS_TOKEN')
+```
+
+Create a new user with the name `travis-REPOSITORY` where you replace *REPOSITORY* with the name of your GitHub repository. 
+The user has to use the *Authorization* header as password (the sha256 hash above).
+Add this user to the group "bbapi".
+
+### Response
+
+Same response as for default API (see above).
