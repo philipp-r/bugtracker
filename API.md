@@ -141,7 +141,7 @@ hash_hmac( 'sha1', JSON-PAYLOAD, WEBHOOK-SECRET );
 ```
 
 Create a new user with the name `github-REPOSITORY` where you replace *REPOSITORY* with the name of your GitHub repository. 
-The user has to use the *secret* of the webhook as **email address** (just a dirty workaround until I have a better solution, but your secret has to contain an @-sign to pass the validation in *classes/Settings.class.php* line 82). Choose a password for the user which will be passed as GET parameter `githubpassword`.
+The user has to use the *secret* of the webhook as **email address** (just a dirty workaround until I have a better solution, but your secret has to contain an @-sign to pass the validation in *classes/Settings.class.php*). Choose a password for the user which will be passed as GET parameter `githubpassword`.
 Add this user to the group "bbapi".
 
 ### Response
