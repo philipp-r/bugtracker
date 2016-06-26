@@ -67,29 +67,54 @@ if( $_GET['XMODE'] == "travisci" ){
 	// read headers, so we get $headers["Authorization"]
 	$headers = apache_request_headers(); // see http://stackoverflow.com/a/2902713
 
-	// check all users
-	$validUser = false;
-	foreach ($config['users'] as $u) {
-		// check where username matches travis-REPOSITORY
-		if ($u['username'] == "travis-".$travis['repository']['name']) {
-			if(
-				// Only users of API group can login
-				$u['group'] == "bbapi" || 
-				// check if password is correct
-				$u['hash'] == Text::getHash($headers["Authorization"], "travis-".$travis['repository']['name'])
-			){
-				$validUser = true;
-				$_POST['api_userid'] = $u['id'];
-			}
-		}
-	}
-	if(!$validUser){
+	// the username is $username 
+	$username = "travis-".$travis['repository']['name'];
+
+	// check if this is a Travis CI user
+	if( $API_ACCESS[$username]['mode'] != "travisci" ||
+	// check api key
+	$API_ACCESS[$username]['key'] != $headers["Authorization"] ){
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
 	}
 
-	
+
+	$validProject = false;
+	// check if project exists
+	if( isset($config["projects"][$_GET['project']]) ){
+		// check project permissions
+		$projects = $API_ACCESS[$username]['projects'];
+		// if has permission for all projects
+		if( $projects == "ALL_PROJECTS" ){
+			$validProject = true;
+		}
+		else{
+			// check every project that is set in config
+			$projectsArray = explode(",", $projects);
+			foreach($projectsArray as $project){
+				if($project == $_GET['project']){
+					$validProject = true;
+				}
+			}
+		}
+	}
+	if( !$validProject ){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid project.";
+		endApi( $returns, 400 );
+	}
+
+
+	// check permissions for "new_issue"
+	if($API_ACCESS[$username]['permissions'] != "new_issue" &&
+	$API_ACCESS[$username]['permissions'] != "ALL_PERMISSIONS" ) {
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "No permission for new_issue.";
+		endApi( $returns, 403 );
+	}
+
+
 	// travis CI status description
 	switch ($travis['status_message']) {
 	    case "Pending":
@@ -114,7 +139,6 @@ if( $_GET['XMODE'] == "travisci" ){
 	
 	// build POST parameters
 	$travisPost = array(
-		'api_userid' => $_POST['api_userid'],
 		'issue_summary' => "Building repository ".$travis['repository']['name']." branch ".$travis['branch']." ".$travis['status_message'],
 		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."** 
 \n \n Status *".$travis['status_message']."*: ".$travis['status_message_details']."
@@ -242,7 +266,7 @@ else{
 	if( !$validProject ){
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid project.";
-		endApi( $returns, 403 );
+		endApi( $returns, 400 );
 	}
 	
 	
