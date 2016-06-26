@@ -506,7 +506,7 @@ class Settings {
 		//if (filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
 		// Validate email address not with filter, check only if there is an @-sign
 		// The email field is used to store GitHub webhook secret for API users
-		elseif (strpos($post['email'], '@') !== false) { // http://stackoverflow.com/a/4366748
+		if (strpos($post['email'], '@') !== false) { // http://stackoverflow.com/a/4366748
 			$email = $post['email'];
 		}
 		else {
