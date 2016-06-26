@@ -142,7 +142,7 @@ if( $_GET['XMODE'] == "travisci" ){
 		'issue_summary' => "Building repository ".$travis['repository']['name']." branch ".$travis['branch']." ".$travis['status_message'],
 		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."** 
 \n \n Status *".$travis['status_message']."*: ".$travis['status_message_details']."
-\n \n Commit ".$travis['commit']." by ".$travis['committer_name']." at ".$travis['committed_at'].": *".$travis['message']."* "
+\n \n Commit ".$travis['commit']." by ".$travis['committer_name']." at ".$travis['committed_at'].": *".$travis['message']."* ",
 	);
 	// create issue
 	$issues = Issues::getInstance($_GET['project']);
@@ -169,47 +169,74 @@ if( $_GET['XMODE'] == "github" ){
 	$post_data_json = file_get_contents('php://input');
 	$post_data = json_decode($post_data_json, true);
 
-	// authentication
-	$validUser = false;
-	// check if password is set
-	if(!empty($_GET["githubpassword"])){
-		// check all users
-		foreach ($config['users'] as $u) {
-			// check where username matches github-REPOSITORY
-			if ($u['username'] == "github-".$post_data['repository']['name']) {
-				if(
-					// Only users of API group can login
-					$u['group'] == "bbapi" || 
-					// check if password is correct
-					$u['hash'] == Text::getHash($_GET["githubpassword"], "github-".$post_data['repository']['name'])
-				){
-					// check webhook secret which is stored as user email address $u['email']
-					$signature = hash_hmac('sha1', $post_data_json, $u['email']); // https://gist.github.com/jplitza/88d64ce351d38c2f4198
-					if( $signature == $_SERVER['HTTP_X_HUB_SIGNATURE'] ){
-						$validUser = true;
-						$_POST['api_userid'] = $u['id'];
-					}
-				}
-			}
-		}
-	}
-	if(!$validUser){
+	// the username is $username 
+	$username = "github-".$post_data['repository']['name'];
+	// X_HUB_SIGNATURE, see https://gist.github.com/jplitza/88d64ce351d38c2f4198
+	$signature = hash_hmac('sha1', $post_data_json, $API_ACCESS[$username]['key']);
+
+	// check if this is a github user
+	if( $API_ACCESS[$username]['mode'] != "github" ||
+	// check api key
+	$signature != $_SERVER['HTTP_X_HUB_SIGNATURE'] ){
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
 	}
-	
-	// build POST parameters
-	$travisPost = array(
-		'api_userid' => $_POST['api_userid'],
-		'issue_summary' => "Building repository ".$travis['repository']['name']." branch ".$travis['branch']." ".$travis['status_message'],
-		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."** 
-\n \n Status *".$travis['status_message']."*: ".$travis['status_message_details']."
-\n \n Commit ".$travis['commit']." by ".$travis['committer_name']." at ".$travis['committed_at'].": *".$travis['message']."* "
-	);
+
+
+	$validProject = false;
+	// check if project exists
+	if( isset($config["projects"][$_GET['project']]) ){
+		// check project permissions
+		$projects = $API_ACCESS[$username]['projects'];
+		// if has permission for all projects
+		if( $projects == "ALL_PROJECTS" ){
+			$validProject = true;
+		}
+		else{
+			// check every project that is set in config
+			$projectsArray = explode(",", $projects);
+			foreach($projectsArray as $project){
+				if($project == $_GET['project']){
+					$validProject = true;
+				}
+			}
+		}
+	}
+	if( !$validProject ){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid project.";
+		endApi( $returns, 400 );
+	}
+
+
+	// check permissions for "new_issue"
+	if($API_ACCESS[$username]['permissions'] != "new_issue" &&
+	$API_ACCESS[$username]['permissions'] != "ALL_PERMISSIONS" ) {
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "No permission for new_issue.";
+		endApi( $returns, 403 );
+	}
+
+
+
+	// check if we have a template for this event
+	if(file_exists("classes/api/github.".$_SERVER['HTTP_X_GITHUB_EVENT'].".php")){
+		// and use the template
+		require("classes/api/github.".$_SERVER['HTTP_X_GITHUB_EVENT'].".php");
+	}
+	// else use default template
+	else{
+		// build POST parameters
+		$githubPost = array(
+			'issue_summary' => "GitHub repository: ".$post_data['repository']['name']." event: ".$_SERVER['HTTP_X_GITHUB_EVENT'],
+			'issue_text' => "GitHub webhook was triggered by event: *".$_SERVER['HTTP_X_GITHUB_EVENT']."* for repository **".$post_data['repository']['name']."** ",
+		);
+	}
+
 	// create issue
 	$issues = Issues::getInstance($_GET['project']);
-	$ans = $issues->new_issue($travisPost, true);
+	$ans = $issues->new_issue($githubPost, true);
 	// return success
 	$returns['status'] = 1;
 	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
