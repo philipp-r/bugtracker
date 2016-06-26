@@ -1,4 +1,8 @@
 <?php
+// include API configuration
+require("database/api_config.php");
+
+//var_dump($config); exit;
 
 /*
  Function to terminate script
@@ -43,14 +47,6 @@ if( !$config["api_enabled"] ){
 	$returns['status'] = 0;
 	$returns['statusDetails'] = "The API is disabled.";
 	endApi( $returns, 501 );
-}
-
-
-// check if "bbapi" group has access to project
-if( !in_array( "bbapi", $config['projects'][$_GET['project']]['can_access'] ) ){
-	$returns['status'] = 0;
-	$returns['statusDetails'] = "Invalid project.";
-	endApi( $returns, 403 );
 }
 
 
@@ -206,22 +202,10 @@ if( $_GET['XMODE'] == "github" ){
 else{
 
 	
-	// check authentication
-	$validUser = false;
-	foreach ($config['users'] as $u) {
-		if ($u['username'] == $_POST['api_username']) {
-			if(
-				// Only users of API group can login
-				$u['group'] == "bbapi" &&
-				// check if password is correct
-				$u['hash'] == Text::getHash($_POST['api_password'], $_POST['api_username'])
-			){
-				$validUser = true;
-				$_POST['api_userid'] = $u['id'];
-			}
-		}
-	}
-	if(!$validUser){
+	// check if this is a default user
+	if( $API_ACCESS[$_POST['api_username']]['mode'] != "default" ||
+	// check api key
+	$API_ACCESS[$_POST['api_username']]['key'] != md5($_POST['api_password']) ){
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
@@ -234,9 +218,37 @@ else{
 		$returns['statusDetails'] = "issue_summary and issue_text are required.";
 		endApi( $returns, 403 );
 	}
+
+
+	$validProject = false;
+	// check if project exists
+	if( isset($config["projects"][$_GET['project']]) ){
+		// check project permissions
+		$projects = $API_ACCESS[$_POST['api_username']]['projects'];
+		// if has permission for all projects
+		if( $projects == "ALL_PROJECTS" ){
+			$validProject = true;
+		}
+		else{
+			// check every project that is set in config
+			$projectsArray = explode(",", $projects);
+			foreach($projectsArray as $project){
+				if($project == $_GET['project']){
+					$validProject = true;
+				}
+			}
+		}
+	}
+	if( !$validProject ){
+		$returns['status'] = 0;
+		$returns['statusDetails'] = "Invalid project.";
+		endApi( $returns, 403 );
+	}
 	
 	
-	if($_POST['action'] == "new_issue") {
+	if($_POST['action'] == "new_issue" && 
+	// check permissions for "new_issue"
+	($API_ACCESS[$_POST['api_username']]['permissions'] == "new_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// create issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->new_issue($_POST, true);

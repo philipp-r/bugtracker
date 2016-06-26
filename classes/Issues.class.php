@@ -199,7 +199,7 @@ class Issues {
 		return $ret;
 	}
 
-	public function new_issue($post, $withApi) {
+	public function new_issue($post, $withApi = false) {
 		global $config;
 
 
@@ -235,7 +235,8 @@ class Issues {
 		// request with API
 		// check API key is done in api.php
 		else{
-			$by = $post['api_userid'];
+			$by = NULL;
+			// $post['issue_text'] = $post['issue_text']." /n /n /n /n Issue created with API by ".$post['api_username'];
 		}
 		
 		$uploads = array();
