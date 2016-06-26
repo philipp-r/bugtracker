@@ -23,7 +23,7 @@ Add this to the "api_config.php" file.</p>
 
 
 <form action="keygen-travisci.php" method="POST">
-	<p>GitHub username: <input type="text" name="github_user" id="github_user"></p>
+	<p>GitHub username (repo owner): <input type="text" name="github_user" id="github_user"></p>
 	<p>GitHub repository name: <input type="text" name="github_repo" id="github_repo"></p>
 	<p>Travis Token: <input type="text" name="travis_token" id="travis_token"></p>
 	<input type="submit" name="submit" id="submit" value="GENERATE">
