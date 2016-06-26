@@ -1,7 +1,4 @@
 <?php
-// include API configuration
-require("database/api_config.php");
-
 //var_dump($config); exit;
 
 /*
@@ -40,6 +37,17 @@ function endApi( $returnValues, $httpStatus ){
 	exit( json_encode($returnValues) );
 
 }
+
+
+// check if configuration file exists
+if(!file_exists("database/api_config.php")){
+	$returns['status'] = 0;
+	$returns['statusDetails'] = "The API is disabled.";
+	endApi( $returns, 501 );
+}
+
+// include API configuration
+require("database/api_config.php");
 
 
 // check if API enabled

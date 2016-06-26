@@ -1,5 +1,6 @@
 .git
 .gitignore
+api_config.example.php
 api.paw
 API.md
 README.md

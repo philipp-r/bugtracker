@@ -6,10 +6,6 @@ API can be tested with Mac App Paw and *api.paw* file.
 
 To enable the Bumpy Booby API log in and go to *Settings -> API* and choose *Enabled*.
 
-Then create a new group named `bbapi` if it not exists yet.
-Give the group "bbapi" permission for every project you want to use with API and for *New issue*.
-
-
 
 
 
@@ -29,7 +25,7 @@ Replace `PROJECTNAME` with the project you want to use. This is required even if
 
 ### Authentication
 
-Open `database/api_config.php` and add the following to the `$API_ACCESS` array:
+Open/Create `database/api_config.php` file (see `api_config.example.php` for an example) and add the following to the `$API_ACCESS` array:
 
 ```
     "API_USERNAME_1" => array(
