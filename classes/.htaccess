@@ -1,2 +1,9 @@
 Allow from none
 Deny from all
+
+<FilesMatch "^keygen\.php$">
+Allow from all
+</FilesMatch>
+<FilesMatch "^keygen-travisci\.php$">
+Allow from all
+</FilesMatch>
