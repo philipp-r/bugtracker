@@ -42,8 +42,8 @@ function endApi( $returnValues, $httpStatus ){
 // check if configuration file exists
 if(!file_exists("database/api_config.php")){
 	$returns['status'] = 0;
-	$returns['statusDetails'] = "The API is disabled.";
-	endApi( $returns, 501 );
+	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://github.com/Spamty/Bumpy-Booby/blob/master/API.md and example configuration https://github.com/Spamty/Bumpy-Booby/blob/master/api_config.example.php for the API.";
+	endApi( $returns, 500 );
 }
 
 // include API configuration

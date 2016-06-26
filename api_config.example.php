@@ -8,14 +8,14 @@ $API_ACCESS = array(
 
 	"API_USERNAME_1" => array(
 		"mode" => "default", // XMODE default
-		"key" => "66f3c330818cdba8e1a9ec67ecaa2b93", // generate key with /classes/api/keygen.php
+		"key" => "0cc175b9c0f1b6a831c399e269772661", // generate key with /classes/api/keygen.php
 		"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
 		"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
 	),
 
 	"travis-REPOSITORY" => array(
 		"mode" => "travisci", // XMODE travisci
-		"key" => "2ff384a686bdd4b54a567b2e0cb335d7336ee7bf5ea06a971fa6086d926862ca", // generate key with /classes/api/keygen-travisci.php
+		"key" => "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", // generate key with /classes/api/keygen-travisci.php
 		"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
 		"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
 	),
