@@ -421,10 +421,7 @@ class Settings {
 			else {
 				$hash = Text::getHash($post['user_password'][$k], $username);
 			}
-			//if (filter_var($post['user_email'][$k], FILTER_VALIDATE_EMAIL)) {
-			// Validate email address not with filter, check only if there is an @-sign
-			// The email field is used to store GitHub webhook secret for API users
-			if (strpos($post['user_email'], '@') !== false) { // http://stackoverflow.com/a/4366748
+			if (filter_var($post['user_email'][$k], FILTER_VALIDATE_EMAIL)) {
 				$email = $post['user_email'][$k];
 			}
 			else {
@@ -503,10 +500,7 @@ class Settings {
 				$this->config['users'][$id]['username']
 			);
 		}
-		//if (filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
-		// Validate email address not with filter, check only if there is an @-sign
-		// The email field is used to store GitHub webhook secret for API users
-		if (strpos($post['email'], '@') !== false) { // http://stackoverflow.com/a/4366748
+		if (filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
 			$email = $post['email'];
 		}
 		else {
@@ -553,10 +547,7 @@ class Settings {
 		$id = Text::newKey($this->config['users']);
 		$username = $post['username'];
 		$hash = Text::getHash($post['password'], $username);
-		//if (filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
-		// Validate email address not with filter, check only if there is an @-sign
-		// The email field is used to store GitHub webhook secret for API users
-		if (strpos($post['email'], '@') !== false) { // http://stackoverflow.com/a/4366748
+		if (filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
 			$email = $post['email'];
 		}
 		else {
