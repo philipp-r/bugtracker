@@ -398,7 +398,7 @@ elseif (canAccess('home')) {
 	$menu = '<li class="m_home">'
 		.'<a href="'.Url::parse('home').'">'.Trad::T_PROJECTS.'</a>'
 	.'</li>';
-	$menu .= '<li class="m_all_issues">'
+	$menu .= '<li class="m_allissues">'
 		.'<a href="'.Url::parse('all_issues').'">'.Trad::T_ALL_ISSUES.'</a>'
 	.'</li>';
 }
