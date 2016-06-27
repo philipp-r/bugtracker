@@ -1,11 +1,15 @@
 # Bumpy Booby
 
-Copyright (c) 2013-2015 Pierre Monchalin
-<http://bumpy-booby.derivoile.fr>
+Copyright (c) 2013-2015 Pierre Monchalin <http://bumpy-booby.derivoile.fr> (Original Bumpy Booby software).
+
+Edited by Philipp <https://github.com/philipp-r> for Spamty.eu. Copyright (c) 2016.
+
+## MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
+"Software"), to deal in the Software without restriction except
+the restriction for our logo (see section below), including
 without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
@@ -21,3 +25,11 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Logo
+
+The Spamty logo and the logo of this software are not subject to the
+MIT license (see above).
+The logo is copyright protected.
+You have no right to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the logo.
