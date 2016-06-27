@@ -372,7 +372,7 @@ class Text {
 		return true;
 	}
 	public static function stop($text, $stop = true) {
-		if (!canAccess('view_errors')) {
+		if (!canAccess('view_errors') || $_GET['page'] == "api") {
 			if (!$stop) { return true; }
 			$text = Trad::A_ERROR_FATAL;
 		}
