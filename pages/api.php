@@ -167,6 +167,100 @@ if( $_GET['XMODE'] == "travisci" ){
 
 
 
+
+
+/*
+  Import RSS
+*/
+elseif($_GET['XMODE'] == 'rss'){
+
+	function createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link){
+			global $rssfeed;
+			// check if this id was already imported
+			if($imported[$rssfeed['name']][$issueData_id] == 1){
+				print_r( $issueData_id." already imported" );
+			}else{
+				print_r("importing ".$issueData_id);
+				// mark as imported in JSON list
+				$imported[$rssfeed['name']][$issueData_id] = 1;
+				// create issue
+				$issues = Issues::getInstance($rssfeed['project']);
+				$ans = $issues->new_issue(
+					array(
+						'issue_summary'=>$issueData_summary,
+						'issue_text'=>$issueData_text." LINK: <".$issueData_link.">",
+					),
+				true);
+			}
+	}
+	
+	// get list with imported ids
+	$imported_json = file_get_contents("database/rss_imported.json");
+	// decode
+	$imported = json_decode($imported_json, true);
+
+	
+	foreach( $RSS as $rssfeed ){
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $rssfeed['url']);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$xml_source = curl_exec($ch);
+		curl_close($ch);
+	
+		$xml = simplexml_load_string($xml_source);
+		
+		// filter GitHub RSS
+		if( strpos($rssfeed['name'], 'github-') !== false){
+			foreach( $xml->entry as $feed_item ){
+				if( strpos($feed_item->id, $rssfeed['filter']['id']) !== false && strpos($feed_item->title, $rssfeed['filter']['title']) !== false ){
+					// prepare data
+					$issueData_summary = (string)$feed_item->title;
+					$issueData_id = (string)$feed_item->id;
+					$issueData_text = (string)$feed_item->content;
+					$issueData_text = strip_tags($issueData_text);
+					$issueData_link = (string)$feed_item->link->attributes()->href;
+					
+					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
+					
+				}
+			}
+		} 
+		// filter Bumpy-Booby RSS
+		elseif( strpos($rssfeed['name'], 'bumpybooby-') !== false){
+			foreach( $xml->channel->item as $feed_item ){
+				if( strpos($feed_item->link, $rssfeed['filter']['link']) == false ){
+					// prepare data
+					$issueData_summary = (string)$feed_item->title;
+					$issueData_id = (string)$feed_item->link;
+					$issueData_text = (string)$feed_item->description;
+					$issueData_link = (string)$feed_item->link;
+					
+					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
+				}
+			}
+		}
+		// default 
+		else{
+		
+		}
+		
+	}
+
+	// encode
+	$imported_json = json_encode($imported);
+	// get list with imported ids
+	file_put_contents("database/rss_imported.json", $imported_json);
+
+}
+
+
+
+
+
+
+
 /*
  Default API
 */

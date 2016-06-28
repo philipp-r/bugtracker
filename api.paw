@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>CD0727CB-80CB-40D4-AC21-1E3707A588D4</UUID>
-        <nextObjectID>121</nextObjectID>
+        <nextObjectID>123</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -74,7 +74,7 @@
         <attribute name="name" type="string">Travis CI</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z103 z106"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z106 z110 z103"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z103">
         <attribute name="value" type="string">2ff384a686bdd4b54a567b2e0cb335d7336ee7bf5ea06a971fa6086d926862ca</attribute>
@@ -162,5 +162,31 @@
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z118"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z122">
+        <attribute name="uuid" type="string">3B86C04E-4741-454D-BAE3-26AEEFD31612</attribute>
+        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600XMODE=rss</attribute>
+        <attribute name="storecookies" type="bool">0</attribute>
+        <attribute name="sendcookies" type="bool">0</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["PbcciIr6aITLdzl33jjpp"],true],[["action"],["new_issue"],true],[["issue_summary"],["Some new API test"],true],[["issue_text"],["HALLO hallo"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string">RSS import</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z123"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z123">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">3</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z122"></relationship>
     </object>
 </database>

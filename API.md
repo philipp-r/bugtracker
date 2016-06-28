@@ -11,7 +11,7 @@ To enable the Bumpy Booby API log in and go to *Settings -> API* and choose *Ena
 
 ## Default API
 
-The API has different modes. This is the default mode. To use `travisci` mode for Travis CI webhooks or `github` mode see below. 
+The API has different modes. This is the default mode. To use `travisci` mode for Travis CI webhooks see below. 
 
 ### Request
 
@@ -134,4 +134,60 @@ For the **projects** and **permissions** settings see default API (above).
 ### Response
 
 Same response as for default API (see above).
+
+
+
+
+## RSS API
+
+The API can import RSS feeds from GitHub and from other Bumpy-Booby instances.
+
+### Configuration
+
+Open/Create `database/api_config.php` file (see `api_config.example.php` for an example) and add the following to the `$RSS` array:
+
+#### GitHub RSS
+
+```
+    array(
+    	"name" => "github-SOME_NAME",
+    	"url" => "https://github.com/GITHUB_USERNAME.private.atom?token=XXX",
+    	"filter" => array(
+    		"id" => "ReleaseEvent", // id contains
+    		"title" => "user/repo", // title contains
+    	),
+    	"project" => "default",
+    ),
+
+```
+
+You can find the feed URL on your GitHub dashboard where it says *Subscribe to your news feed*.
+
+The feed will be filtered and only items where the id contains *ReleaseEvent* and title contains *user/repo* are imported.
+
+New issues are added to the project *default*.
+
+#### Bumpy-Booby RSS
+
+```
+    array(
+    	"name" => "bumpybooby-SOME_NAME",
+    	"url" => "http://example.com/default/rss",
+    	"filter" => array(
+    		"link" => "#", // link contains NOT
+    	),
+    	"project" => "2nd-Project",
+    ),
+
+```
+
+The feed will be filtered and only items where the link contains *x* are imported. So we only get new issues and no comments.
+
+### Start Import
+
+Call this URL in your Browser or with cronjob:
+
+```
+https://example.com/index.php?page=api&XMODE=rss
+```
 
