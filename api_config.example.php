@@ -22,3 +22,19 @@ $API_ACCESS = array(
 
 
 ); 
+
+$RSS = array(
+
+	array(
+		"name" => "github-Bumpy-Booby",
+		"url" => "https://github.com/piero-la-lune/Bumpy-Booby/commits/master.atom",
+		"project" => "default",
+	),
+	array(
+		"name" => "bumpybooby-derivoile.fr",
+		"url" => "http://bumpy-booby.derivoile.fr/default/rss",
+		"project" => "default",
+	),
+
+
+);

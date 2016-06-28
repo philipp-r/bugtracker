@@ -151,21 +151,16 @@ Open/Create `database/api_config.php` file (see `api_config.example.php` for an 
 ```
     array(
     	"name" => "github-SOME_NAME",
-    	"url" => "https://github.com/GITHUB_USERNAME.private.atom?token=XXX",
-    	"filter" => array(
-    		"id" => "ReleaseEvent", // id contains
-    		"title" => "user/repo", // title contains
-    	),
+    	"url" => "https://github.com/USERNAME/REPOSITORY/releases.atom",
     	"project" => "default",
     ),
 
 ```
 
-You can find the feed URL on your GitHub dashboard where it says *Subscribe to your news feed*.
+You can find the feed URL to your subscribed repositories on your GitHub dashboard where it says *Subscribe to your news feed*.
+For new releases the URL is `https://github.com/USERNAME/REPOSITORY/releases.atom` for commits it is `https://github.com/USERNAME/REPOSITORY/commits/master.atom`.
 
-The feed will be filtered and only items where the id contains *ReleaseEvent* and title contains *user/repo* are imported.
-
-New issues are added to the project *default*.
+`name` has to begin with `github-`.
 
 #### Bumpy-Booby RSS
 
@@ -173,15 +168,12 @@ New issues are added to the project *default*.
     array(
     	"name" => "bumpybooby-SOME_NAME",
     	"url" => "http://example.com/default/rss",
-    	"filter" => array(
-    		"link" => "#", // link contains NOT
-    	),
     	"project" => "2nd-Project",
     ),
 
 ```
 
-The feed will be filtered and only items where the link contains *x* are imported. So we only get new issues and no comments.
+`name` has to begin with `bumpybooby-`.
 
 ### Start Import
 

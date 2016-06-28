@@ -175,7 +175,7 @@ if( $_GET['XMODE'] == "travisci" ){
 elseif($_GET['XMODE'] == 'rss'){
 
 	function createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link){
-			global $rssfeed;
+			global $rssfeed, $imported;
 			// check if this id was already imported
 			if($imported[$rssfeed['name']][$issueData_id] == 1){
 				print_r( $issueData_id." already imported" );
@@ -214,7 +214,6 @@ elseif($_GET['XMODE'] == 'rss'){
 		// filter GitHub RSS
 		if( strpos($rssfeed['name'], 'github-') !== false){
 			foreach( $xml->entry as $feed_item ){
-				if( strpos($feed_item->id, $rssfeed['filter']['id']) !== false && strpos($feed_item->title, $rssfeed['filter']['title']) !== false ){
 					// prepare data
 					$issueData_summary = (string)$feed_item->title;
 					$issueData_id = (string)$feed_item->id;
@@ -223,14 +222,13 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_link = (string)$feed_item->link->attributes()->href;
 					
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
-					
-				}
 			}
 		} 
 		// filter Bumpy-Booby RSS
 		elseif( strpos($rssfeed['name'], 'bumpybooby-') !== false){
 			foreach( $xml->channel->item as $feed_item ){
-				if( strpos($feed_item->link, $rssfeed['filter']['link']) == false ){
+				// filter for # so we only get new issues and no comments
+				if( strpos($feed_item->link, "#") == false ){
 					// prepare data
 					$issueData_summary = (string)$feed_item->title;
 					$issueData_id = (string)$feed_item->link;
