@@ -20,11 +20,5 @@ $API_ACCESS = array(
 		"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
 	),
 
-	"github-REPOSITORY" => array(
-		"mode" => "github", // XMODE github
-    	"key" => "YOUR_GITHUB_SECRET", // GitHub secret
-		"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
-		"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
-	),
 
 ); 
