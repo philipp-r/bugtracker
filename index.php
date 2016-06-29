@@ -424,8 +424,8 @@ if (canAccess('settings')) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<link rel="shortcut icon" href="<?php echo Url::parse('favicon.ico', array(), '', true); ?>" />
-		<link rel="apple-touch-icon" href="<?php echo Url::parse('apple-touch-icon.png', array(), '', true); ?>" />
+		<link rel="shortcut icon" href="<?php echo Url::parse('public/img/favicon.ico', array(), '', true); ?>" />
+		<link rel="apple-touch-icon" href="<?php echo Url::parse('public/img/apple-touch-icon.png', array(), '', true); ?>" />
 
 		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css', array(), '', true); ?>" />
 
