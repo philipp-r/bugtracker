@@ -424,14 +424,14 @@ if (canAccess('settings')) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<link rel="shortcut icon" href="<?php echo Url::parse('favicon.ico'); ?>" />
-		<link rel="apple-touch-icon" href="<?php echo Url::parse('apple-touch-icon.png'); ?>" />
+		<link rel="shortcut icon" href="<?php echo Url::parse('favicon.ico', array(), '', true); ?>" />
+		<link rel="apple-touch-icon" href="<?php echo Url::parse('apple-touch-icon.png', array(), '', true); ?>" />
 
-		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css'); ?>" />
+		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css', array(), '', true); ?>" />
 
 		<!--[if lt IE 9]>
-			<script src="<?php echo Url::parse('public/js/html5.js'); ?>"></script>
-			<script src="<?php echo Url::parse('public/js/respond.js'); ?>"></script>
+			<script src="<?php echo Url::parse('public/js/html5.js', array(), '', true); ?>"></script>
+			<script src="<?php echo Url::parse('public/js/respond.js', array(), '', true); ?>"></script>
 		<![endif]-->
 
 		<title><?php echo $page->getTitle(); ?> – <?php echo $config['title']; ?></title>
@@ -557,10 +557,10 @@ if (canAccess('settings')) {
 
 		</div>
 
-		<script src="<?php echo Url::parse('public/js/highlighter.js'); ?>"></script>
-		<script src="<?php echo Url::parse('public/js/jquery.min.js'); ?>"></script>
+		<script src="<?php echo Url::parse('public/js/highlighter.js', array(), '', true); ?>"></script>
+		<script src="<?php echo Url::parse('public/js/jquery.min.js', array(), '', true); ?>"></script>
 		<script>
-			var ajax = "<?php echo Url::parse('public/ajax'); ?>",
+			var ajax = "<?php echo Url::parse('public/ajax', array(), '', true); ?>",
 				token = "<?php echo getToken(); ?>",
 				verb_edit = "<?php echo Trad::V_EDIT; ?>",
 				verb_preview = "<?php echo Trad::V_PREVIEW; ?>",
@@ -571,7 +571,7 @@ if (canAccess('settings')) {
 				$(".m_<?php echo $page->getSafePage(); ?>").addClass("active");
 			});
 		</script>
-		<script src="<?php echo Url::parse('public/js/scripts.min.js'); ?>"></script>
+		<script src="<?php echo Url::parse('public/js/scripts.min.js', array(), '', true); ?>"></script>
 		<script>
 			<?php echo $page->getJavascript(); ?>
 		</script>
