@@ -293,7 +293,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 
 	const F_TIP_NAME = 'Ce nom sera affiché en haut de chaque page.';
 	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Bumpy Booby (en commençant et terminant par un "/") par rapport au nom de domaine.';
-	const F_TIP_URL_CDN = 'Leave this field empty to disable CDN. Otherwise, it should contain the URL of your CDN (for example cloudfront.net).';
+	const F_TIP_URL_CDN = 'Leave this field empty to disable CDN. Otherwise, it should contain the URL of your CDN (for example <em>https://cdn.rawgit.com/Spamty/Bumpy-Booby/master/</em>, feel free to use this one).';
 	const F_TIP_INTRO = 'Cette introduction sera affichée sur la page d\'accueil et mise en forme avec la syntaxe Markdown. Remarque : s\'il n\'y a qu\'un seul projet nommé « %name% », la page d\'accueil est automatiquement redirigée vers le tableau de bord de ce projet, et ce texte ne sera donc jamais affiché.';
 	const F_TIP_EMAIL = 'Laissez ce champ vide si vous ne souhaitez pas activer les notifications par mail. Sinon, cette adresse sera utilisée comme expéditrice des mails envoyés.';
 	const F_TIP_PASSWORD = 'Laissez ce champ vide si vous ne souhaitez pas changer le mot de passe.';

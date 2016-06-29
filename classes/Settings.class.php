@@ -621,7 +621,7 @@ class Settings {
 		return array(
 			'title' => 'Bumpy Booby',
 			'url' => Settings::get_path(),
-			'cdn_url' => 'https://cdn.rawgit.com/Spamty/Bumpy-Booby/master/',
+			'cdn_url' => '',
 			'url_rewriting' => false,
 			'intro' => '',
 			'email' => false,
