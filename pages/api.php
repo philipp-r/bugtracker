@@ -189,6 +189,7 @@ elseif($_GET['XMODE'] == 'rss'){
 					array(
 						'issue_summary'=>$issueData_summary,
 						'issue_text'=>$issueData_text." LINK: <".$issueData_link.">",
+						'issue_date'=>$issueData_date,
 					),
 				true);
 			}
@@ -221,6 +222,8 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_text = (string)$feed_item->content;
 					$issueData_text = strip_tags($issueData_text);
 					$issueData_link = (string)$feed_item->link->attributes()->href;
+					$issueData_date = (string)$feed_item->updated;
+					$issueData_date = strtotime($issueData_date);
 					
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 			}
@@ -235,6 +238,8 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_text = (string)$feed_item->description;
 					$issueData_text = strip_tags($issueData_text);
 					$issueData_link = (string)$feed_item->link;
+					$issueData_date = (string)$feed_item->pubDate;
+					$issueData_date = strtotime($issueData_date);
 					
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 			}
@@ -249,7 +254,9 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_id = (string)$feed_item->link;
 					$issueData_text = (string)$feed_item->description;
 					$issueData_link = (string)$feed_item->link;
-					
+					$issueData_date = (string)$feed_item->pubDate;
+					$issueData_date = strtotime($issueData_date);
+
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 				}
 			}

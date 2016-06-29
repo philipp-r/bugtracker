@@ -230,12 +230,18 @@ class Issues {
 				$by = intval($_SESSION['id']);
 			}
 			else { $by = NULL; }
+			$issueDate = time();
 
 		}
 		// request with API
 		// check API key is done in api.php
 		else{
 			$by = NULL;
+			if( !empty($post['issue_date']) && ctype_digit($post['issue_date']) ){
+				$issueDate = $post['issue_date'];
+			}else{
+				$issueDate = time();
+			}
 			// $post['issue_text'] = $post['issue_text']." /n /n /n /n Issue created with API by ".$post['api_username'];
 		}
 		
@@ -286,7 +292,7 @@ class Issues {
 			'id' => $id,
 			'summary' => $post['issue_summary'],
 			'text' => $post['issue_text'],
-			'date' => time(),
+			'date' => $issueDate,
 			'edit' => time(),
 			'open' => true,
 			'openedby' => $by,
