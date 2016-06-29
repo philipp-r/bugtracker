@@ -126,7 +126,7 @@ class Url {
 			}
 		}
 		// check if a CDN is defined
-		if ( !empty($config['cdn_url']) && $cdn == true ){
+		if ( !empty($config['cdn_url']) && $cdn == true && !canAccess('settings') ){
 			$ret = $config['cdn_url'].$parts[0];
 		}
 		else{
