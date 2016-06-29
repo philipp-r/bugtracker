@@ -151,6 +151,7 @@ Open/Create `database/api_config.php` file (see `api_config.example.php` for an 
 ```
     array(
     	"name" => "github-SOME_NAME",
+    	"title_prefix" => "Will be added to issue title",
     	"url" => "https://github.com/USERNAME/REPOSITORY/releases.atom",
     	"project" => "default",
     ),
@@ -167,6 +168,7 @@ For new releases the URL is `https://github.com/USERNAME/REPOSITORY/releases.ato
 ```
     array(
     	"name" => "bumpybooby-SOME_NAME",
+    	"title_prefix" => "Prefix this to issue title",
     	"url" => "http://example.com/default/rss",
     	"project" => "2nd-Project",
     ),
