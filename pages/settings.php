@@ -402,9 +402,13 @@ $content = '
 			<label for="url">'.Trad::F_URL.'</label>
 			<input type="url" name="url" id="url" class="input-medium" value="'.$config['url'].'" required />
 
-			<label for="url">'.Trad::F_URL_REWRITING.'</label>
+			<label for="url_rewriting">'.Trad::F_URL_REWRITING.'</label>
 			<input type="text" name="url_rewriting" id="url_rewriting" class="input-medium" value="'.$config['url_rewriting'].'" />
 			<p class="help">'.Trad::F_TIP_URL_REWRITING.'</p>
+
+			<label for="cdn_url">'.Trad::F_URL_CDN.'</label>
+			<input type="text" name="cdn_url" id="cdn_url" class="input-medium" value="'.$config['cdn_url'].'" />
+			<p class="help">'.Trad::F_TIP_URL_CDN.'</p>
 
 			<label for="intro">'.Trad::F_INTRO.'</label>
 			<textarea name="intro" id="intro" rows="3">'.htmlspecialchars($config['intro']).'</textarea>

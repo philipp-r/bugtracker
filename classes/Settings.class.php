@@ -60,6 +60,15 @@ class Settings {
 				$this->errors[] = 'validate_url';
 			}
 		}
+		if (isset($post['cdn_url'])) {
+			$post['cdn_url'] = preg_replace('#//$#', '/', $post['cdn_url']);
+			if (filter_var($post['cdn_url'], FILTER_VALIDATE_URL)) {
+				$this->config['cdn_url'] = $post['cdn_url'];
+			}
+			else {
+				$this->errors[] = 'validate_url';
+			}
+		}
 		if (isset($post['url_rewriting'])) {
 			if (empty($post['url_rewriting'])) {
 				$this->config['url_rewriting'] = false;
@@ -612,6 +621,7 @@ class Settings {
 		return array(
 			'title' => 'Bumpy Booby',
 			'url' => Settings::get_path(),
+			'cdn_url' => 'https://cdn.rawgit.com/Spamty/Bumpy-Booby/master/',
 			'url_rewriting' => false,
 			'intro' => '',
 			'email' => false,
@@ -631,7 +641,7 @@ class Settings {
 			'projects' => array(
 				'default' => array(
 					'description' => '',
-					'can_access' => array('none', 'default', 'developper', 'superuser', 'bbapi')
+					'can_access' => array('none', 'default', 'developper', 'superuser')
 				)
 			),
 			'permissions' => array(
