@@ -109,7 +109,7 @@ class Url {
 		return self::$rewriting;
 	}
 
-	public static function parse($page, $params = array(), $anchor = '') {
+	public static function parse($page, $params = array(), $anchor = '', $cdn = false) {
 		global $config;
 		$project = '';
 		$page = self::rewriting($project.$page);
@@ -125,7 +125,13 @@ class Url {
 				}
 			}
 		}
-		$ret = $config['url'].$parts[0];
+		// check if a CDN is defined
+		if ( !empty($config['cdn_url']) && $cdn == true ){
+			$ret = $config['cdn_url'].$parts[0];
+		}
+		else{
+			$ret = $config['url'].$parts[0];
+		}
 		if (!empty($params)) {
 			$ret .= '?'.http_build_query($params);
 		}
