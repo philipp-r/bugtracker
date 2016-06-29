@@ -27,11 +27,13 @@ $RSS = array(
 
 	array(
 		"name" => "github-Bumpy-Booby",
+		"title_prefix" => "New commit in Bumpy-Booby",
 		"url" => "https://github.com/piero-la-lune/Bumpy-Booby/commits/master.atom",
 		"project" => "default",
 	),
 	array(
 		"name" => "bumpybooby-derivoile.fr",
+		"title_prefix" => "",
 		"url" => "http://bumpy-booby.derivoile.fr/default/rss",
 		"project" => "default",
 	),

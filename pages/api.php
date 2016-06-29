@@ -215,7 +215,8 @@ elseif($_GET['XMODE'] == 'rss'){
 		if( strpos($rssfeed['name'], 'github-') !== false){
 			foreach( $xml->entry as $feed_item ){
 					// prepare data
-					$issueData_summary = (string)$feed_item->title;
+					$issueData_summary = $rssfeed['title_prefix']." ";
+					$issueData_summary .= (string)$feed_item->title;
 					$issueData_id = (string)$feed_item->id;
 					$issueData_text = (string)$feed_item->content;
 					$issueData_text = strip_tags($issueData_text);
