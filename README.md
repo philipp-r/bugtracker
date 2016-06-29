@@ -14,7 +14,7 @@ Note: you can delete folder "./public/css/app/", it is useless.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
-**Installation on Spamty server with "build-sites" by pushing to our git server additionally to GitHub.com (public repository).**
+**Installation on Spamty server with webhook and "build-sites" by pushing to GitHub.com.**
 
 ### Backup
 
