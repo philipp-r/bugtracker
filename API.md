@@ -163,6 +163,10 @@ For new releases the URL is `https://github.com/USERNAME/REPOSITORY/releases.ato
 
 `name` has to begin with `github-`.
 
+#### Sourceforge RSS
+
+Similar to GitHub RSS but `name` has to begin with `sourceforge-`.
+
 #### Bumpy-Booby RSS
 
 ```

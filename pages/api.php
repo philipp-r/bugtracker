@@ -225,6 +225,20 @@ elseif($_GET['XMODE'] == 'rss'){
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 			}
 		} 
+		// filter Sourceforge RSS
+		elseif( strpos($rssfeed['name'], 'sourceforge-') !== false){
+			foreach( $xml->channel->item as $feed_item ){
+					// prepare data
+					$issueData_summary = $rssfeed['title_prefix']." ";
+					$issueData_summary .= (string)$feed_item->title;
+					$issueData_id = (string)$feed_item->guid;
+					$issueData_text = (string)$feed_item->description;
+					$issueData_text = strip_tags($issueData_text);
+					$issueData_link = (string)$feed_item->link;
+					
+					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
+			}
+		} 
 		// filter Bumpy-Booby RSS
 		elseif( strpos($rssfeed['name'], 'bumpybooby-') !== false){
 			foreach( $xml->channel->item as $feed_item ){
