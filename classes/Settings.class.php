@@ -62,7 +62,10 @@ class Settings {
 		}
 		if (isset($post['cdn_url'])) {
 			$post['cdn_url'] = preg_replace('#//$#', '/', $post['cdn_url']);
-			if (filter_var($post['cdn_url'], FILTER_VALIDATE_URL)) {
+			if (empty($post['cdn_url'])) {
+				$this->config['cdn_url'] = "";
+			}
+			elseif (filter_var($post['cdn_url'], FILTER_VALIDATE_URL)) {
 				$this->config['cdn_url'] = $post['cdn_url'];
 			}
 			else {
