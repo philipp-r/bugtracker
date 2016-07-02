@@ -560,7 +560,7 @@ if (canAccess('settings')) {
 		<script src="<?php echo Url::parse('public/js/highlighter.js', array(), '', true); ?>"></script>
 		<script src="<?php echo Url::parse('public/js/jquery.min.js', array(), '', true); ?>"></script>
 		<script>
-			var ajax = "<?php echo Url::parse('public/ajax', array(), '', true); ?>",
+			var ajax = "<?php echo Url::parse('public/ajax'); ?>",
 				token = "<?php echo getToken(); ?>",
 				verb_edit = "<?php echo Trad::V_EDIT; ?>",
 				verb_preview = "<?php echo Trad::V_PREVIEW; ?>",
