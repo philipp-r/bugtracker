@@ -20,7 +20,9 @@ The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
 You can do all changes by opening `./index.php?page=settings` in your browser. The configuration is stored in `./database/config.php`.
 
-To configure the API you have to enable it on the settings page and then change the access settings manually in `./database/api_config.php`. Have a look at `API.md` file for further information.
+To configure the API you have to enable it on the settings page and then change the access settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`. Have a look at `API.md` file for further information.
+
+You can also edit the Captcha which is displayed when a user who is not logged in wants to create a new issue. you can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`. Refer to this website for more information about changing the captcha: <https://www.phpcaptcha.org/documentation/customizing-securimage/>.
 
 ### Backup
 
