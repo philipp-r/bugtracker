@@ -21,7 +21,7 @@ return array(
     'text_color'       => '#808080', // hex color for captcha text
     'line_color'       => '#808080', // hex color for lines over text
     'num_lines'        => rand(4,6), // # of lines to draw over text
-	'perturbation'     => rand(5,10)/10, // 1.0 = high distortion, higher numbers = more distortion
+	'perturbation'     => 0.8,       // 1.0 = high distortion, higher numbers = more distortion
 
     'wordlist_file'    => 'words/words.txt', // text file for word captcha
     'use_wordlist'     => false,             // true to use word list
@@ -29,7 +29,6 @@ return array(
 
     // example UTF-8 charset (TTF file must support symbols being used
     // 'charset'          => "абвгдeжзийклмнопрстуфхцчшщъьюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ",
-    'charset'          => "ABCEFGHKMNPRSTWXYZadefhmnqr23456789",
 
     'ttf_file'         => './AHGBold.ttf',   // TTF file for captcha text
 
@@ -60,7 +59,7 @@ return array(
     // change to true for performance reasons once database table is up and running
     'skip_table_check' => false,
 
-	'signature_color'  => '#CBDC62',  // random signature color
+	'signature_color'  => '#CBDC62',
 	'image_signature'  => 'Bumpy-Booby',
 
 
