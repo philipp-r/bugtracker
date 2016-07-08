@@ -45,7 +45,7 @@ return array(
 
     // the PHP session name to use (null for default PHP session name)
     // do not change unless you know what you are doing
-    'session_name'     => null,
+    'session_name'     => 'BumpyBooby',
 
     // change to true to store codes in a database
     'use_database'     => false,
