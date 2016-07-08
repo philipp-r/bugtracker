@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $form_s = (isset($_POST['issue_summary'])) ?
 	htmlspecialchars($_POST['issue_summary']):
@@ -24,14 +25,20 @@ $form_up = (isset($_POST['uploads'])) ?
 $token = getToken();
 
 if (isset($_POST['new_issue'])) {
-	$issues = Issues::getInstance();
-	$ans = $issues->new_issue($_POST, false);
-	if ($ans === true) {
-		header('Location: '
-			.Url::parse(getProject().'/issues/'.$issues->lastissue));
-		exit;
+	require_once 'classes/securimage/securimage.php';
+	$image = new Securimage();
+	if ($image->check($_POST['captcha_code']) == true) {
+		$issues = Issues::getInstance();
+		$ans = $issues->new_issue($_POST, false);
+		if ($ans === true) {
+			header('Location: '
+				.Url::parse(getProject().'/issues/'.$issues->lastissue));
+			exit;
+		}
+		$this->addAlert($ans);
+	} else {
+		$this->addAlert("Wrong Captcha ".$_POST['captcha_code']);
 	}
-	$this->addAlert($ans);
 }
 
 $title = Trad::T_NEW_ISSUE;
@@ -83,6 +90,9 @@ if (canAccess('update_issue')) {
 	.'</div>';
 }
 
+// include securimage
+require_once 'classes/securimage/securimage.php';
+
 $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 .'<div class="box box-new-issue">'
 	.'<div class="top">'
@@ -106,6 +116,7 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 			.'</textarea>'
 			.'<div class="preview text-container" style="display:none"></div>'
 			.$should_login
+			. Securimage::getCaptchaHtml()
 			.'<div class="form-actions">'
 				.'<button type="button" class="btn btn-preview">'
 					.Trad::V_PREVIEW
