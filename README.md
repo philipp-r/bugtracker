@@ -10,7 +10,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 Copy all files, run `./` or `./index.php`, configure Bumpy Booby and enjoy!
 
-Note: you can delete folder "./public/css/app/", it is useless.
+You can delete all files that are listed in `./DELETE_LIST.txt`, they are useless.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
@@ -37,3 +37,5 @@ Bumpy Booby was created by Pierre Monchalin.
 This is a fork from <https://github.com/piero-la-lune/Bumpy-Booby>. Edited by Spamty <https://spamty.eu/>.
 
 Bumpy Booby is distributed under the MIT License. See `./LICENSE.md` for more information.
+
+We are using Securimage <http://www.phpcaptcha.org/>,<https://github.com/dapphp/securimage> by Drew Phillips for spam protection.
