@@ -1,8 +1,10 @@
 .git
 .gitignore
 api_config.example.php
-api.paw
 API.md
+api.paw
+classes/securimage/README.FONT.txt
+classes/securimage/README.md
 README.md
 LICENSE.md
 public/css/app/
