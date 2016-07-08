@@ -16,6 +16,12 @@ The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
 **Installation on Spamty server with webhook and "build-sites" by pushing to GitHub.com.**
 
+### Configuration
+
+You can do all changes by opening `./index.php?page=settings` in your browser. The configuration is stored in `./database/config.php`.
+
+To configure the API you have to enable it on the settings page and then change the access settings manually in `./database/api_config.php`. Have a look at `API.md` file for further information.
+
 ### Backup
 
 Before any update, it's highly recommended to make a backup. You only need to save folder `./database/`.
