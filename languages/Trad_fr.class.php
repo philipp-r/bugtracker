@@ -290,6 +290,8 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_GROUPS = 'Gérer les groupes :';
 	const F_PERMISSIONS = 'Gérer les permissions :';
 	const F_USERS = 'Gérer les utilisateurs :';
+	
+	const F_INVALID_CAPTCHA = 'The CAPTCHA you entered was wrong. Please try again.'; // je ne parle pas français
 
 	const F_TIP_NAME = 'Ce nom sera affiché en haut de chaque page.';
 	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Bumpy Booby (en commençant et terminant par un "/") par rapport au nom de domaine.';

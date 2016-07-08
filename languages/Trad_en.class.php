@@ -289,6 +289,8 @@ This is an automated email, please do not reply.
 	const F_GROUPS = 'Manage groups:';
 	const F_PERMISSIONS = 'Manage permissions:';
 	const F_USERS = 'Manage users:';
+	
+	const F_INVALID_CAPTCHA = 'The CAPTCHA you entered was wrong. Please try again.';
 
 	const F_TIP_NAME = 'It will be displayed on the header of each page.';
 	const F_TIP_URL_REWRITING = 'Leave this field empty to disable url rewriting. Otherwise, it should contain the path to Bumpy Booby folder (started and ended with a "/"), relative to the domain name.';
