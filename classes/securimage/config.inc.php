@@ -1,33 +1,27 @@
 <?php
 
 /**
-  Securimage sample config file (rename to config.inc.php to activate)
-
   Place your custom configuration in this file to make settings global so they
   are applied to the captcha image, audio playback, and validation.
 
-  Using this file is optional but makes settings managing settings easier,
-  especially when upgrading to a new version.
-
-  When a new Securimage object is created, if config.inc.php is found in the
-  Securimage directory, these settings will be applied *before* any settings
-  passed to the constructor (so options passed in will override these).
-
-  This file is especially useful if you use a custom database or session
-  configuration and is easier than modifying securimage.php directly.
-  Any class property from securimage.php can be used here.
+  See https://www.phpcaptcha.org/documentation/customizing-securimage/
+  for available options
 */
 
 return array(
-    /**** CAPTCHA Appearance Options ****/
 
+	// 'captcha_type'     => Securimage::SI_CAPTCHA_MATHEMATIC, // show a simple math problem instead of text
+	// 'image_type'       => SI_IMAGE_JPEG,                     // render as a jpeg image
+
+    /**** CAPTCHA Appearance Options ****/
     'image_width'      => 215,       // width of captcha image in pixels
     'image_height'     => 80,        // height of captcha image in pixels
-    'code_length'      => 6,         // # of characters for captcha code
-    'image_bg_color'   => '#ffffff', // hex color for image background
-    'text_color'       => '#707070', // hex color for captcha text
-    'line_color'       => '#707070', // hex color for lines over text
-    'num_lines'        => 5,         // # of lines to draw over text
+    'code_length'      => rand(5,8), // # of characters for captcha code
+    'image_bg_color'   => '#F9F9F9', // hex color for image background
+    'text_color'       => '#808080', // hex color for captcha text
+    'line_color'       => '#808080', // hex color for lines over text
+    'num_lines'        => rand(4,6), // # of lines to draw over text
+	'perturbation'     => rand(5,10)/10, // 1.0 = high distortion, higher numbers = more distortion
 
     'wordlist_file'    => 'words/words.txt', // text file for word captcha
     'use_wordlist'     => false,             // true to use word list
@@ -35,6 +29,7 @@ return array(
 
     // example UTF-8 charset (TTF file must support symbols being used
     // 'charset'          => "абвгдeжзийклмнопрстуфхцчшщъьюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ",
+    'charset'          => "ABCEFGHKMNPRSTWXYZadefhmnqr23456789",
 
     'ttf_file'         => './AHGBold.ttf',   // TTF file for captcha text
 
@@ -44,7 +39,7 @@ return array(
     'no_session'       => false,
 
     // the PHP session name to use (null for default PHP session name)
-    // do not change unless you know what you are doing
+    // DO NOT CHANGE! Required for Bumpy-Booby
     'session_name'     => 'BumpyBooby',
 
     // change to true to store codes in a database
@@ -64,5 +59,9 @@ return array(
     // Securimage will automatically create the database table if it is not found
     // change to true for performance reasons once database table is up and running
     'skip_table_check' => false,
+
+	'signature_color'  => '#CBDC62',  // random signature color
+	'image_signature'  => 'Bumpy-Booby',
+
 
 );
