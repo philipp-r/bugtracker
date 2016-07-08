@@ -5,15 +5,5 @@ api.paw
 API.md
 README.md
 LICENSE.md
-public/css/app/app.less
-public/css/app/fonts.less
-public/css/app/forms.less
-public/css/app/highlighter.less
-public/css/app/icons.less
-public/css/app/issues.less
-public/css/app/miscellaneous.less
-public/css/app/mixins.less
-public/css/app/responsive.less
-public/css/app/structure.less
-public/css/app/text.less
+public/css/app/
 DELETE_LIST.txt
