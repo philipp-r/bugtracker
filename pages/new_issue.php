@@ -33,6 +33,10 @@ if( isset($_POST['new_issue']) ){
 		if ($image->check($_POST['captcha_code']) == true) {
 			$captcha_check_passed = true;
 		}
+		else{
+			$this->addAlert("Invalid Captcha");
+		}
+
 	}
 	else{
 		$captcha_check_passed = true;
