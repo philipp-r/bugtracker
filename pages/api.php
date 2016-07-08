@@ -40,14 +40,14 @@ function endApi( $returnValues, $httpStatus ){
 
 
 // check if configuration file exists
-if(!file_exists("database/api_config.php")){
+if(!file_exists("database/config_api.php")){
 	$returns['status'] = 0;
-	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://github.com/Spamty/Bumpy-Booby/blob/master/API.md and example configuration https://github.com/Spamty/Bumpy-Booby/blob/master/api_config.example.php for the API.";
+	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://github.com/Spamty/Bumpy-Booby/blob/master/API.md and example configuration https://github.com/Spamty/Bumpy-Booby/blob/master/sample_config/config_api.php for the API.";
 	endApi( $returns, 500 );
 }
 
 // include API configuration
-require("database/api_config.php");
+require("database/config_api.php");
 
 
 // check if API enabled

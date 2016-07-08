@@ -222,7 +222,7 @@ This is an automated email, please do not reply.
 	const T_SEARCH = 'Search';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
-	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/api_config.php</em> file. For more info see API.md file.';
+	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 
 		# FORMS
 

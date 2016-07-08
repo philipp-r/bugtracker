@@ -222,7 +222,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_SEARCH = 'Recherche';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access'; // je ne parle pas français
-	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/api_config.php</em> file. For more info see API.md file.'; // je ne parle pas français
+	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.'; // je ne parle pas français
 
 
 		# FORMS

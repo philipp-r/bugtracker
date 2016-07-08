@@ -15,7 +15,7 @@ if( !empty($_POST['submit']) ){
 $api_key = hash("sha256", $_POST['github_user']."/".$_POST['github_repo'].$_POST['travis_token']);
 ?>
 <p>The key is: <em><?php echo $api_key; ?></em><br>
-Add this to the "api_config.php" file.</p>
+Add this to the "config_api.php" file.</p>
 <hr>
 <?php
 }

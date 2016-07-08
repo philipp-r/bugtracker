@@ -27,7 +27,7 @@ $api_key = generateRandomString(rand(18,28));
 Use this as your "api_password" parameter.</p>
 
 <p>The md5 hash is: <em><?php echo md5($api_key); ?></em><br>
-Add this to the "api_config.php" file.</p>
+Add this to the "config_api.php" file.</p>
 
 </body>
 </html>
