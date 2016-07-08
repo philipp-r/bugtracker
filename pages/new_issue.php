@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $form_s = (isset($_POST['issue_summary'])) ?
 	htmlspecialchars($_POST['issue_summary']):
@@ -24,22 +23,32 @@ $form_up = (isset($_POST['uploads'])) ?
 	array();
 $token = getToken();
 
-if (isset($_POST['new_issue'])) {
-	require_once 'classes/securimage/securimage.php';
-	$image = new Securimage();
-	if ($image->check($_POST['captcha_code']) == true) {
+if( isset($_POST['new_issue']) ){
+	$captcha_check_passed = false;
+	// if user is not logged in, check Captcha
+	if( !$config['loggedin'] ){
+		session_start();
+		require_once 'classes/securimage/securimage.php';
+		$image = new Securimage();
+		if ($image->check($_POST['captcha_code']) == true) {
+			$captcha_check_passed = true;
+		}
+	}
+	else{
+		$captcha_check_passed = true;
+	}
+
+	if($captcha_check_passed){
 		$issues = Issues::getInstance();
 		$ans = $issues->new_issue($_POST, false);
 		if ($ans === true) {
-			header('Location: '
-				.Url::parse(getProject().'/issues/'.$issues->lastissue));
+			header('Location: '.Url::parse(getProject().'/issues/'.$issues->lastissue));
 			exit;
 		}
 		$this->addAlert($ans);
-	} else {
-		$this->addAlert("Wrong Captcha ".$_POST['captcha_code']);
 	}
 }
+
 
 $title = Trad::T_NEW_ISSUE;
 
@@ -90,8 +99,6 @@ if (canAccess('update_issue')) {
 	.'</div>';
 }
 
-// include securimage
-require_once 'classes/securimage/securimage.php';
 
 $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 .'<div class="box box-new-issue">'
@@ -115,9 +122,15 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 				.$form_t
 			.'</textarea>'
 			.'<div class="preview text-container" style="display:none"></div>'
-			.$should_login
-			. Securimage::getCaptchaHtml()
-			.'<div class="form-actions">'
+			.$should_login;
+
+// include securimage if user is not logged in
+if( !$config['loggedin'] ){
+	require_once 'classes/securimage/securimage.php';
+	$content .=	Securimage::getCaptchaHtml();
+}
+
+$content .=	'<div class="form-actions">'
 				.'<button type="button" class="btn btn-preview">'
 					.Trad::V_PREVIEW
 				.'</button>'
