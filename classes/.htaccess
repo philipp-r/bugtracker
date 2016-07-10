@@ -1,10 +1,2 @@
 Allow from none
 Deny from all
-
-# allow API key generator
-<FilesMatch "^keygen\.php$">
-Allow from all
-</FilesMatch>
-<FilesMatch "^keygen-travisci\.php$">
-Allow from all
-</FilesMatch>
