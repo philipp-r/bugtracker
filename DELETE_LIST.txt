@@ -1,5 +1,6 @@
 .git
 .gitignore
+.travis.yml
 API.md
 api.paw
 classes/securimage/README.FONT.txt
