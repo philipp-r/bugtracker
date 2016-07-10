@@ -1,0 +1,23 @@
+language: php
+php:
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+  - hhvm
+  - nightly
+
+# branch whitelist
+branches:
+  only:
+  - master
+
+sudo: false # route your build to the container-based infrastructure for a faster build
+
+#notifications:
+#  webhooks:
+#    urls:
+#      - https://bugs.spamty.eu/index.php?page=api&project=Bumpy-Booby&XMODE=travisci # see docs https://github.com/Spamty/Bumpy-Booby/blob/master/API.md#travis-ci-api
+#    on_success: never
+#    on_failure: always
+#    on_start: never
