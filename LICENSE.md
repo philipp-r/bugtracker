@@ -67,16 +67,3 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-
-## Glyphicons
-
-There are some icons of GLYPHICONS Basic set <http://glyphicons.com/> included.
-
-They are licensed under Creative Commons Attribution 3.0 Unported license.
-
-See their website about licensing <http://glyphicons.com/license/>, the Creative
-Commons summary <https://creativecommons.org/licenses/by/3.0/> and the complete license
-text <https://creativecommons.org/licenses/by/3.0/legalcode>.
-
-Please support the create of these cool icons by buying a the ALL or PRO set on the 
-website <http://glyphicons.com/license/#licensetext>.

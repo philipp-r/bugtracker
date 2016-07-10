@@ -47,5 +47,3 @@ This is a fork from <https://github.com/piero-la-lune/Bumpy-Booby>. Edited by Sp
 Bumpy Booby is distributed under the MIT License. See `./LICENSE.md` for more information.
 
 We are using Securimage <http://www.phpcaptcha.org/>,<https://github.com/dapphp/securimage> by Drew Phillips for spam protection.
-
-This project includes some icons from GLYPHICONS licensed under CC BY 3.0. See <http://glyphicons.com>.

@@ -199,7 +199,7 @@ Portions of securimage_play.swf use the PopForge flash library for playing audio
 **Graphics**
 
 Replaced icons from <http://findicons.com/pack/1723/humility>
-with GLYPHICONS from <http://GLYPHICONS.com/>.
+with own icons.
 
 --------------------------------------------------------------------------
 
