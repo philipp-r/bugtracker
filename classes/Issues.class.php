@@ -257,8 +257,7 @@ class Issues {
 		}
 
 
-		
-status = DEFAULT_STATUS;
+		$status = DEFAULT_STATUS;
 		$assignedto = NULL;
 		$dependencies = array();
 		$labels = array();
@@ -335,7 +334,7 @@ status = DEFAULT_STATUS;
 
 	public function edit_issue($id, $edits) {
 		global $config;
-// check permissions only if request is not API
+		// check permissions only if request is not API
 		if (!canAccess('edit_issue')
 			|| !isset($edits['text'])
 			|| !isset($edits['summary'])
@@ -355,7 +354,7 @@ status = DEFAULT_STATUS;
 
 	public function delete_issue($id, $edits) {
 		global $config;
-// permisson check only if not API
+		// permisson check only if not API
 		if (!canAccess('edit_issue')
 			|| !isset($edits['token'])
 			|| !$this->exists($id)
@@ -364,7 +363,7 @@ status = DEFAULT_STATUS;
 			return Trad::A_ERROR_TOKEN;
 		}
 
-		# We don't destroy it because we don't want to give its ID to a new comment
+		// We don't destroy it because we don't want to give its ID to a new comment
 		$this->issues[$id] = array();
 
 		$this->save();
