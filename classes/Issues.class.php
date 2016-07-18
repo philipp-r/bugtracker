@@ -257,7 +257,8 @@ class Issues {
 		}
 
 
-		$status = DEFAULT_STATUS;
+		
+status = DEFAULT_STATUS;
 		$assignedto = NULL;
 		$dependencies = array();
 		$labels = array();
@@ -334,6 +335,7 @@ class Issues {
 
 	public function edit_issue($id, $edits) {
 		global $config;
+// check permissions only if request is not API
 		if (!canAccess('edit_issue')
 			|| !isset($edits['text'])
 			|| !isset($edits['summary'])
@@ -353,6 +355,7 @@ class Issues {
 
 	public function delete_issue($id, $edits) {
 		global $config;
+// permisson check only if not API
 		if (!canAccess('edit_issue')
 			|| !isset($edits['token'])
 			|| !$this->exists($id)
