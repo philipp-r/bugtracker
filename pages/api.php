@@ -114,15 +114,6 @@ if( $_GET['XMODE'] == "travisci" ){
 	}
 
 
-	// check permissions for "new_issue"
-	if($API_ACCESS[$username]['permissions'] != "new_issue" &&
-	$API_ACCESS[$username]['permissions'] != "ALL_PERMISSIONS" ) {
-		$returns['status'] = 0;
-		$returns['statusDetails'] = "No permission for new_issue.";
-		endApi( $returns, 403 );
-	}
-
-
 	// travis CI status description
 	switch ($travis['status_message']) {
 	    case "Pending":
