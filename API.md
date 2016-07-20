@@ -55,7 +55,6 @@ The following parameters can be passed to the API with the HTTP POST request:
  * `action` (required): Set this to `new_issue` to create a new issue. Other values are not supported yet.
  * `issue_summary` (required): Set the title/summary of the issue.
  * `issue_text` (required): Issue content.
- * `issue_date`: Timestamp when issue was created. If not set the current time is used.
  * `issue_status`: Status of the issue. Default is the `default` status.
  * `issue_assignedto`
  * `issue_dependencies`: List of related issues. Format example `#1, #3, #8`.
