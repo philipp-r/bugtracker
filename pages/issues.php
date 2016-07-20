@@ -272,8 +272,14 @@ $content .= 	'</p>'
 						.Trad::V_APPLY
 					.'</button>'
 				.'</div>'
-				.'</form>'
-			.'</div>'
+				.'</form>';
+// new issue link in right sidebar (esp. for mobile browsers)			
+if (canAccess('new_issue')) {
+	$content .= '<hr><div class="form-actions">'
+					.'<a href="'.Url::parse(getProject().'/issues/new').'" class="btn btn-primary">'.Trad::T_NEW_ISSUE.'</a>'
+				.'</div>';
+}
+$content .= '</div>'
 		.'</div>'
 	.'</div>'
 .'</div>'
