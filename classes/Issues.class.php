@@ -230,14 +230,13 @@ class Issues {
 				$by = intval($_SESSION['id']);
 			}
 			else { $by = NULL; }
-			$issueDate = time();
-
 		}
 		// request with API
 		// check API key is done in api.php
 		else{
 			$by = NULL;
 		}
+		$issueDate = time();
 		
 		$uploads = array();
 		if (canAccess('upload') && !empty($post['uploads'])) {
@@ -346,15 +345,17 @@ class Issues {
 		return true;
 	}
 
-	public function delete_issue($id, $edits) {
+	public function delete_issue($id, $edits, $withApi = false) {
 		global $config;
-		// permisson check only if not API
-		if (!canAccess('edit_issue')
-			|| !isset($edits['token'])
-			|| !$this->exists($id)
-		) { return Trad::A_ERROR_FORM; }
-		if (!tokenOk($edits['token'])) {
-			return Trad::A_ERROR_TOKEN;
+		// if request is not done with API, check permission
+		if( !$withApi ){
+			if (!canAccess('edit_issue')
+				|| !isset($edits['token'])
+				|| !$this->exists($id)
+			) { return Trad::A_ERROR_FORM; }
+			if (!tokenOk($edits['token'])) {
+				return Trad::A_ERROR_TOKEN;
+			}
 		}
 
 		// We don't destroy it because we don't want to give its ID to a new comment

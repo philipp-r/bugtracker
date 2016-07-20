@@ -296,20 +296,7 @@ else{
 		endApi( $returns, 403 );
 	}
 	
-	
-	// validate POST
-	if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
-		$returns['status'] = 0;
-		$returns['statusDetails'] = "issue_summary and issue_text are required.";
-		endApi( $returns, 403 );
-	}
-	// set date
-	$_POST['issue_date'] = time();
-	// change summary
-	$_POST['issue_text'] = $_POST['issue_text']." /n /n /n /n Issue created with API by ".$_POST['api_username'];
-
-
-
+	// validate the project
 	$validProject = false;
 	// check if project exists
 	if( isset($config["projects"][$_GET['project']]) ){
@@ -334,11 +321,20 @@ else{
 		$returns['statusDetails'] = "Invalid project.";
 		endApi( $returns, 400 );
 	}
+
 	
-	
+	// NEW_ISSUE
 	if($_POST['action'] == "new_issue" && 
 	// check permissions for "new_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "new_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
+		// validate POST
+		if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) ){
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "issue_summary and issue_text are required.";
+			endApi( $returns, 403 );
+		}
+		// change summary
+		$_POST['issue_text'] = $_POST['issue_text']."   - `Issue created with API by ".$_POST['api_username']."`";
 		// create issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->new_issue($_POST, true);
