@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>CD0727CB-80CB-40D4-AC21-1E3707A588D4</UUID>
-        <nextObjectID>126</nextObjectID>
+        <nextObjectID>128</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -194,7 +194,7 @@
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">default</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z121 z126"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z126 z128 z121"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -218,11 +218,37 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["KRHGdp0L47lKz2gyPjtajIu"],true],[["action"],["delete_issue"],true],[["issue_id"],["6"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["KRHGdp0L47lKz2gyPjtajIu"],true],[["action"],["delete_issue"],true],[["issue_id"],["3"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">delete_issue</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z125"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z127">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">3</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z128"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z128">
+        <attribute name="uuid" type="string">54171632-5DB1-4C9E-B1CA-E46830A4D08F</attribute>
+        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="storecookies" type="bool">0</attribute>
+        <attribute name="sendcookies" type="bool">0</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["KRHGdp0L47lKz2gyPjtajIu"],true],[["action"],["edit_issue"],true],[["issue_id"],["29"],true],[["issue_summary"],["Anyone there?"],true],[["issue_text"],["Ouvert par nodiscc.\u3c00br \\/\u3e00« Just checking health of this awesome project :) There's been no activity on github or here for a… » LINK: http:\\/\\/bumpy-booby.derivoile.fr\\/default\\/issues\\/44"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string">edit_issue</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z127"></relationship>
     </object>
 </database>

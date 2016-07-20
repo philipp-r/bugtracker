@@ -336,13 +336,36 @@ else{
 		endApi( $returns, 200 );
 	
 	}
+	// EDIT_ISSUE
+	elseif($_POST['action'] == "edit_issue" && 
+	// check permissions for "edit_issue"
+	($API_ACCESS[$_POST['api_username']]['permissions'] == "edit_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
+		// validate POST
+		if( empty($_POST['issue_summary']) || empty($_POST['issue_text']) || !is_numeric($_POST['issue_id']) ){
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "issue_id, issue_summary and issue_text are required.";
+			endApi( $returns, 400 );
+		}
+		// change prepare edit variables
+		$edits['summary'] = $_POST['issue_summary'];
+		$edits['text'] = $_POST['issue_text']."   - `Issue edited with API by ".$_POST['api_username']."`";
+		// create issue
+		$issues = Issues::getInstance($_GET['project']);
+		$ans = $issues->edit_issue($_POST['issue_id'], $edits, true);
+		// return success
+		$returns['status'] = 1;
+		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['ID'] = $_POST['issue_id'];
+		endApi( $returns, 200 );
+	
+	}
 	// DELETE_ISSUE
 	elseif($_POST['action'] == "delete_issue" && 
 	// check permissions for "delete_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "delete_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
 		// we do not check if the issue with this id exists
-		if( empty($_POST['issue_id']) ){
+		if( !is_numeric($_POST['issue_id']) ){
 			$returns['status'] = 0;
 			$returns['statusDetails'] = "issue_id is required.";
 			endApi( $returns, 400 );

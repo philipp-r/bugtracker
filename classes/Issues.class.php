@@ -325,17 +325,19 @@ class Issues {
 		return true;
 	}
 
-	public function edit_issue($id, $edits) {
+	public function edit_issue($id, $edits, $withApi = false) {
 		global $config;
-		// check permissions only if request is not API
-		if (!canAccess('edit_issue')
-			|| !isset($edits['text'])
-			|| !isset($edits['summary'])
-			|| !isset($edits['token'])
-			|| !$this->exists($id)
-		) { return Trad::A_ERROR_FORM; }
-		if (!tokenOk($edits['token'])) {
-			return Trad::A_ERROR_TOKEN;
+		// if request is not done with API, check permission
+		if( !$withApi ){
+			if (!canAccess('edit_issue')
+				|| !isset($edits['text'])
+				|| !isset($edits['summary'])
+				|| !isset($edits['token'])
+				|| !$this->exists($id)
+			) { return Trad::A_ERROR_FORM; }
+			if (!tokenOk($edits['token'])) {
+				return Trad::A_ERROR_TOKEN;
+			}
 		}
 
 		$this->issues[$id]['summary'] = $edits['summary'];
