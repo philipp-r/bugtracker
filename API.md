@@ -41,7 +41,7 @@ Replace the **key** with an md5 hash of your API key. You can generate one by op
 
 You can specify the **projects** that can be used by this user. Just make a comma seperated list (without spaces) like: `default,project-1,other-project`. Or use "ALL_PROJECTS".
 
-You can specify the **permissions** of this user like: `new_issue`, `edit_issue` or `delete_issue`. OR use `ALL_PERMISSIONS`.
+You can specify the **permissions** of this user like: `new_issue`, `edit_issue`, `update_issue`, `delete_issue`, etc. OR use `ALL_PERMISSIONS`.
 
 Pass `api_username` with the username you created in the config file and `api_password` parameter with the user's key (not the hash which is stored in config file) as HTTP POST data.
 
@@ -52,7 +52,7 @@ The following parameters can be passed to the API with the HTTP POST request:
 
  * `api_username` (required)
  * `api_password` (required)
- * `action` (required): Set this to either to: `new_issue` (to create a new issue), `edit_issue` (to edit text and title of an issue), `delete_issue` (to delete a issue), `exists` (to check if issue with given id exists).
+ * `action` (required): Set this to either to: `new_issue` (to create a new issue), `edit_issue` (to edit text and title of an issue), `update_issue` (to update issue details), `delete_issue` (to delete a issue), `exists` (to check if issue with given id exists).
  * For action = `new_issue`:
  	* `issue_summary` (required): Set the title/summary of the issue.
  	* `issue_text` (required): Issue content.
@@ -64,6 +64,13 @@ The following parameters can be passed to the API with the HTTP POST request:
  	* `issue_id` (required): id of the issue.
  	* `issue_summary` (required): Set the title/summary of the issue.
  	* `issue_text` (required): Issue content.
+ * For action = `update_issue`:
+ 	* `issue_id` (required): id of the issue.
+ 	* `issue_status` (required): New status of the issue (status ID from settings page).
+ 	* `issue_open`: `open` or `closed`.
+ 	* `issue_assignedto`
+ 	* `issue_dependencies`: List of related issues. Format example `#1, #3, #8`.
+ 	* `issue_labels`: List of labels. Format example `urgent, private`.
  * For action = `delete_issue`:
  	* `issue_id` (required): id of the issue that should be deleted. For example: `5`.
  * For action = `exists`:

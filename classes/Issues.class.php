@@ -375,20 +375,34 @@ class Issues {
 		return true;
 	}
 
-	public function update_issue($id, $edits) {
+	public function update_issue($id, $edits, $withApi = false) {
 		global $config;
-		if (!canAccess('update_issue')
-			|| !isset($edits['issue_status'])
-			|| !isset($edits['issue_assignedto'])
-			|| !isset($edits['issue_dependencies'])
-			|| !isset($edits['issue_labels'])
-			|| !isset($edits['issue_open'])
-			|| !isset($edits['token'])
-			|| !$this->exists($id)
-			|| !array_key_exists($edits['issue_status'], $config['statuses'])
-		) { return Trad::A_ERROR_FORM; }
-		if (!tokenOk($edits['token'])) {
-			return Trad::A_ERROR_TOKEN;
+		// if request is not done with API, check permission
+		if( !$withApi ){
+			if (!canAccess('update_issue')
+				|| !isset($edits['issue_status'])
+				|| !isset($edits['issue_assignedto'])
+				|| !isset($edits['issue_dependencies'])
+				|| !isset($edits['issue_labels'])
+				|| !isset($edits['issue_open'])
+				|| !isset($edits['token'])
+				|| !$this->exists($id)
+				|| !array_key_exists($edits['issue_status'], $config['statuses'])
+			) { return Trad::A_ERROR_FORM; }
+			if (!tokenOk($edits['token'])) {
+				return Trad::A_ERROR_TOKEN;
+			}
+			if ($config['loggedin']
+				&& isset($config['users'][$_SESSION['id']])
+			) {
+				$by = intval($_SESSION['id']);
+			}
+			else { $by = NULL; }
+		}
+		// request with API
+		// check API key is done in api.php
+		else{
+			$by = NULL;
 		}
 
 		$status = $edits['issue_status'];
@@ -426,13 +440,6 @@ class Issues {
 		$open = $this->issues[$id]['open'];
 		if ($edits['issue_open'] == 'open') { $open = true; }
 		elseif ($edits['issue_open'] == 'closed') { $open = false; }
-
-		if ($config['loggedin']
-			&& isset($config['users'][$_SESSION['id']])
-		) {
-			$by = intval($_SESSION['id']);
-		}
-		else { $by = NULL; }
 
 		$i = &$this->issues[$id];
 		if ($status != $i['status'] || $assignedto != $i['assignedto']) {

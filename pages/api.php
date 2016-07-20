@@ -407,6 +407,26 @@ else{
 	
 	}
 	// UPDATE_ISSUE
+	elseif($_POST['action'] == "update_issue" && 
+	// check permissions for "update_issue"
+	($API_ACCESS[$_POST['api_username']]['permissions'] == "update_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
+		// validate POST
+		// we do not check if the issue with this id exists
+		if( empty($_POST['issue_status']) || !is_numeric($_POST['issue_id']) ){
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "issue_id and issue_status are required.";
+			endApi( $returns, 400 );
+		}
+		// create issue
+		$issues = Issues::getInstance($_GET['project']);
+		$ans = $issues->update_issue($_POST['issue_id'], $_POST, true);
+		// return success
+		$returns['status'] = 1;
+		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['ID'] = $_POST['issue_id'];
+		endApi( $returns, 200 );
+	
+	}
 	// COMMENT
 	// EDIT_COMMENT
 	// DELETE_COMMENT
