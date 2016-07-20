@@ -380,7 +380,7 @@ else{
 		endApi( $returns, 200 );
 	
 	}
-	// DELETE_ISSUE
+	// EXISTS
 	elseif($_POST['action'] == "exists" && 
 	// check permissions for "exists"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "exists" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
@@ -406,6 +406,10 @@ else{
 		endApi( $returns, 200 );
 	
 	}
+	// UPDATE_ISSUE
+	// COMMENT
+	// EDIT_COMMENT
+	// DELETE_COMMENT
 	else{
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid value for action.";
