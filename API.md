@@ -52,7 +52,7 @@ The following parameters can be passed to the API with the HTTP POST request:
 
  * `api_username` (required)
  * `api_password` (required)
- * `action` (required): Set this to either to: `new_issue` (to create a new issue), `delete_issue` (to delete a issue).
+ * `action` (required): Set this to either to: `new_issue` (to create a new issue), `edit_issue` (to edit text and title of an issue), `delete_issue` (to delete a issue), `exists` (to check if issue with given id exists).
  * For action = `new_issue`:
  	* `issue_summary` (required): Set the title/summary of the issue.
  	* `issue_text` (required): Issue content.
@@ -66,6 +66,8 @@ The following parameters can be passed to the API with the HTTP POST request:
  	* `issue_text` (required): Issue content.
  * For action = `delete_issue`:
  	* `issue_id` (required): id of the issue that should be deleted. For example: `5`.
+ * For action = `exists`:
+ 	* `issue_id` (required)
 
 ### Response
 
@@ -73,7 +75,7 @@ The API returns a JSON formatted response.
 
  * `status`: Value is 1 for success and 0 if an error occurred.
  * `statusDetails`: A description of the error or a success message.
- * `ID`: The ID of the newly created issue. This is only returned if the request was successful.
+ * `ID`: The ID of the issue. This is only returned if the request was successful.
 
 Example of an successful request response:
 

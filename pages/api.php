@@ -380,6 +380,32 @@ else{
 		endApi( $returns, 200 );
 	
 	}
+	// DELETE_ISSUE
+	elseif($_POST['action'] == "exists" && 
+	// check permissions for "exists"
+	($API_ACCESS[$_POST['api_username']]['permissions'] == "exists" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
+		// validate POST
+		if( !is_numeric($_POST['issue_id']) ){
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "issue_id is required.";
+			endApi( $returns, 400 );
+		}
+		// create issue
+		$issues = Issues::getInstance($_GET['project']);
+		$ans = $issues->exists($_POST['issue_id'], true);
+		if($ans){
+			// return success
+			$returns['status'] = 1;
+			$returns['statusDetails'] = "Issue exists.";
+		}else{
+			// return issue does not exist
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "Issue does not exist.";
+		}
+		$returns['ID'] = $_POST['issue_id'];
+		endApi( $returns, 200 );
+	
+	}
 	else{
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid value for action.";

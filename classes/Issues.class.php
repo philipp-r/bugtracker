@@ -59,13 +59,21 @@ class Issues {
 		).FILE_ISSUES, Text::hash($this->issues));
 	}
 
-	public function exists($id) {
-		return (
-			   isset($this->issues[$id])
-			&& !empty($this->issues[$id])
-			&& (canAccess('private_issues')
-				|| !in_array(PRIVATE_LABEL, $this->issues[$id]['labels']))
-		);
+	public function exists($id, $withApi = false) {
+		if(!$withApi){
+			return (
+				   isset($this->issues[$id])
+				&& !empty($this->issues[$id])
+				&& (canAccess('private_issues')
+					|| !in_array(PRIVATE_LABEL, $this->issues[$id]['labels']))
+			);
+		}
+		else{
+			return (
+				   isset($this->issues[$id])
+				&& !empty($this->issues[$id])
+			);
+		}
 	}
 
 	public function html_list($a) {
