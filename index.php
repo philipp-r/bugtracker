@@ -528,7 +528,7 @@ if (canAccess('settings')) {
 					<form method="post" class="form-log-out">
 						<p><?php echo str_replace('%user%', '<a href="'.Url::parse('users/'.intval($_SESSION['id'])).'">'.htmlspecialchars($_SESSION['username']).'</a>', Trad::S_WELCOME); ?></p>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
-						<input type="hidden" name="logout" value="1" />
+						<input type="hidden" name="logout" value="1" i/>
 						<button type="submit" class="a-icon-hover"><i class="icon-off"></i></button>
 					</form>
 					<?php
