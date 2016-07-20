@@ -418,6 +418,13 @@ $content = '
 			<input type="email" name="email" id="email" class="input-medium" value="'.$config['email'].'">
 			<p class="help">'.Trad::F_TIP_EMAIL.'</p>
 
+			<label for="cdn_url">'.Trad::F_LINK_CONTACT.'</label>
+			<input type="text" name="link_contact" id="link_contact" class="input-medium" value="'.$config['link_contact'].'" />
+			<label for="cdn_url">'.Trad::F_LINK_LEGALNOTICE.'</label>
+			<input type="text" name="link_legalnotice" id="link_legalnotice" class="input-medium" value="'.$config['link_legalnotice'].'" />
+			<label for="cdn_url">'.Trad::F_LINK_PRIVACYPOLICY.'</label>
+			<input type="text" name="link_privacypolicy" id="link_privacypolicy" class="input-medium" value="'.$config['link_privacypolicy'].'" />
+
 			<label for="language">'.Trad::F_LANGUAGE.'</label>
 			<select name="language" id="language" class="input-medium">'.Text::options($languages, $config['language']).'</select>
 

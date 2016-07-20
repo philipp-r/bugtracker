@@ -110,8 +110,6 @@ class Settings {
 				$this->config['logs_enabled'] = false;
 			}
 		}
-
-
 		if (isset($post['api_enabled'])) {
 			if ($post['api_enabled'] == 'true') {
 				$this->config['api_enabled'] = true;
@@ -120,6 +118,43 @@ class Settings {
 				$this->config['api_enabled'] = false;
 			}
 		}
+		if (isset($post['link_contact'])) {
+			$post['link_contact'] = preg_replace('#//$#', '/', $post['link_contact']);
+			if (empty($post['link_contact'])) {
+				$this->config['link_contact'] = "";
+			}
+			elseif (filter_var($post['link_contact'], FILTER_VALIDATE_URL)) {
+				$this->config['link_contact'] = $post['link_contact'];
+			}
+			else {
+				$this->errors[] = 'validate_url';
+			}
+		}
+		if (isset($post['link_legalnotice'])) {
+			$post['link_legalnotice'] = preg_replace('#//$#', '/', $post['link_legalnotice']);
+			if (empty($post['link_legalnotice'])) {
+				$this->config['link_legalnotice'] = "";
+			}
+			elseif (filter_var($post['link_legalnotice'], FILTER_VALIDATE_URL)) {
+				$this->config['link_legalnotice'] = $post['link_legalnotice'];
+			}
+			else {
+				$this->errors[] = 'validate_url';
+			}
+		}
+		if (isset($post['link_privacypolicy'])) {
+			$post['link_privacypolicy'] = preg_replace('#//$#', '/', $post['link_privacypolicy']);
+			if (empty($post['link_privacypolicy'])) {
+				$this->config['link_privacypolicy'] = "";
+			}
+			elseif (filter_var($post['link_privacypolicy'], FILTER_VALIDATE_URL)) {
+				$this->config['link_privacypolicy'] = $post['link_privacypolicy'];
+			}
+			else {
+				$this->errors[] = 'validate_url';
+			}
+		}
+
 		return true;
 	}
 

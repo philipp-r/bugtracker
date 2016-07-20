@@ -237,6 +237,9 @@ This is an automated email, please do not reply.
 	const F_INTRO = 'Introduction:';
 	const F_DESCRIPTION = 'Description:';
 	const F_EMAIL = 'Email:';
+	const F_LINK_CONTACT = 'Link to external contact page (can be left empty):';
+	const F_LINK_LEGALNOTICE = 'Link to legal notice (can be left empty):';
+	const F_LINK_PRIVACYPOLICY = 'Link to privacy policy (can be left empty):';
 	const F_MAX_UPLOAD = 'Maximum size per upload:';
 	const F_ALLOCATED_SPACE = 'Allocated space per user:';
 	const F_GROUP = 'Group:';

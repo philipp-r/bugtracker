@@ -238,6 +238,9 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_INTRO = 'Introduction :';
 	const F_DESCRIPTION = 'Description :';
 	const F_EMAIL = 'Email :';
+	const F_LINK_CONTACT = 'Link to external contact page (can be left empty):'; // je ne parle pas français
+	const F_LINK_LEGALNOTICE = 'Link to legal notice (can be left empty):'; // je ne parle pas français
+	const F_LINK_PRIVACYPOLICY = 'Link to privacy policy (can be left empty):'; // je ne parle pas français
 	const F_MAX_UPLOAD = 'Taille maximum par envoi de fichier :';
 	const F_ALLOCATED_SPACE = 'Espace alloué à chaque utilisateur :';
 	const F_GROUP = 'Groupe :';
