@@ -303,6 +303,11 @@ else{
 		$returns['statusDetails'] = "issue_summary and issue_text are required.";
 		endApi( $returns, 403 );
 	}
+	// set date
+	$_POST['issue_date'] = time();
+	// change summary
+	$_POST['issue_text'] = $_POST['issue_text']." /n /n /n /n Issue created with API by ".$_POST['api_username'];
+
 
 
 	$validProject = false;
