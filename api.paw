@@ -218,7 +218,7 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["KRHGdp0L47lKz2gyPjtajIu"],true],[["action"],["delete_issue"],true],[["issue_id"],["5"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[[["api_username"],["API_USERNAME_1"],true],[["api_password"],["KRHGdp0L47lKz2gyPjtajIu"],true],[["action"],["delete_issue"],true],[["issue_id"],["6"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">delete_issue</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
