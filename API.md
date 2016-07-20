@@ -41,7 +41,7 @@ Replace the **key** with an md5 hash of your API key. You can generate one by op
 
 You can specify the **projects** that can be used by this user. Just make a comma seperated list (without spaces) like: `default,project-1,other-project`. Or use "ALL_PROJECTS".
 
-You can specify the **permissions** of this user with a comma seperated list (without spaces) like: `new_issue,update_issue`. OR use `ALL_PERMISSIONS` Currently the API only supports `new_issue`!
+You can specify the **permissions** of this user like: `new_issue` or `delete_issue`. OR use `ALL_PERMISSIONS`.
 
 Pass `api_username` with the username you created in the config file and `api_password` parameter with the user's key (not the hash which is stored in config file) as HTTP POST data.
 
@@ -52,13 +52,16 @@ The following parameters can be passed to the API with the HTTP POST request:
 
  * `api_username` (required)
  * `api_password` (required)
- * `action` (required): Set this to `new_issue` to create a new issue. Other values are not supported yet.
- * `issue_summary` (required): Set the title/summary of the issue.
- * `issue_text` (required): Issue content.
- * `issue_status`: Status of the issue. Default is the `default` status.
- * `issue_assignedto`
- * `issue_dependencies`: List of related issues. Format example `#1, #3, #8`.
- * `issue_labels`: List of labels. Format example `urgent, private`.
+ * `action` (required): Set this to either to: `new_issue` (to create a new issue), `delete_issue` (to delete a issue).
+ * For action = `new_issue`:
+ 	* `issue_summary` (required): Set the title/summary of the issue.
+ 	* `issue_text` (required): Issue content.
+ 	* `issue_status`: Status of the issue. Default is the `default` status.
+ 	* `issue_assignedto`
+ 	* `issue_dependencies`: List of related issues. Format example `#1, #3, #8`.
+ 	* `issue_labels`: List of labels. Format example `urgent, private`.
+ * For action = `delete_issue`:
+ 	* `issue_id` (required): id of the issue that should be deleted. For example: `5`.
 
 ### Response
 
