@@ -220,6 +220,9 @@ This is an automated email, please do not reply.
 	const T_LAST_ACTIVITY = 'Last activity';
 	const T_UPLOADS = 'Uploads';
 	const T_SEARCH = 'Search';
+	const T_LINK_CONTACT = 'Contact Us';
+	const T_LINK_LEGALNOTICE = 'Legal Notice';
+	const T_LINK_PRIVACYPOLICY = 'Privacy Policy';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
 	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';

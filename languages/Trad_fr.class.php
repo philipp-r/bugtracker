@@ -220,6 +220,9 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_LAST_ACTIVITY = 'Activité récente';
 	const T_UPLOADS = 'Fichiers';
 	const T_SEARCH = 'Recherche';
+	const T_LINK_CONTACT = 'Contact Us'; // je ne parle pas français
+	const T_LINK_LEGALNOTICE = 'Legal Notice'; // je ne parle pas français
+	const T_LINK_PRIVACYPOLICY = 'Privacy Policy'; // je ne parle pas français
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access'; // je ne parle pas français
 	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.'; // je ne parle pas français

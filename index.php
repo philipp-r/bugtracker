@@ -407,6 +407,28 @@ if (canAccess('settings')) {
 		.'<a href="'.Url::parse('settings').'">'.Trad::T_SETTINGS.'</a>'
 	.'</li>';
 }
+$link_menu = '';
+if (!empty($config['link_contact'])) {
+	$link_menu .= '<li class="m_link_contact">'
+		.'<a href="'.$config['link_contact'].'">'
+			.Trad::T_LINK_CONTACT
+		.'</a>'
+	.'</li>';
+}
+if (!empty($config['link_legalnotice'])) {
+	$link_menu .= '<li class="m_link_legalnotice">'
+		.'<a href="'.$config['link_legalnotice'].'">'
+			.Trad::T_LINK_LEGALNOTICE
+		.'</a>'
+	.'</li>';
+}
+if (!empty($config['link_privacypolicy'])) {
+	$link_menu .= '<li class="m_link_privacypolicy">'
+		.'<a href="'.$config['link_privacypolicy'].'">'
+			.Trad::T_LINK_PRIVACYPOLICY
+		.'</a>'
+	.'</li>';
+}
 
 ?>
 
@@ -478,6 +500,11 @@ if (canAccess('settings')) {
 					<nav>
 						<ul>
 							<?php echo $menu; ?>
+						</ul>
+					</nav>
+					<nav>
+						<ul>
+							<?php echo $link_menu; ?>
 						</ul>
 					</nav>
 					<?php 
