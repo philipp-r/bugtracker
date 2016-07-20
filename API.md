@@ -32,7 +32,7 @@ Open/Create `database/api_config.php` file (see `api_config.example.php` for an 
     	"mode" => "default", // XMODE default
     	"key" => "cfcd208495d565ef66e7dff9f98764da", // md5 hash
     	"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
-    	"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
+    	"permissions" => "ALL_PERMISSIONS", // single permission or "ALL_PERMISSIONS"
     ),
 
 ```
@@ -120,7 +120,7 @@ Open `database/api_config.php` and add the following to the `$API_ACCESS` array:
     	"mode" => "travisci", // XMODE travisci
     	"key" => "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", // generate key with /classes/api/keygen-travisci.php
     	"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
-    	"permissions" => "ALL_PERMISSIONS", // comma seperated list of permissions or "ALL_PERMISSIONS"
+    	"permissions" => "ALL_PERMISSIONS", // single permission or "ALL_PERMISSIONS"
     ),
 
 ```
