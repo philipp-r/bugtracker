@@ -52,7 +52,7 @@ The following parameters can be passed to the API with the HTTP POST request:
 
  * `api_username` (required)
  * `api_password` (required)
- * `action` (required): Set this to either to: `new_issue` (to create a new issue), `edit_issue` (to edit text and title of an issue), `update_issue` (to update issue details), `delete_issue` (to delete a issue), `exists` (to check if issue with given id exists).
+ * `action` (required): Set this to either to: `new_issue` (to create a new issue), `edit_issue` (to edit text and title of an issue), `update_issue` (to update issue details), `delete_issue` (to delete a issue), `exists` (to check if issue with given id exists), `count_issues` (to get the number of issues).
  * For action = `new_issue`:
  	* `issue_summary` (required): Set the title/summary of the issue.
  	* `issue_text` (required): Issue content.
@@ -75,6 +75,9 @@ The following parameters can be passed to the API with the HTTP POST request:
  	* `issue_id` (required): id of the issue that should be deleted. For example: `5`.
  * For action = `exists`:
  	* `issue_id` (required)
+ * For action = `count_issues`:
+ 	* `open`: Filter by issue states (open/closed/all). Default is open.
+ 	* `label`: Filter by issue labels.
 
 ### Response
 
@@ -152,8 +155,58 @@ Same response as for default API (see above).
 
 
 
+## Badges
 
-## RSS API
+You can use the API to get a badge for your GitHub README file.
+
+### URL
+
+```
+http://bugtest.spamty.eu/index.php?page=api&project=PROJECTNAME&XMODE=badge
+```
+
+Replace `PROJECTNAME` with the project you want to use. You can choose the badge-mode by setting the the GET parameter `XMODE` of your request to `badge`.
+
+### Authorization
+
+Authorization is done with GET parameters called `api_username` and `api_password`.
+Open `database/api_config.php` and add the following to the `$API_ACCESS` array:
+
+```
+    "badge-USERNAME" => array(
+    	"mode" => "badge", // XMODE badge
+    	"key" => "cfcd208495d565ef66e7dff9f98764da", // md5 hash
+    	"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
+    ),
+
+```
+
+Replace the **key** with an md5 hash of your API key (which equals the `api_password` parameter). You can generate one by opening `/classes/api/keygen.php` in your browser.
+
+You can specify the **projects** that can be used by this user. Like: `default,project-1,other-project`. Or use "ALL_PROJECTS".
+
+Pass `api_username` with the username you created in the config file (without the *badge-* prefix) and `api_password` parameter with the user's key (not the hash which is stored in config file) as HTTP GET parameters.
+
+### Image
+
+You will be redirected to a badge image powered by Shields.io. For example:
+
+```
+https://img.shields.io/badge/issues-36-red.png
+``` 
+
+### Customization
+
+You can customize the image with these optional GET parameters (see also <http://shields.io/#your-badge>):
+ * `shields_color`: Badge color. `blue`, `ff69b4`, ... Default is `red`.
+ * `shields_format`: Image format (png/svg/...)
+ * `shields_label`: Override the default left-hand-side text
+
+
+
+
+
+## Import RSS feeds
 
 The API can import RSS feeds from GitHub and from other Bumpy-Booby instances.
 

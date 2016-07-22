@@ -58,6 +58,57 @@ if( !$config["api_enabled"] ){
 }
 
 
+// Function to count issues
+function count_issues($fpost){
+	global $config;
+	// code copied from /pages/issues.php
+	$issues = Issues::getInstance();
+	$a = $issues->getAll();
+	$url = new Url(getProject().'/issues');
+	$label = NULL;
+	if (isset($fpost['label'])) {
+		if (isset($config['labels'][$fpost['label']])) {
+			OrderFilter::$filter = array($fpost['label']);
+			$a = array_filter($a, array('OrderFilter', 'filter_label'));
+			$url = new Url(getProject().'/labels/'.$fpost['label']);
+			$label = $config['labels'][$fpost['label']];
+		}
+		else {
+			$returns['status'] = 0;
+			$returns['statusDetails'] = "Invalid label.";
+			endApi( $returns, 400 );
+		}
+	}
+	$open = 'open';
+	if (isset($fpost['open'])) {
+		if ($fpost['open'] == 'closed') {
+			OrderFilter::$filter = array(false);
+			$a = array_filter($a, array('OrderFilter', 'filter_open'));
+			$url->addParam('open', 'closed');
+			$open = 'closed';
+		}
+		elseif ($fpost['open'] == 'open') {
+			OrderFilter::$filter = array(true);
+			$a = array_filter($a, array('OrderFilter', 'filter_open'));
+			$url->addParam('open', 'open');
+			$open = 'open';
+		}
+		else {
+			$url->addParam('open', 'all');
+			$open = 'all';
+		}
+	}
+	else {
+		OrderFilter::$filter = array(true);
+		$a = array_filter($a, array('OrderFilter', 'filter_open'));
+	}
+	$nb = count($a);
+	return $nb;
+
+}
+
+
+
 
 /*
  Travis CI API
@@ -272,6 +323,27 @@ elseif($_GET['XMODE'] == 'rss'){
 
 
 
+
+/*
+  Badge
+*/
+elseif($_GET['XMODE'] == 'badge'){
+	// get number of issues
+	$nb = count_issues($_GET);
+	// shields defaults
+	if(empty($_GET['shields_color'])){ $_GET['shields_color']="red"; }
+	if(empty($_GET['shields_format'])){ $_GET['shields_format']="png"; }
+	if(empty($_GET['shields_label'])){ $_GET['shields_label']="issues"; }
+	// redirect
+	header('Location: https://img.shields.io/badge/'.$_GET['shields_label'].'-'.$nb.'-'.$_GET['shields_color'].'.'.$_GET['shields_format'].'?style='.$_GET['shields_style']);
+	header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
+	exit;
+
+}
+
+
+
+
 /*
  Default API
 */
@@ -427,6 +499,19 @@ else{
 		endApi( $returns, 200 );
 	
 	}
+	// COUNT_ISSUES
+	elseif($_POST['action'] == "count_issues" && 
+	// check permissions for "count_issues"
+	($API_ACCESS[$_POST['api_username']]['permissions'] == "count_issues" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
+
+		$nb = count_issues($_POST);
+		// return success
+		$returns['status'] = 1;
+		$returns['statusDetails'] = $nb." issues found.";
+		$returns['issues'] = $nb;
+		endApi( $returns, 200 );
+	
+	}
 	// COMMENT
 	// EDIT_COMMENT
 	// DELETE_COMMENT
@@ -437,7 +522,6 @@ else{
 	}
 
 }
-
 
 
 
