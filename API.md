@@ -157,7 +157,7 @@ Same response as for default API (see above).
 
 ## Badges
 
-You can use the API to get a badge for your GitHub README file.
+You can use the API to get a badge for your GitHub README file. The badge displays the number of issues.
 
 ### URL
 
@@ -175,7 +175,7 @@ Open `database/api_config.php` and add the following to the `$API_ACCESS` array:
 ```
     "badge-USERNAME" => array(
     	"mode" => "badge", // XMODE badge
-    	"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
+    	"projects" => "PROJECTNAME", // comma seperated list of projects or "ALL_PROJECTS"
     ),
 
 ```
@@ -186,7 +186,7 @@ Pass `api_username` parameter with the username you created in the config file (
 
 ### Image
 
-You will be redirected to a badge image powered by Shields.io. For example:
+When opening the URL you will be redirected to a badge image powered by Shields.io. For example:
 
 ```
 https://img.shields.io/badge/issues-36-red.png
@@ -199,6 +199,10 @@ You can customize the image with these optional GET parameters (see also <http:/
  * `shields_format`: Image format (png/svg/...)
  * `shields_label`: Override the default left-hand-side text
  * `shields_style`: Badge style (plastic/flat/flat-square/social)
+
+You can also filter the issues that are displayed with these parameters:
+ * `open`: Filter by issue states (open/closed/all). Default is open.
+ * `label`: Filter by issue labels.
 
 
 

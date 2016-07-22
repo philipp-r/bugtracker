@@ -62,7 +62,7 @@
     </databaseInfo>
     <object type="LMREQUEST" id="z102">
         <attribute name="uuid" type="string">2EFF22F3-D153-45AE-9B1B-C9B27967587A</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=travisci</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=travisci</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -74,7 +74,7 @@
         <attribute name="name" type="string">Travis CI</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z106 z103 z110"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z106 z110 z103"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z103">
         <attribute name="value" type="string">2ff384a686bdd4b54a567b2e0cb335d7336ee7bf5ea06a971fa6086d926862ca</attribute>
@@ -149,7 +149,7 @@
     </object>
     <object type="LMREQUEST" id="z121">
         <attribute name="uuid" type="string">7E0E73F4-68EC-4091-A06F-CB775B82E4CC</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -165,7 +165,7 @@
     </object>
     <object type="LMREQUEST" id="z122">
         <attribute name="uuid" type="string">3B86C04E-4741-454D-BAE3-26AEEFD31612</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600XMODE=rss</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600XMODE=rss</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -211,7 +211,7 @@
     </object>
     <object type="LMREQUEST" id="z126">
         <attribute name="uuid" type="string">B02977CE-611A-4D08-8962-9D9082904398</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -237,7 +237,7 @@
     </object>
     <object type="LMREQUEST" id="z128">
         <attribute name="uuid" type="string">54171632-5DB1-4C9E-B1CA-E46830A4D08F</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -253,7 +253,7 @@
     </object>
     <object type="LMREQUEST" id="z129">
         <attribute name="uuid" type="string">3C8DA7CD-7AEB-45E9-AC1B-079384AEE4A6</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -279,7 +279,7 @@
     </object>
     <object type="LMREQUEST" id="z131">
         <attribute name="uuid" type="string">7E529BC6-4B22-4217-9829-38E9600BBB5A</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -315,7 +315,7 @@
     </object>
     <object type="LMREQUEST" id="z136">
         <attribute name="uuid" type="string">ED7D0961-4E4A-4225-B4AC-83D9728E0F1E</attribute>
-        <attribute name="url" type="string">http://bugtest.spamty.eu/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600project=default\u2600XMODE=default</attribute>
         <attribute name="storecookies" type="bool">0</attribute>
         <attribute name="sendcookies" type="bool">0</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
