@@ -3,6 +3,9 @@
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
 
 [![Flattr this](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2FSpamty%2FBumpy-Booby)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.png)](https://github.com/Spamty/Bumpy-Booby/blob/master/LICENSE.md)
+
+
 
 ## Running
 
