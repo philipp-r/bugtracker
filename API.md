@@ -162,30 +162,27 @@ You can use the API to get a badge for your GitHub README file.
 ### URL
 
 ```
-http://bugtest.spamty.eu/index.php?page=api&project=PROJECTNAME&XMODE=badge
+https://example.com/index.php?page=api&project=PROJECTNAME&XMODE=badge
 ```
 
 Replace `PROJECTNAME` with the project you want to use. You can choose the badge-mode by setting the the GET parameter `XMODE` of your request to `badge`.
 
 ### Authorization
 
-Authorization is done with GET parameters called `api_username` and `api_password`.
+Authorization is done with GET parameters called `api_username`.
 Open `database/api_config.php` and add the following to the `$API_ACCESS` array:
 
 ```
     "badge-USERNAME" => array(
     	"mode" => "badge", // XMODE badge
-    	"key" => "cfcd208495d565ef66e7dff9f98764da", // md5 hash
     	"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
     ),
 
 ```
 
-Replace the **key** with an md5 hash of your API key (which equals the `api_password` parameter). You can generate one by opening `/classes/api/keygen.php` in your browser.
-
 You can specify the **projects** that can be used by this user. Like: `default,project-1,other-project`. Or use "ALL_PROJECTS".
 
-Pass `api_username` with the username you created in the config file (without the *badge-* prefix) and `api_password` parameter with the user's key (not the hash which is stored in config file) as HTTP GET parameters.
+Pass `api_username` parameter with the username you created in the config file (without the *badge-* prefix) as HTTP GET parameters.
 
 ### Image
 
@@ -201,6 +198,7 @@ You can customize the image with these optional GET parameters (see also <http:/
  * `shields_color`: Badge color. `blue`, `ff69b4`, ... Default is `red`.
  * `shields_format`: Image format (png/svg/...)
  * `shields_label`: Override the default left-hand-side text
+ * `shields_style`: Badge style (plastic/flat/flat-square/social)
 
 
 

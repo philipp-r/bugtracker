@@ -328,14 +328,53 @@ elseif($_GET['XMODE'] == 'rss'){
   Badge
 */
 elseif($_GET['XMODE'] == 'badge'){
-	// get number of issues
-	$nb = count_issues($_GET);
+
 	// shields defaults
 	if(empty($_GET['shields_color'])){ $_GET['shields_color']="red"; }
 	if(empty($_GET['shields_format'])){ $_GET['shields_format']="png"; }
 	if(empty($_GET['shields_label'])){ $_GET['shields_label']="issues"; }
+
+	// the username is $username 
+	$username = "badge-".$_GET['api_username'];
+	// check if valid user
+	if( $API_ACCESS[$username]['mode'] != "badge" ){
+		// expecting an image so redirect
+		$redirectUrl='https://img.shields.io/badge/INVALID-USERNAME-red.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
+		//die($redirectUrl);
+		header('Location: '.$redirectUrl);
+		header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
+		exit;
+	}
+	// check project access
+	$validProject = false;
+	// check if project exists
+	$projects = $API_ACCESS[$username]['projects'];
+	// if has permission for all projects
+	if( $projects == "ALL_PROJECTS" ){ $validProject = true; }
+	else{
+		// check every project that is set in config
+		$projectsArray = explode(",", $projects);
+		foreach($projectsArray as $project){
+			if($project == $_GET['project']){
+				$validProject = true;
+			}
+		}
+	}
+	if( !$validProject ){
+		// expecting an image so redirect
+		$redirectUrl='https://img.shields.io/badge/INVALID-PROJECT-red.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
+		//die($redirectUrl);
+		header('Location: '.$redirectUrl);
+		header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
+		exit;
+	}
+
+	// get number of issues
+	$nb = count_issues($_GET);
 	// redirect
-	header('Location: https://img.shields.io/badge/'.$_GET['shields_label'].'-'.$nb.'-'.$_GET['shields_color'].'.'.$_GET['shields_format'].'?style='.$_GET['shields_style']);
+	$redirectUrl='https://img.shields.io/badge/'.$_GET['shields_label'].'-'.$nb.'-'.$_GET['shields_color'].'.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
+	//die($redirectUrl);
+	header('Location: '.$redirectUrl);
 	header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
 	exit;
 
