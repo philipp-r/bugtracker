@@ -197,6 +197,8 @@ if( $_GET['XMODE'] == "travisci" ){
 	// create issue
 	$issues = Issues::getInstance($_GET['project']);
 	$ans = $issues->new_issue($travisPost, true);
+	// log
+	logm("Travis CI API: created issue in ".$_GET['project'].", ID ".$issues->lastissue);
 	// return success
 	$returns['status'] = 1;
 	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
@@ -204,8 +206,6 @@ if( $_GET['XMODE'] == "travisci" ){
 	endApi( $returns, 200 );
 
 }
-
-
 
 
 
@@ -222,6 +222,8 @@ elseif($_GET['XMODE'] == 'rss'){
 			if($imported[$rssfeed['name']][$issueData_id] == 1){
 				print_r( $issueData_id." already imported" );
 			}else{
+				// log
+				logm("RSS feed: importing item with guid ".$issueData_id." in ".$rssfeed['project']);
 				print_r("importing ".$issueData_id);
 				// mark as imported in JSON list
 				$imported[$rssfeed['name']][$issueData_id] = 1;
@@ -440,6 +442,8 @@ else{
 		// create issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->new_issue($_POST, true);
+		// log
+		logm("API: new_issue: project ".$_GET['project']." ID ".$issues->lastissue);
 		// return success
 		$returns['status'] = 1;
 		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
@@ -463,6 +467,8 @@ else{
 		// create issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->edit_issue($_POST['issue_id'], $edits, true);
+		// log
+		logm("API: edit_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
 		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
@@ -484,6 +490,8 @@ else{
 		// create issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->delete_issue($_POST['issue_id'], "", true);
+		// log
+		logm("API: delete_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
 		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
@@ -513,6 +521,8 @@ else{
 			$returns['status'] = 0;
 			$returns['statusDetails'] = "Issue does not exist.";
 		}
+		// log
+		logm("API: exists: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		$returns['ID'] = $_POST['issue_id'];
 		endApi( $returns, 200 );
 	
@@ -528,9 +538,11 @@ else{
 			$returns['statusDetails'] = "issue_id and issue_status are required.";
 			endApi( $returns, 400 );
 		}
-		// create issue
+		// update issue
 		$issues = Issues::getInstance($_GET['project']);
 		$ans = $issues->update_issue($_POST['issue_id'], $_POST, true);
+		// log
+		logm("API: update_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
 		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
@@ -544,6 +556,8 @@ else{
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "count_issues" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 
 		$nb = count_issues($_POST);
+		// log
+		logm("API: count_issues: project ".$_GET['project']);
 		// return success
 		$returns['status'] = 1;
 		$returns['statusDetails'] = $nb." issues found.";
