@@ -542,8 +542,8 @@ if (!empty($config['link_privacypolicy'])) {
 						<?php
 							}
 						?>
-						<input type="text" name="username" placeholder="<?php echo Trad::F_USERNAME2; ?>" />
-						<input type="password" name="password" placeholder="<?php echo Trad::F_PASSWORD2; ?>" class="input-left" />
+						<input type="text" name="username" placeholder="<?php echo Trad::F_USERNAME2; ?>" aria-labelledby="<?php echo Trad::F_USERNAME2; ?>" />
+						<input type="password" name="password" placeholder="<?php echo Trad::F_PASSWORD2; ?>" class="input-left" aria-labelledby="<?php echo Trad::F_PASSWORD2; ?>" />
 						<button type="submit" class="a-icon-hover"><i class="icon-circle-arrow-right"></i></button>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
 						<input type="hidden" name="login" value="1" />
