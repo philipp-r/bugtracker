@@ -186,7 +186,7 @@ if (canAccess('post_comment') && $issue['open']) {
 		<div class="div-help-markdown">'.Trad::HELP_MARKDOWN.'</div>
 		'.$form_pc_a.'
 		<form action="'.Url::parse(getProject().'/issues/'.$issue['id'], array(), 'post_comment').'" method="post" id="post_comment">
-			<textarea name="comment" rows="6" required>'.$form_pc_c.'</textarea>
+			<textarea name="comment" rows="6" aria-labelledby="'.Trad::V_COMMENT.'" required>'.$form_pc_c.'</textarea>
 			<div class="preview text-container" style="display:none"></div>
 			'.$message.'
 			<div class="form-actions">
