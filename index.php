@@ -471,7 +471,7 @@ if (!empty($config['link_privacypolicy'])) {
 
 	<body>
 
-		<?php echo $page->getAlerts(); var_DUMP($config['language']); ?>
+		<?php echo $page->getAlerts(); ?>
 		<!--[if lt IE 8]>
 			<div class="alert alert-error"><?php echo Trad::A_IE; ?></div>
 		<![endif]-->
