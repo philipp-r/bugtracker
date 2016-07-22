@@ -2,7 +2,12 @@
 
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
 
-[![Flattr this](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2FSpamty%2FBumpy-Booby)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.png)](https://github.com/Spamty/Bumpy-Booby/blob/master/LICENSE.md)
+[![Open Issues](http://bugs.spamty.eu/index.php?page=api&project=Bumpy-Booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&shields_label=open_issues)](https://bugs.spamty.eu/index.php?project=Bumpy-Booby&page=issues)
+[![Closed Issues](http://bugs.spamty.eu/index.php?page=api&project=Bumpy-Booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&open=closed&shields_label=closed_issues&shields_color=green)](https://bugs.spamty.eu/index.php?project=Bumpy-Booby&page=issues&open=closed)
+
+[![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2FSpamty%2FBumpy-Booby)
+![Twitter](https://img.shields.io/twitter/follow/Spamty.svg?style=social&label=Follow&maxAge=2592000)
 
 ## Running
 
