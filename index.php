@@ -226,8 +226,12 @@ if (isset($_POST['login'])
 			$_SESSION['username'] = $matching_user['username'];
 			$_SESSION['ip'] = getAllIPs();
 			$_SESSION['expires_on'] = time()+TIMEOUT;
-				# 0 means "When browser closes"
-			session_set_cookie_params(0, Text::dir($_SERVER["SCRIPT_NAME"]));
+			if($_POST['stayloggedin'] == 'yes'){
+				$cookie_lifetime = 2420000; # 4 weeks
+			}else{
+				$cookie_lifetime = 0; # 0 means "When browser closes"
+			}
+			session_set_cookie_params($cookie_lifetime, Text::dir($_SERVER["SCRIPT_NAME"]));
 			session_regenerate_id(true);
 			logm('Login successful.');
 			$settings->login_successful($u['id']);
@@ -545,6 +549,7 @@ if (!empty($config['link_privacypolicy'])) {
 						<input type="text" name="username" placeholder="<?php echo Trad::F_USERNAME2; ?>" aria-labelledby="<?php echo Trad::F_USERNAME2; ?>" />
 						<input type="password" name="password" placeholder="<?php echo Trad::F_PASSWORD2; ?>" class="input-left" aria-labelledby="<?php echo Trad::F_PASSWORD2; ?>" />
 						<button type="submit" class="a-icon-hover"><i class="icon-circle-arrow-right"></i></button>
+						<label for="stayloggedin"><input type="checkbox" name="stayloggedin" id="stayloggedin" value="yes" class="loggedin-checkbox"> Keep me logged in</label>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
 						<input type="hidden" name="login" value="1" />
 					</form>
