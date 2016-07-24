@@ -4,6 +4,7 @@ label, input, button, select, textarea {
 	font-family: @font-family;
 }
 input, textarea { -webkit-appearance: none; }
+.loggedin-checkbox { -webkit-appearance: checkbox; }
 
 .form-actions {
 	text-align: center;
@@ -14,8 +15,10 @@ input, textarea { -webkit-appearance: none; }
 }
 
 .main-right {
-	input {
+	input:not([type="checkbox"]) {
 		width: @width-aside - 24px - 16px - 2px; // 2px because of Firefox
+	}
+	input {
 		margin: 2px 0 2px 0;
 		padding: 8px;
 		border: none;
