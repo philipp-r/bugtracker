@@ -134,6 +134,8 @@ class Trad {
 
 	const S_LAST_UPDATES = 'Last updates…';
 
+	const S_STAY_LOGGEDIN = 'Keep me logged in';
+
 		# Alerts
 
 	const A_ERROR_DIRECTORY = '<strong>Error:</strong> unable to create directory “%name%”.';

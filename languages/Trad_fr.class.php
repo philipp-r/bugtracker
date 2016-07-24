@@ -134,6 +134,8 @@ class Trad {
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 
+	const S_STAY_LOGGEDIN = 'Keep me logged in'; // je ne parle pas français
+
 		# Alerts
 
 	const A_ERROR_DIRECTORY = '<strong>Erreur :</strong> impossible de créer le dossier « %name% ».';

@@ -549,7 +549,7 @@ if (!empty($config['link_privacypolicy'])) {
 						<input type="text" name="username" placeholder="<?php echo Trad::F_USERNAME2; ?>" aria-labelledby="<?php echo Trad::F_USERNAME2; ?>" />
 						<input type="password" name="password" placeholder="<?php echo Trad::F_PASSWORD2; ?>" class="input-left" aria-labelledby="<?php echo Trad::F_PASSWORD2; ?>" />
 						<button type="submit" class="a-icon-hover"><i class="icon-circle-arrow-right"></i></button>
-						<label for="stayloggedin"><input type="checkbox" name="stayloggedin" id="stayloggedin" value="yes" class="loggedin-checkbox"> Keep me logged in</label>
+						<label for="stayloggedin"><input type="checkbox" name="stayloggedin" id="stayloggedin" value="yes" class="loggedin-checkbox"> <?php echo Trad::S_STAY_LOGGEDIN; ?></label>
 						<input type="hidden" name="token" value="<?php echo getToken(); ?>" />
 						<input type="hidden" name="login" value="1" />
 					</form>
