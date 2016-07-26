@@ -19,8 +19,6 @@ You can delete all files that are listed in `./DELETE_LIST.txt`, they are useles
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
-**Installation on Spamty server with webhook and "build-sites" by pushing to GitHub.com.**
-
 ### Configuration
 
 You can do all changes by opening `./index.php?page=settings` in your browser. The configuration is stored in `./database/config.php`.
