@@ -706,8 +706,7 @@ class Settings {
 			'groups' => array(
 				'default' => Trad::W_USER,
 				'developper' => Trad::W_DEVELOPPER,
-				'superuser' => Trad::W_SUPERUSER,
-				'bbapi' => Trad::W_APIGROUP
+				'superuser' => Trad::W_SUPERUSER
 			),
 			'statuses' => array(
 				'default' => array(

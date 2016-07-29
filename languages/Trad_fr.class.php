@@ -54,7 +54,6 @@ class Trad {
 	const W_USER = 'Utilisateur';
 	const W_DEVELOPPER = 'Développeur';
 	const W_SUPERUSER = 'Superutilisateur';
-	const W_APIGROUP = 'API';
 	const W_S_NEW = 'Nouveau';
 	const W_S_CONFIRMED = 'Confirmé';
 	const W_S_ASSIGNED = 'Assigné à %user%';
