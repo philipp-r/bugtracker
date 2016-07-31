@@ -40,14 +40,14 @@ function endApi( $returnValues, $httpStatus ){
 
 
 // check if configuration file exists
-if(!file_exists("database/config_api.php")){
+if(!file_exists(DIR_DATABASE."config_api.php")){
 	$returns['status'] = 0;
 	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://github.com/Spamty/Bumpy-Booby/blob/master/API.md and example configuration https://github.com/Spamty/Bumpy-Booby/blob/master/sample_config/config_api.php for the API.";
 	endApi( $returns, 500 );
 }
 
 // include API configuration
-require("database/config_api.php");
+require(DIR_DATABASE."config_api.php");
 
 
 // check if API enabled
@@ -240,7 +240,7 @@ elseif($_GET['XMODE'] == 'rss'){
 	}
 	
 	// get list with imported ids
-	$imported_json = file_get_contents("database/rss_imported.json");
+	$imported_json = file_get_contents(DIR_DATABASE."rss_imported.json");
 	// decode
 	$imported = json_decode($imported_json, true);
 
@@ -315,7 +315,7 @@ elseif($_GET['XMODE'] == 'rss'){
 	// encode
 	$imported_json = json_encode($imported);
 	// get list with imported ids
-	file_put_contents("database/rss_imported.json", $imported_json);
+	file_put_contents(DIR_DATABASE."rss_imported.json", $imported_json);
 
 }
 
