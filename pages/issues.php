@@ -158,7 +158,12 @@ $content = '<h1>'.Trad::T_BROWSE_ISSUES
 	.' <small>'.str_replace('%nb%', $nb, Trad::S_MATCHING_ISSUES).'</small>'
 	.'</h1>';
 
-if (!canAccess('new_issue')
+// new issue link in right sidebar (esp. for mobile browsers)			
+if (canAccess('new_issue')) {
+	$content .= '<div class="mobile-new-issue-btn"><a href="'.Url::parse(getProject().'/issues/new').'" class="btn">'.Trad::T_NEW_ISSUE.'</a><p>&nbsp;</p></div>';
+}
+// have to login message
+elseif (!canAccess('new_issue')
 	&& !$config['loggedin']
 	&& canAccess('signup')
 	&& in_array(DEFAULT_GROUP, $config['permissions']['post_comment'])
