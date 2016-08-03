@@ -135,6 +135,9 @@ class Trad {
 
 	const S_STAY_LOGGEDIN = 'Rester connecté';
 
+	const S_DEFAULT_DEFPROJ_DESC = 'Ceci est le projet par défaut où tout le monde a accès.';
+	const S_DEFAULT_2NDPROJ_DESC = 'Cela pourrait être votre projet de projet 2ème où seuls les utilisateurs enregistrés peuvent poster des questions.';
+
 		# Alerts
 
 	const A_ERROR_DIRECTORY = '<strong>Erreur :</strong> impossible de créer le dossier « %name% ».';

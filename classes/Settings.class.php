@@ -659,12 +659,12 @@ class Settings {
 		return array(
 			'title' => 'Bumpy Booby',
 			'url' => Settings::get_path(),
-			'cdn_url' => '',
+			'cdn_url' => 'https://cdn.rawgit.com/Spamty/Bumpy-Booby/master/',
 			'url_rewriting' => false,
 			'link_contact' => '',
 			'link_legalnotice' => '',
 			'link_privacypolicy' => '',
-			'intro' => '',
+			'intro' => 'Welcome to the Bumpy Booby issue tracker.',
 			'email' => false,
 			'language' => $language,
 			'max_size_upload' => '1MB',
@@ -681,31 +681,35 @@ class Settings {
 			'api_enabled' => false,
 			'projects' => array(
 				'default' => array(
-					'description' => '',
+					'description' => Trad::S_DEFAULT_DEFPROJ_DESC,
 					'can_access' => array('none', 'default', 'developper', 'superuser')
+				),
+				'2nd-project' => array(
+					'description' => Trad::S_DEFAULT_2NDPROJ_DESC,
+					'can_access' => array('default', 'developper', 'superuser')
 				)
 			),
 			'permissions' => array(
-				'home' => array('none', 'default', 'developper', 'superuser'),
-				'dashboard' => array('none', 'default', 'developper', 'superuser'),
-				'issues' =>  array('none', 'default', 'developper', 'superuser'),
-				'private_issues' => array(),
-				'search' => array('none', 'default', 'developper', 'superuser'),
-				'new_issue' => array('default', 'developper', 'superuser'),
+				'home' => array('none', 'default', 'developer', 'superuser'),
+				'dashboard' => array('none', 'default', 'developer', 'superuser'),
+				'issues' =>  array('none', 'default', 'developer', 'superuser'),
+				'private_issues' => array('superuser'),
+				'search' => array('none', 'default', 'developer', 'superuser'),
+				'new_issue' => array('none', 'default', 'developer', 'superuser'),
 				'edit_issue' => array('superuser'),
-				'update_issue' => array('developper', 'superuser'),
-				'post_comment' => array('default', 'developper', 'superuser'),
+				'update_issue' => array('default', 'developper', 'superuser'),
+				'post_comment' => array('default', 'developer', 'superuser'),
 				'edit_comment' => array('superuser'),
-				'view_user' => array('none', 'default', 'developper', 'superuser'),
+				'view_user' => array('none', 'default', 'developer', 'superuser'),
 				'settings' => array('superuser'),
-				'upload' => array('default', 'developper', 'superuser'),
-				'view_upload' => array('none', 'default', 'developper', 'superuser'),
+				'upload' => array('superuser'),
+				'view_upload' => array('none', 'default', 'developer', 'superuser'),
 				'signup' => array('none'),
 				'view_errors' => array('superuser')
 			),
 			'groups' => array(
 				'default' => Trad::W_USER,
-				'developper' => Trad::W_DEVELOPPER,
+				'developer' => Trad::W_DEVELOPPER,
 				'superuser' => Trad::W_SUPERUSER
 			),
 			'statuses' => array(

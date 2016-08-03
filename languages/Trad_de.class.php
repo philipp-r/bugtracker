@@ -135,6 +135,9 @@ class Trad {
 
 	const S_STAY_LOGGEDIN = 'Keep me logged in';
 
+	const S_DEFAULT_DEFPROJ_DESC = 'This is the default project where everyone has access to.';
+	const S_DEFAULT_2NDPROJ_DESC = 'This could be your 2nd project project where only registered users are allowed to post issues.';
+
 		# Alerts
 
 	const A_ERROR_DIRECTORY = '<strong>Error:</strong> unable to create directory “%name%”.';
