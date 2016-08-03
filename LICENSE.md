@@ -2,10 +2,9 @@
 
 ## Bumpy Booby
 
-Copyright (c) 2013-2015 Pierre Monchalin <http://bumpy-booby.derivoile.fr> 
-(Original Bumpy Booby software).
+Copyright (c) 2013-2015 [Pierre Monchalin](http://bumpy-booby.derivoile.fr) (for original Bumpy Booby software).
 
-Edited by Philipp <https://github.com/philipp-r> for Spamty.eu. Copyright (c) 2016.
+Edited by [Philipp](https://github.com/philipp-r). Copyright (c) 2016.
 
 ### MIT License
 
@@ -34,8 +33,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 This software includes Securimage by Drew Phillips.
 
-Securimage is licensed under the following license, see also `./classes/securimage/README.md`
-and the website <http://www.phpcaptcha.org/>.
+Securimage is licensed under the following license, see also the included 
+`./classes/securimage/README.md` file and [the website](http://www.phpcaptcha.org/).
 
 Copyright (c) 2011 Drew Phillips
 All rights reserved.

@@ -9,38 +9,36 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 [![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2FSpamty%2FBumpy-Booby)
 [![Twitter](https://img.shields.io/twitter/follow/Spamty.svg?style=social&label=Follow&maxAge=2592000)](https://twitter.com/spamty)
 
-## Running
+## Install
 
-### Installation
-
-Download the [latest release](https://github.com/Spamty/Bumpy-Booby/releases/latest), open `./index.php` in your browser, configure Bumpy Booby and enjoy!
-
-You can (but you do not have to) delete all files that are listed in `./DELETE_LIST.txt`, they are useless.
+Download the [latest release](https://github.com/Spamty/Bumpy-Booby/releases/latest) and upload to your webserver.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
-### Configuration
+[See our wiki](https://github.com/Spamty/Bumpy-Booby/wiki/Install) for details!
 
-You can do all changes by opening `./index.php?page=settings` in your browser. The configuration is stored in `./database/config.php`.
+## Configuration
 
-To configure the API you have to enable it on the settings page and then change the access settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`. Have a look at `API.md` file for further information.
+You can do all changes by opening `./index.php?page=settings` in your browser.
 
-You can also edit the Captcha which is displayed when a user who is not logged in wants to create a new issue. you can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`. Refer to this website for more information about changing the captcha: <https://www.phpcaptcha.org/documentation/customizing-securimage/>.
+To configure the [API](https://github.com/Spamty/Bumpy-Booby/wiki/API) change the settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`.
 
-### Backup
+You can also edit the Captcha which is displayed when a user who is not logged in wants to create a new issue. you can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`.
 
-Before any update, it's highly recommended to make a backup. You only need to save folder `./database/`.
+[See our wiki](https://github.com/Spamty/Bumpy-Booby/wiki/Configuration) for details!
 
-## Bugs reports
+## API
 
-Report bugs & feature requests here: <https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues>. 
-Or send us an email: <https://3q3.de/spamty>
+The API has some features:
 
-## License
+ * [Default API](https://github.com/Spamty/Bumpy-Booby/wiki/Bumpy-Booby-API) to create new issues, edit them, and more.
+ * [Travis CI API](https://github.com/Spamty/Bumpy-Booby/wiki/Travis-CI-API) to create a new issue when a build with Travis CI fails.
+ * [Badges](https://github.com/Spamty/Bumpy-Booby/wiki/Badges) that can be displayed in GitHub 'README.md' file.
+ * [Import RSS Feeds](https://github.com/Spamty/Bumpy-Booby/wiki/Import-RSS) to create new issues from RSS feeds.
 
-Bumpy Booby was originally created by Pierre Monchalin. 
-This is a fork from <https://github.com/piero-la-lune/Bumpy-Booby>. Edited by Spamty <https://spamty.eu/>.
+[See our wiki](https://github.com/Spamty/Bumpy-Booby/wiki/API) for details!
 
-Bumpy Booby is distributed under the **MIT License**. See `./LICENSE.md` for more information.
+## Bugs & feature requests
 
-We are using Securimage <http://www.phpcaptcha.org/>,<https://github.com/dapphp/securimage> by Drew Phillips for spam protection.
+Report bugs & feature requests in our [issue tracker](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues)
+or [send us an email](https://3q3.de/spamty).
