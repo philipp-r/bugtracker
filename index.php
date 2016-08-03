@@ -311,8 +311,8 @@ function get_file($filename) {
 }
 function check_dir($dirname) {
 	if (!is_dir(DIR_DATABASE.$dirname)
-		&& (!mkdir(DIR_DATABASE.$dirname, 0705)
-			|| !chmod(DIR_DATABASE.$dirname, 0705))
+		&& (!mkdir(DIR_DATABASE.$dirname, 0775)
+			|| !chmod(DIR_DATABASE.$dirname, 0775))
 	) {
 		logm('Enable to create directory “'. DIR_DATABASE.$filename.'”');
 		Text::stop(str_replace(
