@@ -43,7 +43,7 @@ class Trad {
 
 	const W_PREVIOUS = 'Précédente';
 	const W_NEXT = 'Suivante';
-	const W_MORE = 'MORE'; // je ne parle pas français
+	const W_MORE = 'PLUS';
 	const W_CURRENT = 'Page %nb1% sur %nb2%';
 
 	const W_NOT_LOGGED = 'Non connecté';
@@ -133,7 +133,7 @@ class Trad {
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 
-	const S_STAY_LOGGEDIN = 'Keep me logged in'; // je ne parle pas français
+	const S_STAY_LOGGEDIN = 'Rester connecté';
 
 		# Alerts
 
@@ -213,22 +213,22 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_GROUPS = 'Groupes';
 	const T_USERS = 'Utilisateurs';
 	const T_BROWSE_ISSUES = 'Parcourir les demandes';
-	const T_BROWSE_ALL_ISSUES = 'Browse all issues'; // je ne parle pas français
-	const T_ALL_ISSUES_DESCRIPTION = 'This are all open issues for all projects'; // je ne parle pas français
+	const T_BROWSE_ALL_ISSUES = 'Voir toutes les demandes';
+	const T_ALL_ISSUES_DESCRIPTION = 'Ce sont toutes les demandes ouvertes pour tous les projets';
 	const T_NEW_ISSUE = 'Nouvelle demande';
-	const T_ALL_ISSUES = 'All issues'; // je ne parle pas français
+	const T_ALL_ISSUES = 'Toutes les demandes';
 	const T_PROJECTS = 'Projets';
 	const T_DASHBOARD = 'Tableau de bord';
 	const T_LAST_UPDATES = 'Dernières mises à jour';
 	const T_LAST_ACTIVITY = 'Activité récente';
 	const T_UPLOADS = 'Fichiers';
 	const T_SEARCH = 'Recherche';
-	const T_LINK_CONTACT = 'Contact Us'; // je ne parle pas français
-	const T_LINK_LEGALNOTICE = 'Legal Notice'; // je ne parle pas français
-	const T_LINK_PRIVACYPOLICY = 'Privacy Policy'; // je ne parle pas français
+	const T_LINK_CONTACT = 'Contactez nous'; 
+	const T_LINK_LEGALNOTICE = 'Mention légale';
+	const T_LINK_PRIVACYPOLICY = 'Politique de confidentialité';
 	const T_API_SETTINGS = 'API';
-	const T_API_ACCESS_SETTINGS = 'API access'; // je ne parle pas français
-	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.'; // je ne parle pas français
+	const T_API_ACCESS_SETTINGS = 'L\'accès aux API';
+	const T_API_ACCESS_HELP = 'Configurer l\'accès API dans <em>/database/config_api.php</em> fichier. Pour plus d\'informations voir le fichier API.md.';
 
 
 		# FORMS
@@ -244,9 +244,9 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_INTRO = 'Introduction :';
 	const F_DESCRIPTION = 'Description :';
 	const F_EMAIL = 'Email :';
-	const F_LINK_CONTACT = 'Link to external contact page (can be left empty):'; // je ne parle pas français
-	const F_LINK_LEGALNOTICE = 'Link to legal notice (can be left empty):'; // je ne parle pas français
-	const F_LINK_PRIVACYPOLICY = 'Link to privacy policy (can be left empty):'; // je ne parle pas français
+	const F_LINK_CONTACT = 'Lien vers la page de contact externe (peut être laissé vide):';
+	const F_LINK_LEGALNOTICE = 'Lien vers mention légale (peut être laissé vide):';
+	const F_LINK_PRIVACYPOLICY = 'Lien vers la politique de confidentialité (peut être laissé vide):'; 
 	const F_MAX_UPLOAD = 'Taille maximum par envoi de fichier :';
 	const F_ALLOCATED_SPACE = 'Espace alloué à chaque utilisateur :';
 	const F_GROUP = 'Groupe :';
@@ -300,7 +300,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_PERMISSIONS = 'Gérer les permissions :';
 	const F_USERS = 'Gérer les utilisateurs :';
 	
-	const F_INVALID_CAPTCHA = 'The CAPTCHA you entered was wrong. Please try again.'; // je ne parle pas français
+	const F_INVALID_CAPTCHA = 'Le CAPTCHA que vous avez entré a eu tort. Veuillez réessayer.';
 
 	const F_TIP_NAME = 'Ce nom sera affiché en haut de chaque page.';
 	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Bumpy Booby (en commençant et terminant par un "/") par rapport au nom de domaine.';
@@ -320,7 +320,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_TIP_ID_LABEL = '<b>Attention :</b> les étiquettes des demandes ne seront pas mis à jour, elles pointeront donc toujours vers les anciens ID. Dans le cas où une étiquette d\'une demande ne correspondrait plus à aucun des nouveaux ID, la demande perdrait cette étiquette.';
 	const F_TIP_ID_GROUP = '<b>Attention :</b> le groupe de chaque utilisateur ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce groupe ne correspondrait plus à aucun des nouveaux ID, l\'utilisateur rejoindrait le groupe par défaut.';
 
-	const F_API_ENABLE = 'Enable the API'; // je ne parle pas français
+	const F_API_ENABLE = 'Activer l\'API';
 
 	const HELP_MARKDOWN = '
 		<h2>Syntaxe Markdown :</h2>
@@ -380,7 +380,7 @@ Et ceci en est un autre : &lt;http://example.com&gt;.</code></pre>
 	private static $permissions = array(
 		'home' => array(
 			'title' => 'Page d\'accueil :',
-			'description' => 'Can access to the home page and view list of all open issues for his projects.' // je ne parle pas français
+			'description' => 'Peut accéder à la page d\'accueil et vue liste de toutes les questions ouvertes pour ses projets.' 
 		),
 		'dashboard' => array(
 			'title' => 'Tableaux de bord :',
