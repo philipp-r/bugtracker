@@ -13,9 +13,9 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 ### Installation
 
-Copy all files, run `./` or `./index.php`, configure Bumpy Booby and enjoy!
+Download the [latest release](https://github.com/Spamty/Bumpy-Booby/releases/latest), open `./index.php` in your browser, configure Bumpy Booby and enjoy!
 
-You can delete all files that are listed in `./DELETE_LIST.txt`, they are useless.
+You can (but you do not have to) delete all files that are listed in `./DELETE_LIST.txt`, they are useless.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
@@ -31,22 +31,16 @@ You can also edit the Captcha which is displayed when a user who is not logged i
 
 Before any update, it's highly recommended to make a backup. You only need to save folder `./database/`.
 
-### Requirements
-
-Bumpy Booby doesn't support IE 6 & 7. It requires JavaScript to work properly.
-
 ## Bugs reports
 
-Report bugs & feature requests for the original software here: <http://bumpy-booby.derivoile.fr>.
-
-Report issues with this fork here: <https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues>. 
+Report bugs & feature requests here: <https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues>. 
 Or send us an email: <https://3q3.de/spamty>
 
-## About Booby Bumpy
+## License
 
-Bumpy Booby was created by Pierre Monchalin. 
+Bumpy Booby was originally created by Pierre Monchalin. 
 This is a fork from <https://github.com/piero-la-lune/Bumpy-Booby>. Edited by Spamty <https://spamty.eu/>.
 
-Bumpy Booby is distributed under the MIT License. See `./LICENSE.md` for more information.
+Bumpy Booby is distributed under the **MIT License**. See `./LICENSE.md` for more information.
 
 We are using Securimage <http://www.phpcaptcha.org/>,<https://github.com/dapphp/securimage> by Drew Phillips for spam protection.
