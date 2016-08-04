@@ -25,11 +25,11 @@ if (strict_lower($config['version'], '0.3')) {
 
 // upgrade 1.0
 if (strict_lower($config['version'], '1.0')) {
-	$config['cdn_url'] = "";
-	$config['api_enabled'] = false;
-	$config['link_contact'] = "";
-	$config['link_legalnotice'] = "";
-	$config['link_privacypolicy'] = "";
+	if(!isset($config['cdn_url'])){$config['cdn_url'] = "";}
+	if(!isset($config['api_enabled'])){$config['api_enabled'] = false;}
+	if(!isset($config['link_contact'])){$config['link_contact'] = "";}
+	if(!isset($config['link_legalnotice'])){$config['link_legalnotice'] = "";}
+	if(!isset($config['link_privacypolicy'])){$config['link_privacypolicy'] = "";}
 }
 
 $settings = new Settings();
