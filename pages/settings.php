@@ -658,6 +658,10 @@ $content = '
 
 
 </form>
+
+<h2>Info</h2>
+<p>Runnig '.NAME.' version '.VERSION.'</p>
+<p>Get latest version from <a href="https://github.com/Spamty/Bumpy-Booby/releases/latest">GitHub</a> to <a href="https://github.com/Spamty/Bumpy-Booby/wiki/Upgrade">upgrade</a>.</p>
 ';
 
 $javascript = '
