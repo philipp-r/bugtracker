@@ -8,7 +8,7 @@ spl_autoload_register('loadClass');
 set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
-define('VERSION', '0.3');
+define('VERSION', '1.0.1');
 define('AUTHOR', 'Pierre Monchalin, Spamty.eu');
 define('URL', 'https://github.com/Spamty/Bumpy-Booby');
 
