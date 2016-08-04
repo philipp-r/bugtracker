@@ -342,7 +342,6 @@ check_file(FILE_UPLOADS, Text::hash(array()));
 check_file(FILE_USERS, Text::hash(array()));
 check_file('.htaccess', "Allow from none\nDeny from all\n");
 
-
 if (!is_file(DIR_DATABASE.FILE_CONFIG)) {
 	$page->load('install');
 }
