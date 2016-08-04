@@ -210,6 +210,10 @@
  * @author     Drew Phillips <drew@drew-phillips.com>
  *
  */
+
+// define database directory by Bumpy Booby (same as in index.php)
+define('DIR_DATABASE', dirname(__FILE__).'/../../database/');
+
 class Securimage
 {
     // All of the public variables below are securimage options
