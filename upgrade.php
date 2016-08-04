@@ -4,23 +4,32 @@ if (!isset($config)) {
 	exit;
 }
 
+// check version
 function strict_lower($a, $b) {
-	$ea = explode('.', $a);
-	$eb = explode('.', $b);
+	$ea = explode('.', $a); // config version
+	$eb = explode('.', $b); // new version
 	for ($i=0; $i < count($ea); $i++) { 
 		if (!isset($eb[$i])) { $eb[$i] = 0; }
 		$na = intval($ea[$i]);
 		$nb = intval($eb[$i]);
 		if ($na > $nb) { return false; }
-		if ($na < $nb) { return true; }
+		if ($na < $nb) { return true; } // true if new version higher than config version
 	}
 	return false;
 }
 
+// upgrade 0.3
 if (strict_lower($config['version'], '0.3')) {
-
 	$config['nb_last_activity_rss'] = 20;
+}
 
+// upgrade 1.0
+if (strict_lower($config['version'], '1.0')) {
+	$config['cdn_url'] = "";
+	$config['api_enabled'] = false;
+	$config['link_contact'] = "";
+	$config['link_legalnotice'] = "";
+	$config['link_privacypolicy'] = "";
 }
 
 $settings = new Settings();
@@ -28,6 +37,6 @@ if ($config['url_rewriting']) { $settings->url_rewriting(); }
 $settings->save();
 
 header('Content-Type: text/html; charset=utf-8');
-die('Mise à jour effectuée avec succès ! Raffraichissez cette page pour accéder à Bumpy Boopby.');
+die('Successfully upgraded! Refresh the page to access Bumpy Boopby.');
 
 ?>
