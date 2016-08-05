@@ -105,6 +105,7 @@ if (canAccess('update_issue')) {
 
 
 $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
+.'This is <b>no demo</b>. Only submit serious issues here. If you want to try this software use our <a href="https://demo.bugtrackr.eu/">online demo</a>.'
 .'<div class="box box-new-issue">'
 	.'<div class="top">'
 		.'<div class="manage">'
