@@ -122,7 +122,7 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 			.'<div class="div-help-markdown">'.Trad::HELP_MARKDOWN.'</div>'
 			.'<input type="text" name="issue_summary" value="'.$form_s.'" '
 				.'placeholder="'.Trad::F_SUMMARY.'" required />'
-			.'<textarea name="issue_text" rows="12" '
+			.'<textarea name="issue_text" rows="12" ';
 
 if( !empty($form_t) ){
 	$content .=	$form_t;
@@ -168,6 +168,7 @@ $content .=	"[ Please describe your problem / question as detailed as possible. 
  * Webserver: [ Apache / Lighttpd ]
  * [ add more info if possible ]";
 }
+
 $content .= '</textarea>'
 			.'<div class="preview text-container" style="display:none"></div>'
 			.$should_login;
