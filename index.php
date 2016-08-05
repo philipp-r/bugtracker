@@ -452,7 +452,7 @@ if (!empty($config['link_privacypolicy'])) {
 		<link rel="shortcut icon" href="<?php echo Url::parse('public/img/favicon.ico', array(), '', true); ?>" />
 		<link rel="apple-touch-icon" href="<?php echo Url::parse('public/img/apple-touch-icon.png', array(), '', true); ?>" />
 
-		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css', array(), '', true); ?>" />
+		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.css', array(), '', true); ?>" />
 
 		<!--[if lt IE 9]>
 			<script src="<?php echo Url::parse('public/js/html5.js', array(), '', true); ?>"></script>
