@@ -659,12 +659,12 @@ class Settings {
 		return array(
 			'title' => 'Bumpy Booby',
 			'url' => Settings::get_path(),
-			'cdn_url' => 'https://cdn.rawgit.com/bugtrackr/bumpy-booby/master/',
+			'cdn_url' => '',
 			'url_rewriting' => false,
 			'link_contact' => '',
 			'link_legalnotice' => '',
 			'link_privacypolicy' => '',
-			'intro' => 'Welcome to the Bumpy Booby issue tracker.',
+			'intro' => 'Welcome to the issue tracker.',
 			'email' => false,
 			'language' => $language,
 			'max_size_upload' => '1MB',
@@ -682,10 +682,6 @@ class Settings {
 			'projects' => array(
 				'default' => array(
 					'description' => Trad::S_DEFAULT_DEFPROJ_DESC,
-					'can_access' => array('none', 'default', 'developper', 'superuser')
-				),
-				'2nd-project' => array(
-					'description' => Trad::S_DEFAULT_2NDPROJ_DESC,
 					'can_access' => array('default', 'developper', 'superuser')
 				)
 			),
