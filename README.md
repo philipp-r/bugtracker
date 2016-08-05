@@ -35,3 +35,7 @@ There are no .htaccess files in this branch. Add this to the apache config:
 	</FilesMatch>
 </Directory>
 ```
+
+## Bugs & feature requests
+
+Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).

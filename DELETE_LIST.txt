@@ -8,4 +8,5 @@ README.md
 sample_config/
 LICENSE.md
 public/css/app/
+public/css/original/
 DELETE_LIST.txt
