@@ -657,16 +657,16 @@ class Settings {
 
 	public static function get_default_config($language = 'en') {
 		return array(
-			'title' => 'Bumpy Booby',
+			'title' => 'Bumpy Booby DEMO',
 			'url' => Settings::get_path(),
-			'cdn_url' => '',
+			'cdn_url' => 'https://cdn.rawgit.com/bugtrackr/bumpy-booby/master/',
 			'url_rewriting' => false,
 			'link_contact' => '',
 			'link_legalnotice' => '',
 			'link_privacypolicy' => '',
-			'intro' => 'Welcome to the issue tracker.',
+			'intro' => 'Welcome to the **demo** issue tracker.',
 			'email' => false,
-			'language' => $language,
+			'language' => 'en', // force English
 			'max_size_upload' => '1MB',
 			'allocated_space' => '2MB',
 			'issues_per_page' => 12,
@@ -676,13 +676,17 @@ class Settings {
 			'length_preview_project' => 200,
 			'nb_last_activity_dashboard' => 5,
 			'nb_last_activity_user' => 5,
-			'nb_last_activity_rss' => 20,
+			'nb_last_activity_rss' => 1,
 			'logs_enabled' => false,
 			'api_enabled' => false,
 			'projects' => array(
 				'default' => array(
-					'description' => Trad::S_DEFAULT_DEFPROJ_DESC,
+					'description' => 'The default project is private and can only be seen by registered users.',
 					'can_access' => array('default', 'developper', 'superuser')
+				),
+				'public' => array(
+					'description' => 'This is a public project where everyone is allowed to create new issues.',
+					'can_access' => array('none', 'default', 'developper', 'superuser')
 				)
 			),
 			'permissions' => array(
@@ -694,7 +698,7 @@ class Settings {
 				'new_issue' => array('none', 'default', 'developer', 'superuser'),
 				'edit_issue' => array('superuser'),
 				'update_issue' => array('default', 'developper', 'superuser'),
-				'post_comment' => array('default', 'developer', 'superuser'),
+				'post_comment' => array('none', 'default', 'developer', 'superuser'),
 				'edit_comment' => array('superuser'),
 				'view_user' => array('none', 'default', 'developer', 'superuser'),
 				'settings' => array('superuser'),

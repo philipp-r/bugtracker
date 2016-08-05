@@ -460,6 +460,8 @@ if (!empty($config['link_privacypolicy'])) {
 		<![endif]-->
 
 		<title><?php echo $page->getTitle(); ?> – <?php echo $config['title']; ?></title>
+		
+		<meta name="robots" content="noindex, nofollow" />
 
 		<?php
 
@@ -578,6 +580,7 @@ if (!empty($config['link_privacypolicy'])) {
 								Trad::S_COPYRIGHT
 							);
 						?>
+						<br />This is only a <b>demo</b> of the software.
 					</div>
 				</div>
 			</aside>
