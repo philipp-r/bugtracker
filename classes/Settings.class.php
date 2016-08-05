@@ -282,7 +282,11 @@ class Settings {
 				intval($post['nb_last_activity_user']);
 		}
 		if (isset($post['theme'])) {
-			$this->config['theme'] = $post['theme'];
+			if( file_exists(DIR_CURRENT."public/css/".$post['theme'].".css") ){
+				$this->config['theme'] = $post['theme'];
+			}else{
+				$this->config['theme'] = 'app';
+			}
 		}
 		return true;
 	}
