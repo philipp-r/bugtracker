@@ -22,7 +22,7 @@ $_POST['language'] = "en";
 $_POST['user_username'] = array($admin_username);
 $_POST['user_password'] = array($admin_password);
 $_POST['title'] = "Bumpy Booby Demo";
-$_POST['url'] = "https://demo.bugtrackr.eu";
+$_POST['url'] = "https://demo.bugtrackr.eu/";
 $_POST['action'] = "save";
 
 
