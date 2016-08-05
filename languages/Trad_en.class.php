@@ -264,6 +264,8 @@ This is an automated email, please do not reply.
 	const F_PREVIEW_PROJECT = 'Previews length (projects):';
 	const F_LAST_EDITS = 'Number of issues displayed on dashboards:';
 	const F_LAST_ACTIVITY = 'Number of issues displayed on user pages:';
+	const F_THEME = "Theme";
+	const F_TIP_THEME = "Place the .css file in";
 
 	const F_ADD_PROJECT = 'New project';
 	const F_ADD_COLOR = 'New color';
