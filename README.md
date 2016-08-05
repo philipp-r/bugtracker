@@ -59,5 +59,4 @@ The API has some features:
 
 ## Bugs & feature requests
 
-Report bugs & feature requests in our [issue tracker](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues)
-or [send us an email](https://3q3.de/spamty).
+Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).
