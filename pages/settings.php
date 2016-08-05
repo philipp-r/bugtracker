@@ -661,7 +661,7 @@ $content = '
 
 <h2>Info</h2>
 <p>Runnig '.NAME.' version '.VERSION.'</p>
-<p>Get latest version from <a href="https://github.com/Spamty/Bumpy-Booby/releases/latest">GitHub</a> to <a href="https://github.com/Spamty/Bumpy-Booby/wiki/Upgrade">upgrade</a>.</p>
+<p>Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.</p>
 ';
 
 $javascript = '

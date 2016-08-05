@@ -9,8 +9,8 @@ set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
 define('VERSION', '1.0.1');
-define('AUTHOR', 'Pierre Monchalin, Spamty.eu');
-define('URL', 'https://github.com/Spamty/Bumpy-Booby');
+define('AUTHOR', 'bugtrackr.eu');
+define('URL', 'https://github.com/bugtrackr/bumpy-booby');
 
 ### Languages
 define('LANGUAGES', 'en,fr'); # Separated by a comma
