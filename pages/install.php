@@ -109,10 +109,6 @@ elseif (isset($_POST['action'])
 		}
 	}
 	else {
-		$_SESSION['alert'] = array(
-			'text' => Trad::A_SUCCESS_INSTALL,
-			'type' => 'alert-success'
-		);
 		header('Location: '.Url::parse('home'));
 		exit;
 	}
