@@ -11,18 +11,13 @@ $content = '<h1>'.Trad::T_INSTALLATION.'</h1>'
 	.'<p>&nbsp;</p>';
 
 /*
-	Heroku Vars
-*/
-$admin_username = getenv('admin_username');
-$admin_password = getenv('admin_password');
-/*
 	Demo Config
 */
-$_POST['language'] = "en";
-$_POST['user_username'] = array($admin_username);
-$_POST['user_password'] = array($admin_password);
-$_POST['title'] = "Bumpy Booby Demo";
-$_POST['url'] = "https://demo.bugtrackr.eu/";
+$_POST['language'] = getenv('language');
+$_POST['user_username'] = array(getenv('admin_username'));
+$_POST['user_password'] = array(getenv('admin_password'));
+$_POST['title'] = getenv('title');
+$_POST['url'] = getenv('url');
 $_POST['action'] = "save";
 
 
