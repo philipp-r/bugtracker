@@ -442,7 +442,7 @@ class Securimage
      *
      * @var string
      */
-    public $session_name   = null;
+    public $session_name   = "BumpyBooby";
 
     /**
      * true to use the wordlist file, false to generate random captcha codes
