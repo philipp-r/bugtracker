@@ -10,6 +10,22 @@ $content = '<h1>'.Trad::T_INSTALLATION.'</h1>'
 	.'<p>'.Trad::S_INTRO_INSTALL.'</p>'
 	.'<p>&nbsp;</p>';
 
+/*
+	Heroku Vars
+*/
+$admin_username = getenv('admin_username');
+$admin_password = getenv('admin_password');
+/*
+	Demo Config
+*/
+$_POST['language'] = "en";
+$_POST['user_username'] = array($admin_username);
+$_POST['user_password'] = array($admin_password);
+$_POST['title'] = "Bumpy Booby Demo";
+$_POST['url'] = "https://demo.bugtrackr.eu";
+$_POST['action'] = "save";
+
+
 if (isset($_POST['language']) && Text::check_language($_POST['language'])) {
 
 	$content .= '<form action="'.Url::parse('install').'" method="post" '
