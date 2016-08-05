@@ -1,22 +1,40 @@
 # Bumpy Booby
 
-Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://demo.bugtrackr.eu/)
+Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.png)](https://docs.bugtrackr.eu/license/)
-[![Open Issues](http://bugs.spamty.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&shields_label=open_issues)](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues)
-[![Closed Issues](http://bugs.spamty.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&open=closed&shields_label=closed_issues&shields_color=green)](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues&open=closed)
-
-[![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
+I recommend to use the `master` branch. This one is used to deploy our custom [issue tracker](https://bb.bugtrackr.eu/).
 
 Version 1.0.1
 
 ## Install
 
-Download the [latest release](https://github.com/bugtrackr/bumpy-booby/releases/latest) and upload to your webserver.
+Installation on our server with webhook and "build-sites" by pushing to GitHub.com. **TO DO**
 
-The folder `./database` has to be writable for apache: `chmod -R 777 database`.
+### .htaccess files
 
-[See our wiki](https://docs.bugtrackr.eu/wiki/install/) for details!
+There are no .htaccess files in this branch. Add this to the apache config:
+```
+<Directory ~ "^/var/www/(classes|database|languages|pages)/">
+	Allow from none
+	Deny from all
+</Directory>
+<Directory "/var/www/classes/api/">
+	Allow from none
+	Deny from all
+	# allow API key generator
+	<FilesMatch "^keygen\.php$">
+		Allow from all
+	</FilesMatch>
+	<FilesMatch "^keygen-travisci\.php$">
+		Allow from all
+	</FilesMatch>
+</Directory>
+<Directory "/var/www/classes/securimage/">
+	<FilesMatch "^.*$">
+		Allow from all
+	</FilesMatch>
+</Directory>
+```
 
 ## Configuration
 
