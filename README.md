@@ -3,8 +3,8 @@
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://demo.bugtrackr.eu/)
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.png)](https://docs.bugtrackr.eu/license/)
-[![Open Issues](http://bugs.spamty.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&shields_label=open_issues)](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues)
-[![Closed Issues](http://bugs.spamty.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&open=closed&shields_label=closed_issues&shields_color=green)](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues&open=closed)
+[![Open Issues](https://bb.bugtrackr.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&shields_label=open_issues)](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues)
+[![Closed Issues](https://bb.bugtrackr.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&api_username=Bumpy-Booby-GitHub-README&open=closed&shields_label=closed_issues&shields_color=green)](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues&open=closed)
 
 [![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
 
@@ -41,5 +41,4 @@ The API has some features:
 
 ## Bugs & feature requests
 
-Report bugs & feature requests in our [issue tracker](https://bugs.spamty.eu/index.php?project=bumpy-booby&page=issues)
-or [send us an email](https://3q3.de/spamty).
+Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).
