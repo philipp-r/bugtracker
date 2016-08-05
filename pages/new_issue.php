@@ -104,8 +104,11 @@ if (canAccess('update_issue')) {
 }
 
 
-$content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
-.'<p>This is <b>no demo</b>. Only submit serious issues here. If you want to try this software use our <a href="https://demo.bugtrackr.eu/">online demo</a>.</p><p>&nbsp;</p>'
+$content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>';
+if( getProject()=="support" ){
+	$content .= '<div class="alert alert-error"><a href="https://bb.bugtrackr.eu/index.php?sort=id_desc&statuses=resolved&open=all&perpage=12&project=support&page=issues" target="_blank">Please look at the resolved support issues. Maybe your question was already answered.</a></div>';
+}
+$content .= '<p>This is <b>no demo</b>. Only submit serious issues here. If you want to try this software use our <a href="https://demo.bugtrackr.eu/">online demo</a>.</p><p>&nbsp;</p>'
 .'<div class="box box-new-issue">'
 	.'<div class="top">'
 		.'<div class="manage">'
