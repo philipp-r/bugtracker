@@ -105,6 +105,7 @@ if (canAccess('update_issue')) {
 
 
 $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
+.'<p>This is <b>a demo</b> and only for testing Bumpy Booby. The software is reset regularly. Please use our <a href="https://bb.bugtrackr.eu/">issue tracker</a> to report bugs, submit feature requests and get support.</p><p>&nbsp;</p>'
 .'<div class="box box-new-issue">'
 	.'<div class="top">'
 		.'<div class="manage">'
