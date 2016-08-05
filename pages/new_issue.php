@@ -122,7 +122,8 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 			.'<div class="div-help-markdown">'.Trad::HELP_MARKDOWN.'</div>'
 			.'<input type="text" name="issue_summary" value="'.$form_s.'" '
 				.'placeholder="'.Trad::F_SUMMARY.'" required />'
-			.'<textarea name="issue_text" rows="12" ';
+			.'<textarea name="issue_text" rows="12" '
+				.'placeholder="'.Trad::F_CONTENT.'" required>';
 
 if( !empty($form_t) ){
 	$content .=	$form_t;
