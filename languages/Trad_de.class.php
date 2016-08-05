@@ -69,25 +69,25 @@ class Trad {
 
 		# Verbes
 
-	const V_UPDATE = 'Update';
-	const V_UPDATE_DETAILS = 'Update details';
-	const V_UPDATE_CONTENT = 'Update content';
-	const V_UPDATE_AND = 'Update & %adjective%';
-	const V_CANCEL = 'Cancel';
-	const V_PREVIEW = 'Preview';
-	const V_COMMENT = 'Comment';
-	const V_SUBMIT = 'Submit';
-	const V_SELECT_FILE = 'Select a file…';
-	const V_UPLOADING = 'Uploading…';
-	const V_SAVE_CONFIG = 'Save settings';
-	const V_APPLY = 'Apply';
-	const V_EDIT = 'Edit';
-	const V_SIGNUP = 'Sign up';
-	const V_CONTINUE = 'Continue';
-	const V_REMOVE_ISSUE = 'Delete issue';
-	const V_CLOSE = 'close';
-	const V_REOPEN = 'reopen';
-	const V_EXPORT = 'Export raw data';
+	const V_UPDATE = 'Aktualisieren';
+	const V_UPDATE_DETAILS = 'Details aktualisieren';
+	const V_UPDATE_CONTENT = 'Inhalt aktualisieren';
+	const V_UPDATE_AND = 'aktualisieren & %adjective%';
+	const V_CANCEL = 'Abbrechen';
+	const V_PREVIEW = 'Vorschau';
+	const V_COMMENT = 'Kommentieren';
+	const V_SUBMIT = 'Senden';
+	const V_SELECT_FILE = 'Wähle eine Datei...';
+	const V_UPLOADING = 'Hochladen...';
+	const V_SAVE_CONFIG = 'Einstellungen speichern';
+	const V_APPLY = 'Anwenden';
+	const V_EDIT = 'Bearbeiten';
+	const V_SIGNUP = 'Registrieren';
+	const V_CONTINUE = 'Weiter';
+	const V_REMOVE_ISSUE = 'Fall löschen';
+	const V_CLOSE = 'schließen';
+	const V_REOPEN = 'wiedereröffnen';
+	const V_EXPORT = 'Daten exportieren';
 
 		# Sentencies
 
