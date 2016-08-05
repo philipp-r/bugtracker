@@ -91,30 +91,30 @@ class Trad {
 
 		# Sentencies
 
-	const S_NOLABEL = '–';
-	const S_NODEPENDENCY = '–';
-	const S_COMMENT_LEAVE = 'Leave a comment:';
-	const S_AGO = '%duration% %pediod% ago';
-	const S_ISSUE_ABOUT = 'About this issue:';
-	const S_UPLOAD_ADD = 'Attach a file:';
-	const S_WELCOME = 'Welcome, %user%';
-	const S_NEVER = 'Never';
-	const S_ME = 'Of updates on issues I have contributed in';
-	const S_ALWAYS = 'Of each updates';
-	const S_START_NOTIF = 'Be notified of new updates';
-	const S_STOP_NOTIF = 'No longer be notified of updates';
-	const S_NOTFOUND = 'The page you\'re looking for does not exist anymore...';
-	const S_FORBIDDEN = 'You are not allowed to access this page. Please log in/out to continue.';
+	const S_NOLABEL = '-';
+	const S_NODEPENDENCY = '-';
+	const S_COMMENT_LEAVE = 'Schreibe einen Kommentar:';
+	const S_AGO = 'vor %duration% %pediod%';
+	const S_ISSUE_ABOUT = 'Über diesen Fall:';
+	const S_UPLOAD_ADD = 'Hänge eine Datei an:';
+	const S_WELCOME = 'Willkommen, %user%';
+	const S_NEVER = 'Niemals';
+	const S_ME = 'Über Aktualisierungen in Fällen zu denen ich beigetragen habe';
+	const S_ALWAYS = 'Über alle Aktualisierungen';
+	const S_START_NOTIF = 'Werde über Aktualisierungen benachrichtigt';
+	const S_STOP_NOTIF = 'Werde nicht mehr benachrichtigt';
+	const S_NOTFOUND = 'Die Seite nach der du suchst existiert nicht mehr...';
+	const S_FORBIDDEN = 'Du darfst auf diese Seite nicht zugreifen. Bitte melde dich an.';
 
-	const S_VIEW_PARTICIPATION = 'View his participation.';
-	const S_VIEW_STATUS = 'View issues “%status%”.';
+	const S_VIEW_PARTICIPATION = 'Siehe seine Aktivitäten';
+	const S_VIEW_STATUS = 'Siehe Fälle “%status%”.';
 
-	const S_ISSUE_CREATED = 'by %user% %time%';
-	const S_ISSUE_UPDATED = '%adj% by %user% %time%.';
-	const S_ISSUE_STATUS_UPDATED = 'Status updated to %status% by %user% %time%.';
+	const S_ISSUE_CREATED = 'von %user% %time%';
+	const S_ISSUE_UPDATED = '%adj% von %user% %time%.';
+	const S_ISSUE_STATUS_UPDATED = 'Status aktualisiert zu %status% von %user% %time%.';
 
-	const S_RSS_ISSUE_UPDATED = '%adj% by %user%.';
-	const S_RSS_ISSUE_STATUS_UPDATED = 'Status updated to “%status%” by %user%.';
+	const S_RSS_ISSUE_UPDATED = '%adj% von %user%.';
+	const S_RSS_ISSUE_STATUS_UPDATED = 'Status aktualisiert zu “%status%” von %user%.';
 
 	const S_INTRO_INSTALL = 'It looks like it\'s the first time you run Bumpy Booby! Please configure it:';
 	const S_FIRST_ISSUE_TITLE = 'How are you doing, pumpkin?';
