@@ -116,35 +116,35 @@ class Trad {
 	const S_RSS_ISSUE_UPDATED = '%adj% von %user%.';
 	const S_RSS_ISSUE_STATUS_UPDATED = 'Status aktualisiert zu “%status%” von %user%.';
 
-	const S_INTRO_INSTALL = 'It looks like it\'s the first time you run Bumpy Booby! Please configure it:';
-	const S_FIRST_ISSUE_TITLE = 'How are you doing, pumpkin?';
-	const S_FIRST_ISSUE = 'I am your first issue! After logging, you will be able to delete me.';
+	const S_INTRO_INSTALL = 'Bitte konfiguriere Bumpy Booby:';
+	const S_FIRST_ISSUE_TITLE = 'Wie geht es dir?';
+	const S_FIRST_ISSUE = 'Ich bin dein erster Fall! Nachdem du dich angemeldet hast, kannst du mich bearbeiten oder löschen.';
 
-	const S_NO_USER = 'No user matches your request.';
-	const S_NO_ISSUE = 'No issue matches your request.';
-	const S_MATCHING_ISSUES = '%nb% matching issues';
-	const S_NO_ACTIVITY = 'No recent activity.';
-	const S_NO_UPLOAD = 'No upload.';
-	const S_SIZE_REMAINING = '%remain% remaining on the %total% allowed.';
-	const S_NO_PROJECT = 'No project.';
+	const S_NO_USER = 'Keine Benutzer gefunden.';
+	const S_NO_ISSUE = 'Keine Fälle gefunden.';
+	const S_MATCHING_ISSUES = '%nb% passende Fälle';
+	const S_NO_ACTIVITY = 'Keine aktuelle Aktivität.';
+	const S_NO_UPLOAD = 'Keine hochgeladenen Dateien.';
+	const S_SIZE_REMAINING = 'Es verbleiben %remain% von den erlaubten %total%.';
+	const S_NO_PROJECT = 'Kein Projekt.';
 
-	const S_SEARCH = '#12, @user, words…';
-	const S_COPYRIGHT = 'Powered by %name%.';
+	const S_SEARCH = '#12, @Benutzer, Wörter...';
+	const S_COPYRIGHT = 'Betrieben mit %name%.';
 
-	const S_LAST_UPDATES = 'Last updates…';
+	const S_LAST_UPDATES = 'Kürzliche Aktualisierungen...';
 
-	const S_STAY_LOGGEDIN = 'Keep me logged in';
+	const S_STAY_LOGGEDIN = 'Angemeldet bleiben';
 
-	const S_DEFAULT_DEFPROJ_DESC = 'This is the default project where everyone has access to.';
-	const S_DEFAULT_2NDPROJ_DESC = 'This could be your 2nd project project where only registered users are allowed to post issues.';
+	const S_DEFAULT_DEFPROJ_DESC = 'Dies ist das standard Projekt, auf das jeder Zugriff hat.';
+	const S_DEFAULT_2NDPROJ_DESC = 'Das könnte dein zweites Projekt sein. Hier dürfen nur angemeldete Nutzer lesen und schreiben.';
 
 		# Alerts
 
-	const A_ERROR_DIRECTORY = '<strong>Error:</strong> unable to create directory “%name%”.';
-	const A_ERROR_FILE = '<strong>Error:</strong> unable to read file “%name%”.';
-	const A_ERROR_FILE_WRITE = '<strong>Error:</strong> unable to write file “%name%”.';
-	const A_ERROR_FATAL = 'Sorry, something went wrong. Please contact an administrator if this problem persists.';
-	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />File “<strong>%file%</strong>” on line <strong>%line%</strong>.';
+	const A_ERROR_DIRECTORY = '<strong>Fehler:</strong> Konnte das Verzeichnis “%name%” nicht erstellen.';
+	const A_ERROR_FILE = '<strong>Fehler:</strong> Konnte Datei “%name%” nicht lesen.';
+	const A_ERROR_FILE_WRITE = '<strong>Fehler:</strong> Konnte nicht in Datei “%name%” schreiben.';
+	const A_ERROR_FATAL = 'Entschuldigung, etwas ist schiefgelaufen. Bitte kontaktiere den Administrator, wenn das Problem weiterhin besteht.';
+	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />Datei “<strong>%file%</strong>” in Zeile <strong>%line%</strong>.';
 
 	const A_SUCCESS_INSTALL = '<strong>Done:</strong> Bumpy Booby is now completely configured.';
 	const A_ERROR_INSTALL = '<strong>Error:</strong> Bumpy Booby is already configured. Please remove the config file if you want to reset the configuration.';
@@ -264,6 +264,8 @@ This is an automated email, please do not reply.
 	const F_PREVIEW_PROJECT = 'Previews length (projects):';
 	const F_LAST_EDITS = 'Number of issues displayed on dashboards:';
 	const F_LAST_ACTIVITY = 'Number of issues displayed on user pages:';
+	const F_THEME = "Theme";
+	const F_TIP_THEME = "Place the .css file in";
 
 	const F_ADD_PROJECT = 'New project';
 	const F_ADD_COLOR = 'New color';
@@ -281,6 +283,7 @@ This is an automated email, please do not reply.
 	const F_FILTER_STATES = 'Filter states:';
 	const F_FILTER_LABELS = 'Filter labels:';
 	const F_FILTER_USERS = 'Filter users:';
+	const F_FILTER_MILESTONE = 'Filter milestone:';
 
 	const F_WRITE = 'Write:';
 	const F_SUMMARY = 'Summary';
@@ -289,6 +292,7 @@ This is an automated email, please do not reply.
 	const F_STATUS = 'Status:';
 	const F_RELATED = 'Related:';
 	const F_LABELS2 = 'Labels:';
+	const F_MILESTONE = 'Milestone:';
 
 	const F_GENERAL_SETTINGS = 'General settings:';
 	const F_PROJECTS = 'Projects:';

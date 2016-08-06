@@ -32,6 +32,11 @@ if (strict_lower($config['version'], '1.0')) {
 	if(!isset($config['link_privacypolicy'])){$config['link_privacypolicy'] = "";}
 }
 
+// upgrade 1.1
+if (strict_lower($config['version'], '1.1')) {
+	if(!isset($config['theme'])){$config['theme'] = "app.css";}
+}
+
 $settings = new Settings();
 if ($config['url_rewriting']) { $settings->url_rewriting(); }
 $settings->save();

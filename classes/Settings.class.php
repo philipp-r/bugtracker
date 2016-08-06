@@ -281,6 +281,13 @@ class Settings {
 			$this->config['nb_last_activity_user'] =
 				intval($post['nb_last_activity_user']);
 		}
+		if (isset($post['theme'])) {
+			if( file_exists(DIR_CURRENT."public/css/".$post['theme']) ){
+				$this->config['theme'] = $post['theme'];
+			}else{
+				$this->config['theme'] = 'app.css';
+			}
+		}
 		return true;
 	}
 
@@ -677,6 +684,7 @@ class Settings {
 			'nb_last_activity_dashboard' => 5,
 			'nb_last_activity_user' => 5,
 			'nb_last_activity_rss' => 20,
+			'theme' => 'app',
 			'logs_enabled' => false,
 			'api_enabled' => false,
 			'projects' => array(

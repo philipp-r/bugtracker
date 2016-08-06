@@ -4,7 +4,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 I recommend to use the `master` branch. This one is used to deploy our custom [issue tracker](https://bb.bugtrackr.eu/).
 
-Version 1.0.1
+Version 1.1
 
 ## Install
 

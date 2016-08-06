@@ -8,7 +8,7 @@ spl_autoload_register('loadClass');
 set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
-define('VERSION', '1.0.1');
+define('VERSION', '1.1');
 define('AUTHOR', 'bugtrackr.eu');
 define('URL', 'https://github.com/bugtrackr/bumpy-booby');
 
@@ -451,7 +451,7 @@ if (!empty($config['link_privacypolicy'])) {
 		<link rel="shortcut icon" href="<?php echo Url::parse('public/img/favicon.ico', array(), '', true); ?>" />
 		<link rel="apple-touch-icon" href="<?php echo Url::parse('public/img/apple-touch-icon.png', array(), '', true); ?>" />
 
-		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css', array(), '', true); ?>" />
+		<link rel="stylesheet" href="<?php echo Url::parse('public/css/'.$config['theme'], array(), '', true); ?>" />
 
 		<!--[if lt IE 9]>
 			<script src="<?php echo Url::parse('public/js/html5.js', array(), '', true); ?>"></script>
