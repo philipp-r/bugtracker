@@ -282,6 +282,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_FILTER_STATES = 'Filtrer les états :';
 	const F_FILTER_LABELS = 'Filtrer les labels :';
 	const F_FILTER_USERS = 'Filtrer les utilisateurs :';
+	const F_FILTER_MILESTONE = 'Filtrer les étapes:';
 
 	const F_WRITE = 'Écrire :';
 	const F_SUMMARY = 'Résumé';
@@ -290,6 +291,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_STATUS = 'Statut :';
 	const F_RELATED = 'Liée à :';
 	const F_LABELS2 = 'Étiquettes :';
+	const F_MILESTONE = 'Étapes :';
 
 	const F_GENERAL_SETTINGS = 'Réglages généraux :';
 	const F_PROJECTS = 'Projets :';

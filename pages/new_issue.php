@@ -97,7 +97,7 @@ if (canAccess('update_issue')) {
 		.'<label for="issue_dependencies">'.Trad::F_RELATED.'</label>'
 		.'<input type="text" name="issue_dependencies" value="'.$form_d.'" '
 			.'placeholder="#1, #2, ..." />'
-		.'<label for="issue_milestone"> . MILESTONE . </label>'
+		.'<label for="issue_milestone">'.Trad::F_MILESTONE.'</label>'
 		.'<input type="text" name="issue_milestone" value="'.$form_d.'" '
 			.'placeholder="v2.0.1" />'
 		.'<label>'.Trad::F_LABELS2.'</label>'

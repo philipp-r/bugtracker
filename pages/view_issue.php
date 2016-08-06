@@ -289,7 +289,7 @@ if (canAccess('update_issue')) {
 		<select name="issue_assignedto" class="select-users">'.Text::options($users, $issue['assignedto']).'</select>
 		<label for="issue_dependencies">'.Trad::F_RELATED.'</label>
 		<input type="text" name="issue_dependencies" value="'.((empty($issue['dependencies'])) ? '' : '#'.implode(', #', $issue['dependencies'])).'" placeholder="#1, #2, ..." />
-		<label for="issue_milestone"> . MILESTONE . </label>
+		<label for="issue_milestone">'.Trad::F_MILESTONE.'</label>
 		<input type="text" name="issue_milestone" value="'.((empty($issue['milestone'])) ? '' : $issue['milestone']).'" placeholder="v2.0.1" />
 		<label>'.Trad::F_LABELS2.'</label>
 		<p class="p-edit-labels">'.$l.'</p>
@@ -386,7 +386,7 @@ $content = '
 				Trad::S_ISSUE_UPDATED).'
 			</p>
 			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').'
-			'.((empty($milestone)) ? '' : '<p class="p-text"> . MILESTONE . '.$milestone.'</p>').'
+			'.((empty($milestone)) ? '' : '<p class="p-text">'.Trad::F_MILESTONE.' '.$milestone.'</p>').'
 			<p class="p-labels">'.$labels.'</p>
 			<form action="'.Url::parse(getProject().'/issues/'.$issue['id']).'" method="post">
 				<input type="hidden" name="action" value="1" />

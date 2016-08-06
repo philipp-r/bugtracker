@@ -281,6 +281,7 @@ This is an automated email, please do not reply.
 	const F_FILTER_STATES = 'Filter states:';
 	const F_FILTER_LABELS = 'Filter labels:';
 	const F_FILTER_USERS = 'Filter users:';
+	const F_FILTER_MILESTONE = 'Filter milestone:';
 
 	const F_WRITE = 'Write:';
 	const F_SUMMARY = 'Summary';
@@ -289,6 +290,7 @@ This is an automated email, please do not reply.
 	const F_STATUS = 'Status:';
 	const F_RELATED = 'Related:';
 	const F_LABELS2 = 'Labels:';
+	const F_MILESTONE = 'Milestone:';
 
 	const F_GENERAL_SETTINGS = 'General settings:';
 	const F_PROJECTS = 'Projects:';

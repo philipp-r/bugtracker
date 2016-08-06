@@ -251,7 +251,7 @@ else {
 	}
 }
 $content .= 	'</p>'
-				.'<p> . FILTER MILESTONE . <br />'
+				.'<p>'.Trad::F_FILTER_MILESTONE.'<br />'
 				.'<input type="text" name="milestone" value="'.((empty($milestone)) ? '' : $milestone).'" placeholder="v2.0.1" />'
 				.'</p>'
 				.'<p>'
