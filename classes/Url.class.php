@@ -56,7 +56,7 @@ class Url {
 			'redirect' => 'index.php?project=$1&page=issues&label=$2'
 		),
 		array(
-			'rule' => '^([a-zA-Z0-9-]+)/milestone/([a-z0-9-_]+)$',
+			'rule' => '^([a-zA-Z0-9-]+)/milestone/([a-z0-9-_\.]+)$',
 			'redirect' => 'index.php?project=$1&page=issues&milestone=$2'
 		),
 		array(
