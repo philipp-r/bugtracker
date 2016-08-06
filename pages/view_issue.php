@@ -304,7 +304,7 @@ if (canAccess('update_issue')) {
 </div>
 	';
 }
-var_dump($issue);
+
 $edit_issue = '';
 $displ_f = (empty($form_ei_a)) ? 'none'            : 'table-cell';
 $displ_t = (empty($form_ei_a)) ? 'table-cell'           : 'none';

@@ -46,6 +46,12 @@ class OrderFilter {
 		return true;
 	}
 
+	public static function filter_milestone($a) {
+		if(!empty($a['milestone'])){
+			return in_array($a['milestone'], self::$filter);
+		}
+	}
+
 	public static function filter_user($a) {
 		if (in_array($a['openedby'], self::$filter)) { return true; }
 		foreach ($a['edits'] as $e) {
