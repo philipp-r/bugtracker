@@ -92,6 +92,10 @@ class Issues {
 			if (!empty($labels)) {
 				$labels = '<div class="labels">'.$labels.'</div>';
 			}
+			$milestone = '';
+			if (!empty($issue['milestone'])) {
+				$milestone = '<i class="icon-indent-right"></i>'.$issue['milestone'].'&nbsp;–&nbsp;';
+			}
 			$nbcomments = 0;
 			foreach ($issue['edits'] as $e) {
 				if (!empty($e) && $e['type'] == 'comment') { $nbcomments++; }
@@ -118,6 +122,7 @@ class Issues {
 						.'</a>'
 						.'<span class="grey">'
 							.$by.'&nbsp;–&nbsp;'
+							.$milestone
 							.'<a href="'.$url.'#comments" class="a-nb-comment">'
 								.'<i class="icon-comment"></i>'.$nbcomments
 							.'</a>'
