@@ -8,7 +8,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 [![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
 
-Version 1.0.1
+Version 1.1
 
 ## Install
 
