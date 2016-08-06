@@ -661,7 +661,7 @@ $content = '
 
 <h2>'.Trad::T_INFO.'</h2>
 <p>'.str_replace('%name%', NAME, Trad::S_COPYRIGHT).' '.Trad::W_VERSION.' '.VERSION.'</p>
-<p>'.S_UPGRADE.'</p>';
+<p>'.Trad::S_UPGRADE.'</p>';
 
 $javascript = '
 $(document).ready(function(){
