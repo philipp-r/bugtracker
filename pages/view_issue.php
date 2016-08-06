@@ -246,6 +246,11 @@ if (!empty($issue['dependencies'])) {
 	$dependencies = implode(', ', $d);
 }
 
+$milestone = '';
+if (!empty($issue['milestone'])) {
+	$milestone = $issue['milestone'];
+}
+
 $statuses = array();
 foreach ($config['statuses'] as $k => $v) {
 	$statuses[$k] = $v['name'];
@@ -284,6 +289,8 @@ if (canAccess('update_issue')) {
 		<select name="issue_assignedto" class="select-users">'.Text::options($users, $issue['assignedto']).'</select>
 		<label for="issue_dependencies">'.Trad::F_RELATED.'</label>
 		<input type="text" name="issue_dependencies" value="'.((empty($issue['dependencies'])) ? '' : '#'.implode(', #', $issue['dependencies'])).'" placeholder="#1, #2, ..." />
+		<label for="issue_milestone"> . MILESTONE . </label>
+		<input type="text" name="issue_milestone" value="'.((empty($issue['milestone'])) ? '' : $issue['milestone']).'" placeholder="v2.0.1" />
 		<label>'.Trad::F_LABELS2.'</label>
 		<p class="p-edit-labels">'.$l.'</p>
 		<input type="hidden" name="issue_labels" value="" />
@@ -297,6 +304,7 @@ if (canAccess('update_issue')) {
 </div>
 	';
 }
+var_dump($issue);
 $edit_issue = '';
 $displ_f = (empty($form_ei_a)) ? 'none'            : 'table-cell';
 $displ_t = (empty($form_ei_a)) ? 'table-cell'           : 'none';
@@ -378,6 +386,7 @@ $content = '
 				Trad::S_ISSUE_UPDATED).'
 			</p>
 			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').'
+			'.((empty($milestone)) ? '' : '<p class="p-text"> . MILESTONE . '.$milestone.'</p>').'
 			<p class="p-labels">'.$labels.'</p>
 			<form action="'.Url::parse(getProject().'/issues/'.$issue['id']).'" method="post">
 				<input type="hidden" name="action" value="1" />

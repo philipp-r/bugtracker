@@ -225,6 +225,7 @@ class Issues {
 				&& (!isset($post['issue_status'])
 					|| !isset($post['issue_assignedto'])
 					|| !isset($post['issue_dependencies'])
+					|| !isset($post['issue_milestone'])
 					|| !isset($post['issue_labels'])
 					|| !array_key_exists($post['issue_status'], $config['statuses'])
 				)
@@ -261,6 +262,7 @@ class Issues {
 		$status = DEFAULT_STATUS;
 		$assignedto = NULL;
 		$dependencies = array();
+		$milestone = '';
 		$labels = array();
 		if (canAccess('update_issue') || $withApi) {
 			if(!empty($post['issue_status'])){
@@ -275,6 +277,9 @@ class Issues {
 				if ($this->exists($d)) {
 					$dependencies[] = $d;
 				}
+			}
+			if(!empty($post['issue_milestone'])){
+				$milestone = $post['issue_milestone'];
 			}
 			$la = explode(',', $post['issue_labels']);
 			foreach ($la as $l) {
@@ -301,6 +306,7 @@ class Issues {
 			'status' => $status,
 			'labels' => $labels,
 			'dependencies' => $dependencies,
+			'milestone' => $milestone,
 			'uploads' => $uploads,
 			'mailto' => array(),
 			'edits' => array()
@@ -383,6 +389,7 @@ class Issues {
 				|| !isset($edits['issue_status'])
 				|| !isset($edits['issue_assignedto'])
 				|| !isset($edits['issue_dependencies'])
+				|| !isset($edits['issue_milestone'])
 				|| !isset($edits['issue_labels'])
 				|| !isset($edits['issue_open'])
 				|| !isset($edits['token'])
@@ -423,6 +430,11 @@ class Issues {
 					$dependencies[] = $d;
 				}
 			}
+		}
+
+		$milestone = '';
+		if (!empty($edits['issue_milestone'])) {
+			$milestone = $edits['issue_milestone'];
 		}
 
 		$labels = array();
@@ -469,6 +481,7 @@ class Issues {
 		$i['status'] = $status;
 		$i['assignedto'] = $assignedto;
 		$i['dependencies'] = $dependencies;
+		$i['milestone'] = $milestone;
 		$i['labels'] = $labels;
 		$i['open'] = $open;
 		unset($i);
