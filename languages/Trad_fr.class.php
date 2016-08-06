@@ -265,6 +265,8 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_PREVIEW_PROJECT = 'Longueur des extraits (projets) :';
 	const F_LAST_EDITS = 'Nombre de demandes affichées sur les tableaux de bord:';
 	const F_LAST_ACTIVITY = 'Nombre de demandes affichées sur la page des utilisateurs :';
+	const F_THEME = "Désign";
+	const F_TIP_THEME = "Placez le fichier .css dans";
 
 	const F_ADD_PROJECT = 'Nouveau projet';
 	const F_ADD_COLOR = 'Nouvelle couleur';

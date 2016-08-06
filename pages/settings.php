@@ -488,6 +488,22 @@ $content = '
 			<input type="text" name="nb_last_activity_dashboard" id="nb_last_activity_dashboard" class="input-small" value="'.$config['nb_last_activity_dashboard'].'" />
 			<label for="nb_last_activity_user">'.Trad::F_LAST_ACTIVITY.'</label>
 			<input type="text" name="nb_last_activity_user" id="nb_last_activity_user" class="input-small" value="'.$config['nb_last_activity_user'].'" />
+			<label for="theme">'.Trad::F_THEME.'</label>
+			<select name="theme" id="theme" class="input-medium">';
+			// get all files from css folder
+			$all_files = scandir(DIR_CURRENT."public/css/");
+			foreach( $all_files as $file ){
+				// only .css files
+				if(strpos($file, '.css') !== false){
+					// select box
+					$content .= '<option value="'.$file.'" ';
+					if($config['theme'] == $file){ $content .= 'selected'; }
+					$content .= '>'.$file.'</option>';
+				}
+			}
+
+$content .= '</select>
+			<p class="help">'.Trad::F_TIP_THEME.' ./public/css</p>
 		</div>
 	</div>
 
