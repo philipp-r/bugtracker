@@ -86,7 +86,7 @@ if (isset($_GET['status'])) {
 }
 
 $milestone = NULL;
-if (isset($_GET['milestone'])) {
+if (!empty($_GET['milestone'])) {
 	OrderFilter::$filter = array($_GET['milestone']);
 	$a = array_filter($a, array('OrderFilter', 'filter_milestone'));
 	$url->addParam('milestone', $_GET['milestone']);

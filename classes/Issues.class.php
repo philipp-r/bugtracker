@@ -94,7 +94,9 @@ class Issues {
 			}
 			$milestone = '';
 			if (!empty($issue['milestone'])) {
-				$milestone = '<i class="icon-indent-right"></i>'.$issue['milestone'].'&nbsp;–&nbsp;';
+				$url = Url::parse($this->project.'/milestone/'.$issue['milestone']);
+				$milestone = '<a href="'.$url.'">'
+						.'<i class="icon-indent-right"></i>'.$issue['milestone'].'&nbsp;–&nbsp;</a>';
 			}
 			$nbcomments = 0;
 			foreach ($issue['edits'] as $e) {
