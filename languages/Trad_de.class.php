@@ -66,6 +66,7 @@ class Trad {
 	const W_PROFILEPIC = 'Profilbild';
 
 	const W_RSS = 'RSS Feed';
+	const W_VERSION = 'Version';
 
 		# Verbes
 
@@ -130,6 +131,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @Benutzer, Wörter...';
 	const S_COPYRIGHT = 'Betrieben mit %name%.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.';
 
 	const S_LAST_UPDATES = 'Kürzliche Aktualisierungen...';
 
@@ -232,6 +234,7 @@ This is an automated email, please do not reply.
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
 	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
+	const T_INFO = 'Info';
 
 		# FORMS
 
