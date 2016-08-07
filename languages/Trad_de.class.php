@@ -83,6 +83,7 @@ class Trad {
 	const V_APPLY = 'Anwenden';
 	const V_EDIT = 'Bearbeiten';
 	const V_SIGNUP = 'Registrieren';
+	const V_LOGIN = 'Anmelden';
 	const V_CONTINUE = 'Weiter';
 	const V_REMOVE_ISSUE = 'Fall löschen';
 	const V_CLOSE = 'schließen';

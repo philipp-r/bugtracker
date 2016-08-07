@@ -83,6 +83,7 @@ class Trad {
 	const V_APPLY = 'Appliquer';
 	const V_EDIT = 'Modifier';
 	const V_SIGNUP = 'S\'inscrire';
+	const V_LOGIN = 'Connectez';
 	const V_CONTINUE = 'Continuer';
 	const V_REMOVE_ISSUE = 'Supprimer la demande';
 	const V_CLOSE = 'fermer';
