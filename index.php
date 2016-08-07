@@ -8,7 +8,7 @@ spl_autoload_register('loadClass');
 set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
-define('VERSION', '1.0.2');
+define('VERSION', '1.0.3');
 define('AUTHOR', 'bugtrackr.eu');
 define('URL', 'https://github.com/bugtrackr/bumpy-booby');
 
