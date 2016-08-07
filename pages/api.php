@@ -4,7 +4,7 @@
 /*
  Function to terminate script
 */
-function endApi( $returnValues, $httpStatus ){
+function endApi( $returnValues, $httpStatus = 200 ){
 	// The HTTP status is currently not implemented.
 	// API returns always 200
 	/*
@@ -133,6 +133,8 @@ if( $_GET['XMODE'] == "travisci" ){
 	if( $API_ACCESS[$username]['mode'] != "travisci" ||
 	// check api key
 	$API_ACCESS[$username]['key'] != $headers["Authorization"] ){
+		// log
+		logm("Travis CI API: Authorization failed with user ".$username.". Got authorization header ".$headers["Authorization"].", key in config file is ".$API_ACCESS[$username]['key']);
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
@@ -159,6 +161,7 @@ if( $_GET['XMODE'] == "travisci" ){
 		}
 	}
 	if( !$validProject ){
+		logm("Travis CI API: Invalid project ".$_GET['project']);
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid project.";
 		endApi( $returns, 400 );
@@ -220,11 +223,13 @@ elseif($_GET['XMODE'] == 'rss'){
 			global $rssfeed, $imported;
 			// check if this id was already imported
 			if($imported[$rssfeed['name']][$issueData_id] == 1){
-				print_r( $issueData_id." already imported" );
+				// log
+				logm("RSS feed: already imported item with guid ".$issueData_id);
+				print_r("already imported ".$issueData_id."; ");
 			}else{
 				// log
 				logm("RSS feed: importing item with guid ".$issueData_id." in ".$rssfeed['project']);
-				print_r("importing ".$issueData_id);
+				print_r("importing ".$issueData_id."; ");
 				// mark as imported in JSON list
 				$imported[$rssfeed['name']][$issueData_id] = 1;
 				// create issue
@@ -331,28 +336,61 @@ elseif($_GET['XMODE'] == 'rss'){
 */
 elseif($_GET['XMODE'] == 'badge'){
 
+	function output_badge( $badge ){
+		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.png?style='.$badge['style'];
+		if($_GET['debug'] == "true"){
+			endApi($badge, 400);
+		}
+		else{
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $badge['url']);
+			curl_setopt($ch, CURLOPT_HEADER, false);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$res = curl_exec($ch);
+			$rescode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+			curl_close($ch) ;
+			header('Content-Type: image/png');
+			echo $res;
+		}
+		exit;
+	}
+
+	$badge = array();
+	
 	// shields defaults
-	if(empty($_GET['shields_color'])){ $_GET['shields_color']="red"; }
-	if(empty($_GET['shields_format'])){ $_GET['shields_format']="png"; }
-	if(empty($_GET['shields_label'])){ $_GET['shields_label']="issues"; }
+	if(empty($_GET['shields_color'])){ 
+		$badge['color']="red";
+	}else{
+		$badge['color']=$_GET['shields_color'];
+	}
+	if(empty($_GET['shields_label'])){ 
+		$badge['label']="issues";
+	}else{
+		$badge['label']=$_GET['shields_label'];
+	}
+	if(empty($_GET['shields_style'])){ 
+		$badge['style']="flat";
+	}else{
+		$badge['style']=$_GET['shields_style'];
+	}
+	$badge['content']="";
 
 	// the username is $username 
 	$username = "badge-".$_GET['api_username'];
 	// check if valid user
 	if( $API_ACCESS[$username]['mode'] != "badge" ){
-		// expecting an image so redirect
-		$redirectUrl='https://img.shields.io/badge/INVALID-USERNAME-red.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
-		//die($redirectUrl);
-		header('Location: '.$redirectUrl);
-		header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
-		exit;
+		$badge['label']="username";
+		$badge['content']="INVALID";
+		output_badge( $badge );
 	}
+
 	// check project access
 	$validProject = false;
 	// check if project exists
 	$projects = $API_ACCESS[$username]['projects'];
 	// if has permission for all projects
-	if( $projects == "ALL_PROJECTS" ){ $validProject = true; }
+	if(empty($_GET['project'])){ $validProject = false; }
+	elseif( $projects == "ALL_PROJECTS" ){ $validProject = true; }
 	else{
 		// check every project that is set in config
 		$projectsArray = explode(",", $projects);
@@ -363,23 +401,17 @@ elseif($_GET['XMODE'] == 'badge'){
 		}
 	}
 	if( !$validProject ){
-		// expecting an image so redirect
-		$redirectUrl='https://img.shields.io/badge/INVALID-PROJECT-red.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
-		//die($redirectUrl);
-		header('Location: '.$redirectUrl);
-		header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
-		exit;
+		$badge['label']="project";
+		$badge['content']="INVALID";
+		output_badge( $badge );
 	}
 
 	// get number of issues
 	$nb = count_issues($_GET);
-	// redirect
-	$redirectUrl='https://img.shields.io/badge/'.$_GET['shields_label'].'-'.$nb.'-'.$_GET['shields_color'].'.'.$_GET['shields_format'].'?style='.$_GET['shields_style'];
-	//die($redirectUrl);
-	header('Location: '.$redirectUrl);
-	header($_SERVER["SERVER_PROTOCOL"]." 302 Found"); 
-	exit;
+	$badge['content']=$nb;
+	output_badge( $badge );
 
+	exit;
 }
 
 

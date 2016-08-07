@@ -22,7 +22,7 @@ The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
 You can do all changes by opening `./index.php?page=settings` in your browser.
 
-To configure the [API](https://docs.bugtrackr.eu/wiki/api/) change the settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`.
+To configure the [API](https://docs.bugtrackr.eu/api/) change the settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`.
 
 You can also edit the Captcha which is displayed when a user who is not logged in wants to create a new issue. you can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`.
 

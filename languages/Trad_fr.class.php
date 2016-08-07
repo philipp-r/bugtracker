@@ -66,6 +66,7 @@ class Trad {
 	const W_PROFILEPIC = 'avatar';
 
 	const W_RSS = 'Flux RSS';
+	const W_VERSION = 'Version';
 
 		# Verbes
 
@@ -131,6 +132,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @qqn, mots…';
 	const S_COPYRIGHT = 'Propulsé par %name%.';
+	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://docs.bugtrackr.eu/wiki/upgrade/">mise à niveau</a>.';
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 
@@ -179,7 +181,7 @@ class Trad {
 	const A_PLEASE_LOGIN_ISSUE = 'Connectez-vous pour soumettre une demande. Pas encore inscrit ? Créez un compte : c\'est gratuit et ultra rapide !';
 	const A_SHOULD_LOGIN = 'Si vous possèdez déjà un compte, connectez-vous. Sinon, pensez à vous inscrire : c\'est gratuit et ultra rapide !';
 
-	const A_IE = 'Votre navigateur est obsolète : <a href="http://www.browserchoice.eu">effectuez une mise à niveau ou changez de navigateur</a>.';
+	const A_IE = 'Votre navigateur est obsolète : <a href="https://www.browser-update.org/fr/update.html">effectuez une mise à niveau ou changez de navigateur</a>.';
 
 		# Mails
 
@@ -233,7 +235,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'L\'accès aux API';
 	const T_API_ACCESS_HELP = 'Configurer l\'accès API dans <em>/database/config_api.php</em> fichier. Pour plus d\'informations voir le fichier API.md.';
-
+	const T_INFO = 'Info';
 
 		# FORMS
 
