@@ -44,6 +44,10 @@ class Url {
 			'redirect' => 'index.php?page=signup'
 		),
 		array(
+			'rule' => '^login$',
+			'redirect' => 'index.php?page=login'
+		),
+		array(
 			'rule' => '^([a-zA-Z0-9-]+)/dashboard$',
 			'redirect' => 'index.php?project=$1&page=dashboard'
 		),
