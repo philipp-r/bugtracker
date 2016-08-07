@@ -338,8 +338,11 @@ elseif($_GET['XMODE'] == 'badge'){
 
 	function output_badge( $badge ){
 		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.svg?maxAge=86400&style='.$badge['style'];
-		if($_GET['debug'] == "true"){
-			endApi($badge, 400);
+		if($_GET['mode'] == "debug"){
+			endApi($badge, 200);
+		}
+		if($_GET['mode'] == "shields"){
+			endApi($badge, 200);
 		}
 		else{
 			$ch = curl_init();
@@ -376,35 +379,16 @@ elseif($_GET['XMODE'] == 'badge'){
 		$badge['style']=$_GET['shields_style'];
 	}
 	$badge['content']="";
-
-	// the username is $username 
-	$username = "badge-".$_GET['api_username'];
-	// check if valid user
-	if( $API_ACCESS[$username]['mode'] != "badge" ){
-		$badge['label']="username";
-		$badge['content']="INVALID";
-		output_badge( $badge );
-	}
+	$badge['label']="issues";
 
 	// check project access
 	$validProject = false;
-	// check if project exists
-	$projects = $API_ACCESS[$username]['projects'];
 	// if has permission for all projects
-	if(empty($_GET['project'])){ $validProject = false; }
-	elseif( $projects == "ALL_PROJECTS" ){ $validProject = true; }
-	else{
-		// check every project that is set in config
-		$projectsArray = explode(",", $projects);
-		foreach($projectsArray as $project){
-			if($project == $_GET['project']){
-				$validProject = true;
-			}
-		}
-	}
-	if( !$validProject ){
-		$badge['label']="project";
-		$badge['content']="INVALID";
+	if( 
+		$API_ACCESS['badge']['ALL_PROJECTS']   != true &&
+		$API_ACCESS['badge'][$_GET['project']] != true
+	){ 
+		$badge['content']="INVALID project";
 		output_badge( $badge );
 	}
 
