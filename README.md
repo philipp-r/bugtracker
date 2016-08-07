@@ -8,7 +8,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 [![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.png?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
 
-Version 1.0.2
+Version 1.0.3
 
 ## Install
 
@@ -22,7 +22,7 @@ The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
 You can do all changes by opening `./index.php?page=settings` in your browser.
 
-To configure the [API](https://docs.bugtrackr.eu/wiki/api/) change the settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`.
+To configure the [API](https://docs.bugtrackr.eu/api/) change the settings manually in `./database/config_api.php`. There is a sample configuration file `./sample_config/config_api.php`.
 
 You can also edit the Captcha which is displayed when a user who is not logged in wants to create a new issue. you can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`.
 
