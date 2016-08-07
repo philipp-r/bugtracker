@@ -379,7 +379,6 @@ elseif($_GET['XMODE'] == 'badge'){
 		$badge['style']=$_GET['shields_style'];
 	}
 	$badge['content']="";
-	$badge['label']="issues";
 
 	// check project access
 	$validProject = false;
