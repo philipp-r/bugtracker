@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>CD0727CB-80CB-40D4-AC21-1E3707A588D4</UUID>
-        <nextObjectID>136</nextObjectID>
+        <nextObjectID>141</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -70,11 +70,11 @@
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
         <attribute name="body" type="string">[{"data":{"keyValues":[[["payload"],["{  \\"id\\": 1,\\n  \\"number\\": \\"1\\",\\n  \\"status\\": null,\\n  \\"started_at\\": null,\\n  \\"finished_at\\": null,\\n  \\"status_message\\": \\"Passed\\",\\n  \\"commit\\": \\"62aae5f70ceee39123ef\\",\\n  \\"branch\\": \\"master\\",\\n  \\"message\\": \\"the commit message\\",\\n  \\"compare_url\\": \\"https:\\/\\/github.com\\/svenfuchs\\/minimal\\/compare\\/master...develop\\",\\n  \\"committed_at\\": \\"2011-11-11T11: 11: 11Z\\",\\n  \\"committer_name\\": \\"Sven Fuchs\\",\\n  \\"committer_email\\": \\"svenfuchs@artweb-design.de\\",\\n  \\"author_name\\": \\"Sven Fuchs\\",\\n  \\"author_email\\": \\"svenfuchs@artweb-design.de\\",\\n  \\"type\\": \\"push\\",\\n  \\"build_url\\": \\"https:\\/\\/travis-ci.org\\/svenfuchs\\/minimal\\/builds\\/1\\",\\n  \\"repository\\": {\\n    \\"id\\": 1,\\n    \\"name\\": \\"REPOSITORY\\",\\n    \\"owner_name\\": \\"svenfuchs\\",\\n    \\"url\\": \\"http:\\/\\/github.com\\/svenfuchs\\/minimal\\"\\n  },\\n  \\"config\\": {\\n    \\"notifications\\": {\\n      \\"webhooks\\": [\\n        \\"http:\\/\\/evome.fr\\/notifications\\",\\n        \\"http:\\/\\/example.com\\/\\"\\n      ]\\n    }\\n  },\\n  \\"matrix\\": [\\n    {\\n      \\"id\\": 2,\\n      \\"repository_id\\": 1,\\n      \\"number\\": \\"1.1\\",\\n      \\"state\\": \\"created\\",\\n      \\"started_at\\": null,\\n      \\"finished_at\\": null,\\n      \\"config\\": {\\n        \\"notifications\\": {\\n          \\"webhooks\\": [\\n            \\"http:\\/\\/evome.fr\\/notifications\\",\\n            \\"http:\\/\\/example.com\\/\\"\\n          ]\\n        }\\n      },\\n      \\"status\\": null,\\n      \\"log\\": \\"\\",\\n      \\"result\\": null,\\n      \\"parent_id\\": 1,\\n      \\"commit\\": \\"62aae5f70ceee39123ef\\",\\n      \\"branch\\": \\"master\\",\\n      \\"message\\": \\"the commit message\\",\\n      \\"committed_at\\": \\"2011-11-11T11: 11: 11Z\\",\\n      \\"committer_name\\": \\"Sven Fuchs\\",\\n      \\"committer_email\\": \\"svenfuchs@artweb-design.de\\",\\n      \\"author_name\\": \\"Sven Fuchs\\",\\n      \\"author_email\\": \\"svenfuchs@artweb-design.de\\",\\n      \\"compare_url\\": \\"https:\\/\\/github.com\\/svenfuchs\\/minimal\\/compare\\/master...develop\\"\\n    }\\n  ]\\n}"],true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
-        <attribute name="order" type="int64">1</attribute>
+        <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Travis CI</attribute>
-        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z138"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z106 z110 z103"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z106 z103"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z103">
         <attribute name="value" type="string">2ff384a686bdd4b54a567b2e0cb335d7336ee7bf5ea06a971fa6086d926862ca</attribute>
@@ -173,9 +173,9 @@
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
         <attribute name="body" type="string">[{"data":{"keyValues":[]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
-        <attribute name="order" type="int64">2</attribute>
+        <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">RSS import</attribute>
-        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z139"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z123"></relationship>
     </object>
@@ -194,7 +194,7 @@
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">default</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z121 z136 z126 z128 z129 z131"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z131 z136 z129 z121 z126 z128"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -328,5 +328,60 @@
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z135"></relationship>
+    </object>
+    <object type="LMREQUESTGROUP" id="z137">
+        <attribute name="uuid" type="string">9C5DAD80-1E9C-46A9-8A4C-1032EA3531B3</attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string">badge</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z140"></relationship>
+        <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+    </object>
+    <object type="LMREQUESTGROUP" id="z138">
+        <attribute name="uuid" type="string">C36CCD31-01AE-4D91-BBE2-5AC18AA78C1A</attribute>
+        <attribute name="order" type="int64">3</attribute>
+        <attribute name="name" type="string">travis ci</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z102"></relationship>
+        <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+    </object>
+    <object type="LMREQUESTGROUP" id="z139">
+        <attribute name="uuid" type="string">662C659B-961E-4E3D-82FF-6B16E9AF1A36</attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string">rss</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z122"></relationship>
+        <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
+        <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z140">
+        <attribute name="uuid" type="string">CB288891-BB6D-42AC-B10C-7ED115FD167F</attribute>
+        <attribute name="url" type="string">http://bumpy.booby/index.php?page=api\u2600XMODE=badge\u2600project=default\u2600api_username=USERNAME</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">GET</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string">Badge API</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z137"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z141"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z141">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z140"></relationship>
     </object>
 </database>
