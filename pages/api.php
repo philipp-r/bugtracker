@@ -337,7 +337,7 @@ elseif($_GET['XMODE'] == 'rss'){
 elseif($_GET['XMODE'] == 'badge'){
 
 	function output_badge( $badge ){
-		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.png?style='.$badge['style'];
+		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.svg?maxAge=86400&style='.$badge['style'];
 		if($_GET['debug'] == "true"){
 			endApi($badge, 400);
 		}
@@ -349,7 +349,9 @@ elseif($_GET['XMODE'] == 'badge'){
 			$res = curl_exec($ch);
 			$rescode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 			curl_close($ch) ;
-			header('Content-Type: image/png');
+			header('Expires: ' . gmdate('D, d M Y H:i:s', time() + (60*60*24)) . ' GMT');
+			header("Cache-Control: public, max-age=" . 60*60*24);
+			header('Content-Type: image/svg+xml');
 			echo $res;
 		}
 		exit;
