@@ -180,7 +180,7 @@ class Trad {
 	const A_PLEASE_LOGIN_ISSUE = 'Please log in to submit an issue. No account yet? Create one: it\'s free and really fast !';
 	const A_SHOULD_LOGIN = 'If you have an account, please log in. If not, consider creating one: it\'s free and really fast !';
 
-	const A_IE = 'Your browser is obsolete: <a href="http://www.browserchoice.eu">upgrade or change it</a>.';
+	const A_IE = 'Your browser is obsolete: <a href="https://www.browser-update.org/en/update.html">upgrade or change it</a>.';
 
 		# Mails
 

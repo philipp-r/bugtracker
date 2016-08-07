@@ -148,39 +148,39 @@ class Trad {
 	const A_ERROR_FATAL = 'Entschuldigung, etwas ist schiefgelaufen. Bitte kontaktiere den Administrator, wenn das Problem weiterhin besteht.';
 	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />Datei “<strong>%file%</strong>” in Zeile <strong>%line%</strong>.';
 
-	const A_SUCCESS_INSTALL = '<strong>Done:</strong> Bumpy Booby is now completely configured.';
-	const A_ERROR_INSTALL = '<strong>Error:</strong> Bumpy Booby is already configured. Please remove the config file if you want to reset the configuration.';
-	const A_MODIF_SAVED = 'Modifications were saved.';
+	const A_SUCCESS_INSTALL = '<strong>Fertig:</strong> Bumpy Booby ist eingerichtet.';
+	const A_ERROR_INSTALL = '<strong>Fehler:</strong> Bumpy Booby ist schon installiert. Lösche die Konfigurationsdatei um sie zurückzusetzen.';
+	const A_MODIF_SAVED = 'Änderungen wurden gespeichert.';
 
-	const A_ERROR_FORM = 'An error occured. Please send again the form.';
-	const A_ERROR_TOKEN = 'Wrong token. Please send again the form.';
-	const A_ERROR_EMPTY = 'You have to specify a username and a password.';
-	const A_ERROR_SAME_USERNAME = 'This username is not available.';
-	const A_SUCCESS_SIGNUP = '<strong>Done:</strong> You can now log in.';
+	const A_ERROR_FORM = 'Ein Fehler ist aufgetreten. Bitte schicke das Formular erneut ab.';
+	const A_ERROR_TOKEN = 'Falsches Token. Bitte schicke das Formular erneut ab.';
+	const A_ERROR_EMPTY = 'Es wurden kein Benutzername und Passwort angegeben.';
+	const A_ERROR_SAME_USERNAME = 'Dieser Benutzername ist nicht verfügbar.';
+	const A_SUCCESS_SIGNUP = '<strong>Fertig:</strong> Du kannst dich nun anmelden.';
 
-	const A_CONFIRM_DELETE_COMMENT = 'Are you sure you want to delete this comment?';
-	const A_SUCCESS_DELETE_COMMENT = 'The comment was deleted.';
-	const A_CONFIRM_DELETE_ISSUE = 'Are you sure you want to delete this issue?';
-	const A_SUCCESS_DELETE_ISSUE = 'The issue was deleted.';
-	const A_CONFIRM_DELETE_UPLOAD = 'Are you sure you want to delete this file?';
-	const A_CONFIRM_DELETE_PROJECT = 'Are you sure you want to delete this project? All the corresponding issues will be lost.';
+	const A_CONFIRM_DELETE_COMMENT = 'Bist du sicher, dass du diesen Kommentar löschen möchtest?';
+	const A_SUCCESS_DELETE_COMMENT = 'Der Kommentar wurde gelöscht.';
+	const A_CONFIRM_DELETE_ISSUE = 'Bist du sicher, dass du diesen Fall löschen möchtest?';
+	const A_SUCCESS_DELETE_ISSUE = 'Der Fall wurde gelöscht.';
+	const A_CONFIRM_DELETE_UPLOAD = 'Bist du sicher, dass du diese Datei löschen möchtest?';
+	const A_CONFIRM_DELETE_PROJECT = 'Bist du sicher, dass du dieses Projekt löschen möchtest? Alle zugehörigen Fälle gehen verloren.';
 
-	const A_LOGGED = 'You are now logged in.';
-	const A_LOGGED_OUT = 'You are now logged out.';
-	const A_ERROR_CONNEXION = '<strong>Error:</strong> Wrong username or password.';
-	const A_ERROR_CONNEXION_WAIT = '<strong>Error:</strong> Wrong username or password. Please wait %duration% %period% before trying again.';
-	const A_ERROR_LOGIN_WAIT = 'Please wait %duration% %period% before trying again. This a protection against malicious attacks.';
+	const A_LOGGED = 'Du bist angemeldet.';
+	const A_LOGGED_OUT = 'Du bist abgemeldet.';
+	const A_ERROR_CONNEXION = '<strong>Fehler:</strong> Falscher Benutzername oder Password.';
+	const A_ERROR_CONNEXION_WAIT = '<strong>Fehler:</strong> Falscher Benutzername oder Password. Bitte warte %duration% %period% bevor du es erneut versuchst.';
+	const A_ERROR_LOGIN_WAIT = 'Bitte warte %duration% %period% bevor du es erneut versuchst. Dies dient zum Schutz vor Angriffen auf das System.';
 
-	const A_ERROR_UPLOAD = 'An error occured. Please try again.';
-	const A_ERROR_UPLOAD_SIZE = 'File exceeds the maximum allowed size (%nb% max).';
-	const A_ERROR_UPLOAD_FULL = 'You don\'t have enought disk space to upload this file : %nb% remaining.';
+	const A_ERROR_UPLOAD = 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
+	const A_ERROR_UPLOAD_SIZE = 'Die Datei ist größer als erlaubt (maximal %nb%).';
+	const A_ERROR_UPLOAD_FULL = 'Du hast nicht genug freien Speicherplatz um die Datei hochzuladen: %nb% frei.';
 
-	const A_PLEASE_LOGIN_ISSUES = 'Please log in to see the issues.';
-	const A_PLEASE_LOGIN_COMMENT = 'Please log in to post a comment. No account yet? Create one: it\'s free and really fast !';
-	const A_PLEASE_LOGIN_ISSUE = 'Please log in to submit an issue. No account yet? Create one: it\'s free and really fast !';
-	const A_SHOULD_LOGIN = 'If you have an account, please log in. If not, consider creating one: it\'s free and really fast !';
+	const A_PLEASE_LOGIN_ISSUES = 'Bitte melde dich an um die Fälle zu sehen.';
+	const A_PLEASE_LOGIN_COMMENT = 'Bitte melde dich an um zu kommentieren. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
+	const A_PLEASE_LOGIN_ISSUE = 'Bitte melde dich an um einen Fall zu erstellen. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
+	const A_SHOULD_LOGIN = 'Bitte melde dich an, wenn du einen Account hast. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
 
-	const A_IE = 'Your browser is obsolete: <a href="http://www.browserchoice.eu">upgrade or change it</a>.';
+	const A_IE = 'Dein Browser ist veraltet: <a href="https://www.browser-update.org/de/update.html>aktualisiere oder wechsel ihn</a>.';
 
 		# Mails
 
