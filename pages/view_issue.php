@@ -363,6 +363,12 @@ if ($config['email']
 	$manage_issue .= '<li><a href="javascript:;" class="a-notifications">'.$text.'</a></li>';
 }
 
+$milestone_html='';
+if(!empty($milestone)){
+	$milestone_url = Url::parse(getProject().'/milestone/'.$issue['milestone']);
+	$milestone_html = '<p class="p-text">'.Trad::F_MILESTONE.' <a href="'.$milestone_url.'"><i class="icon-indent-right"></i>'.$milestone.'</a>';
+}
+
 $content = '
 
 <h1><span class="span-id" style="background:'.$config['statuses'][$issue['status']]['color'].'"><span>#</span>'.$issue['id'].'</span>'.$safe_title.'</h1>
@@ -385,9 +391,8 @@ $content = '
 				),
 				Trad::S_ISSUE_UPDATED).'
 			</p>
-			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').'
-			'.((empty($milestone)) ? '' : '<p class="p-text">'.Trad::F_MILESTONE.' '.$milestone.'</p>').'
-			<p class="p-labels">'.$labels.'</p>
+			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').$milestone_html
+			.'<p class="p-labels">'.$labels.'</p>
 			<form action="'.Url::parse(getProject().'/issues/'.$issue['id']).'" method="post">
 				<input type="hidden" name="action" value="1" />
 				<input type="hidden" name="token" value="'.$token.'" />
