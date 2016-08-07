@@ -66,6 +66,7 @@ class Trad {
 	const W_PROFILEPIC = 'Profilbild';
 
 	const W_RSS = 'RSS Feed';
+	const W_VERSION = 'Version';
 
 		# Verbes
 
@@ -116,69 +117,70 @@ class Trad {
 	const S_RSS_ISSUE_UPDATED = '%adj% von %user%.';
 	const S_RSS_ISSUE_STATUS_UPDATED = 'Status aktualisiert zu “%status%” von %user%.';
 
-	const S_INTRO_INSTALL = 'It looks like it\'s the first time you run Bumpy Booby! Please configure it:';
-	const S_FIRST_ISSUE_TITLE = 'How are you doing, pumpkin?';
-	const S_FIRST_ISSUE = 'I am your first issue! After logging, you will be able to delete me.';
+	const S_INTRO_INSTALL = 'Bitte konfiguriere Bumpy Booby:';
+	const S_FIRST_ISSUE_TITLE = 'Wie geht es dir?';
+	const S_FIRST_ISSUE = 'Ich bin dein erster Fall! Nachdem du dich angemeldet hast, kannst du mich bearbeiten oder löschen.';
 
-	const S_NO_USER = 'No user matches your request.';
-	const S_NO_ISSUE = 'No issue matches your request.';
-	const S_MATCHING_ISSUES = '%nb% matching issues';
-	const S_NO_ACTIVITY = 'No recent activity.';
-	const S_NO_UPLOAD = 'No upload.';
-	const S_SIZE_REMAINING = '%remain% remaining on the %total% allowed.';
-	const S_NO_PROJECT = 'No project.';
+	const S_NO_USER = 'Keine Benutzer gefunden.';
+	const S_NO_ISSUE = 'Keine Fälle gefunden.';
+	const S_MATCHING_ISSUES = '%nb% passende Fälle';
+	const S_NO_ACTIVITY = 'Keine aktuelle Aktivität.';
+	const S_NO_UPLOAD = 'Keine hochgeladenen Dateien.';
+	const S_SIZE_REMAINING = 'Es verbleiben %remain% von den erlaubten %total%.';
+	const S_NO_PROJECT = 'Kein Projekt.';
 
-	const S_SEARCH = '#12, @user, words…';
-	const S_COPYRIGHT = 'Powered by %name%.';
+	const S_SEARCH = '#12, @Benutzer, Wörter...';
+	const S_COPYRIGHT = 'Betrieben mit %name%.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.';
 
-	const S_LAST_UPDATES = 'Last updates…';
+	const S_LAST_UPDATES = 'Kürzliche Aktualisierungen...';
 
-	const S_STAY_LOGGEDIN = 'Keep me logged in';
+	const S_STAY_LOGGEDIN = 'Angemeldet bleiben';
 
-	const S_DEFAULT_DEFPROJ_DESC = 'This is the default project where everyone has access to.';
-	const S_DEFAULT_2NDPROJ_DESC = 'This could be your 2nd project project where only registered users are allowed to post issues.';
+	const S_DEFAULT_DEFPROJ_DESC = 'Dies ist das standard Projekt, auf das jeder Zugriff hat.';
+	const S_DEFAULT_2NDPROJ_DESC = 'Das könnte dein zweites Projekt sein. Hier dürfen nur angemeldete Nutzer lesen und schreiben.';
 
 		# Alerts
 
-	const A_ERROR_DIRECTORY = '<strong>Error:</strong> unable to create directory “%name%”.';
-	const A_ERROR_FILE = '<strong>Error:</strong> unable to read file “%name%”.';
-	const A_ERROR_FILE_WRITE = '<strong>Error:</strong> unable to write file “%name%”.';
-	const A_ERROR_FATAL = 'Sorry, something went wrong. Please contact an administrator if this problem persists.';
-	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />File “<strong>%file%</strong>” on line <strong>%line%</strong>.';
+	const A_ERROR_DIRECTORY = '<strong>Fehler:</strong> Konnte das Verzeichnis “%name%” nicht erstellen.';
+	const A_ERROR_FILE = '<strong>Fehler:</strong> Konnte Datei “%name%” nicht lesen.';
+	const A_ERROR_FILE_WRITE = '<strong>Fehler:</strong> Konnte nicht in Datei “%name%” schreiben.';
+	const A_ERROR_FATAL = 'Entschuldigung, etwas ist schiefgelaufen. Bitte kontaktiere den Administrator, wenn das Problem weiterhin besteht.';
+	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />Datei “<strong>%file%</strong>” in Zeile <strong>%line%</strong>.';
 
-	const A_SUCCESS_INSTALL = '<strong>Done:</strong> Bumpy Booby is now completely configured.';
-	const A_ERROR_INSTALL = '<strong>Error:</strong> Bumpy Booby is already configured. Please remove the config file if you want to reset the configuration.';
-	const A_MODIF_SAVED = 'Modifications were saved.';
+	const A_SUCCESS_INSTALL = '<strong>Fertig:</strong> Bumpy Booby ist eingerichtet.';
+	const A_ERROR_INSTALL = '<strong>Fehler:</strong> Bumpy Booby ist schon installiert. Lösche die Konfigurationsdatei um sie zurückzusetzen.';
+	const A_MODIF_SAVED = 'Änderungen wurden gespeichert.';
 
-	const A_ERROR_FORM = 'An error occured. Please send again the form.';
-	const A_ERROR_TOKEN = 'Wrong token. Please send again the form.';
-	const A_ERROR_EMPTY = 'You have to specify a username and a password.';
-	const A_ERROR_SAME_USERNAME = 'This username is not available.';
-	const A_SUCCESS_SIGNUP = '<strong>Done:</strong> You can now log in.';
+	const A_ERROR_FORM = 'Ein Fehler ist aufgetreten. Bitte schicke das Formular erneut ab.';
+	const A_ERROR_TOKEN = 'Falsches Token. Bitte schicke das Formular erneut ab.';
+	const A_ERROR_EMPTY = 'Es wurden kein Benutzername und Passwort angegeben.';
+	const A_ERROR_SAME_USERNAME = 'Dieser Benutzername ist nicht verfügbar.';
+	const A_SUCCESS_SIGNUP = '<strong>Fertig:</strong> Du kannst dich nun anmelden.';
 
-	const A_CONFIRM_DELETE_COMMENT = 'Are you sure you want to delete this comment?';
-	const A_SUCCESS_DELETE_COMMENT = 'The comment was deleted.';
-	const A_CONFIRM_DELETE_ISSUE = 'Are you sure you want to delete this issue?';
-	const A_SUCCESS_DELETE_ISSUE = 'The issue was deleted.';
-	const A_CONFIRM_DELETE_UPLOAD = 'Are you sure you want to delete this file?';
-	const A_CONFIRM_DELETE_PROJECT = 'Are you sure you want to delete this project? All the corresponding issues will be lost.';
+	const A_CONFIRM_DELETE_COMMENT = 'Bist du sicher, dass du diesen Kommentar löschen möchtest?';
+	const A_SUCCESS_DELETE_COMMENT = 'Der Kommentar wurde gelöscht.';
+	const A_CONFIRM_DELETE_ISSUE = 'Bist du sicher, dass du diesen Fall löschen möchtest?';
+	const A_SUCCESS_DELETE_ISSUE = 'Der Fall wurde gelöscht.';
+	const A_CONFIRM_DELETE_UPLOAD = 'Bist du sicher, dass du diese Datei löschen möchtest?';
+	const A_CONFIRM_DELETE_PROJECT = 'Bist du sicher, dass du dieses Projekt löschen möchtest? Alle zugehörigen Fälle gehen verloren.';
 
-	const A_LOGGED = 'You are now logged in.';
-	const A_LOGGED_OUT = 'You are now logged out.';
-	const A_ERROR_CONNEXION = '<strong>Error:</strong> Wrong username or password.';
-	const A_ERROR_CONNEXION_WAIT = '<strong>Error:</strong> Wrong username or password. Please wait %duration% %period% before trying again.';
-	const A_ERROR_LOGIN_WAIT = 'Please wait %duration% %period% before trying again. This a protection against malicious attacks.';
+	const A_LOGGED = 'Du bist angemeldet.';
+	const A_LOGGED_OUT = 'Du bist abgemeldet.';
+	const A_ERROR_CONNEXION = '<strong>Fehler:</strong> Falscher Benutzername oder Password.';
+	const A_ERROR_CONNEXION_WAIT = '<strong>Fehler:</strong> Falscher Benutzername oder Password. Bitte warte %duration% %period% bevor du es erneut versuchst.';
+	const A_ERROR_LOGIN_WAIT = 'Bitte warte %duration% %period% bevor du es erneut versuchst. Dies dient zum Schutz vor Angriffen auf das System.';
 
-	const A_ERROR_UPLOAD = 'An error occured. Please try again.';
-	const A_ERROR_UPLOAD_SIZE = 'File exceeds the maximum allowed size (%nb% max).';
-	const A_ERROR_UPLOAD_FULL = 'You don\'t have enought disk space to upload this file : %nb% remaining.';
+	const A_ERROR_UPLOAD = 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
+	const A_ERROR_UPLOAD_SIZE = 'Die Datei ist größer als erlaubt (maximal %nb%).';
+	const A_ERROR_UPLOAD_FULL = 'Du hast nicht genug freien Speicherplatz um die Datei hochzuladen: %nb% frei.';
 
-	const A_PLEASE_LOGIN_ISSUES = 'Please log in to see the issues.';
-	const A_PLEASE_LOGIN_COMMENT = 'Please log in to post a comment. No account yet? Create one: it\'s free and really fast !';
-	const A_PLEASE_LOGIN_ISSUE = 'Please log in to submit an issue. No account yet? Create one: it\'s free and really fast !';
-	const A_SHOULD_LOGIN = 'If you have an account, please log in. If not, consider creating one: it\'s free and really fast !';
+	const A_PLEASE_LOGIN_ISSUES = 'Bitte melde dich an um die Fälle zu sehen.';
+	const A_PLEASE_LOGIN_COMMENT = 'Bitte melde dich an um zu kommentieren. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
+	const A_PLEASE_LOGIN_ISSUE = 'Bitte melde dich an um einen Fall zu erstellen. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
+	const A_SHOULD_LOGIN = 'Bitte melde dich an, wenn du einen Account hast. Noch keinen Account? Erstelle dir einen: es ist kostenlos und geht sehr schnell!';
 
-	const A_IE = 'Your browser is obsolete: <a href="http://www.browserchoice.eu">upgrade or change it</a>.';
+	const A_IE = 'Dein Browser ist veraltet: <a href="https://www.browser-update.org/de/update.html>aktualisiere oder wechsel ihn</a>.';
 
 		# Mails
 
@@ -232,6 +234,7 @@ This is an automated email, please do not reply.
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
 	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
+	const T_INFO = 'Info';
 
 		# FORMS
 

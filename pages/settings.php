@@ -659,13 +659,11 @@ $content = '
 
 </form>
 
-<h2>Info</h2>
-<p>Runnig '.NAME.' version '.VERSION.'</p>
-<p>Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.</p>
-';
+<h2>'.Trad::T_INFO.'</h2>
+<p>'.str_replace('%name%', NAME, Trad::S_COPYRIGHT).' '.Trad::W_VERSION.' '.VERSION.'</p>
+<p>'.Trad::S_UPGRADE.'</p>';
 
 $javascript = '
-
 $(document).ready(function(){
 	$(document).on("keyup", ".color", function() {
 		$(this).closest("tr").find(".label").css("background-color", $(this).val());
