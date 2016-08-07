@@ -133,6 +133,8 @@ if( $_GET['XMODE'] == "travisci" ){
 	if( $API_ACCESS[$username]['mode'] != "travisci" ||
 	// check api key
 	$API_ACCESS[$username]['key'] != $headers["Authorization"] ){
+		// log
+		logm("Travis CI API: Authorization failed with user ".$username.". Got authorization header ".$headers["Authorization"].", key in config file is ".$API_ACCESS[$username]['key']);
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
@@ -159,6 +161,7 @@ if( $_GET['XMODE'] == "travisci" ){
 		}
 	}
 	if( !$validProject ){
+		logm("Travis CI API: Invalid project ".$_GET['project']);
 		$returns['status'] = 0;
 		$returns['statusDetails'] = "Invalid project.";
 		endApi( $returns, 400 );
@@ -220,11 +223,13 @@ elseif($_GET['XMODE'] == 'rss'){
 			global $rssfeed, $imported;
 			// check if this id was already imported
 			if($imported[$rssfeed['name']][$issueData_id] == 1){
-				print_r( $issueData_id." already imported" );
+				// log
+				logm("RSS feed: already imported item with guid ".$issueData_id);
+				print_r("already imported ".$issueData_id."; ");
 			}else{
 				// log
 				logm("RSS feed: importing item with guid ".$issueData_id." in ".$rssfeed['project']);
-				print_r("importing ".$issueData_id);
+				print_r("importing ".$issueData_id."; ");
 				// mark as imported in JSON list
 				$imported[$rssfeed['name']][$issueData_id] = 1;
 				// create issue
