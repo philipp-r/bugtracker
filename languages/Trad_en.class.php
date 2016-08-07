@@ -66,6 +66,7 @@ class Trad {
 	const W_PROFILEPIC = 'profile picture';
 
 	const W_RSS = 'RSS feed';
+	const W_VERSION = 'Version';
 
 		# Verbes
 
@@ -131,6 +132,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @user, words…';
 	const S_COPYRIGHT = 'Powered by %name%.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.';
 
 	const S_LAST_UPDATES = 'Last updates…';
 
@@ -179,7 +181,7 @@ class Trad {
 	const A_PLEASE_LOGIN_ISSUE = 'Please log in to submit an issue. No account yet? Create one: it\'s free and really fast !';
 	const A_SHOULD_LOGIN = 'If you have an account, please log in. If not, consider creating one: it\'s free and really fast !';
 
-	const A_IE = 'Your browser is obsolete: <a href="http://www.browserchoice.eu">upgrade or change it</a>.';
+	const A_IE = 'Your browser is obsolete: <a href="https://www.browser-update.org/en/update.html">upgrade or change it</a>.';
 
 		# Mails
 
@@ -233,6 +235,7 @@ This is an automated email, please do not reply.
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
 	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
+	const T_INFO = 'Info';
 
 		# FORMS
 
