@@ -1,4 +1,8 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+use PUGX\Poser\Render\SvgRender;
+use PUGX\Poser\Poser;
+
 //var_dump($config); exit;
 
 /*
@@ -336,30 +340,6 @@ elseif($_GET['XMODE'] == 'rss'){
 */
 elseif($_GET['XMODE'] == 'badge'){
 
-	function output_badge( $badge ){
-		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.svg?maxAge=86400&style='.$badge['style'];
-		if($_GET['mode'] == "debug"){
-			endApi($badge, 200);
-		}
-		if($_GET['mode'] == "shields"){
-			endApi($badge, 200);
-		}
-		else{
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $badge['url']);
-			curl_setopt($ch, CURLOPT_HEADER, false);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$res = curl_exec($ch);
-			$rescode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
-			curl_close($ch) ;
-			header('Expires: ' . gmdate('D, d M Y H:i:s', time() + (60*60*24)) . ' GMT');
-			header("Cache-Control: public, max-age=" . 60*60*24);
-			header('Content-Type: image/svg+xml');
-			echo $res;
-		}
-		exit;
-	}
-
 	$badge = array();
 	
 	// shields defaults
@@ -374,12 +354,11 @@ elseif($_GET['XMODE'] == 'badge'){
 		$badge['label']=$_GET['shields_label'];
 	}
 	if(empty($_GET['shields_style'])){ 
-		$badge['style']="flat";
+		$badge['style']="plastic";
 	}else{
 		$badge['style']=$_GET['shields_style'];
 	}
 	$badge['content']="";
-	$badge['label']="issues";
 
 	// check project access
 	$validProject = false;
@@ -389,14 +368,25 @@ elseif($_GET['XMODE'] == 'badge'){
 		$API_ACCESS['badge'][$_GET['project']] != true
 	){ 
 		$badge['content']="INVALID project";
-		output_badge( $badge );
+	}
+	else{
+		// get number of issues
+		$nb = count_issues($_GET);
+		$badge['content']=$nb;
 	}
 
-	// get number of issues
-	$nb = count_issues($_GET);
-	$badge['content']=$nb;
-	output_badge( $badge );
-
+	// output
+	if($_GET['mode'] == "debug" || $_GET['mode'] == "shields"){
+		endApi($badge, 200);
+	}
+	else{
+		header('Expires: ' . gmdate('D, d M Y H:i:s', time() + (60*60*24)) . ' GMT');
+		header("Cache-Control: public, max-age=" . 60*60*24);
+		header('Content-Type: image/svg+xml');
+		$render = new SvgRender();
+		$poser = new Poser(array($render));
+		echo $poser->generate($badge['label'], $badge['content'], $badge['color'], $badge['style']);
+	}
 	exit;
 }
 
