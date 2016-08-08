@@ -19,9 +19,12 @@ $API_ACCESS = array(
 		"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
 	),
 
-	"badge-USERNAME" => array(
-		"mode" => "badge", // XMODE badge
-		"projects" => "ALL_PROJECTS", // comma seperated list of projects or "ALL_PROJECTS"
+	"badge" => array(
+		// list projects that have badges available
+		"default" => true,
+		"2nd-project" => true,
+		// or use "ALL_PROJECTS"
+		//"ALL_PROJECTS" => true,
 	),
 
 

@@ -1,5 +1,4 @@
 <?php
-
 $form_s = (isset($_POST['issue_summary'])) ?
 	htmlspecialchars($_POST['issue_summary']):
 	'';

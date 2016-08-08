@@ -1,4 +1,8 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+use PUGX\Poser\Render\SvgRender;
+use PUGX\Poser\Poser;
+
 //var_dump($config); exit;
 
 /*
@@ -336,25 +340,6 @@ elseif($_GET['XMODE'] == 'rss'){
 */
 elseif($_GET['XMODE'] == 'badge'){
 
-	function output_badge( $badge ){
-		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.png?style='.$badge['style'];
-		if($_GET['debug'] == "true"){
-			endApi($badge, 400);
-		}
-		else{
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $badge['url']);
-			curl_setopt($ch, CURLOPT_HEADER, false);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$res = curl_exec($ch);
-			$rescode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
-			curl_close($ch) ;
-			header('Content-Type: image/png');
-			echo $res;
-		}
-		exit;
-	}
-
 	$badge = array();
 	
 	// shields defaults
@@ -369,48 +354,39 @@ elseif($_GET['XMODE'] == 'badge'){
 		$badge['label']=$_GET['shields_label'];
 	}
 	if(empty($_GET['shields_style'])){ 
-		$badge['style']="flat";
+		$badge['style']="plastic";
 	}else{
 		$badge['style']=$_GET['shields_style'];
 	}
 	$badge['content']="";
 
-	// the username is $username 
-	$username = "badge-".$_GET['api_username'];
-	// check if valid user
-	if( $API_ACCESS[$username]['mode'] != "badge" ){
-		$badge['label']="username";
-		$badge['content']="INVALID";
-		output_badge( $badge );
-	}
-
 	// check project access
 	$validProject = false;
-	// check if project exists
-	$projects = $API_ACCESS[$username]['projects'];
 	// if has permission for all projects
-	if(empty($_GET['project'])){ $validProject = false; }
-	elseif( $projects == "ALL_PROJECTS" ){ $validProject = true; }
+	if( 
+		$API_ACCESS['badge']['ALL_PROJECTS']   != true &&
+		$API_ACCESS['badge'][$_GET['project']] != true
+	){ 
+		$badge['content']="INVALID project";
+	}
 	else{
-		// check every project that is set in config
-		$projectsArray = explode(",", $projects);
-		foreach($projectsArray as $project){
-			if($project == $_GET['project']){
-				$validProject = true;
-			}
-		}
-	}
-	if( !$validProject ){
-		$badge['label']="project";
-		$badge['content']="INVALID";
-		output_badge( $badge );
+		// get number of issues
+		$nb = count_issues($_GET);
+		$badge['content']=$nb;
 	}
 
-	// get number of issues
-	$nb = count_issues($_GET);
-	$badge['content']=$nb;
-	output_badge( $badge );
-
+	// output
+	if($_GET['mode'] == "debug" || $_GET['mode'] == "shields"){
+		endApi($badge, 200);
+	}
+	else{
+		header('Expires: ' . gmdate('D, d M Y H:i:s', time() + (60*60*24)) . ' GMT');
+		header("Cache-Control: public, max-age=" . 60*60*24);
+		header('Content-Type: image/svg+xml');
+		$render = new SvgRender();
+		$poser = new Poser(array($render));
+		echo $poser->generate($badge['label'], $badge['content'], $badge['color'], $badge['style']);
+	}
 	exit;
 }
 
