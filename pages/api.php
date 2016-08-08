@@ -1,4 +1,8 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+use PUGX\Poser\Render\SvgRender;
+use PUGX\Poser\Poser;
+
 //var_dump($config); exit;
 
 /*
@@ -336,6 +340,7 @@ elseif($_GET['XMODE'] == 'rss'){
 */
 elseif($_GET['XMODE'] == 'badge'){
 
+
 	function output_badge( $badge ){
 		$badge['url'] = 'https://img.shields.io/badge/'.$badge['label'].'-'.$badge['content'].'-'.$badge['color'].'.svg?maxAge=86400&style='.$badge['style'];
 		if($_GET['mode'] == "debug"){
@@ -343,6 +348,11 @@ elseif($_GET['XMODE'] == 'badge'){
 		}
 		if($_GET['mode'] == "shields"){
 			endApi($badge, 200);
+		}
+		if($_GET['mode'] == "php"){
+			$render = new SvgRender();
+			$poser = new Poser(array($render));
+			echo $poser->generate('license', 'MIT', '428F7E', 'plastic');
 		}
 		else{
 			$ch = curl_init();

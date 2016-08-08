@@ -1,0 +1,38 @@
+{
+    "name": "coduo/phpspec-data-provider-extension",
+    "type": "library",
+    "keywords": ["phpspec", "dataprovider", "extension", "coduo", "data", "provider"],
+    "license": "MIT", 
+    "authors": [
+        {
+            "name": "Norbert Orzechowicz",
+            "email": "norbert@orzechowicz.pl"
+        },
+        {
+            "name": "Michał Dąbrowski",
+            "email": "dabrowski@brillante.pl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "phpspec/phpspec": "^2"
+    },
+    "require-dev": {
+        "behat/behat": "3.0.*",
+        "symfony/filesystem": "~2.3",
+        "symfony/process": "~2.3",
+        "symfony/console": "~2.3.2",
+        "bossa/phpspec2-expect": "^1"
+    },
+    "autoload": {
+        "psr-0": { "Coduo\\PhpSpec": "src/"}
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        }
+    }
+}
