@@ -139,6 +139,8 @@ class ComposerStaticInit315b3f26b84af958df1291ea0b8bc98f
         'SebastianBergmann\\RecursionContext\\Context' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Context.php',
         'SebastianBergmann\\RecursionContext\\Exception' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Exception.php',
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
+        'Securimage' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
+        'Securimage_Color' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

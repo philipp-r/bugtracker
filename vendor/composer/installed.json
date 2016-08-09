@@ -1148,5 +1148,54 @@
             "packagist",
             "pin"
         ]
+    },
+    {
+        "name": "dapphp/securimage",
+        "version": "3.6.4",
+        "version_normalized": "3.6.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dapphp/securimage.git",
+            "reference": "2ed50264ae5541fec8d8c79e4c9b6235a7cfd506"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dapphp/securimage/zipball/2ed50264ae5541fec8d8c79e4c9b6235a7cfd506",
+            "reference": "2ed50264ae5541fec8d8c79e4c9b6235a7cfd506",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.2.0"
+        },
+        "suggest": {
+            "ext-pdo": "For database storage support",
+            "ext-pdo_mysql": "For MySQL database support",
+            "ext-pdo_sqlite": "For SQLite3 database support"
+        },
+        "time": "2016-03-04 21:08:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "securimage.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "Drew Phillips",
+                "email": "drew@drew-phillips.com"
+            }
+        ],
+        "description": "PHP CAPTCHA Library",
+        "homepage": "https://www.phpcaptcha.org",
+        "keywords": [
+            "captcha",
+            "security"
+        ]
     }
 ]

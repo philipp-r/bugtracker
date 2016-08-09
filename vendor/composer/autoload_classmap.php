@@ -33,4 +33,6 @@ return array(
     'SebastianBergmann\\RecursionContext\\Context' => $vendorDir . '/sebastian/recursion-context/src/Context.php',
     'SebastianBergmann\\RecursionContext\\Exception' => $vendorDir . '/sebastian/recursion-context/src/Exception.php',
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
+    'Securimage' => $vendorDir . '/dapphp/securimage/securimage.php',
+    'Securimage_Color' => $vendorDir . '/dapphp/securimage/securimage.php',
 );
