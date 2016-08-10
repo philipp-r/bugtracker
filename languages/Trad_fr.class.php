@@ -68,6 +68,10 @@ class Trad {
 	const W_RSS = 'Flux RSS';
 	const W_VERSION = 'Version';
 
+	const W_CAPTCHA_IMAGE = 'CAPTCHA image';
+	const W_CAPTCHA_REFRESH = 'Rafraîchir l\'image';
+	const W_CAPTCHA_INPUT = 'Tapez le texte :';
+
 		# Verbes
 
 	const V_UPDATE = 'Mettre à jour';

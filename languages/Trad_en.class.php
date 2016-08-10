@@ -67,6 +67,10 @@ class Trad {
 
 	const W_RSS = 'RSS feed';
 	const W_VERSION = 'Version';
+	
+	const W_CAPTCHA_IMAGE = 'CAPTCHA Image';
+	const W_CAPTCHA_REFRESH = 'Refresh Image';
+	const W_CAPTCHA_INPUT = 'Type the text:';
 
 		# Verbes
 

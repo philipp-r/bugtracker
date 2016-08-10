@@ -130,7 +130,13 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 // include securimage if user is not logged in
 if( !$config['loggedin'] ){
 	require_once 'vendor/autoload.php';
-	$content .=	Securimage::getCaptchaHtml();
+	// https://www.phpcaptcha.org/Securimage_Docs/classes/Securimage.html#method_getCaptchaHtml
+	$content .=	Securimage::getCaptchaHtml( array(
+					'image_alt_text' => Trad::W_CAPTCHA_IMAGE,
+					'refresh_alt_text' => Trad::W_CAPTCHA_REFRESH,
+					'refresh_title_text' => Trad::W_CAPTCHA_REFRESH,
+					'input_text' => Trad::W_CAPTCHA_INPUT,
+				) );
 }
 
 $content .=	'<div class="form-actions">'
