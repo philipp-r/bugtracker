@@ -27,7 +27,7 @@ if( isset($_POST['new_issue']) ){
 	// if user is not logged in, check Captcha
 	if( !$config['loggedin'] ){
 		session_start();
-		require_once 'classes/securimage/securimage.php';
+		require_once 'vendor/autoload.php';
 		$image = new Securimage();
 		if ($image->check($_POST['captcha_code']) == true) {
 			$captcha_check_passed = true;
@@ -129,7 +129,7 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 
 // include securimage if user is not logged in
 if( !$config['loggedin'] ){
-	require_once 'classes/securimage/securimage.php';
+	require_once 'vendor/autoload.php';
 	$content .=	Securimage::getCaptchaHtml();
 }
 
