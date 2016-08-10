@@ -8,6 +8,7 @@ class ComposerStaticInit315b3f26b84af958df1291ea0b8bc98f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -93,6 +94,13 @@ class ComposerStaticInit315b3f26b84af958df1291ea0b8bc98f
             'PhpSpec' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/phpspec/src',
+            ),
+        ),
+        'H' => 
+        array (
+            'HTMLPurifier' => 
+            array (
+                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
         'D' => 
