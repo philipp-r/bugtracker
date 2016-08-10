@@ -26,7 +26,6 @@ if( isset($_POST['new_issue']) ){
 	$captcha_check_passed = false;
 	// if user is not logged in, check Captcha
 	if( !$config['loggedin'] ){
-		session_start();
 		require_once 'vendor/autoload.php';
 		$image = new Securimage();
 		if ($image->check($_POST['captcha_code']) == true) {
