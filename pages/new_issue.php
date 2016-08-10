@@ -34,7 +34,6 @@ if( isset($_POST['new_issue']) ){
 		else{
 			$this->addAlert(Trad::F_INVALID_CAPTCHA);
 		}
-
 	}
 	else{
 		$captcha_check_passed = true;
