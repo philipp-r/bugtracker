@@ -980,8 +980,8 @@ class Securimage
         }
 
         // check for and load settings from custom config file
-        if (file_exists(dirname(__FILE__) . '/config.inc.php')) {
-            $settings = include dirname(__FILE__) . '/config.inc.php';
+        if (file_exists(dirname(__FILE__) . '/../../../database/config_captcha.php')) {
+            $settings = include dirname(__FILE__) . '/../../../database/config_captcha.php';
 
             if (is_array($settings)) {
                 $options = array_merge($settings, $options);
