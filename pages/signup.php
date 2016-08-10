@@ -4,10 +4,23 @@ $username = (isset($_POST['username'])) ? htmlspecialchars($_POST['username']) :
 $email = (isset($_POST['email'])) ? htmlspecialchars($_POST['email']) : '';
 
 if (isset($_POST['new_user'])) {
-	// validate captcha
-	require_once 'vendor/autoload.php';
-	$image = new Securimage();
-	if ($image->check($_POST['captcha_code']) == true) {
+	$captcha_check_passed = false;
+	// if user is not logged in, check Captcha
+	if( !$config['loggedin'] && $config['captcha_signup'] ){
+		require_once 'vendor/autoload.php';
+		$image = new Securimage();
+		if ($image->check($_POST['captcha_code']) == true) {
+			$captcha_check_passed = true;
+		}
+		else{
+			$this->addAlert(Trad::F_INVALID_CAPTCHA);
+		}
+	}
+	else{
+		$captcha_check_passed = true;
+	}
+
+	if($captcha_check_passed){
 		// create new user
 		$settings = new Settings();
 		$ans = $settings->new_user($_POST);
@@ -20,18 +33,10 @@ if (isset($_POST['new_user'])) {
 			$this->addAlert($ans);
 		}
 	}
-	// invalid captcha
-	else{
-		$this->addAlert(Trad::F_INVALID_CAPTCHA);
-	}
-
-
 }
 
 $title = Trad::V_SIGNUP;
 
-// to include securimage
-require_once 'vendor/autoload.php';
 
 
 $content = '
@@ -45,14 +50,21 @@ $content = '
 	<input type="password" name="password" id="password2" class="input-normal" required />
 	<label for="email">'.Trad::F_EMAIL.'</label>
 	<input type="email" name="email" id="email" class="input-large" value="'.$email.'" />
-	<p class="help">'.Trad::F_TIP_USER_EMAIL.'</p>'.
-	Securimage::getCaptchaHtml( array(
+	<p class="help">'.Trad::F_TIP_USER_EMAIL.'</p>';
+	
+// include securimage if user is not logged in
+if( !$config['loggedin'] && $config['captcha_signup'] ){
+	// to include securimage
+	require_once 'vendor/autoload.php';
+	$content .= Securimage::getCaptchaHtml( array(
 		'image_alt_text' => Trad::W_CAPTCHA_IMAGE,
 		'refresh_alt_text' => Trad::W_CAPTCHA_REFRESH,
 		'refresh_title_text' => Trad::W_CAPTCHA_REFRESH,
 		'input_text' => Trad::W_CAPTCHA_INPUT,
-	) ).
-	'<div class="form-actions">
+	) );
+}
+
+$content .='<div class="form-actions">
 		<input type="hidden" name="token" value="'.getToken().'" />
 		<input type="hidden" name="new_user" value="1" />
 		<button type="submit" class="btn btn-primary">'.Trad::V_SIGNUP.'</button>

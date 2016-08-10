@@ -25,7 +25,7 @@ $token = getToken();
 if( isset($_POST['new_issue']) ){
 	$captcha_check_passed = false;
 	// if user is not logged in, check Captcha
-	if( !$config['loggedin'] ){
+	if( !$config['loggedin'] && $config['captcha_new_issue'] ){
 		require_once 'vendor/autoload.php';
 		$image = new Securimage();
 		if ($image->check($_POST['captcha_code']) == true) {
@@ -126,7 +126,7 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 			.$should_login;
 
 // include securimage if user is not logged in
-if( !$config['loggedin'] ){
+if( !$config['loggedin'] && $config['captcha_new_issue'] ){
 	require_once 'vendor/autoload.php';
 	// https://www.phpcaptcha.org/Securimage_Docs/classes/Securimage.html#method_getCaptchaHtml
 	$content .=	Securimage::getCaptchaHtml( array(

@@ -11,7 +11,7 @@ $form_ei_a = '';
 if (isset($_POST['post_comment'])) {
 	$captcha_check_passed = false;
 	// if user is not logged in, check Captcha
-	if( !$config['loggedin'] ){
+	if( !$config['loggedin'] && $config['captcha_post_comment'] ){
 		require_once 'vendor/autoload.php';
 		$image = new Securimage();
 		if ($image->check($_POST['captcha_code']) == true) {
@@ -214,7 +214,7 @@ if (canAccess('post_comment') && $issue['open']) {
 			'.$message;
 
 // include securimage if user is not logged in
-if( !$config['loggedin'] ){
+if( !$config['loggedin'] && $config['captcha_post_comment'] ){
 	require_once 'vendor/autoload.php';
 	// https://www.phpcaptcha.org/Securimage_Docs/classes/Securimage.html#method_getCaptchaHtml
 	$form_comment .= Securimage::getCaptchaHtml( array(
