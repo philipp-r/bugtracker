@@ -372,7 +372,8 @@ foreach ($config['users'] as $u) {
 	$t_users .= getTrUser($u);
 }
 
-var_dump($config);
+//var_dump($config);
+
 $content = '
 
 	<h1>'.Trad::T_SETTINGS.'</h1>

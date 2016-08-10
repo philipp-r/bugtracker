@@ -727,6 +727,9 @@ class Settings {
 				'developer' => Trad::W_DEVELOPPER,
 				'superuser' => Trad::W_SUPERUSER
 			),
+			'captcha_new_issue' => true,
+			'captcha_post_comment' => true,
+			'captcha_signup' => false,
 			'statuses' => array(
 				'default' => array(
 					'name' => Trad::W_S_NEW,
@@ -772,7 +775,7 @@ class Settings {
 			'users' => array(),
 			'salt' => Text::randomKey(40),
 			'version' => VERSION,
-			'last_update' => false
+			'last_update' => false,
 		);
 	}
 }
