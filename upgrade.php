@@ -32,10 +32,16 @@ if (strict_lower($config['version'], '1.0')) {
 	if(!isset($config['link_privacypolicy'])){$config['link_privacypolicy'] = "";}
 }
 
+// upgrade 1.0.4
+if (strict_lower($config['version'], '1.0.4')) {
+	if(!isset($config['captcha_new_issue'])){$config['captcha_new_issue'] = true;}
+	if(!isset($config['captcha_post_comment'])){$config['captcha_post_comment'] = true;}
+	if(!isset($config['captcha_signup'])){$config['captcha_signup'] = false;}
+}
+
 // upgrade 1.1
 if (strict_lower($config['version'], '1.1')) {
 	if(!isset($config['theme'])){$config['theme'] = "app.css";}
-}
 
 $settings = new Settings();
 if ($config['url_rewriting']) { $settings->url_rewriting(); }
