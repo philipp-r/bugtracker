@@ -3,9 +3,6 @@
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://demo.bugtrackr.eu/)
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=plastic)](https://docs.bugtrackr.eu/license/)
-[![Open Issues](https://bb.bugtrackr.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&open=open&shields_label=open_issues&shields_color=red)](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues)
-[![Closed Issues](https://bb.bugtrackr.eu/index.php?page=api&project=bumpy-booby&XMODE=badge&open=closed&shields_label=closed_issues&shields_color=green)](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues&open=closed)
-
 [![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.svg?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
 
 Version 1.0.4
@@ -36,7 +33,3 @@ The [API](https://docs.bugtrackr.eu/api/) has these features:
  * [Travis CI API](https://docs.bugtrackr.eu/api/travis-ci/) to create a new issue when a build with Travis CI fails.
  * [Badges](https://docs.bugtrackr.eu/api/badges/) that can be displayed in GitHub 'README.md' file.
  * [Import RSS Feeds](https://docs.bugtrackr.eu/api/rss/) to create new issues from RSS feeds.
-
-## Bugs & feature requests
-
-Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).
