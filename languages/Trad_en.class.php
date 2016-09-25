@@ -67,6 +67,10 @@ class Trad {
 
 	const W_RSS = 'RSS feed';
 	const W_VERSION = 'Version';
+	
+	const W_CAPTCHA_IMAGE = 'CAPTCHA Image';
+	const W_CAPTCHA_REFRESH = 'Refresh Image';
+	const W_CAPTCHA_INPUT = 'Type the text:';
 
 		# Verbes
 
@@ -216,8 +220,8 @@ This is an automated email, please do not reply.
 	const T_GLOBAL_SETTINGS = 'Global settings';
 	const T_APPEARANCE = 'Appearance';
 	const T_ISSUES = 'Issues';
-	const T_GROUPS = 'Groups';
-	const T_USERS = 'Users';
+	const T_PERMISSIONS = 'Permissions';
+	const T_CAPTCHA = 'Captcha';
 	const T_BROWSE_ISSUES = 'Browse issues';
 	const T_BROWSE_ALL_ISSUES = 'Browse all issues';
 	const T_ALL_ISSUES_DESCRIPTION = 'This are all open issues for all projects';
@@ -234,7 +238,6 @@ This is an automated email, please do not reply.
 	const T_LINK_PRIVACYPOLICY = 'Privacy Policy';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
-	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 	const T_INFO = 'Info';
 
 		# FORMS
@@ -329,6 +332,8 @@ This is an automated email, please do not reply.
 	const F_TIP_ID_STATUS = '<b>Tip:</b> be careful when changing the IDs, because each issue keeps its old status ID (except if this ID does not exist anymore: in this case, the default status will be used).';
 	const F_TIP_ID_LABEL = '<b>Tip:</b> be careful when changing the IDs, because each label of one issue keeps its old ID (except if this ID does not exist anymore: in this case, the label is removed from the issue).';
 	const F_TIP_ID_GROUP = '<b>Tip:</b> be careful when changing the IDs, because each user keeps its old group ID (except if this ID does not exist anymore: in this case, the default group will be used).';
+	const F_TIP_CAPTCHA = 'Choose the actions where a captcha will be shown for not logged in users.';
+	const F_TIP_API_ACCESS = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 
 	const F_API_ENABLE = 'Enable the API';
 

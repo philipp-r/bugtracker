@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
+
 class Text {
 
 	protected static $accents = array('À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç',
