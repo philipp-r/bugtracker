@@ -2,18 +2,18 @@
 
 ## Contents
 
-[A. Contents](#contents)
-[B. Bumpy Booby](#bumpy-booby)
-  [GNU GENERAL PUBLIC LICENSE](#gnu-general-public-license)
-[C. Original Software](#original-software)
-  [MIT LICENSE](#mit-license)
-[D. Included software](#included-software)
-  [I. Securimage](#securimage)
-  [II. html5shiv](#html5shiv)
-  [III. jQuery](#jquery)
-  [IV. Respond.js](#respond-js)
-  [V. HTML Purifier](#html-purifier)
-  [VI. PHP Markdown](#php-markdown)
+ * [A. Contents](#contents)
+ * [B. Bumpy Booby](#bumpy-booby)
+  * [GNU GENERAL PUBLIC LICENSE](#gnu-general-public-license)
+ * [C. Original Software](#original-software)
+  * [MIT LICENSE](#mit-license)
+ * [D. Included software](#included-software)
+  * [I. Securimage](#securimage)
+  * [II. html5shiv](#html5shiv)
+  * [III. jQuery](#jquery)
+  * [IV. Respond.js](#respond-js)
+  * [V. HTML Purifier](#html-purifier)
+  * [VI. PHP Markdown](#php-markdown)
 
 
 
