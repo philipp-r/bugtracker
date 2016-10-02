@@ -22,8 +22,9 @@
 
 ## B. Bumpy Booby
 
-Copyright (C) 2016 by [bugtrackr team](https://github.com/bugtrackr) 
-& [contributors](https://github.com/bugtrackr/bumpy-booby/graphs/contributors)
+Copyright (C) 2016 for the software by 
+[bugtrackr team](https://github.com/bugtrackr) & 
+[contributors](https://github.com/bugtrackr/bumpy-booby/graphs/contributors)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
