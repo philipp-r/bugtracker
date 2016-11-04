@@ -136,7 +136,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @user, words…';
 	const S_COPYRIGHT = 'Powered by %name%.';
-	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://bugtrackr.github.io/wiki/upgrade/">upgrade</a>.';
 
 	const S_LAST_UPDATES = 'Last updates…';
 

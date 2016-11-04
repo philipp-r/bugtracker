@@ -9,7 +9,7 @@ set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
 define('VERSION', '1.1');
-define('AUTHOR', 'bugtrackr.eu');
+define('AUTHOR', 'bugtrackr');
 define('URL', 'https://github.com/bugtrackr/bumpy-booby');
 
 ### Languages

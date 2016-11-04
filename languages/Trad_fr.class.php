@@ -136,7 +136,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @qqn, mots…';
 	const S_COPYRIGHT = 'Propulsé par %name%.';
-	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://docs.bugtrackr.eu/wiki/upgrade/">mise à niveau</a>.';
+	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://bugtrackr.github.io/wiki/upgrade/">mise à niveau</a>.';
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 

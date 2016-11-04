@@ -46,7 +46,7 @@ function endApi( $returnValues, $httpStatus = 200 ){
 // check if configuration file exists
 if(!file_exists(DIR_DATABASE."config_api.php")){
 	$returns['status'] = 0;
-	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://docs.bugtrackr.eu/api/ and example configuration https://github.com/bugtrackr/bumpy-booby/blob/master/sample_config/config_api.php for the API.";
+	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://bugtrackr.github.io/api/ and example configuration https://github.com/bugtrackr/bumpy-booby/blob/master/sample_config/config_api.php for the API.";
 	endApi( $returns, 500 );
 }
 
