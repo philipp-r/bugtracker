@@ -1,8 +1,7 @@
 # Bumpy Booby
 
-Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
-
-I recommend to use the `master` branch. This one is used to deploy our custom [issue tracker](https://bb.bugtrackr.eu/).
+I recommend to use the `master` branch. 
+This one was used to deploy our custom issue tracker - but we are now using [GitHub issues](https://github.com/bugtrackr/bumpy-booby/issues).
 
 Version 1.1
 
@@ -38,4 +37,4 @@ There are no .htaccess files in this branch. Add this to the apache config:
 
 ## Bugs & feature requests
 
-Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).
+See GitHub issues.
