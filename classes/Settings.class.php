@@ -703,7 +703,7 @@ class Settings {
 			'nb_last_activity_dashboard' => 5,
 			'nb_last_activity_user' => 5,
 			'nb_last_activity_rss' => 5,
-			'theme' => 'app',
+			'theme' => 'app.css',
 			'logs_enabled' => false,
 			'api_enabled' => false,
 			'projects' => array(
