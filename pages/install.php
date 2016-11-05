@@ -7,6 +7,7 @@ $l = explode(',', LANGUAGES);
 foreach ($l as $v) { $languages[$v] = $v; }
 
 $content = '<h1>Auto '.Trad::T_INSTALLATION.'</h1>'
+	.'<p>'.Trad::S_INTRO_INSTALL.'</p>'
 	.'<p>&nbsp;</p>';
 
 if (isset($_POST['language']) && Text::check_language($_POST['language'])) {
@@ -79,8 +80,11 @@ if (is_file(DIR_DATABASE.FILE_CONFIG)) {
 		</div>
 	';
 }
-else {
-	$config = Settings::get_default_config(getenv('INSTALL_LANG'));
+elseif (isset($_POST['action'])
+	&& isset($_POST['language'])
+	&& Text::check_language($_POST['language'])
+) {
+	$config = Settings::get_default_config($_POST['language']);
 	$settings = new Settings();
 	$post = $_POST;
 	var_dump($post); die();
