@@ -466,53 +466,6 @@
         ]
     },
     {
-        "name": "phpdocumentor/reflection-docblock",
-        "version": "3.1.0",
-        "version_normalized": "3.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-            "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9270140b940ff02e58ec577c237274e92cd40cdd",
-            "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "phpdocumentor/reflection-common": "^1.0@dev",
-            "phpdocumentor/type-resolver": "^0.2.0",
-            "webmozart/assert": "^1.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "^0.9.4",
-            "phpunit/phpunit": "^4.4"
-        },
-        "time": "2016-06-10 09:48:41",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "phpDocumentor\\Reflection\\": [
-                    "src/"
-                ]
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Mike van Riel",
-                "email": "me@mikevanriel.com"
-            }
-        ],
-        "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock."
-    },
-    {
         "name": "phpspec/prophecy",
         "version": "v1.6.1",
         "version_normalized": "1.6.1.0",
@@ -890,23 +843,23 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v3.1.4",
-        "version_normalized": "3.1.4.0",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d"
+            "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/f291ed25eb1435bddbe8a96caaef16469c2a092d",
-            "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+            "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-09-02 02:12:52",
+        "time": "2016-10-24 18:41:13",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -941,23 +894,23 @@
     },
     {
         "name": "symfony/process",
-        "version": "v3.1.4",
-        "version_normalized": "3.1.4.0",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/process.git",
-            "reference": "e64e93041c80e77197ace5ab9385dedb5a143697"
+            "reference": "66de154ae86b1a07001da9fbffd620206e4faf94"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/process/zipball/e64e93041c80e77197ace5ab9385dedb5a143697",
-            "reference": "e64e93041c80e77197ace5ab9385dedb5a143697",
+            "url": "https://api.github.com/repos/symfony/process/zipball/66de154ae86b1a07001da9fbffd620206e4faf94",
+            "reference": "66de154ae86b1a07001da9fbffd620206e4faf94",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-08-16 14:58:24",
+        "time": "2016-09-29 14:13:09",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -992,23 +945,23 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v3.1.4",
-        "version_normalized": "3.1.4.0",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "e568ef1784f447a0e54dcb6f6de30b9747b0f577"
+            "reference": "205b5ffbb518a98ba2ae60a52656c4a31ab00c6f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/e568ef1784f447a0e54dcb6f6de30b9747b0f577",
-            "reference": "e568ef1784f447a0e54dcb6f6de30b9747b0f577",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
+            "reference": "205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-08-26 12:04:02",
+        "time": "2016-09-28 00:11:12",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1043,17 +996,17 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v3.1.4",
-        "version_normalized": "3.1.4.0",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5"
+            "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
-            "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
+            "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
             "shasum": ""
         },
         "require": {
@@ -1070,7 +1023,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2016-07-19 10:45:57",
+        "time": "2016-10-13 06:28:43",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1104,22 +1057,131 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "symfony/console",
-        "version": "v3.1.4",
-        "version_normalized": "3.1.4.0",
+        "name": "psr/log",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/console.git",
-            "reference": "8ea494c34f0f772c3954b5fbe00bffc5a435e563"
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/8ea494c34f0f772c3954b5fbe00bffc5a435e563",
-            "reference": "8ea494c34f0f772c3954b5fbe00bffc5a435e563",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-10-10 12:19:37",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "symfony/debug",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/debug.git",
+            "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/debug/zipball/e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
+            "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9",
+            "psr/log": "~1.0"
+        },
+        "conflict": {
+            "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+        },
+        "require-dev": {
+            "symfony/class-loader": "~2.8|~3.0",
+            "symfony/http-kernel": "~2.8|~3.0"
+        },
+        "time": "2016-09-06 11:02:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Debug\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Debug Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/console",
+        "version": "v3.1.6",
+        "version_normalized": "3.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/console/zipball/c99da1119ae61e15de0e4829196b9fba6f73d065",
+            "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/debug": "~2.8|~3.0",
             "symfony/polyfill-mbstring": "~1.0"
         },
         "require-dev": {
@@ -1132,7 +1194,7 @@
             "symfony/event-dispatcher": "",
             "symfony/process": ""
         },
-        "time": "2016-08-19 06:48:39",
+        "time": "2016-10-06 01:44:51",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1166,18 +1228,65 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "phpspec/phpspec",
-        "version": "2.5.2",
-        "version_normalized": "2.5.2.0",
+        "name": "phpdocumentor/reflection-docblock",
+        "version": "3.1.1",
+        "version_normalized": "3.1.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/phpspec/phpspec.git",
-            "reference": "7e7e104de01b5052195cefefcd0b29f1add4c116"
+            "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+            "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpspec/phpspec/zipball/7e7e104de01b5052195cefefcd0b29f1add4c116",
-            "reference": "7e7e104de01b5052195cefefcd0b29f1add4c116",
+            "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+            "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "phpdocumentor/reflection-common": "^1.0@dev",
+            "phpdocumentor/type-resolver": "^0.2.0",
+            "webmozart/assert": "^1.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^4.4"
+        },
+        "time": "2016-09-30 07:12:33",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpDocumentor\\Reflection\\": [
+                    "src/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mike van Riel",
+                "email": "me@mikevanriel.com"
+            }
+        ],
+        "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock."
+    },
+    {
+        "name": "phpspec/phpspec",
+        "version": "2.5.3",
+        "version_normalized": "2.5.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpspec/phpspec.git",
+            "reference": "153ebd99d9b842e0c99a024c41f970d79db46475"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpspec/phpspec/zipball/153ebd99d9b842e0c99a024c41f970d79db46475",
+            "reference": "153ebd99d9b842e0c99a024c41f970d79db46475",
             "shasum": ""
         },
         "require": {
@@ -1202,7 +1311,7 @@
         "suggest": {
             "phpspec/nyan-formatters": "~1.0 – Adds Nyan formatters"
         },
-        "time": "2016-09-04 11:59:15",
+        "time": "2016-09-26 20:28:11",
         "bin": [
             "bin/phpspec"
         ],

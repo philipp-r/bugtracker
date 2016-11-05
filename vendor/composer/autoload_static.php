@@ -27,10 +27,12 @@ class ComposerStaticInit315b3f26b84af958df1291ea0b8bc98f
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'PUGX\\Poser\\' => 11,
         ),
         'D' => 
@@ -70,9 +72,17 @@ class ComposerStaticInit315b3f26b84af958df1291ea0b8bc98f
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'PUGX\\Poser\\' => 
         array (
