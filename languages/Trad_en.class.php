@@ -67,6 +67,10 @@ class Trad {
 
 	const W_RSS = 'RSS feed';
 	const W_VERSION = 'Version';
+	
+	const W_CAPTCHA_IMAGE = 'CAPTCHA Image';
+	const W_CAPTCHA_REFRESH = 'Refresh Image';
+	const W_CAPTCHA_INPUT = 'Type the text:';
 
 		# Verbes
 
@@ -84,6 +88,7 @@ class Trad {
 	const V_APPLY = 'Apply';
 	const V_EDIT = 'Edit';
 	const V_SIGNUP = 'Sign up';
+	const V_LOGIN = 'Log in';
 	const V_CONTINUE = 'Continue';
 	const V_REMOVE_ISSUE = 'Delete issue';
 	const V_CLOSE = 'close';
@@ -131,7 +136,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @user, words…';
 	const S_COPYRIGHT = 'Powered by %name%.';
-	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://docs.bugtrackr.eu/wiki/upgrade/">upgrade</a>.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://bugtrackr.github.io/wiki/upgrade/">upgrade</a>.';
 
 	const S_LAST_UPDATES = 'Last updates…';
 
@@ -215,8 +220,8 @@ This is an automated email, please do not reply.
 	const T_GLOBAL_SETTINGS = 'Global settings';
 	const T_APPEARANCE = 'Appearance';
 	const T_ISSUES = 'Issues';
-	const T_GROUPS = 'Groups';
-	const T_USERS = 'Users';
+	const T_PERMISSIONS = 'Permissions';
+	const T_CAPTCHA = 'Captcha';
 	const T_BROWSE_ISSUES = 'Browse issues';
 	const T_BROWSE_ALL_ISSUES = 'Browse all issues';
 	const T_ALL_ISSUES_DESCRIPTION = 'This are all open issues for all projects';
@@ -233,7 +238,6 @@ This is an automated email, please do not reply.
 	const T_LINK_PRIVACYPOLICY = 'Privacy Policy';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'API access';
-	const T_API_ACCESS_HELP = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 	const T_INFO = 'Info';
 
 		# FORMS
@@ -267,6 +271,8 @@ This is an automated email, please do not reply.
 	const F_PREVIEW_PROJECT = 'Previews length (projects):';
 	const F_LAST_EDITS = 'Number of issues displayed on dashboards:';
 	const F_LAST_ACTIVITY = 'Number of issues displayed on user pages:';
+	const F_THEME = "Theme";
+	const F_TIP_THEME = "Place the .css file in";
 
 	const F_ADD_PROJECT = 'New project';
 	const F_ADD_COLOR = 'New color';
@@ -284,6 +290,7 @@ This is an automated email, please do not reply.
 	const F_FILTER_STATES = 'Filter states:';
 	const F_FILTER_LABELS = 'Filter labels:';
 	const F_FILTER_USERS = 'Filter users:';
+	const F_FILTER_MILESTONE = 'Filter milestone:';
 
 	const F_WRITE = 'Write:';
 	const F_SUMMARY = 'Summary';
@@ -292,6 +299,7 @@ This is an automated email, please do not reply.
 	const F_STATUS = 'Status:';
 	const F_RELATED = 'Related:';
 	const F_LABELS2 = 'Labels:';
+	const F_MILESTONE = 'Milestone:';
 
 	const F_GENERAL_SETTINGS = 'General settings:';
 	const F_PROJECTS = 'Projects:';
@@ -324,6 +332,8 @@ This is an automated email, please do not reply.
 	const F_TIP_ID_STATUS = '<b>Tip:</b> be careful when changing the IDs, because each issue keeps its old status ID (except if this ID does not exist anymore: in this case, the default status will be used).';
 	const F_TIP_ID_LABEL = '<b>Tip:</b> be careful when changing the IDs, because each label of one issue keeps its old ID (except if this ID does not exist anymore: in this case, the label is removed from the issue).';
 	const F_TIP_ID_GROUP = '<b>Tip:</b> be careful when changing the IDs, because each user keeps its old group ID (except if this ID does not exist anymore: in this case, the default group will be used).';
+	const F_TIP_CAPTCHA = 'Choose the actions where a captcha will be shown for not logged in users.';
+	const F_TIP_API_ACCESS = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 
 	const F_API_ENABLE = 'Enable the API';
 

@@ -35,9 +35,10 @@ class Settings {
 		$this->c_colors($post);
 		$this->c_statuses($post);
 		$this->c_labels($post);
+		$this->c_users($post);
 		$this->c_groups($post);
 		$this->c_permissions($post);
-		$this->c_users($post);
+		$this->c_captcha($post);
 		$this->save();
 		$this->save_users();
 		return $this->errors;
@@ -281,6 +282,13 @@ class Settings {
 			$this->config['nb_last_activity_user'] =
 				intval($post['nb_last_activity_user']);
 		}
+		if (isset($post['theme'])) {
+			if( file_exists(DIR_CURRENT."public/css/".$post['theme']) ){
+				$this->config['theme'] = $post['theme'];
+			}else{
+				$this->config['theme'] = 'app.css';
+			}
+		}
 		return true;
 	}
 
@@ -374,55 +382,6 @@ class Settings {
 		return true;
 	}
 
-	protected function c_groups($post) {
-		if (!canAccess('settings')
-			|| !isset($post['group_id'])
-			|| !is_array($post['group_id'])
-			|| !isset($post['group_name'])
-			|| !is_array($post['group_name'])
-			|| count($post['group_id']) != count($post['group_name'])
-		) { return false; }
-		$groups = array();
-		foreach ($post['group_id'] as $k => $v) {
-			$id = Text::purge($v);
-			if (empty($id)) { continue; }
-			$groups[$id] = htmlspecialchars($post['group_name'][$k]);
-		}
-		if (!isset($groups[DEFAULT_GROUP])) {
-			$groups[DEFAULT_GROUP] = $this->config['groups'][DEFAULT_GROUP];
-			$this->errors[] = 'default_group_removed';
-		}
-		if (!isset($groups[DEFAULT_GROUP_SUPERUSER])) {
-			$groups[DEFAULT_GROUP_SUPERUSER] =
-				$this->config['groups'][DEFAULT_GROUP_SUPERUSER];
-			$this->errors[] = 'default_group_superuser_removed';
-		}
-		foreach ($this->config['users'] as $k => $u) {
-			if (!array_key_exists($u['group'], $groups)) {
-				$this->config['users'][$k]['group'] = DEFAULT_GROUP;
-			}
-		}
-		$this->config['groups'] = $groups;
-		return true;
-	}
-
-	protected function c_permissions($post) {
-		if (!canAccess('settings')) { return false; }
-		$permissions = $this->config['permissions'];
-		$groups = array_keys($this->config['groups']); $groups[] = 'none';
-		foreach ($permissions as $k => $v) {
-			$permissions[$k] = array();
-			foreach ($groups as $g) {
-				if (!isset($post['permission_'.$k.'_'.$g])) { return false; }
-				if ($post['permission_'.$k.'_'.$g] == "1") {
-					$permissions[$k][] = $g;
-				}
-			}
-		}
-		$this->config['permissions'] = $permissions;
-		return true;
-	}
-
 	protected function c_users($post) {
 		if (!canAccess('settings')
 			|| !isset($post['user_id'])
@@ -502,6 +461,73 @@ class Settings {
 		}
 		$this->config['users'] = $users;
 		return true;
+	}
+
+	protected function c_groups($post) {
+		if (!canAccess('settings')
+			|| !isset($post['group_id'])
+			|| !is_array($post['group_id'])
+			|| !isset($post['group_name'])
+			|| !is_array($post['group_name'])
+			|| count($post['group_id']) != count($post['group_name'])
+		) { return false; }
+		$groups = array();
+		foreach ($post['group_id'] as $k => $v) {
+			$id = Text::purge($v);
+			if (empty($id)) { continue; }
+			$groups[$id] = htmlspecialchars($post['group_name'][$k]);
+		}
+		if (!isset($groups[DEFAULT_GROUP])) {
+			$groups[DEFAULT_GROUP] = $this->config['groups'][DEFAULT_GROUP];
+			$this->errors[] = 'default_group_removed';
+		}
+		if (!isset($groups[DEFAULT_GROUP_SUPERUSER])) {
+			$groups[DEFAULT_GROUP_SUPERUSER] =
+				$this->config['groups'][DEFAULT_GROUP_SUPERUSER];
+			$this->errors[] = 'default_group_superuser_removed';
+		}
+		foreach ($this->config['users'] as $k => $u) {
+			if (!array_key_exists($u['group'], $groups)) {
+				$this->config['users'][$k]['group'] = DEFAULT_GROUP;
+			}
+		}
+		$this->config['groups'] = $groups;
+		return true;
+	}
+
+	protected function c_permissions($post) {
+		if (!canAccess('settings')) { return false; }
+		$permissions = $this->config['permissions'];
+		$groups = array_keys($this->config['groups']); $groups[] = 'none';
+		foreach ($permissions as $k => $v) {
+			$permissions[$k] = array();
+			foreach ($groups as $g) {
+				if (!isset($post['permission_'.$k.'_'.$g])) { return false; }
+				if ($post['permission_'.$k.'_'.$g] == "1") {
+					$permissions[$k][] = $g;
+				}
+			}
+		}
+		$this->config['permissions'] = $permissions;
+		return true;
+	}
+
+	protected function c_captcha($post) {
+		if (isset($post['captcha_new_issue']) && $post['captcha_new_issue'] == "yes") {
+			$this->config['captcha_new_issue'] = true;
+		} else {
+			$this->config['captcha_new_issue'] = false;
+		}
+		if (isset($post['captcha_post_comment']) && $post['captcha_post_comment'] == "yes") {
+			$this->config['captcha_post_comment'] = true;
+		} else {
+			$this->config['captcha_post_comment'] = false;
+		}
+		if (isset($post['captcha_signup']) && $post['captcha_signup'] == "yes") {
+			$this->config['captcha_signup'] = true;
+		} else {
+			$this->config['captcha_signup'] = false;
+		}
 	}
 
 	public function url_rewriting() {
@@ -659,7 +685,7 @@ class Settings {
 		return array(
 			'title' => 'Bumpy Booby DEMO',
 			'url' => Settings::get_path(),
-			'cdn_url' => 'https://cdn.rawgit.com/bugtrackr/bumpy-booby/master/',
+			'cdn_url' => 'https://cdn.rawgit.com/bugtrackr/bumpy-booby/demo/',
 			'url_rewriting' => false,
 			'link_contact' => '',
 			'link_legalnotice' => '',
@@ -676,7 +702,8 @@ class Settings {
 			'length_preview_project' => 200,
 			'nb_last_activity_dashboard' => 5,
 			'nb_last_activity_user' => 5,
-			'nb_last_activity_rss' => 1,
+			'nb_last_activity_rss' => 5,
+			'theme' => 'app',
 			'logs_enabled' => false,
 			'api_enabled' => false,
 			'projects' => array(
@@ -712,6 +739,9 @@ class Settings {
 				'developer' => Trad::W_DEVELOPPER,
 				'superuser' => Trad::W_SUPERUSER
 			),
+			'captcha_new_issue' => true,
+			'captcha_post_comment' => true,
+			'captcha_signup' => false,
 			'statuses' => array(
 				'default' => array(
 					'name' => Trad::W_S_NEW,
@@ -757,7 +787,7 @@ class Settings {
 			'users' => array(),
 			'salt' => Text::randomKey(40),
 			'version' => VERSION,
-			'last_update' => false
+			'last_update' => false,
 		);
 	}
 }

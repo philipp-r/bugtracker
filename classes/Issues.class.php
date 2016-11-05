@@ -92,6 +92,12 @@ class Issues {
 			if (!empty($labels)) {
 				$labels = '<div class="labels">'.$labels.'</div>';
 			}
+			$milestone = '';
+			if (!empty($issue['milestone'])) {
+				$url = Url::parse($this->project.'/milestone/'.$issue['milestone']);
+				$milestone = '<a href="'.$url.'">'
+						.'<i class="icon-indent-right"></i>'.$issue['milestone'].'&nbsp;–&nbsp;</a>';
+			}
 			$nbcomments = 0;
 			foreach ($issue['edits'] as $e) {
 				if (!empty($e) && $e['type'] == 'comment') { $nbcomments++; }
@@ -118,6 +124,7 @@ class Issues {
 						.'</a>'
 						.'<span class="grey">'
 							.$by.'&nbsp;–&nbsp;'
+							.$milestone
 							.'<a href="'.$url.'#comments" class="a-nb-comment">'
 								.'<i class="icon-comment"></i>'.$nbcomments
 							.'</a>'
@@ -225,6 +232,7 @@ class Issues {
 				&& (!isset($post['issue_status'])
 					|| !isset($post['issue_assignedto'])
 					|| !isset($post['issue_dependencies'])
+					|| !isset($post['issue_milestone'])
 					|| !isset($post['issue_labels'])
 					|| !array_key_exists($post['issue_status'], $config['statuses'])
 				)
@@ -261,6 +269,7 @@ class Issues {
 		$status = DEFAULT_STATUS;
 		$assignedto = NULL;
 		$dependencies = array();
+		$milestone = '';
 		$labels = array();
 		if (canAccess('update_issue') || $withApi) {
 			if(!empty($post['issue_status'])){
@@ -275,6 +284,9 @@ class Issues {
 				if ($this->exists($d)) {
 					$dependencies[] = $d;
 				}
+			}
+			if(!empty($post['issue_milestone'])){
+				$milestone = $post['issue_milestone'];
 			}
 			$la = explode(',', $post['issue_labels']);
 			foreach ($la as $l) {
@@ -301,6 +313,7 @@ class Issues {
 			'status' => $status,
 			'labels' => $labels,
 			'dependencies' => $dependencies,
+			'milestone' => $milestone,
 			'uploads' => $uploads,
 			'mailto' => array(),
 			'edits' => array()
@@ -383,6 +396,7 @@ class Issues {
 				|| !isset($edits['issue_status'])
 				|| !isset($edits['issue_assignedto'])
 				|| !isset($edits['issue_dependencies'])
+				|| !isset($edits['issue_milestone'])
 				|| !isset($edits['issue_labels'])
 				|| !isset($edits['issue_open'])
 				|| !isset($edits['token'])
@@ -423,6 +437,11 @@ class Issues {
 					$dependencies[] = $d;
 				}
 			}
+		}
+
+		$milestone = '';
+		if (!empty($edits['issue_milestone'])) {
+			$milestone = $edits['issue_milestone'];
 		}
 
 		$labels = array();
@@ -469,6 +488,7 @@ class Issues {
 		$i['status'] = $status;
 		$i['assignedto'] = $assignedto;
 		$i['dependencies'] = $dependencies;
+		$i['milestone'] = $milestone;
 		$i['labels'] = $labels;
 		$i['open'] = $open;
 		unset($i);

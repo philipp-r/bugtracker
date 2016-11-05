@@ -8,8 +8,8 @@ spl_autoload_register('loadClass');
 set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Bumpy Booby');
-define('VERSION', '1.0.3');
-define('AUTHOR', 'bugtrackr.eu');
+define('VERSION', '1.1');
+define('AUTHOR', 'bugtrackr');
 define('URL', 'https://github.com/bugtrackr/bumpy-booby');
 
 ### Languages
@@ -80,7 +80,6 @@ ini_set('session.use_cookies', 1);
 ini_set('session.use_only_cookies', 1);
 	# Prevent php to use sessionID in URL if cookies are disabled.
 ini_set('session.use_trans_sid', false);
-session_name('BumpyBooby');
 session_start();
 
 
@@ -451,7 +450,7 @@ if (!empty($config['link_privacypolicy'])) {
 		<link rel="shortcut icon" href="<?php echo Url::parse('public/img/favicon.ico', array(), '', true); ?>" />
 		<link rel="apple-touch-icon" href="<?php echo Url::parse('public/img/apple-touch-icon.png', array(), '', true); ?>" />
 
-		<link rel="stylesheet" href="<?php echo Url::parse('public/css/app.min.css', array(), '', true); ?>" />
+		<link rel="stylesheet" href="<?php echo Url::parse('public/css/'.$config['theme'], array(), '', true); ?>" />
 
 		<!--[if lt IE 9]>
 			<script src="<?php echo Url::parse('public/js/html5.js', array(), '', true); ?>"></script>

@@ -4,7 +4,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 **[The demo](https://demo.bugtrackr.eu/) is built using this branch.**
 
-Version 1.0.3
+Version 1.1
 
 ## Install
 
@@ -36,6 +36,10 @@ There are no .htaccess files in this branch. Add this to the apache config:
 </Directory>
 ```
 
-## Bugs & feature requests
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-Report bugs & feature requests in our [issue tracker](https://bb.bugtrackr.eu/index.php?project=bumpy-booby&page=issues).
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.

@@ -22,7 +22,8 @@ class Page {
 		'settings',
 		'error/403',
 		'error/404',
-		'signup'
+		'signup',
+		'login'
 	);
 	private $need_project = array(
 		'dashboard',

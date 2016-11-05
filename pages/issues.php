@@ -19,6 +19,9 @@ if (isset($_POST['action']) && $_POST['action'] = 'sort-filter') {
 	if (isset($_POST['statuses'])) {
 		$url->addParam('statuses', $_POST['statuses']);
 	}
+	if (isset($_POST['milestone'])) {
+		$url->addParam('milestone', $_POST['milestone']);
+	}
 	if (isset($_POST['open'])) {
 		$url->addParam('open', $_POST['open']);
 	}
@@ -80,6 +83,14 @@ if (isset($_GET['status'])) {
 	else {
 		$error404 = true;
 	}
+}
+
+$milestone = NULL;
+if (!empty($_GET['milestone'])) {
+	OrderFilter::$filter = array($_GET['milestone']);
+	$a = array_filter($a, array('OrderFilter', 'filter_milestone'));
+	$url->addParam('milestone', $_GET['milestone']);
+	$milestone = $_GET['milestone'];
 }
 
 $open = 'open';
@@ -240,6 +251,9 @@ else {
 	}
 }
 $content .= 	'</p>'
+				.'<p>'.Trad::F_FILTER_MILESTONE.'<br />'
+				.'<input type="text" name="milestone" value="'.((empty($milestone)) ? '' : $milestone).'" placeholder="v2.0.1" />'
+				.'</p>'
 				.'<p>'
 					.Trad::F_SORT_BY.'<br />'
 					.'<select>'

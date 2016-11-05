@@ -7,16 +7,35 @@ if (isset($_GET['id']) && $issue = $issues->get($_GET['id'])) {
 $form_pc_c = ''; $form_pc_a = '';
 $form_ec_c = ''; $form_ec_a = ''; $form_ec_id = '';
 $form_ei_a = '';
+// new comment
 if (isset($_POST['post_comment'])) {
-	$ans = $issues->comment($issue['id'], $_POST);
-	if ($ans === true) {
-		$url = Url::parse(getProject().'/issues/'.$issue['id'], array(), 'e-'.$issues->lastcomment);
-		header('Location: '.$url);
-		exit;
+	$captcha_check_passed = false;
+	// if user is not logged in, check Captcha
+	if( !$config['loggedin'] && $config['captcha_post_comment'] ){
+		require_once 'vendor/autoload.php';
+		$image = new Securimage();
+		if ($image->check($_POST['captcha_code']) == true) {
+			$captcha_check_passed = true;
+		}
+		else{
+			$this->addAlert(Trad::F_INVALID_CAPTCHA);
+		}
+	}
+	else{
+		$captcha_check_passed = true;
+	}
+	if($captcha_check_passed){
+		$ans = $issues->comment($issue['id'], $_POST);
+		if ($ans === true) {
+			$url = Url::parse(getProject().'/issues/'.$issue['id'], array(), 'e-'.$issues->lastcomment);
+			header('Location: '.$url);
+			exit;
+		}
 	}
 	$form_pc_a = '<div class="alert alert-error">'.$ans.'</div>';
 	$form_pc_c = htmlspecialchars($_POST['comment']);
 }
+// delete comment
 elseif (isset($_POST['delete_comment'])) {
 	$ans = $issues->delete_comment($issue['id'], $_POST);
 	if ($ans === true) {
@@ -28,6 +47,7 @@ elseif (isset($_POST['delete_comment'])) {
 		$this->addAlert($ans);
 	}
 }
+// edit comment
 elseif (isset($_POST['edit_comment'])) {
 	$ans = $issues->edit_comment($issue['id'], $_POST);
 	if ($ans === true) {
@@ -40,6 +60,7 @@ elseif (isset($_POST['edit_comment'])) {
 		$form_ec_id = intval($_POST['comment_id']);
 	}
 }
+// update issue content
 elseif (isset($_POST['update_content'])) {
 	$ans = $issues->edit_issue($issue['id'], $_POST);
 	if ($ans === true) {
@@ -50,6 +71,7 @@ elseif (isset($_POST['update_content'])) {
 		$form_ei_a = '<div class="alert alert-error">'.$ans.'</div>';
 	}
 }
+// update issue details
 elseif (isset($_POST['update_details'])) {
 	$ans = $issues->update_issue($issue['id'], $_POST);
 	if ($ans === true) {
@@ -60,6 +82,7 @@ elseif (isset($_POST['update_details'])) {
 		$this->addAlert($ans);
 	}
 }
+// delete issue
 elseif (isset($_POST['delete_issue'])) {
 	$ans = $issues->delete_issue($issue['id'], $_POST);
 	if ($ans === true) {
@@ -188,8 +211,22 @@ if (canAccess('post_comment') && $issue['open']) {
 		<form action="'.Url::parse(getProject().'/issues/'.$issue['id'], array(), 'post_comment').'" method="post" id="post_comment">
 			<textarea name="comment" rows="6" aria-labelledby="'.Trad::V_COMMENT.'" required>'.$form_pc_c.'</textarea>
 			<div class="preview text-container" style="display:none"></div>
-			'.$message.'
-			<div class="form-actions">
+			'.$message;
+
+// include securimage if user is not logged in
+if( !$config['loggedin'] && $config['captcha_post_comment'] ){
+	require_once 'vendor/autoload.php';
+	// https://www.phpcaptcha.org/Securimage_Docs/classes/Securimage.html#method_getCaptchaHtml
+	$form_comment .= Securimage::getCaptchaHtml( array(
+		'image_alt_text' => Trad::W_CAPTCHA_IMAGE,
+		'refresh_alt_text' => Trad::W_CAPTCHA_REFRESH,
+		'refresh_title_text' => Trad::W_CAPTCHA_REFRESH,
+		'input_text' => Trad::W_CAPTCHA_INPUT,
+	) );
+}
+
+
+$form_comment .= '<div class="form-actions">
 				<button type="button" class="btn btn-preview">'.Trad::V_PREVIEW.'</button>
 				<button type="submit" class="btn btn-primary">'.Trad::V_COMMENT.'</button>
 			</div>
@@ -246,6 +283,11 @@ if (!empty($issue['dependencies'])) {
 	$dependencies = implode(', ', $d);
 }
 
+$milestone = '';
+if (!empty($issue['milestone'])) {
+	$milestone = $issue['milestone'];
+}
+
 $statuses = array();
 foreach ($config['statuses'] as $k => $v) {
 	$statuses[$k] = $v['name'];
@@ -284,6 +326,8 @@ if (canAccess('update_issue')) {
 		<select name="issue_assignedto" class="select-users">'.Text::options($users, $issue['assignedto']).'</select>
 		<label for="issue_dependencies">'.Trad::F_RELATED.'</label>
 		<input type="text" name="issue_dependencies" value="'.((empty($issue['dependencies'])) ? '' : '#'.implode(', #', $issue['dependencies'])).'" placeholder="#1, #2, ..." />
+		<label for="issue_milestone">'.Trad::F_MILESTONE.'</label>
+		<input type="text" name="issue_milestone" value="'.((empty($issue['milestone'])) ? '' : $issue['milestone']).'" placeholder="v2.0.1" />
 		<label>'.Trad::F_LABELS2.'</label>
 		<p class="p-edit-labels">'.$l.'</p>
 		<input type="hidden" name="issue_labels" value="" />
@@ -297,6 +341,7 @@ if (canAccess('update_issue')) {
 </div>
 	';
 }
+
 $edit_issue = '';
 $displ_f = (empty($form_ei_a)) ? 'none'            : 'table-cell';
 $displ_t = (empty($form_ei_a)) ? 'table-cell'           : 'none';
@@ -355,6 +400,12 @@ if ($config['email']
 	$manage_issue .= '<li><a href="javascript:;" class="a-notifications">'.$text.'</a></li>';
 }
 
+$milestone_html='';
+if(!empty($milestone)){
+	$milestone_url = Url::parse(getProject().'/milestone/'.$issue['milestone']);
+	$milestone_html = '<p class="p-text">'.Trad::F_MILESTONE.' <a href="'.$milestone_url.'"><i class="icon-indent-right"></i>'.$milestone.'</a>';
+}
+
 $content = '
 
 <h1><span class="span-id" style="background:'.$config['statuses'][$issue['status']]['color'].'"><span>#</span>'.$issue['id'].'</span>'.$safe_title.'</h1>
@@ -377,8 +428,8 @@ $content = '
 				),
 				Trad::S_ISSUE_UPDATED).'
 			</p>
-			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').'
-			<p class="p-labels">'.$labels.'</p>
+			'.((empty($dependencies)) ? '' : '<p class="p-text">'.Trad::F_RELATED.' '.$dependencies.'</p>').$milestone_html
+			.'<p class="p-labels">'.$labels.'</p>
 			<form action="'.Url::parse(getProject().'/issues/'.$issue['id']).'" method="post">
 				<input type="hidden" name="action" value="1" />
 				<input type="hidden" name="token" value="'.$token.'" />

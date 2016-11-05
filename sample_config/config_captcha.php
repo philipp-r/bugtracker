@@ -39,7 +39,7 @@ return array(
 
     // the PHP session name to use (null for default PHP session name)
     // DO NOT CHANGE! Required for Bumpy-Booby
-    'session_name'     => 'BumpyBooby',
+    'session_name'     => '',
 
     // change to true to store codes in a database
     'use_database'     => false,

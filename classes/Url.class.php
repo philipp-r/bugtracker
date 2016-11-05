@@ -44,6 +44,10 @@ class Url {
 			'redirect' => 'index.php?page=signup'
 		),
 		array(
+			'rule' => '^login$',
+			'redirect' => 'index.php?page=login'
+		),
+		array(
 			'rule' => '^([a-zA-Z0-9-]+)/dashboard$',
 			'redirect' => 'index.php?project=$1&page=dashboard'
 		),
@@ -54,6 +58,10 @@ class Url {
 		array(
 			'rule' => '^([a-zA-Z0-9-]+)/labels/([a-z0-9-]+)$',
 			'redirect' => 'index.php?project=$1&page=issues&label=$2'
+		),
+		array(
+			'rule' => '^([a-zA-Z0-9-]+)/milestone/([a-z0-9-_\.]+)$',
+			'redirect' => 'index.php?project=$1&page=issues&milestone=$2'
 		),
 		array(
 			'rule' => '^([a-zA-Z0-9-]+)/search$',

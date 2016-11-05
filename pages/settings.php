@@ -372,6 +372,7 @@ foreach ($config['users'] as $u) {
 	$t_users .= getTrUser($u);
 }
 
+//var_dump($config);
 
 $content = '
 
@@ -381,8 +382,7 @@ $content = '
 		<li><a href="#t1">'.Trad::T_GLOBAL_SETTINGS.'</a></li>
 		<li><a href="#t2">'.Trad::T_APPEARANCE.'</a></li>
 		<li><a href="#t3">'.Trad::T_ISSUES.'</a></li>
-		<li><a href="#t4">'.Trad::T_GROUPS.'</a></li>
-		<li><a href="#t5">'.Trad::T_USERS.'</a></li>
+		<li><a href="#t4">'.Trad::T_PERMISSIONS.'</a></li>
 		<li><a href="#t9">'.Trad::T_API_SETTINGS.'</a></li>
 	</ul>
 
@@ -488,6 +488,22 @@ $content = '
 			<input type="text" name="nb_last_activity_dashboard" id="nb_last_activity_dashboard" class="input-small" value="'.$config['nb_last_activity_dashboard'].'" />
 			<label for="nb_last_activity_user">'.Trad::F_LAST_ACTIVITY.'</label>
 			<input type="text" name="nb_last_activity_user" id="nb_last_activity_user" class="input-small" value="'.$config['nb_last_activity_user'].'" />
+			<label for="theme">'.Trad::F_THEME.'</label>
+			<select name="theme" id="theme" class="input-medium">';
+			// get all files from css folder
+			$all_files = scandir(DIR_CURRENT."public/css/");
+			foreach( $all_files as $file ){
+				// only .css files
+				if(strpos($file, '.css') !== false){
+					// select box
+					$content .= '<option value="'.$file.'" ';
+					if($config['theme'] == $file){ $content .= 'selected'; }
+					$content .= '>'.$file.'</option>';
+				}
+			}
+
+$content .= '</select>
+			<p class="help">'.Trad::F_TIP_THEME.' ./public/css</p>
 		</div>
 	</div>
 
@@ -568,7 +584,21 @@ $content = '
 		<button type="submit" class="btn btn-primary">'.Trad::V_SAVE_CONFIG.'</button>
 	</div>
 
-	<h2 id="t4">'.Trad::T_GROUPS.'</h2>
+	<h2 id="t4">'.Trad::T_PERMISSIONS.'</h2>
+
+	<div class="box box-settings">
+		<div class="top a-icon-hover">
+			<i class="icon-chevron-down"></i>'.Trad::F_USERS.'
+		</div>
+		<div class="inner-form" style="display:none">
+			<table class="table">
+				<tbody>
+					'.$t_users.'
+				</tbody>
+			</table>
+			<p style="text-align:center"><a href="javascript:;" class="btn btn-success btn-add-user">'.Trad::F_ADD_USER.'</a><a href="'.Url::parse('settings', array('action' => 'export_users')).'" class="btn btn-export-users"><i class="icon-share"></i></a></p>
+		</div>
+	</div>
 
 	<div class="box box-settings">
 		<div class="top a-icon-hover">
@@ -605,24 +635,21 @@ $content = '
 		</div>
 	</div>
 
-	<div class="form-actions">
-		<a href="'.Url::parse('settings').'" class="btn">'.Trad::V_CANCEL.'</a>
-		<button type="submit" class="btn btn-primary">'.Trad::V_SAVE_CONFIG.'</button>
-	</div>
-	
-	<h2 id="t5">'.Trad::T_USERS.'</h2>
-
 	<div class="box box-settings">
 		<div class="top a-icon-hover">
-			<i class="icon-chevron-down"></i>'.Trad::F_USERS.'
+			<i class="icon-chevron-down"></i>'.Trad::T_CAPTCHA.'
 		</div>
 		<div class="inner-form" style="display:none">
-			<table class="table">
-				<tbody>
-					'.$t_users.'
-				</tbody>
-			</table>
-			<p style="text-align:center"><a href="javascript:;" class="btn btn-success btn-add-user">'.Trad::F_ADD_USER.'</a><a href="'.Url::parse('settings', array('action' => 'export_users')).'" class="btn btn-export-users"><i class="icon-share"></i></a></p>
+			<p class="p-tip">'.Trad::F_TIP_CAPTCHA.'</p>
+			<label for="captcha_new_issue">'.Trad::permissions('new_issue', 'title') 
+				.'<input type="checkbox" name="captcha_new_issue" id="captcha_new_issue" value="yes" class="loggedin-checkbox" '.($config['captcha_new_issue'] ? 'checked' : '').' />
+			</label>
+			<label for="captcha_post_comment">'.Trad::permissions('post_comment', 'title') 
+				.'<input type="checkbox" name="captcha_post_comment" id="captcha_post_comment" value="yes" class="loggedin-checkbox" '.($config['captcha_post_comment'] ? 'checked' : '').' />
+			</label>
+			<label for="captcha_signup">'.Trad::permissions('signup', 'title') 
+				.'<input type="checkbox" name="captcha_signup" id="captcha_signup" value="yes" class="loggedin-checkbox" '.($config['captcha_signup'] ? 'checked' : '').' />
+			</label>
 		</div>
 	</div>
 
@@ -630,9 +657,6 @@ $content = '
 		<a href="'.Url::parse('settings').'" class="btn">'.Trad::V_CANCEL.'</a>
 		<button type="submit" class="btn btn-primary">'.Trad::V_SAVE_CONFIG.'</button>
 	</div>
-
-	<input type="hidden" name="action" value="save" />
-	<input type="hidden" name="token" value="'.getToken().'" />
 
 	<h2 id="t9" class="first">'.Trad::T_API_SETTINGS.'</h2>
 
@@ -642,7 +666,7 @@ $content = '
 		</div>
 		<div class="inner-form" style="display:none">
 			<label for="title">'.Trad::T_API_ACCESS_SETTINGS.'</label>
-			<p>'.Trad::T_API_ACCESS_HELP.'</p>
+			<p>'.Trad::F_TIP_API_ACCESS.'</p>
 
 			<label for="api_enabled">'.Trad::F_API_ENABLE.'</label>
 			<select name="api_enabled" id="api_enabled" class="input-medium">'.Text::options(array('true' => Trad::W_ENABLED, 'false' => Trad::W_DISABLED), ($config['api_enabled'] ? 'true' : 'false')).'</select>
@@ -655,7 +679,8 @@ $content = '
 	</div>
 
 
-
+	<input type="hidden" name="action" value="save" />
+	<input type="hidden" name="token" value="'.getToken().'" />
 
 </form>
 

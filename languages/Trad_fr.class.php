@@ -68,6 +68,10 @@ class Trad {
 	const W_RSS = 'Flux RSS';
 	const W_VERSION = 'Version';
 
+	const W_CAPTCHA_IMAGE = 'CAPTCHA image';
+	const W_CAPTCHA_REFRESH = 'Rafraîchir l\'image';
+	const W_CAPTCHA_INPUT = 'Tapez le texte :';
+
 		# Verbes
 
 	const V_UPDATE = 'Mettre à jour';
@@ -84,6 +88,7 @@ class Trad {
 	const V_APPLY = 'Appliquer';
 	const V_EDIT = 'Modifier';
 	const V_SIGNUP = 'S\'inscrire';
+	const V_LOGIN = 'Connectez';
 	const V_CONTINUE = 'Continuer';
 	const V_REMOVE_ISSUE = 'Supprimer la demande';
 	const V_CLOSE = 'fermer';
@@ -131,7 +136,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @qqn, mots…';
 	const S_COPYRIGHT = 'Propulsé par %name%.';
-	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://docs.bugtrackr.eu/wiki/upgrade/">mise à niveau</a>.';
+	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://bugtrackr.github.io/wiki/upgrade/">mise à niveau</a>.';
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 
@@ -215,8 +220,8 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_GLOBAL_SETTINGS = 'Réglages généraux';
 	const T_APPEARANCE = 'Apparence';
 	const T_ISSUES = 'Demandes';
-	const T_GROUPS = 'Groupes';
-	const T_USERS = 'Utilisateurs';
+	const T_PERMISSIONS = 'Permissions';
+	const T_CAPTCHA = 'Captcha';
 	const T_BROWSE_ISSUES = 'Parcourir les demandes';
 	const T_BROWSE_ALL_ISSUES = 'Voir toutes les demandes';
 	const T_ALL_ISSUES_DESCRIPTION = 'Ce sont toutes les demandes ouvertes pour tous les projets';
@@ -233,7 +238,6 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_LINK_PRIVACYPOLICY = 'Politique de confidentialité';
 	const T_API_SETTINGS = 'API';
 	const T_API_ACCESS_SETTINGS = 'L\'accès aux API';
-	const T_API_ACCESS_HELP = 'Configurer l\'accès API dans <em>/database/config_api.php</em> fichier. Pour plus d\'informations voir le fichier API.md.';
 	const T_INFO = 'Info';
 
 		# FORMS
@@ -267,6 +271,8 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_PREVIEW_PROJECT = 'Longueur des extraits (projets) :';
 	const F_LAST_EDITS = 'Nombre de demandes affichées sur les tableaux de bord:';
 	const F_LAST_ACTIVITY = 'Nombre de demandes affichées sur la page des utilisateurs :';
+	const F_THEME = "Désign";
+	const F_TIP_THEME = "Placez le fichier .css dans";
 
 	const F_ADD_PROJECT = 'Nouveau projet';
 	const F_ADD_COLOR = 'Nouvelle couleur';
@@ -284,6 +290,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_FILTER_STATES = 'Filtrer les états :';
 	const F_FILTER_LABELS = 'Filtrer les labels :';
 	const F_FILTER_USERS = 'Filtrer les utilisateurs :';
+	const F_FILTER_MILESTONE = 'Filtrer les étapes:';
 
 	const F_WRITE = 'Écrire :';
 	const F_SUMMARY = 'Résumé';
@@ -292,6 +299,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_STATUS = 'Statut :';
 	const F_RELATED = 'Liée à :';
 	const F_LABELS2 = 'Étiquettes :';
+	const F_MILESTONE = 'Étapes :';
 
 	const F_GENERAL_SETTINGS = 'Réglages généraux :';
 	const F_PROJECTS = 'Projets :';
@@ -324,6 +332,8 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_TIP_ID_STATUS = '<b>Attention :</b> le statut de chaque demande ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce statut ne correspondrait plus à aucun des nouveaux ID, la demande retrouverait l\'état par défaut.';
 	const F_TIP_ID_LABEL = '<b>Attention :</b> les étiquettes des demandes ne seront pas mis à jour, elles pointeront donc toujours vers les anciens ID. Dans le cas où une étiquette d\'une demande ne correspondrait plus à aucun des nouveaux ID, la demande perdrait cette étiquette.';
 	const F_TIP_ID_GROUP = '<b>Attention :</b> le groupe de chaque utilisateur ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce groupe ne correspondrait plus à aucun des nouveaux ID, l\'utilisateur rejoindrait le groupe par défaut.';
+	const F_TIP_CAPTCHA = 'Choisissez les actions où captcha sera affiché pour les utilisateurs qui ne sont pas connectés.';
+	const F_TIP_API_ACCESS = 'Configurer l\'accès API dans <em>/database/config_api.php</em> fichier. Pour plus d\'informations voir le fichier API.md.';
 
 	const F_API_ENABLE = 'Activer l\'API';
 

@@ -25,9 +25,8 @@ $token = getToken();
 if( isset($_POST['new_issue']) ){
 	$captcha_check_passed = false;
 	// if user is not logged in, check Captcha
-	if( !$config['loggedin'] ){
-		session_start();
-		require_once 'classes/securimage/securimage.php';
+	if( !$config['loggedin'] && $config['captcha_new_issue'] ){
+		require_once 'vendor/autoload.php';
 		$image = new Securimage();
 		if ($image->check($_POST['captcha_code']) == true) {
 			$captcha_check_passed = true;
@@ -35,7 +34,6 @@ if( isset($_POST['new_issue']) ){
 		else{
 			$this->addAlert(Trad::F_INVALID_CAPTCHA);
 		}
-
 	}
 	else{
 		$captcha_check_passed = true;
@@ -96,6 +94,9 @@ if (canAccess('update_issue')) {
 		.'<label for="issue_dependencies">'.Trad::F_RELATED.'</label>'
 		.'<input type="text" name="issue_dependencies" value="'.$form_d.'" '
 			.'placeholder="#1, #2, ..." />'
+		.'<label for="issue_milestone">'.Trad::F_MILESTONE.'</label>'
+		.'<input type="text" name="issue_milestone" value="'.$form_d.'" '
+			.'placeholder="v2.0.1" />'
 		.'<label>'.Trad::F_LABELS2.'</label>'
 		.'<p class="p-edit-labels">'.$labels.'</p>'
 		.'<input type="hidden" name="issue_labels" value="" />'
@@ -129,9 +130,15 @@ $content = '<h1>'.Trad::T_NEW_ISSUE.'</h1>'
 			.$should_login;
 
 // include securimage if user is not logged in
-if( !$config['loggedin'] ){
-	require_once 'classes/securimage/securimage.php';
-	$content .=	Securimage::getCaptchaHtml();
+if( !$config['loggedin'] && $config['captcha_new_issue'] ){
+	require_once 'vendor/autoload.php';
+	// https://www.phpcaptcha.org/Securimage_Docs/classes/Securimage.html#method_getCaptchaHtml
+	$content .=	Securimage::getCaptchaHtml( array(
+					'image_alt_text' => Trad::W_CAPTCHA_IMAGE,
+					'refresh_alt_text' => Trad::W_CAPTCHA_REFRESH,
+					'refresh_title_text' => Trad::W_CAPTCHA_REFRESH,
+					'input_text' => Trad::W_CAPTCHA_INPUT,
+				) );
 }
 
 $content .=	'<div class="form-actions">'
