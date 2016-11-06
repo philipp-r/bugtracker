@@ -1,9 +1,11 @@
 # Bumpy Booby
 
-Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
+[![GPL License](https://img.shields.io/github/issues/bugtrackr/bumpy-booby.svg)](https://github.com/bugtrackr/bumpy-booby/issues)
 
 [![GPL License](https://img.shields.io/badge/license-GPL-blue.svg?style=plastic)](https://bugtrackr.github.io/license/)
-[![Flattr this](https://img.shields.io/badge/_Flattr_this_--lightgrey.svg?style=social)](https://flattr.com/submit/auto?fid=y7wn6e&url=https%3A%2F%2Fgithub.com%2Fbugtrackr%2Fbumpy-booby)
+[![Bitcoin donations](https://img.shields.io/badge/tips---%3E_bitcoin-yellow.svg)](https://blockchain.info/address/1PuhHFRSqYyxbtLmvoF3D1LkoY2mVENCia)
+
+Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
 
 Version 1.1.1
 
