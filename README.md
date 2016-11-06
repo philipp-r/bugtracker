@@ -2,8 +2,8 @@
 
 [![GPL License](https://img.shields.io/github/issues/bugtrackr/bumpy-booby.svg)](https://github.com/bugtrackr/bumpy-booby/issues)
 
-[![GPL License](https://img.shields.io/badge/license-GPL-blue.svg?style=plastic)](https://bugtrackr.github.io/license/)
-[![Bitcoin donations](https://img.shields.io/badge/tips---%3E_bitcoin-yellow.svg)](https://blockchain.info/address/1PuhHFRSqYyxbtLmvoF3D1LkoY2mVENCia)
+[![GPL License](https://img.shields.io/badge/license-GPL-blue.svg)](https://bugtrackr.github.io/license/)
+[![Bitcoin donations](https://img.shields.io/badge/tips---%3E_bitcoin-pink.svg)](https://blockchain.info/address/1PuhHFRSqYyxbtLmvoF3D1LkoY2mVENCia)
 
 Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
 
