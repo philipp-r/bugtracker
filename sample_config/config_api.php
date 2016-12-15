@@ -3,6 +3,12 @@
 	Configuration of API users
 	See *API.md* file for more information
 */
+
+// Webhook URL that is triggered, when a new issue or comment is created
+// Your URL has to contain {{EVENT_NAME}} which will be replaced with the event that occured
+// Webhooks work great with IFTTT Maker channel <https://ifttt.com/maker>
+$WEBHOOK = "https://maker.ifttt.com/trigger/{{EVENT_NAME}}/with/key/XYZ";
+
 $API_ACCESS = array(
 
 
