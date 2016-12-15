@@ -4,37 +4,11 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 **[The demo](https://bumpybooby.herokuapp.com/) is built using this branch.**
 
-Version 1.1
+Version 1.1.1
 
 ## Install
 
 Auto deploy on Heroku.
-
-### .htaccess files
-
-There are no .htaccess files in this branch. Add this to the apache config:
-```
-<Directory ~ "^/var/www/(classes|database|languages|pages)/">
-	Allow from none
-	Deny from all
-</Directory>
-<Directory "/var/www/classes/api/">
-	Allow from none
-	Deny from all
-	# allow API key generator
-	<FilesMatch "^keygen\.php$">
-		Allow from all
-	</FilesMatch>
-	<FilesMatch "^keygen-travisci\.php$">
-		Allow from all
-	</FilesMatch>
-</Directory>
-<Directory "/var/www/classes/securimage/">
-	<FilesMatch "^.*$">
-		Allow from all
-	</FilesMatch>
-</Directory>
-```
 
 ## GNU GPL License
 
