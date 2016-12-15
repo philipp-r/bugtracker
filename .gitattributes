@@ -1,0 +1,17 @@
+# used to remove files from deployment using `git archive`
+# git files
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/* export-ignore
+# Travis CI
+.travis.yml export-ignore
+# Readme/License
+classes/securimage/README.FONT.txt export-ignore
+classes/securimage/README.md export-ignore
+README.md export-ignore
+LICENSE.md export-ignore
+# .less
+public/css/app/* export-ignore
+public/css/original/* export-ignore
+# sample files
+sample_config/* export-ignore

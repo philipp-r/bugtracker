@@ -4,7 +4,7 @@ Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking sys
 
 **[The demo](https://bumpybooby.herokuapp.com/) is built using this branch.**
 
-Version 1.1.1
+Version 1.1.2
 
 ## Install
 
