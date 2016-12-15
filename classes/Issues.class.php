@@ -344,10 +344,25 @@ class Issues {
 			));
 			$mail->send($u['email']);
 		}
-
-		// trigger IFTTT Maker channel here for new issue
-		// https://maker.ifttt.com/trigger/bb_new_issue/with/key/KEY_FROM_CONFIG_FILE
 		
+		// check if API is enabled & config file exists
+		if($config["api_enabled"] && file_exists(DIR_DATABASE."config_api.php")){
+		require DIR_DATABASE."config_api.php";
+		if( !empty($WEBHOOK) ){
+			$webhook_data = array("value1" => Url::parse($this->project.'/issues/'.$id), "value2" => $post['issue_summary'], "value3" => $post['issue_text']);
+			$webhook_json = json_encode($webhook_data);
+			$hook_url = str_replace("{{EVENT_NAME}}", "bb_new_issue", $WEBHOOK);
+			$ch = curl_init($hook_url);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $webhook_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			    'Content-Type: application/json',
+			    'Content-Length: ' . strlen($webhook_json))
+			);
+			$result = curl_exec($ch);
+		}
+		}
+
 		$this->save();
 		return true;
 	}
@@ -645,8 +660,23 @@ class Issues {
 			$mail->send($u['email']);
 		}
 
-		// trigger IFTTT Maker channel here
-		// https://maker.ifttt.com/trigger/bb_comment/with/key/KEY_FROM_CONFIG_FILE
+		// check if API is enabled & config file exists
+		if($config["api_enabled"] && file_exists(DIR_DATABASE."config_api.php")){
+		require DIR_DATABASE."config_api.php";
+		if( !empty($WEBHOOK) ){
+			$webhook_data = array("value1" => Url::parse($this->project.'/issues/'.$id, array(), 'e-'.$cid), "value2" => $this->issues[$id]['summary'], "value3" => $post['comment']);
+			$webhook_json = json_encode($webhook_data);
+			$hook_url = str_replace("{{EVENT_NAME}}", "bb_comment", $WEBHOOK);
+			$ch = curl_init($hook_url);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $webhook_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			    'Content-Type: application/json',
+			    'Content-Length: ' . strlen($webhook_json))
+			);
+			$result = curl_exec($ch);
+		}
+		}
 
 		$this->save();
 		return true;
