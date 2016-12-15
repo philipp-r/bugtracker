@@ -10,6 +10,9 @@ classes/securimage/README.FONT.txt export-ignore
 classes/securimage/README.md export-ignore
 README.md export-ignore
 LICENSE.md export-ignore
+# API
+api.paw
+api.raml
 # .less
 public/css/app/* export-ignore
 public/css/original/* export-ignore
