@@ -214,6 +214,9 @@ class Issues {
 		return $ret;
 	}
 
+/* ****
+	Create new issue
+**** */
 	public function new_issue($post, $withApi = false) {
 		global $config;
 
@@ -319,7 +322,7 @@ class Issues {
 			'edits' => array()
 		);
 		$this->lastissue = $id;
-
+		
 		if ($by !== NULL
 			&& $config['users'][$by]['notifications'] != 'never'
 		) {
@@ -342,10 +345,17 @@ class Issues {
 			$mail->send($u['email']);
 		}
 
+		// trigger IFTTT Maker channel here for new issue
+		// https://maker.ifttt.com/trigger/bb_new_issue/with/key/KEY_FROM_CONFIG_FILE
+		
 		$this->save();
 		return true;
 	}
 
+
+/* ****
+	Edit an issue
+**** */
 	public function edit_issue($id, $edits, $withApi = false) {
 		global $config;
 		// if request is not done with API, check permission
@@ -368,6 +378,9 @@ class Issues {
 		return true;
 	}
 
+/* ****
+	Delete an issue
+**** */
 	public function delete_issue($id, $edits, $withApi = false) {
 		global $config;
 		// if request is not done with API, check permission
@@ -388,6 +401,9 @@ class Issues {
 		return true;
 	}
 
+/* ****
+	Update an issue
+**** */
 	public function update_issue($id, $edits, $withApi = false) {
 		global $config;
 		// if request is not done with API, check permission
@@ -549,6 +565,9 @@ class Issues {
 		$this->save();
 	}
 
+/* ****
+	Comment on issue
+**** */
 	public function comment($id, $post) {
 		global $config;
 		if (!canAccess('post_comment')
@@ -625,6 +644,9 @@ class Issues {
 			));
 			$mail->send($u['email']);
 		}
+
+		// trigger IFTTT Maker channel here
+		// https://maker.ifttt.com/trigger/bb_comment/with/key/KEY_FROM_CONFIG_FILE
 
 		$this->save();
 		return true;
