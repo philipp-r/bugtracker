@@ -2,392 +2,392 @@
 
 class Trad {
 
-		# Mots
+		# Words
 
-	const W_ISSUE = 'Demande';
-	const W_OPEN = 'Ouvert';
-	const W_OPENED = 'Ouvert';
-	const W_CLOSED = 'Fermé';
-	const W_REOPENED = 'Réouvert';
-	const W_COMMENTED = 'Commenté';
-	const W_NOBODY = 'personne';
-	const W_SOMEONE = 'quelqu\'un';
-	const W_ENABLED = 'Activé';
-	const W_DISABLED = 'Désactivé';
-	const W_NOTFOUND = 'Page non trouvée';
-	const W_FORBIDDEN = 'Accès refusé';
+	const W_ISSUE = 'Issue';
+	const W_OPEN = 'Open';
+	const W_OPENED = 'Opened';
+	const W_CLOSED = 'Closed';
+	const W_REOPENED = 'Reopened';
+	const W_COMMENTED = 'Commented';
+	const W_NOBODY = 'nobody';
+	const W_SOMEONE = 'someone';
+	const W_ENABLED = 'Enabled';
+	const W_DISABLED = 'Disabled';
+	const W_NOTFOUND = 'Not found';
+	const W_FORBIDDEN = 'Forbidden';
 	const W_MENU = 'Menu';
 
-	const W_EXAMPLE = 'Exemple';
+	const W_EXAMPLE = 'Example';
 	const W_HEX = 'Hex';
-	const W_RENDERING = 'Rendu';
+	const W_RENDERING = 'Rendering';
 	const W_ID = 'ID';
-	const W_DISPLAY_NAME = 'Nom affiché';
+	const W_DISPLAY_NAME = 'Display name';
 	
-	const W_SECONDE = 'seconde';
+	const W_SECONDE = 'second';
 	const W_MINUTE = 'minute';
-	const W_HOUR = 'heure';
-	const W_DAY = 'jour';
-	const W_WEEK = 'semaine';
-	const W_MONTH = 'mois';
-	const W_YEAR = 'année';
-	const W_DECADE = 'décennie';
-	const W_SECONDE_P = 'secondes';
+	const W_HOUR = 'hour';
+	const W_DAY = 'day';
+	const W_WEEK = 'week';
+	const W_MONTH = 'month';
+	const W_YEAR = 'year';
+	const W_DECADE = 'decad';
+	const W_SECONDE_P = 'seconds';
 	const W_MINUTE_P = 'minutes';
-	const W_HOUR_P = 'heures';
-	const W_DAY_P = 'jours';
-	const W_WEEK_P = 'semaines';
-	const W_MONTH_P = 'mois';
-	const W_YEAR_P = 'années';
-	const W_DECADE_P = 'décennies';
+	const W_HOUR_P = 'hours';
+	const W_DAY_P = 'days';
+	const W_WEEK_P = 'weeks';
+	const W_MONTH_P = 'months';
+	const W_YEAR_P = 'years';
+	const W_DECADE_P = 'decads';
 
-	const W_PREVIOUS = 'Précédente';
-	const W_NEXT = 'Suivante';
-	const W_MORE = 'PLUS';
-	const W_CURRENT = 'Page %nb1% sur %nb2%';
+	const W_PREVIOUS = 'Previous';
+	const W_NEXT = 'Next';
+	const W_MORE = 'MORE';
+	const W_CURRENT = 'Page %nb1% of %nb2%';
 
-	const W_NOT_LOGGED = 'Non connecté';
+	const W_NOT_LOGGED = 'Not logged in';
 
 	const W_SUSPENSION = '…';
-	const W_EXTRACT = '« %text% »';
+	const W_EXTRACT = '“%text%”';
 
-	const W_USER = 'Utilisateur';
-	const W_DEVELOPPER = 'Développeur';
-	const W_SUPERUSER = 'Superutilisateur';
-	const W_S_NEW = 'Nouveau';
-	const W_S_CONFIRMED = 'Confirmé';
-	const W_S_ASSIGNED = 'Assigné à %user%';
-	const W_S_RESOLVED = 'Résolu';
-	const W_S_REJECTED = 'Rejeté';
+	const W_USER = 'User';
+	const W_DEVELOPPER = 'Developper';
+	const W_SUPERUSER = 'Superuser';
+	const W_S_NEW = 'New';
+	const W_S_CONFIRMED = 'Confirmed';
+	const W_S_ASSIGNED = 'Assigned to %user%';
+	const W_S_RESOLVED = 'Resolved';
+	const W_S_REJECTED = 'Rejected';
 	const W_L_URGENT = 'Urgent';
-	const W_L_IMPROVEMENT = 'Amélioration';
-	const W_L_PRIVATE = 'Privé';
+	const W_L_IMPROVEMENT = 'Improvement';
+	const W_L_PRIVATE = 'Private';
 
-	const W_PROFILEPIC = 'avatar';
+	const W_PROFILEPIC = 'profile picture';
 
-	const W_RSS = 'Flux RSS';
+	const W_RSS = 'RSS feed';
 	const W_VERSION = 'Version';
-
-	const W_CAPTCHA_IMAGE = 'CAPTCHA image';
-	const W_CAPTCHA_REFRESH = 'Rafraîchir l\'image';
-	const W_CAPTCHA_INPUT = 'Tapez le texte :';
+	
+	const W_CAPTCHA_IMAGE = 'CAPTCHA Image';
+	const W_CAPTCHA_REFRESH = 'Refresh Image';
+	const W_CAPTCHA_INPUT = 'Type the text:';
 
 		# Verbes
 
-	const V_UPDATE = 'Mettre à jour';
-	const V_UPDATE_DETAILS = 'Mettre à jour la demande';
-	const V_UPDATE_CONTENT = 'Mettre à jour le contenu';
-	const V_UPDATE_AND = 'Mettre à jour & %adjective%';
-	const V_CANCEL = 'Annuler';
-	const V_PREVIEW = 'Aperçu';
-	const V_COMMENT = 'Commenter';
-	const V_SUBMIT = 'Envoyer';
-	const V_SELECT_FILE = 'Choisir un fichier…';
-	const V_UPLOADING = 'Transfert en cours…';
-	const V_SAVE_CONFIG = 'Enregistrer les réglages';
-	const V_APPLY = 'Appliquer';
-	const V_EDIT = 'Modifier';
-	const V_SIGNUP = 'S\'inscrire';
-	const V_LOGIN = 'Connectez';
-	const V_CONTINUE = 'Continuer';
-	const V_REMOVE_ISSUE = 'Supprimer la demande';
-	const V_CLOSE = 'fermer';
-	const V_REOPEN = 'réouvrir';
-	const V_EXPORT = 'Exporter les données brutes';
+	const V_UPDATE = 'Update';
+	const V_UPDATE_DETAILS = 'Update details';
+	const V_UPDATE_CONTENT = 'Update content';
+	const V_UPDATE_AND = 'Update & %adjective%';
+	const V_CANCEL = 'Cancel';
+	const V_PREVIEW = 'Preview';
+	const V_COMMENT = 'Comment';
+	const V_SUBMIT = 'Submit';
+	const V_SELECT_FILE = 'Select a file…';
+	const V_UPLOADING = 'Uploading…';
+	const V_SAVE_CONFIG = 'Save settings';
+	const V_APPLY = 'Apply';
+	const V_EDIT = 'Edit';
+	const V_SIGNUP = 'Sign up';
+	const V_LOGIN = 'Log in';
+	const V_CONTINUE = 'Continue';
+	const V_REMOVE_ISSUE = 'Delete issue';
+	const V_CLOSE = 'close';
+	const V_REOPEN = 'reopen';
+	const V_EXPORT = 'Export raw data';
 
-		# Phrases
+		# Sentencies
 
 	const S_NOLABEL = '–';
 	const S_NODEPENDENCY = '–';
-	const S_COMMENT_LEAVE = 'Poster un commentaire :';
-	const S_AGO = 'il y a %duration% %pediod%';
-	const S_ISSUE_ABOUT = 'À propos :';
-	const S_UPLOAD_ADD = 'Joindre un fichier :';
-	const S_WELCOME = 'Bienvenue, %user%';
-	const S_NEVER = 'Jamais';
-	const S_ME = 'À chaque mise à jour de demandes auxquelles j\'ai participé';
-	const S_ALWAYS = 'Tout le temps';
-	const S_START_NOTIF = 'Être averti des mises à jour';
-	const S_STOP_NOTIF = 'Ne plus être averti lors des mises à jour';
-	const S_NOTFOUND = 'La page que vous recherchez n\'existe pas...';
-	const S_FORBIDDEN = 'Vous n\'êtes pas autorisé à accèder à cette page. Merci de vous connecter pour continuer.';
+	const S_COMMENT_LEAVE = 'Leave a comment:';
+	const S_AGO = '%duration% %pediod% ago';
+	const S_ISSUE_ABOUT = 'About this issue:';
+	const S_UPLOAD_ADD = 'Attach a file:';
+	const S_WELCOME = 'Welcome, %user%';
+	const S_NEVER = 'Never';
+	const S_ME = 'Of updates on issues I have contributed in';
+	const S_ALWAYS = 'Of each updates';
+	const S_START_NOTIF = 'Be notified of new updates';
+	const S_STOP_NOTIF = 'No longer be notified of updates';
+	const S_NOTFOUND = 'The page you\'re looking for does not exist anymore...';
+	const S_FORBIDDEN = 'You are not allowed to access this page. Please log in/out to continue.';
 
-	const S_VIEW_PARTICIPATION = 'Voir ses participations';
-	const S_VIEW_STATUS = 'Voir les demandes « %status% ».';
+	const S_VIEW_PARTICIPATION = 'View his participation.';
+	const S_VIEW_STATUS = 'View issues “%status%”.';
 
-	const S_ISSUE_CREATED = 'par %user% %time%';
-	const S_ISSUE_UPDATED = '%adj% par %user% %time%.';
-	const S_ISSUE_STATUS_UPDATED = 'Statut changé à %status% par %user% %time%.';
+	const S_ISSUE_CREATED = 'by %user% %time%';
+	const S_ISSUE_UPDATED = '%adj% by %user% %time%.';
+	const S_ISSUE_STATUS_UPDATED = 'Status updated to %status% by %user% %time%.';
 
-	const S_RSS_ISSUE_UPDATED = '%adj% par %user%.';
-	const S_RSS_ISSUE_STATUS_UPDATED = 'Statut changé à « %status% » par %user%.';
+	const S_RSS_ISSUE_UPDATED = '%adj% by %user%.';
+	const S_RSS_ISSUE_STATUS_UPDATED = 'Status updated to “%status%” by %user%.';
 
-	const S_INTRO_INSTALL = 'On dirait que c\'est la première fois que vous utilisez Bumpy Booby ! Merci de le configurer :';
-	const S_FIRST_ISSUE_TITLE = 'Ça roule ma poule ?';
-	const S_FIRST_ISSUE = 'Je suis votre toute première demande ! Après vous être connecté, vous pourrez me supprimer.';
+	const S_INTRO_INSTALL = 'It looks like it\'s the first time you run Bumpy Booby! Please configure it:';
+	const S_FIRST_ISSUE_TITLE = 'How are you doing, pumpkin?';
+	const S_FIRST_ISSUE = 'I am your first issue! After logging, you will be able to delete me.';
 
-	const S_NO_USER = 'Aucun utilisateur ne correspond à votre requête.';
-	const S_NO_ISSUE = 'Aucune demande ne correspond à votre requête.';
-	const S_MATCHING_ISSUES = '%nb% demandes correspondantes';
-	const S_NO_ACTIVITY = 'Aucune activité récente.';
-	const S_NO_UPLOAD = 'Aucun fichier.';
-	const S_SIZE_REMAINING = '%remain% restant sur les %total% autorisés.';
-	const S_NO_PROJECT = 'Aucun projet.';
+	const S_NO_USER = 'No user matches your request.';
+	const S_NO_ISSUE = 'No issue matches your request.';
+	const S_MATCHING_ISSUES = '%nb% matching issues';
+	const S_NO_ACTIVITY = 'No recent activity.';
+	const S_NO_UPLOAD = 'No upload.';
+	const S_SIZE_REMAINING = '%remain% remaining on the %total% allowed.';
+	const S_NO_PROJECT = 'No project.';
 
-	const S_SEARCH = '#12, @qqn, mots…';
-	const S_COPYRIGHT = 'Propulsé par %name%.';
-	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://bugtrackr.github.io/wiki/upgrade/">mise à niveau</a>.';
+	const S_SEARCH = '#12, @user, words…';
+	const S_COPYRIGHT = 'Powered by %name%.';
+	const S_UPGRADE = 'Get latest version from <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> to <a href="https://bugtrackr.github.io/wiki/upgrade/">upgrade</a>.';
 
-	const S_LAST_UPDATES = 'Dernières mises à jour…';
+	const S_LAST_UPDATES = 'Last updates…';
 
-	const S_STAY_LOGGEDIN = 'Rester connecté';
+	const S_STAY_LOGGEDIN = 'Keep me logged in';
 
-	const S_DEFAULT_DEFPROJ_DESC = 'Ceci est le projet par défaut où tout le monde a accès.';
-	const S_DEFAULT_2NDPROJ_DESC = 'Cela pourrait être votre projet de projet 2ème où seuls les utilisateurs enregistrés peuvent poster des questions.';
+	const S_DEFAULT_DEFPROJ_DESC = 'This is the default project where everyone has access to.';
+	const S_DEFAULT_2NDPROJ_DESC = 'This could be your 2nd project project where only registered users are allowed to post issues.';
 
 		# Alerts
 
-	const A_ERROR_DIRECTORY = '<strong>Erreur :</strong> impossible de créer le dossier « %name% ».';
-	const A_ERROR_FILE = '<strong>Erreur :</strong> impossible de lire le fichier « %name% ».';
-	const A_ERROR_FILE_WRITE = '<strong>Erreur :</strong> impossible de mettre à jour le fichier « %name% ».';
-	const A_ERROR_FATAL = 'Désolé, une erreur s\'est produite. Merci de contacter un administrateur si le problème persiste.';
-	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />Fichier « <strong>%file%</strong> » à la ligne <strong>%line%</strong>.';
+	const A_ERROR_DIRECTORY = '<strong>Error:</strong> unable to create directory “%name%”.';
+	const A_ERROR_FILE = '<strong>Error:</strong> unable to read file “%name%”.';
+	const A_ERROR_FILE_WRITE = '<strong>Error:</strong> unable to write file “%name%”.';
+	const A_ERROR_FATAL = 'Sorry, something went wrong. Please contact an administrator if this problem persists.';
+	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />File “<strong>%file%</strong>” on line <strong>%line%</strong>.';
 
-	const A_SUCCESS_INSTALL = '<strong>Terminé :</strong> Bumpy Booby est maintenant configuré.';
-	const A_ERROR_INSTALL = '<strong>Erreur :</strong> Bumpy Booby est déjà configuré. Si vous souhaitez revenir à la configuration par défaut, supprimez le fichier de configuration.';
-	const A_MODIF_SAVED = 'Les modifications ont été sauvegardées.';
+	const A_SUCCESS_INSTALL = '<strong>Done:</strong> Bumpy Booby is now completely configured.';
+	const A_ERROR_INSTALL = '<strong>Error:</strong> Bumpy Booby is already configured. Please remove the config file if you want to reset the configuration.';
+	const A_MODIF_SAVED = 'Modifications were saved.';
 
-	const A_ERROR_FORM = 'Une erreur s\'est produite. Merci de soumettre à nouveau le formulaire.';
-	const A_ERROR_TOKEN = 'Mauvais jeton de sécurité. Merci de soumettre à nouveau le formulaire.';
-	const A_ERROR_EMPTY = 'Vous devez fournir un nom d\'utilisateur et un mot de passe.';
-	const A_ERROR_SAME_USERNAME = 'Ce nom d\'utilisateur n\'est pas disponible.';
-	const A_SUCCESS_SIGNUP = '<strong>Inscription terminée :</strong> vous pouvez maintenant vous connecter.';
+	const A_ERROR_FORM = 'An error occured. Please send again the form.';
+	const A_ERROR_TOKEN = 'Wrong token. Please send again the form.';
+	const A_ERROR_EMPTY = 'You have to specify a username and a password.';
+	const A_ERROR_SAME_USERNAME = 'This username is not available.';
+	const A_SUCCESS_SIGNUP = '<strong>Done:</strong> You can now log in.';
 
-	const A_CONFIRM_DELETE_COMMENT = 'Voulez-vous vraiment supprimer ce commentaire ?';
-	const A_SUCCESS_DELETE_COMMENT = 'Le commentaire a été supprimé.';
-	const A_CONFIRM_DELETE_ISSUE = 'Voulez-vous vraiment supprimer cette demande ?';
-	const A_SUCCESS_DELETE_ISSUE = 'La demande a été supprimée.';
-	const A_CONFIRM_DELETE_UPLOAD = 'Voulez-vous vraiment supprimer ce fichier ?';
-	const A_CONFIRM_DELETE_PROJECT = 'Voulez-vous vraiment supprimer ce projet ? Toutes les demandes correspondantes seront perdues.';
+	const A_CONFIRM_DELETE_COMMENT = 'Are you sure you want to delete this comment?';
+	const A_SUCCESS_DELETE_COMMENT = 'The comment was deleted.';
+	const A_CONFIRM_DELETE_ISSUE = 'Are you sure you want to delete this issue?';
+	const A_SUCCESS_DELETE_ISSUE = 'The issue was deleted.';
+	const A_CONFIRM_DELETE_UPLOAD = 'Are you sure you want to delete this file?';
+	const A_CONFIRM_DELETE_PROJECT = 'Are you sure you want to delete this project? All the corresponding issues will be lost.';
 
-	const A_LOGGED = 'Vous êtes maintenant connecté.';
-	const A_LOGGED_OUT = 'Vous êtes maintenant déconnecté.';
-	const A_ERROR_CONNEXION = '<strong>Erreur:</strong> mauvais nom d\'utilisateur ou mot de passe.';
-	const A_ERROR_CONNEXION_WAIT = '<strong>Erreur :</strong> mauvais nom d\'utilisateur ou mot de passe. Merci de patienter %duration% %period% avant de réessayer.';
-	const A_ERROR_LOGIN_WAIT = 'Merci de patienter %duration% %period% avant de réessayer. Ceci est une protection contre les attaques malveillantes.';
+	const A_LOGGED = 'You are now logged in.';
+	const A_LOGGED_OUT = 'You are now logged out.';
+	const A_ERROR_CONNEXION = '<strong>Error:</strong> Wrong username or password.';
+	const A_ERROR_CONNEXION_WAIT = '<strong>Error:</strong> Wrong username or password. Please wait %duration% %period% before trying again.';
+	const A_ERROR_LOGIN_WAIT = 'Please wait %duration% %period% before trying again. This a protection against malicious attacks.';
 
-	const A_ERROR_UPLOAD = 'Une erreur s\'est produite. Merci de réessayer';
-	const A_ERROR_UPLOAD_SIZE = 'La taille du fichier dépasse la limite autorisée (%nb% maximum).';
-	const A_ERROR_UPLOAD_FULL = 'Vous ne disposez pas de suffisament d\'espace pour envoyer ce fichier : %nb% restant.';
+	const A_ERROR_UPLOAD = 'An error occured. Please try again.';
+	const A_ERROR_UPLOAD_SIZE = 'File exceeds the maximum allowed size (%nb% max).';
+	const A_ERROR_UPLOAD_FULL = 'You don\'t have enought disk space to upload this file : %nb% remaining.';
 
-	const A_PLEASE_LOGIN_ISSUES = 'Connectez-vous pour accèder aux demandes.';
-	const A_PLEASE_LOGIN_COMMENT = 'Connectez-vous pour poster un commentaire. Pas encore inscrit ? Créez un compte : c\'est gratuit et ultra rapide !';
-	const A_PLEASE_LOGIN_ISSUE = 'Connectez-vous pour soumettre une demande. Pas encore inscrit ? Créez un compte : c\'est gratuit et ultra rapide !';
-	const A_SHOULD_LOGIN = 'Si vous possèdez déjà un compte, connectez-vous. Sinon, pensez à vous inscrire : c\'est gratuit et ultra rapide !';
+	const A_PLEASE_LOGIN_ISSUES = 'Please log in to see the issues.';
+	const A_PLEASE_LOGIN_COMMENT = 'Please log in to post a comment. No account yet? Create one: it\'s free and really fast !';
+	const A_PLEASE_LOGIN_ISSUE = 'Please log in to submit an issue. No account yet? Create one: it\'s free and really fast !';
+	const A_SHOULD_LOGIN = 'If you have an account, please log in. If not, consider creating one: it\'s free and really fast !';
 
-	const A_IE = 'Votre navigateur est obsolète : <a href="https://www.browser-update.org/fr/update.html">effectuez une mise à niveau ou changez de navigateur</a>.';
+	const A_IE = 'Your browser is obsolete: <a href="https://www.browser-update.org/en/update.html">upgrade or change it</a>.';
 
 		# Mails
 
-	const M_NEW_COMMENT_O = '[%title% — %project% — Demande #%id%] Nouveau commentaire';
-	const M_NEW_COMMENT = 'Salut, %username% !
+	const M_NEW_COMMENT_O = '[%title% — %project% — Issue #%id%] New comment';
+	const M_NEW_COMMENT = 'Hi, %username%!
 
-La demande #%id% — « %summary% » vient juste d\'être commentée par %by%. Vous pouvez lire ce nouveau commentaire ici:
+The issue #%id% — “%summary%” has just been commented by %by%. You can read the new comment here:
 	%url%.
 
-Si vous ne souhaitez plus recevoir de notifications à propos de cette demande, une option est disponible (après connexion) sur la page ci-dessus.
+If you don\'t want to receive further notifications on this issue, an option is available (after logging) via the link above.
 
 -----
-Ceci est un message automatisé. Merci de ne pas y répondre.
+This is an automated email, please do not reply.
 	';
 
-	const M_NEW_ISSUE_O = '[%title% — %project%] Nouvelle demande';
-	const M_NEW_ISSUE = 'Salut, %username% !
+	const M_NEW_ISSUE_O = '[%title% — %project%] New issue';
+	const M_NEW_ISSUE = 'Hi, %username%!
 
-La demande #%id% — « %summary% » vient tout juste d\'être postée par %by%. Vous pouvez la consulter ici :
+The issue #%id% — “%summary%” has just been submited by %by%. You can read it here:
 	%url%.
 
-Si vous ne souhaitez plus recevoir de notifications à propos de cette demande, une option est disponible (après connexion) sur la page ci-dessus.
+If you don\'t want to receive further notifications on this issue, an option is available (after logging) via the link above.
 
 -----
-Ceci est un message automatisé. Merci de ne pas y répondre.
+This is an automated email, please do not reply.
 	';
 
-		# Titre
+		# Titles
 
 	const T_INSTALLATION = 'Installation';
-	const T_SETTINGS = 'Réglages';
-	const T_GLOBAL_SETTINGS = 'Réglages généraux';
-	const T_APPEARANCE = 'Apparence';
-	const T_ISSUES = 'Demandes';
+	const T_SETTINGS = 'Settings';
+	const T_GLOBAL_SETTINGS = 'Global settings';
+	const T_APPEARANCE = 'Appearance';
+	const T_ISSUES = 'Issues';
 	const T_PERMISSIONS = 'Permissions';
 	const T_CAPTCHA = 'Captcha';
-	const T_BROWSE_ISSUES = 'Parcourir les demandes';
-	const T_BROWSE_ALL_ISSUES = 'Voir toutes les demandes';
-	const T_ALL_ISSUES_DESCRIPTION = 'Ce sont toutes les demandes ouvertes pour tous les projets';
-	const T_NEW_ISSUE = 'Nouvelle demande';
-	const T_ALL_ISSUES = 'Toutes les demandes';
-	const T_PROJECTS = 'Projets';
-	const T_DASHBOARD = 'Tableau de bord';
-	const T_LAST_UPDATES = 'Dernières mises à jour';
-	const T_LAST_ACTIVITY = 'Activité récente';
-	const T_UPLOADS = 'Fichiers';
-	const T_SEARCH = 'Recherche';
-	const T_LINK_CONTACT = 'Contactez nous'; 
-	const T_LINK_LEGALNOTICE = 'Mention légale';
-	const T_LINK_PRIVACYPOLICY = 'Politique de confidentialité';
+	const T_BROWSE_ISSUES = 'Browse issues';
+	const T_BROWSE_ALL_ISSUES = 'Browse all issues';
+	const T_ALL_ISSUES_DESCRIPTION = 'This are all open issues for all projects';
+	const T_NEW_ISSUE = 'New issue';
+	const T_ALL_ISSUES = 'All issues';
+	const T_PROJECTS = 'Projects';
+	const T_DASHBOARD = 'Dashboard';
+	const T_LAST_UPDATES = 'Last updates';
+	const T_LAST_ACTIVITY = 'Last activity';
+	const T_UPLOADS = 'Uploads';
+	const T_SEARCH = 'Search';
+	const T_LINK_CONTACT = 'Contact Us';
+	const T_LINK_LEGALNOTICE = 'Legal Notice';
+	const T_LINK_PRIVACYPOLICY = 'Privacy Policy';
 	const T_API_SETTINGS = 'API';
-	const T_API_ACCESS_SETTINGS = 'L\'accès aux API';
+	const T_API_ACCESS_SETTINGS = 'API access';
 	const T_INFO = 'Info';
 
 		# FORMS
 
-	const F_USERNAME = 'Nom d\'utilisateur :';
-	const F_PASSWORD = 'Mot de passe :';
-	const F_USERNAME2 = 'Nom d\'utilisateur';
-	const F_PASSWORD2 = 'Mot de passe';
-	const F_NAME = 'Nom :';
-	const F_URL = 'Url :';
-	const F_URL_CDN = 'CDN Url :';
-	const F_URL_REWRITING = 'Url rewriting :';
-	const F_INTRO = 'Introduction :';
-	const F_DESCRIPTION = 'Description :';
-	const F_EMAIL = 'Email :';
-	const F_LINK_CONTACT = 'Lien vers la page de contact externe (peut être laissé vide):';
-	const F_LINK_LEGALNOTICE = 'Lien vers mention légale (peut être laissé vide):';
-	const F_LINK_PRIVACYPOLICY = 'Lien vers la politique de confidentialité (peut être laissé vide):'; 
-	const F_MAX_UPLOAD = 'Taille maximum par envoi de fichier :';
-	const F_ALLOCATED_SPACE = 'Espace alloué à chaque utilisateur :';
-	const F_GROUP = 'Groupe :';
-	const F_NOTIFICATIONS = 'Être averti :';
-	const F_PROJECT_X = 'Projet « %name% » :';
-	const F_LANGUAGE = 'Langue :';
-	const F_LOGS = 'Logs :';
+	const F_USERNAME = 'Username:';
+	const F_PASSWORD = 'Password:';
+	const F_USERNAME2 = 'Username';
+	const F_PASSWORD2 = 'Password';
+	const F_NAME = 'Name:';
+	const F_URL = 'Url:';
+	const F_URL_CDN = 'CDN Url:';
+	const F_URL_REWRITING = 'Url rewriting:';
+	const F_INTRO = 'Introduction:';
+	const F_DESCRIPTION = 'Description:';
+	const F_EMAIL = 'Email:';
+	const F_LINK_CONTACT = 'Link to external contact page (can be left empty):';
+	const F_LINK_LEGALNOTICE = 'Link to legal notice (can be left empty):';
+	const F_LINK_PRIVACYPOLICY = 'Link to privacy policy (can be left empty):';
+	const F_MAX_UPLOAD = 'Maximum size per upload:';
+	const F_ALLOCATED_SPACE = 'Allocated space per user:';
+	const F_GROUP = 'Group:';
+	const F_NOTIFICATIONS = 'Be notified:';
+	const F_PROJECT_X = 'Project “%name%”:';
+	const F_LANGUAGE = 'Language:';
+	const F_LOGS = 'Logs:';
 
-	const F_ISSUES_PAGE = 'Demandes par page :';
-	const F_ISSUES_PAGE_SEARCH = 'Demandes par page (recherche) :';
-	const F_PREVIEW_ISSUE = 'Longueur des extraits (demandes) :';
-	const F_PREVIEW_SEARCH = 'Longueur des extraits (recherche) :';
-	const F_PREVIEW_PROJECT = 'Longueur des extraits (projets) :';
-	const F_LAST_EDITS = 'Nombre de demandes affichées sur les tableaux de bord:';
-	const F_LAST_ACTIVITY = 'Nombre de demandes affichées sur la page des utilisateurs :';
-	const F_THEME = "Désign";
-	const F_TIP_THEME = "Placez le fichier .css dans";
+	const F_ISSUES_PAGE = 'Issues per page:';
+	const F_ISSUES_PAGE_SEARCH = 'Issues per page (search):';
+	const F_PREVIEW_ISSUE = 'Previews length (issues):';
+	const F_PREVIEW_SEARCH = 'Previews length (search):';
+	const F_PREVIEW_PROJECT = 'Previews length (projects):';
+	const F_LAST_EDITS = 'Number of issues displayed on dashboards:';
+	const F_LAST_ACTIVITY = 'Number of issues displayed on user pages:';
+	const F_THEME = "Theme";
+	const F_TIP_THEME = "Place the .css file in";
 
-	const F_ADD_PROJECT = 'Nouveau projet';
-	const F_ADD_COLOR = 'Nouvelle couleur';
-	const F_ADD_STATUS = 'Nouveau statut';
-	const F_ADD_LABEL = 'Nouvelle étiquette';
-	const F_ADD_GROUP = 'Nouveau groupe';
-	const F_ADD_USER = 'Nouveau utilisateur';
+	const F_ADD_PROJECT = 'New project';
+	const F_ADD_COLOR = 'New color';
+	const F_ADD_STATUS = 'New status';
+	const F_ADD_LABEL = 'New label';
+	const F_ADD_GROUP = 'New group';
+	const F_ADD_USER = 'New user';
 
-	const F_SORT_BY = 'Trier par :';
+	const F_SORT_BY = 'Sort by:';
 	const F_SORT_ID = 'ID';
-	const F_SORT_MOD = 'mise à jour';
-	const F_SORT_DESC = 'décroissant';
-	const F_SORT_ASC = 'croissant';
-	const F_FILTER_STATUSES = 'Filtrer les statuts :';
-	const F_FILTER_STATES = 'Filtrer les états :';
-	const F_FILTER_LABELS = 'Filtrer les labels :';
-	const F_FILTER_USERS = 'Filtrer les utilisateurs :';
-	const F_FILTER_MILESTONE = 'Filtrer les étapes:';
+	const F_SORT_MOD = 'last update';
+	const F_SORT_DESC = 'descending';
+	const F_SORT_ASC = 'ascending';
+	const F_FILTER_STATUSES = 'Filter statuses:';
+	const F_FILTER_STATES = 'Filter states:';
+	const F_FILTER_LABELS = 'Filter labels:';
+	const F_FILTER_USERS = 'Filter users:';
+	const F_FILTER_MILESTONE = 'Filter milestone:';
 
-	const F_WRITE = 'Écrire :';
-	const F_SUMMARY = 'Résumé';
-	const F_CONTENT = 'Description complète';
+	const F_WRITE = 'Write:';
+	const F_SUMMARY = 'Summary';
+	const F_CONTENT = 'Content';
 
-	const F_STATUS = 'Statut :';
-	const F_RELATED = 'Liée à :';
-	const F_LABELS2 = 'Étiquettes :';
-	const F_MILESTONE = 'Étapes :';
+	const F_STATUS = 'Status:';
+	const F_RELATED = 'Related:';
+	const F_LABELS2 = 'Labels:';
+	const F_MILESTONE = 'Milestone:';
 
-	const F_GENERAL_SETTINGS = 'Réglages généraux :';
-	const F_PROJECTS = 'Projets :';
-	const F_DATABASE = 'Base de données :';
-	const F_UPLOADS = 'Fichiers téléchargés :';
-	const F_COLORS = 'Gérer les couleurs :';
-	const F_DISPLAY = 'Gérer l\'affichage :';
-	const F_STATUSES = 'Gérer les statuts :';
-	const F_LABELS = 'Gérer les étiquettes :';
-	const F_GROUPS = 'Gérer les groupes :';
-	const F_PERMISSIONS = 'Gérer les permissions :';
-	const F_USERS = 'Gérer les utilisateurs :';
+	const F_GENERAL_SETTINGS = 'General settings:';
+	const F_PROJECTS = 'Projects:';
+	const F_DATABASE = 'Database:';
+	const F_UPLOADS = 'Uploads:';
+	const F_COLORS = 'Manage colors:';
+	const F_DISPLAY = 'Manage display :';
+	const F_STATUSES = 'Manage statuses:';
+	const F_LABELS = 'Manage labels:';
+	const F_GROUPS = 'Manage groups:';
+	const F_PERMISSIONS = 'Manage permissions:';
+	const F_USERS = 'Manage users:';
 	
-	const F_INVALID_CAPTCHA = 'Le CAPTCHA que vous avez entré a eu tort. Veuillez réessayer.';
+	const F_INVALID_CAPTCHA = 'The CAPTCHA you entered was wrong. Please try again.';
 
-	const F_TIP_NAME = 'Ce nom sera affiché en haut de chaque page.';
-	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Bumpy Booby (en commençant et terminant par un "/") par rapport au nom de domaine.';
+	const F_TIP_NAME = 'It will be displayed on the header of each page.';
+	const F_TIP_URL_REWRITING = 'Leave this field empty to disable url rewriting. Otherwise, it should contain the path to Bumpy Booby folder (started and ended with a "/"), relative to the domain name.';
 	const F_TIP_URL_CDN = 'Leave this field empty to disable CDN. Otherwise, it has to contain the URL of your CDN (for example <em>https://cdn.rawgit.com/bugtrackr/bumpy-booby/master/</em>, feel free to use this one). Make sure to host all files from <em>/public</em> folder on your CDN.';
-	const F_TIP_INTRO = 'Cette introduction sera affichée sur la page d\'accueil et mise en forme avec la syntaxe Markdown. Remarque : s\'il n\'y a qu\'un seul projet nommé « %name% », la page d\'accueil est automatiquement redirigée vers le tableau de bord de ce projet, et ce texte ne sera donc jamais affiché.';
-	const F_TIP_EMAIL = 'Laissez ce champ vide si vous ne souhaitez pas activer les notifications par mail. Sinon, cette adresse sera utilisée comme expéditrice des mails envoyés.';
-	const F_TIP_PASSWORD = 'Laissez ce champ vide si vous ne souhaitez pas changer le mot de passe.';
-	const F_TIP_USER_EMAIL = 'Non obligatoire : seulement nécessaire si vous souhaitez recevoir des notifications.';
-	const F_TIP_NOTIFICATIONS = 'Ceci est un réglage général : vous pouvez également le modifier pour chaque demande.';
-	const F_TIP_NOTIFICATIONS_DISABLED = 'Remarque : les notifications sont actuellement désactivées par l\'administrateur.';
-	const F_TIP_DESCRIPTION = 'Ce texte sera affiché sur le tableau de bord du projet, et mis en forme avec la syntaxe Markdown.';
+	const F_TIP_INTRO = 'It will be displayed on the home page. It will be parsed with the Markdown syntax. Note: if there is only one project named “%name%”, the home page is automatically redirected to the project dashboard, and this text will not be displayed.';
+	const F_TIP_EMAIL = 'Leave this field empty to disable email notifications. Otherwise, this address will be used as sender when sending an email notification.';
+	const F_TIP_PASSWORD = 'Leave it empty if you don\'t want to change the password.';
+	const F_TIP_USER_EMAIL = 'Required only if you want to receive notifications.';
+	const F_TIP_NOTIFICATIONS = 'This a default setting: you will be able to change it for each issue.';
+	const F_TIP_NOTIFICATIONS_DISABLED = 'Note: notifications are currently disabled by the administrator.';
+	const F_TIP_DESCRIPTION = 'It will be displayed on the project dashboard. It will be parsed with the markdown syntax.';
 
-	const F_TIP_MAX_UPLOAD = 'Chaque fichier envoyé ne peut pas dépasser cette taille.';
-	const F_TIP_ALLOCATED_SPACE = 'Un utilisateur ne pourra plus envoyer de fichier une fois cette limite atteinte. <em>Attention :</em> cette limite ne s\'applique pas aux utilisateurs non connectés (avec les réglages par défaut, ils ne peuvent pas envoyer de fichier du tout ).';
+	const F_TIP_MAX_UPLOAD = 'Each uploaded file can\'t exceed this size.';
+	const F_TIP_ALLOCATED_SPACE = 'A user can\'t upload other files once he reached this limit.<br /><em>Attention:</em> if none logged users are allowed to upload files (this is not the default setting), this limit does not apply to them.';
 
-	const F_TIP_ID_STATUS = '<b>Attention :</b> le statut de chaque demande ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce statut ne correspondrait plus à aucun des nouveaux ID, la demande retrouverait l\'état par défaut.';
-	const F_TIP_ID_LABEL = '<b>Attention :</b> les étiquettes des demandes ne seront pas mis à jour, elles pointeront donc toujours vers les anciens ID. Dans le cas où une étiquette d\'une demande ne correspondrait plus à aucun des nouveaux ID, la demande perdrait cette étiquette.';
-	const F_TIP_ID_GROUP = '<b>Attention :</b> le groupe de chaque utilisateur ne sera pas mis à jour, il pointera donc toujours vers l\'ancien ID. Dans le cas où ce groupe ne correspondrait plus à aucun des nouveaux ID, l\'utilisateur rejoindrait le groupe par défaut.';
-	const F_TIP_CAPTCHA = 'Choisissez les actions où captcha sera affiché pour les utilisateurs qui ne sont pas connectés.';
-	const F_TIP_API_ACCESS = 'Configurer l\'accès API dans <em>/database/config_api.php</em> fichier. Pour plus d\'informations voir le fichier API.md.';
+	const F_TIP_ID_STATUS = '<b>Tip:</b> be careful when changing the IDs, because each issue keeps its old status ID (except if this ID does not exist anymore: in this case, the default status will be used).';
+	const F_TIP_ID_LABEL = '<b>Tip:</b> be careful when changing the IDs, because each label of one issue keeps its old ID (except if this ID does not exist anymore: in this case, the label is removed from the issue).';
+	const F_TIP_ID_GROUP = '<b>Tip:</b> be careful when changing the IDs, because each user keeps its old group ID (except if this ID does not exist anymore: in this case, the default group will be used).';
+	const F_TIP_CAPTCHA = 'Choose the actions where a captcha will be shown for not logged in users.';
+	const F_TIP_API_ACCESS = 'Configure API access in <em>/database/config_api.php</em> file. For more info see API.md file.';
 
-	const F_API_ENABLE = 'Activer l\'API';
+	const F_API_ENABLE = 'Enable the API';
 
 	const HELP_MARKDOWN = '
-		<h2>Syntaxe Markdown :</h2>
+		<h2>Markdown syntax:</h2>
 
-		<p>Paragraphes :</p>
-<pre><code class="blank no-highlight">Sautez au moins une ligne pour créer un nouveau paragraphe.
-Ce texte sera donc affiché à la suite de la phrase précédente : le retour à la ligne n\'est pas suffisant.
+		<p>Paragraphs:</p>
+<pre><code class="blank no-highlight">Paragraphs are separated by one or more blank lines.
+That\'s why this text will be displayed in the same line that the previous phrase, no matter the line break.
 
-Pour revenir à la ligne sans créer de nouveau paragraphe :  
-insérez deux espaces juste avant de revenir à la ligne (comme à la ligne ci-dessus).</code></pre>
-		<p>Mise en valeur :</p>
-<pre><code class="blank no-highlight">*Je suis du texte en italique...*  
-_...et moi aussi !_  
+To start a new line without creating a new paragraph:  
+insert 2 spaces before the line break, just like here.</code></pre>
+		<p>Emphasis:</p>
+<pre><code class="blank no-highlight">*Italic text*  
+_Itatic text again_  
 
-**Je suis du texte en gras...**  
-__...et moi aussi !__</code></pre>
+**Bold text**  
+__Bold text again__  </code></pre>
 
-		<p>Liens :</p>
-<pre><code class="blank no-highlight">Ceci est [un exemple](http://example.com) de lien au milieu d\'une phrase.  
-Et ceci en est un autre : &lt;http://example.com&gt;.</code></pre>
+		<p>Links:</p>
+<pre><code class="blank no-highlight">This is [an example](http://example.com) of inline link.  
+This is another one : &lt;http://example.com&gt;.</code></pre>
 
-		<p>Images :</p>
-<pre><code class="blank no-highlight">![Je suis une image](http://example.com/image.png)</code></pre>
+		<p>Images:</p>
+<pre><code class="blank no-highlight">![I am an image.](http://example.com/image.png)</code></pre>
 
-		<p>Titres :</p>
-<pre><code class="blank no-highlight"># Titre principal
-## Titre secondaire
-### Titre de troisième niveau
-#### Titre de quatrième niveau</code></pre>
+		<p>Headers:</p>
+<pre><code class="blank no-highlight"># Top Level title
+## Second level title
+### Third level title
+#### Fourth level title</code></pre>
 
-		<p>Liste :</p>
-<pre><code class="blank no-highlight">- une chose
-* et une seconde !
+		<p>Lists:</p>
+<pre><code class="blank no-highlight">- one item
+* another one
 
-1. ce qui constitue la première étape
-2. et ce qui constitue la deuxième</code></pre>
+1. first item
+2. second item</code></pre>
 
-		<p>Citations :</p>
-<pre><code class="blank no-highlight">> Je suis une citation constituée de deux paragraphes.
+		<p>Blockquotes:</p>
+<pre><code class="blank no-highlight">> I am a blockquote with two paragraphs.
 >
-> Je suis le second paragraphe.</code></pre>
+> I am the second paragraph.</code></pre>
 
-		<p>Zones de code :</p>
-<pre><code class="blank no-highlight">Ceci est `un bout de code` inséré dans une phrase.</code></pre>
-<pre><code class="blank no-highlight">    &lt;?php echo "Je suis une zone de code, car je suis indenté
-    avec 4 espaces"; ?&gt;</code></pre>
+		<p>Code blocks:</p>
+<pre><code class="blank no-highlight">This is an `inline code block`.</code></pre>
+<pre><code class="blank no-highlight">    &lt;?php echo "I am a code block, because I am indented
+    with 4 spaces"; ?&gt;</code></pre>
 <pre><code class="blank no-highlight">```
-&lt;?php echo "Je suis une zone de code."; ?&gt;
+&lt;?php echo "I am a code block."; ?&gt;
 ```
 
 ```php
-&lt;?php echo "Les langages reconnus sont : bash, cs, ruby, diff, javascript, css, xml, http, java, php, python, sql, ini, perl, json, cpp, markdown, no-highlight"; ?&gt;
+&lt;?php echo "Supported languages are : bash, cs, ruby, diff, javascript, css, xml, http, java, php, python, sql, ini, perl, json, cpp, markdown, no-highlight"; ?&gt;
 ```</code></pre>
 	';
 
@@ -395,7 +395,7 @@ Et ceci en est un autre : &lt;http://example.com&gt;.</code></pre>
 	private static $permissions = array(
 		'home' => array(
 			'title' => 'Page d\'accueil :',
-			'description' => 'Peut accéder à la page d\'accueil et vue liste de toutes les questions ouvertes pour ses projets.' 
+			'description' => 'Peut accéder à la page d\'accueil et vue liste de toutes les questions ouvertes pour ses projets.'
 		),
 		'dashboard' => array(
 			'title' => 'Tableaux de bord :',
