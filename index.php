@@ -8,7 +8,7 @@ spl_autoload_register('loadClass');
 set_error_handler(array('Text', 'capture_error'));
 
 define('NAME', 'Nireus');
-define('VERSION', '1.1.2');
+define('VERSION', '1.1.3');
 define('AUTHOR', 'bugtrackr');
 define('URL', 'https://github.com/bugtrackr/Nireus');
 
@@ -509,7 +509,7 @@ if (!empty($config['link_privacypolicy'])) {
 							<?php echo $link_menu; ?>
 						</ul>
 					</nav>
-					<?php 
+					<?php
 						if (canAccess('search') && getProject()) {
 					?>
 					<form action="<?php echo Url::parse(getProject().'/search'); ?>" method="post" class="form-search">

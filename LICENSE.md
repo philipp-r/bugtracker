@@ -22,7 +22,7 @@
 
 ## B. Nireus
 
-Copyright (C) 2016 for the software by
+Copyright (C) 2017 for the software by
 [bugtrackr team](https://github.com/bugtrackr) &
 [contributors](https://github.com/bugtrackr/Nireus/graphs/contributors)
 

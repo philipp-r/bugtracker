@@ -8,7 +8,7 @@
 
 Nireus is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
 
-Version 1.1.2
+Version 1.1.3
 
 ## Install
 
@@ -39,7 +39,7 @@ The [API](https://bugtrackr.github.io/api/) has these features:
 
 ## GNU GPL License
 
-Copyright (C) 2016 for the software by
+Copyright (C) 2017 for the software by
 [bugtrackr team](https://github.com/bugtrackr) &
 [contributors](https://github.com/bugtrackr/Nireus/graphs/contributors)
 
