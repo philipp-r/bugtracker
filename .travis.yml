@@ -17,7 +17,7 @@ sudo: false # route your build to the container-based infrastructure for a faste
 #notifications:
 #  webhooks:
 #    urls:
-#      - https://bugs.spamty.eu/index.php?page=api&project=Bumpy-Booby&XMODE=travisci # see docs https://github.com/Spamty/Bumpy-Booby/blob/master/API.md#travis-ci-api
+#      - https://bugs.spamty.eu/index.php?page=api&project=Nireus&XMODE=travisci # see docs https://github.com/bugtrackr/Nireus/blob/master/API.md#travis-ci-api
 #    on_success: never
 #    on_failure: always
 #    on_start: never

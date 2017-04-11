@@ -28,7 +28,7 @@ $API_ACCESS = array(
 	),
 
 
-); 
+);
 
 $RSS = array(
 

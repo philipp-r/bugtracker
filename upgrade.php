@@ -8,7 +8,7 @@ if (!isset($config)) {
 function strict_lower($a, $b) {
 	$ea = explode('.', $a); // config version
 	$eb = explode('.', $b); // new version
-	for ($i=0; $i < count($ea); $i++) { 
+	for ($i=0; $i < count($ea); $i++) {
 		if (!isset($eb[$i])) { $eb[$i] = 0; }
 		$na = intval($ea[$i]);
 		$nb = intval($eb[$i]);
@@ -47,6 +47,6 @@ if ($config['url_rewriting']) { $settings->url_rewriting(); }
 $settings->save();
 
 header('Content-Type: text/html; charset=utf-8');
-die('Successfully upgraded! Refresh the page to access Bumpy Boopby.');
+die('Successfully upgraded! Refresh the page to access Nireus.');
 
 ?>

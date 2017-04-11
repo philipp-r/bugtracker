@@ -7,10 +7,10 @@ spl_autoload_register('loadClass');
 ### Catch errors
 set_error_handler(array('Text', 'capture_error'));
 
-define('NAME', 'Bumpy Booby');
-define('VERSION', '1.1.2');
+define('NAME', 'Nireus');
+define('VERSION', '1.1.3');
 define('AUTHOR', 'bugtrackr');
-define('URL', 'https://github.com/bugtrackr/bumpy-booby');
+define('URL', 'https://github.com/bugtrackr/Nireus');
 
 ### Languages
 define('LANGUAGES', 'en,fr'); # Separated by a comma
@@ -510,7 +510,7 @@ if (!empty($config['link_privacypolicy'])) {
 							<?php echo $link_menu; ?>
 						</ul>
 					</nav>
-					<?php 
+					<?php
 						if (canAccess('search') && getProject()) {
 					?>
 					<form action="<?php echo Url::parse(getProject().'/search'); ?>" method="post" class="form-search">

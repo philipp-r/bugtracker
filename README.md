@@ -1,10 +1,10 @@
-# Bumpy Booby
+# Nireus
 
-Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. 
+Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system.
 
 **[The demo](https://bumpybooby.herokuapp.com/) is built using this branch.**
 
-Version 1.1.2
+Version 1.1.3
 
 ## Install
 
@@ -12,9 +12,9 @@ Auto deploy on Heroku.
 
 ## GNU GPL License
 
-Copyright (C) 2016 for the software by 
-[bugtrackr team](https://github.com/bugtrackr) & 
-[contributors](https://github.com/bugtrackr/bumpy-booby/graphs/contributors)
+Copyright (C) 2017 for the software by
+[bugtrackr team](https://github.com/bugtrackr) &
+[contributors](https://github.com/bugtrackr/Nireus/graphs/contributors)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
