@@ -1,0 +1,3 @@
+files:
+  - source: /languages/Trad_en.class.php
+    translation: /languages/Trad_%two_letters_code%.class.php
