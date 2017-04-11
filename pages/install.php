@@ -36,7 +36,7 @@ if (isset($_POST['language']) && Text::check_language($_POST['language'])) {
 			.'<div class="inner-form">'
 				.'<label for="title">'.Trad::F_NAME.'</label>'
 				.'<input type="text" class="input-medium" id="title" '
-					.'name="title" value="Bumpy Booby" />'
+					.'name="title" value="Nireus" />'
 				.'<p class="help">'.Trad::F_TIP_NAME.'</p>'
 				.'<label for="url">'.Trad::F_URL.'</label>'
 				.'<input type="url" class="input-large" id="url" '

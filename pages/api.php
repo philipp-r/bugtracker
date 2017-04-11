@@ -16,23 +16,23 @@ function endApi( $returnValues, $httpStatus = 200 ){
 		header($_SERVER["SERVER_PROTOCOL"].' 200 OK');
 		// Why we use $_SERVER["SERVER_PROTOCOL"]?
 		// See: http://php.net/manual/de/function.header.php#92305
-	} 
+	}
 	elseif( $httpStatus == 403 ){
 		header($_SERVER["SERVER_PROTOCOL"].' 403 Forbidden');
-	} 
+	}
 	elseif( $httpStatus == 410 ){
 		header($_SERVER["SERVER_PROTOCOL"].' 410 Gone');
-	} 
+	}
 	elseif( $httpStatus == 500 ){
 		header($_SERVER["SERVER_PROTOCOL"].' 500 Internal Server Error');
-	} 
+	}
 	elseif( $httpStatus == 501 ){
 		header($_SERVER["SERVER_PROTOCOL"].' 501 Not Implemented');
-	} 
+	}
 	else{
 		// catch-all with 400
 		header($_SERVER["SERVER_PROTOCOL"].' 400 Bad Request');
-	} 
+	}
 	*/
 
 	// output as JSON
@@ -46,7 +46,7 @@ function endApi( $returnValues, $httpStatus = 200 ){
 // check if configuration file exists
 if(!file_exists(DIR_DATABASE."config_api.php")){
 	$returns['status'] = 0;
-	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://bugtrackr.github.io/api/ and example configuration https://github.com/bugtrackr/bumpy-booby/blob/master/sample_config/config_api.php for the API.";
+	$returns['statusDetails'] = "Configuration file is missing. Check out the documentation https://bugtrackr.github.io/api/ and example configuration https://github.com/bugtrackr/Nireus/blob/master/sample_config/config_api.php for the API.";
 	endApi( $returns, 500 );
 }
 
@@ -118,19 +118,19 @@ function count_issues($fpost){
  Travis CI API
 */
 if( $_GET['XMODE'] == "travisci" ){
-	
+
 	// We get JSON in $_POST['payload'] which is decoded in array
 	// see https://docs.travis-ci.com/user/notifications/#Webhooks-Delivery-Format
 	// and https://gist.github.com/svenfuchs/1225015#gistcomment-891767
 	$travisJson = $_POST['payload'];
 	$travis = json_decode($travisJson, true);
 	//var_dump($travis);exit;
-	
-	
+
+
 	// read headers, so we get $headers["Authorization"]
 	$headers = apache_request_headers(); // see http://stackoverflow.com/a/2902713
 
-	// the username is $username 
+	// the username is $username
 	$username = "travis-".$travis['repository']['name'];
 
 	// check if this is a Travis CI user
@@ -193,11 +193,11 @@ if( $_GET['XMODE'] == "travisci" ){
 	        $travis['status_message_details'] = "The build completed in failure after a previously failed build";
 	        break;
 	}
-	
+
 	// build POST parameters
 	$travisPost = array(
 		'issue_summary' => "Building repository ".$travis['repository']['name']." branch ".$travis['branch']." ".$travis['status_message'],
-		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."** 
+		'issue_text' => "Build [".$travis['number']."](".$travis['build_url'].") of repository [".$travis['repository']['name']."](".$travis['repository']['url'].") branch ".$travis['branch']." **".$travis['status_message']."**
 \n \n Status *".$travis['status_message']."*: ".$travis['status_message_details']."
 \n \n Commit ".$travis['commit']." by ".$travis['committer_name']." at ".$travis['committed_at'].": *".$travis['message']."* ",
 	);
@@ -208,7 +208,7 @@ if( $_GET['XMODE'] == "travisci" ){
 	logm("Travis CI API: created issue in ".$_GET['project'].", ID ".$issues->lastissue);
 	// return success
 	$returns['status'] = 1;
-	$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+	$returns['statusDetails'] = "Nireus returned: ".$ans;
 	$returns['ID'] = $issues->lastissue;
 	endApi( $returns, 200 );
 
@@ -247,13 +247,13 @@ elseif($_GET['XMODE'] == 'rss'){
 				true);
 			}
 	}
-	
+
 	// get list with imported ids
 	$imported_json = file_get_contents(DIR_DATABASE."rss_imported.json");
 	// decode
 	$imported = json_decode($imported_json, true);
 
-	
+
 	foreach( $RSS as $rssfeed ){
 
 		$ch = curl_init();
@@ -262,9 +262,9 @@ elseif($_GET['XMODE'] == 'rss'){
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$xml_source = curl_exec($ch);
 		curl_close($ch);
-	
+
 		$xml = simplexml_load_string($xml_source);
-		
+
 		// filter GitHub RSS
 		if( strpos($rssfeed['name'], 'github-') !== false){
 			foreach( $xml->entry as $feed_item ){
@@ -277,10 +277,10 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_link = (string)$feed_item->link->attributes()->href;
 					$issueData_date = (string)$feed_item->updated;
 					$issueData_date = strtotime($issueData_date);
-					
+
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 			}
-		} 
+		}
 		// filter Sourceforge RSS
 		elseif( strpos($rssfeed['name'], 'sourceforge-') !== false){
 			foreach( $xml->channel->item as $feed_item ){
@@ -293,11 +293,11 @@ elseif($_GET['XMODE'] == 'rss'){
 					$issueData_link = (string)$feed_item->link;
 					$issueData_date = (string)$feed_item->pubDate;
 					$issueData_date = strtotime($issueData_date);
-					
+
 					createRssIssue($issueData_id, $issueData_summary, $issueData_text, $issueData_link);
 			}
-		} 
-		// filter Bumpy-Booby RSS
+		}
+		// filter Nireus RSS
 		elseif( strpos($rssfeed['name'], 'bumpybooby-') !== false){
 			foreach( $xml->channel->item as $feed_item ){
 				// filter for # so we only get new issues and no comments
@@ -314,11 +314,11 @@ elseif($_GET['XMODE'] == 'rss'){
 				}
 			}
 		}
-		// default 
+		// default
 		else{
-		
+
 		}
-		
+
 	}
 
 	// encode
@@ -341,19 +341,19 @@ elseif($_GET['XMODE'] == 'rss'){
 elseif($_GET['XMODE'] == 'badge'){
 
 	$badge = array();
-	
+
 	// shields defaults
-	if(empty($_GET['shields_color'])){ 
+	if(empty($_GET['shields_color'])){
 		$badge['color']="red";
 	}else{
 		$badge['color']=$_GET['shields_color'];
 	}
-	if(empty($_GET['shields_label'])){ 
+	if(empty($_GET['shields_label'])){
 		$badge['label']="issues";
 	}else{
 		$badge['label']=$_GET['shields_label'];
 	}
-	if(empty($_GET['shields_style'])){ 
+	if(empty($_GET['shields_style'])){
 		$badge['style']="plastic";
 	}else{
 		$badge['style']=$_GET['shields_style'];
@@ -363,10 +363,10 @@ elseif($_GET['XMODE'] == 'badge'){
 	// check project access
 	$validProject = false;
 	// if has permission for all projects
-	if( 
+	if(
 		$API_ACCESS['badge']['ALL_PROJECTS']   != true &&
 		$API_ACCESS['badge'][$_GET['project']] != true
-	){ 
+	){
 		$badge['content']="INVALID project";
 	}
 	else{
@@ -398,7 +398,7 @@ elseif($_GET['XMODE'] == 'badge'){
 */
 else{
 
-	
+
 	// check if this is a default user
 	if( $API_ACCESS[$_POST['api_username']]['mode'] != "default" ||
 	// check api key
@@ -407,7 +407,7 @@ else{
 		$returns['statusDetails'] = "Invalid username or password.";
 		endApi( $returns, 403 );
 	}
-	
+
 	// validate the project
 	$validProject = false;
 	// check if project exists
@@ -434,9 +434,9 @@ else{
 		endApi( $returns, 400 );
 	}
 
-	
+
 	// NEW_ISSUE
-	if($_POST['action'] == "new_issue" && 
+	if($_POST['action'] == "new_issue" &&
 	// check permissions for "new_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "new_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
@@ -454,13 +454,13 @@ else{
 		logm("API: new_issue: project ".$_GET['project']." ID ".$issues->lastissue);
 		// return success
 		$returns['status'] = 1;
-		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['statusDetails'] = "Nireus returned: ".$ans;
 		$returns['ID'] = $issues->lastissue;
 		endApi( $returns, 200 );
-	
+
 	}
 	// EDIT_ISSUE
-	elseif($_POST['action'] == "edit_issue" && 
+	elseif($_POST['action'] == "edit_issue" &&
 	// check permissions for "edit_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "edit_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
@@ -479,13 +479,13 @@ else{
 		logm("API: edit_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
-		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['statusDetails'] = "Nireus returned: ".$ans;
 		$returns['ID'] = $_POST['issue_id'];
 		endApi( $returns, 200 );
-	
+
 	}
 	// DELETE_ISSUE
-	elseif($_POST['action'] == "delete_issue" && 
+	elseif($_POST['action'] == "delete_issue" &&
 	// check permissions for "delete_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "delete_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
@@ -502,13 +502,13 @@ else{
 		logm("API: delete_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
-		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['statusDetails'] = "Nireus returned: ".$ans;
 		$returns['ID'] = $_POST['issue_id'];
 		endApi( $returns, 200 );
-	
+
 	}
 	// EXISTS
-	elseif($_POST['action'] == "exists" && 
+	elseif($_POST['action'] == "exists" &&
 	// check permissions for "exists"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "exists" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
@@ -533,10 +533,10 @@ else{
 		logm("API: exists: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		$returns['ID'] = $_POST['issue_id'];
 		endApi( $returns, 200 );
-	
+
 	}
 	// UPDATE_ISSUE
-	elseif($_POST['action'] == "update_issue" && 
+	elseif($_POST['action'] == "update_issue" &&
 	// check permissions for "update_issue"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "update_issue" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 		// validate POST
@@ -553,13 +553,13 @@ else{
 		logm("API: update_issue: project ".$_GET['project']." ID ".$_POST['issue_id']);
 		// return success
 		$returns['status'] = 1;
-		$returns['statusDetails'] = "Bumpy Booby returned: ".$ans;
+		$returns['statusDetails'] = "Nireus returned: ".$ans;
 		$returns['ID'] = $_POST['issue_id'];
 		endApi( $returns, 200 );
-	
+
 	}
 	// COUNT_ISSUES
-	elseif($_POST['action'] == "count_issues" && 
+	elseif($_POST['action'] == "count_issues" &&
 	// check permissions for "count_issues"
 	($API_ACCESS[$_POST['api_username']]['permissions'] == "count_issues" || $API_ACCESS[$_POST['api_username']]['permissions'] == "ALL_PERMISSIONS") ) {
 
@@ -571,7 +571,7 @@ else{
 		$returns['statusDetails'] = $nb." issues found.";
 		$returns['issues'] = $nb;
 		endApi( $returns, 200 );
-	
+
 	}
 	// COMMENT
 	// EDIT_COMMENT

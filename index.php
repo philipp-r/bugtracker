@@ -7,10 +7,10 @@ spl_autoload_register('loadClass');
 ### Catch errors
 set_error_handler(array('Text', 'capture_error'));
 
-define('NAME', 'Bumpy Booby');
+define('NAME', 'Nireus');
 define('VERSION', '1.1.2');
 define('AUTHOR', 'bugtrackr');
-define('URL', 'https://github.com/bugtrackr/bumpy-booby');
+define('URL', 'https://github.com/bugtrackr/Nireus');
 
 ### Languages
 define('LANGUAGES', 'en,fr'); # Separated by a comma

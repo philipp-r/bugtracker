@@ -1,17 +1,17 @@
-# Bumpy Booby
+# Nireus
 
-[![Issues](https://img.shields.io/github/issues/bugtrackr/bumpy-booby.svg)](https://github.com/bugtrackr/bumpy-booby/issues)
+[![Issues](https://img.shields.io/github/issues/bugtrackr/Nireus.svg)](https://github.com/bugtrackr/Nireus/issues)
 
 [![GPL License](https://img.shields.io/badge/license-GPL-blue.svg)](https://bugtrackr.github.io/license/)
 [![Bitcoin donations](https://img.shields.io/badge/tips---%3E_bitcoin-ff69b4.svg)](https://blockchain.info/address/1PuhHFRSqYyxbtLmvoF3D1LkoY2mVENCia)
 
-Bumpy Booby is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
+Nireus is a simple, responsive and highly customizable PHP bug tracking system. [Try the demo](https://bumpybooby.herokuapp.com/)
 
 Version 1.1.2
 
 ## Install
 
-Download the [latest release](https://github.com/bugtrackr/bumpy-booby/releases/latest) and upload to your webserver.
+Download the [latest release](https://github.com/bugtrackr/Nireus/releases/latest) and upload to your webserver.
 
 The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
@@ -21,10 +21,10 @@ The folder `./database` has to be writable for apache: `chmod -R 777 database`.
 
 You can do all changes by opening `./index.php?page=settings` in your browser. [See our wiki](https://bugtrackr.github.io/wiki/config/) for details!
 
-To configure the [API](https://bugtrackr.github.io/api/) change the settings manually in `./database/config_api.php`. 
+To configure the [API](https://bugtrackr.github.io/api/) change the settings manually in `./database/config_api.php`.
 There is a sample configuration file `./sample_config/config_api.php`.
 
-You can also edit the [Captcha](https://bugtrackr.github.io/wiki/captcha/) which is displayed when a user who is not logged in wants to create a new issue. 
+You can also edit the [Captcha](https://bugtrackr.github.io/wiki/captcha/) which is displayed when a user who is not logged in wants to create a new issue.
 You can do this with `./database/config_captcha.php` file. There is a sample configuration file `./sample_config/config_captcha.php`.
 
 ## API
@@ -38,9 +38,9 @@ The [API](https://bugtrackr.github.io/api/) has these features:
 
 ## GNU GPL License
 
-Copyright (C) 2016 for the software by 
-[bugtrackr team](https://github.com/bugtrackr) & 
-[contributors](https://github.com/bugtrackr/bumpy-booby/graphs/contributors)
+Copyright (C) 2016 for the software by
+[bugtrackr team](https://github.com/bugtrackr) &
+[contributors](https://github.com/bugtrackr/Nireus/graphs/contributors)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

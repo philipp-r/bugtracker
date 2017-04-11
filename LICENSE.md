@@ -3,7 +3,7 @@
 ## A. Contents
 
  * [A. Contents](#a-contents)
- * [B. Bumpy Booby](#b-bumpy-booby)
+ * [B. Nireus](#b-Nireus)
   * [GNU GENERAL PUBLIC LICENSE](#gnu-general-public-license)
  * [C. Original Software](#c-original-software)
   * [MIT LICENSE](#mit-license)
@@ -20,11 +20,11 @@
 
 
 
-## B. Bumpy Booby
+## B. Nireus
 
-Copyright (C) 2016 for the software by 
-[bugtrackr team](https://github.com/bugtrackr) & 
-[contributors](https://github.com/bugtrackr/bumpy-booby/graphs/contributors)
+Copyright (C) 2016 for the software by
+[bugtrackr team](https://github.com/bugtrackr) &
+[contributors](https://github.com/bugtrackr/Nireus/graphs/contributors)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -723,7 +723,7 @@ please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 ## C. Original Software
 
 This software is based on the work of Pierre Monchalin.
-The [original software](https://github.com/piero-la-lune/Bumpy-Booby) 
+The [original software](https://github.com/piero-la-lune/Bumpy-Booby)
 is licensed under the following terms.
 
 ### MIT LICENSE
@@ -756,11 +756,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## D. Included software
 
-Bumpy Booby contains some software from other developers. Especially 
-the files located in the vendor directory are externally maintained 
-libraries used by this software which have their own licenses. 
+Nireus contains some software from other developers. Especially
+the files located in the vendor directory are externally maintained
+libraries used by this software which have their own licenses.
 
-Please read them, as their terms may differ from the license above 
+Please read them, as their terms may differ from the license above
 that does not apply to the following included software.
 
 ### I. Securimage
@@ -771,11 +771,11 @@ Securimage is licensed under the [BSD license](https://github.com/dapphp/securim
 
 ### II. html5shiv
 
-Copyright (c) 2014 for [html5shiv](https://github.com/aFarkas/html5shiv) 
+Copyright (c) 2014 for [html5shiv](https://github.com/aFarkas/html5shiv)
 by Alexander Farkas (aFarkas).
 
-This software is licensed under a dual license system (MIT or GPL version 2). 
-This means you are free to choose with which of both licenses (MIT or GPL version 2) 
+This software is licensed under a dual license system (MIT or GPL version 2).
+This means you are free to choose with which of both licenses (MIT or GPL version 2)
 you want to use this library.
 
 [Read license text](https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md)
@@ -784,7 +784,7 @@ you want to use this library.
 
 Copyright (c) jQuery Foundation.
 
-jQuery Foundation projects are released under the terms of the license specified 
+jQuery Foundation projects are released under the terms of the license specified
 in the project's repository or if not specified, under the MIT license.
 
 [Read their license](https://github.com/jquery/jquery/blob/master/LICENSE.txt)
@@ -794,7 +794,7 @@ in the project's repository or if not specified, under the MIT license.
 matchMedia() polyfill: Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas.
 Licensed under MIT/BSD license.
 
-Respond.js: Copyright (c) by Scott Jehl. 
+Respond.js: Copyright (c) by Scott Jehl.
 Under [MIT license](https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT).
 
 ### V. HTML Purifier
@@ -802,7 +802,7 @@ Under [MIT license](https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
 Copyright (C) 2006-2008 Edward Z. Yang.
 
 Licensed under under the terms of the GNU Lesser General Public
-License; either version 2.1 of the License, or (at your option) 
+License; either version 2.1 of the License, or (at your option)
 any later version.
 
 [Visit website](http://htmlpurifier.org)
@@ -813,4 +813,3 @@ Copyright (c) 2004-2015 by Michel Fortin.
 Based on Markdown: Copyright (c) 2004-2006 by John Gruber.
 
 [License text](https://github.com/michelf/php-markdown/blob/lib/License.md).
-

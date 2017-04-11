@@ -38,7 +38,7 @@ return array(
     'no_session'       => false,
 
     // the PHP session name to use (null for default PHP session name)
-    // DO NOT CHANGE! Required for Bumpy-Booby
+    // DO NOT CHANGE! Required for Nireus
     'session_name'     => '',
 
     // change to true to store codes in a database
@@ -60,7 +60,7 @@ return array(
     'skip_table_check' => false,
 
 	'signature_color'  => '#CBDC62',
-	'image_signature'  => 'Bumpy-Booby',
+	'image_signature'  => 'Nireus',
 
 
 );

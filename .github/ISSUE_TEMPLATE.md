@@ -17,7 +17,7 @@ how to implement the addition or change. Code examples are welcome. ]
 Include code to reproduce, if relevant. ]
 
 ## My Environment
- * Bumpy Booby version: [ version or branch and commit ]
+ * Nireus version: [ version or branch and commit ]
  * Browser: [ your web browser ]
  * Webserver: [ Apache / Lighttpd ]
  * [ add more info if possible / relevant ]

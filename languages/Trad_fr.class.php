@@ -23,7 +23,7 @@ class Trad {
 	const W_RENDERING = 'Rendu';
 	const W_ID = 'ID';
 	const W_DISPLAY_NAME = 'Nom affiché';
-	
+
 	const W_SECONDE = 'seconde';
 	const W_MINUTE = 'minute';
 	const W_HOUR = 'heure';
@@ -122,7 +122,7 @@ class Trad {
 	const S_RSS_ISSUE_UPDATED = '%adj% par %user%.';
 	const S_RSS_ISSUE_STATUS_UPDATED = 'Statut changé à « %status% » par %user%.';
 
-	const S_INTRO_INSTALL = 'On dirait que c\'est la première fois que vous utilisez Bumpy Booby ! Merci de le configurer :';
+	const S_INTRO_INSTALL = 'On dirait que c\'est la première fois que vous utilisez Nireus ! Merci de le configurer :';
 	const S_FIRST_ISSUE_TITLE = 'Ça roule ma poule ?';
 	const S_FIRST_ISSUE = 'Je suis votre toute première demande ! Après vous être connecté, vous pourrez me supprimer.';
 
@@ -136,7 +136,7 @@ class Trad {
 
 	const S_SEARCH = '#12, @qqn, mots…';
 	const S_COPYRIGHT = 'Propulsé par %name%.';
-	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/bumpy-booby/releases/latest">GitHub</a> et <a href = "https://bugtrackr.github.io/wiki/upgrade/">mise à niveau</a>.';
+	const S_UPGRADE = 'Obtenir la dernière version à partir de <a href="https://github.com/bugtrackr/Nireus/releases/latest">GitHub</a> et <a href = "https://bugtrackr.github.io/wiki/upgrade/">mise à niveau</a>.';
 
 	const S_LAST_UPDATES = 'Dernières mises à jour…';
 
@@ -153,8 +153,8 @@ class Trad {
 	const A_ERROR_FATAL = 'Désolé, une erreur s\'est produite. Merci de contacter un administrateur si le problème persiste.';
 	const A_ERROR = '<strong>%title%:</strong><br /><br />%message%<br /><br />Fichier « <strong>%file%</strong> » à la ligne <strong>%line%</strong>.';
 
-	const A_SUCCESS_INSTALL = '<strong>Terminé :</strong> Bumpy Booby est maintenant configuré.';
-	const A_ERROR_INSTALL = '<strong>Erreur :</strong> Bumpy Booby est déjà configuré. Si vous souhaitez revenir à la configuration par défaut, supprimez le fichier de configuration.';
+	const A_SUCCESS_INSTALL = '<strong>Terminé :</strong> Nireus est maintenant configuré.';
+	const A_ERROR_INSTALL = '<strong>Erreur :</strong> Nireus est déjà configuré. Si vous souhaitez revenir à la configuration par défaut, supprimez le fichier de configuration.';
 	const A_MODIF_SAVED = 'Les modifications ont été sauvegardées.';
 
 	const A_ERROR_FORM = 'Une erreur s\'est produite. Merci de soumettre à nouveau le formulaire.';
@@ -233,7 +233,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const T_LAST_ACTIVITY = 'Activité récente';
 	const T_UPLOADS = 'Fichiers';
 	const T_SEARCH = 'Recherche';
-	const T_LINK_CONTACT = 'Contactez nous'; 
+	const T_LINK_CONTACT = 'Contactez nous';
 	const T_LINK_LEGALNOTICE = 'Mention légale';
 	const T_LINK_PRIVACYPOLICY = 'Politique de confidentialité';
 	const T_API_SETTINGS = 'API';
@@ -255,7 +255,7 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_EMAIL = 'Email :';
 	const F_LINK_CONTACT = 'Lien vers la page de contact externe (peut être laissé vide):';
 	const F_LINK_LEGALNOTICE = 'Lien vers mention légale (peut être laissé vide):';
-	const F_LINK_PRIVACYPOLICY = 'Lien vers la politique de confidentialité (peut être laissé vide):'; 
+	const F_LINK_PRIVACYPOLICY = 'Lien vers la politique de confidentialité (peut être laissé vide):';
 	const F_MAX_UPLOAD = 'Taille maximum par envoi de fichier :';
 	const F_ALLOCATED_SPACE = 'Espace alloué à chaque utilisateur :';
 	const F_GROUP = 'Groupe :';
@@ -312,12 +312,12 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 	const F_GROUPS = 'Gérer les groupes :';
 	const F_PERMISSIONS = 'Gérer les permissions :';
 	const F_USERS = 'Gérer les utilisateurs :';
-	
+
 	const F_INVALID_CAPTCHA = 'Le CAPTCHA que vous avez entré a eu tort. Veuillez réessayer.';
 
 	const F_TIP_NAME = 'Ce nom sera affiché en haut de chaque page.';
-	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Bumpy Booby (en commençant et terminant par un "/") par rapport au nom de domaine.';
-	const F_TIP_URL_CDN = 'Leave this field empty to disable CDN. Otherwise, it has to contain the URL of your CDN (for example <em>https://cdn.rawgit.com/bugtrackr/bumpy-booby/master/</em>, feel free to use this one). Make sure to host all files from <em>/public</em> folder on your CDN.';
+	const F_TIP_URL_REWRITING = 'Laissez ce champ vide pour désactiver l\'url rewriting. Sinon, il doit contenir le chemin du dossier de Nireus (en commençant et terminant par un "/") par rapport au nom de domaine.';
+	const F_TIP_URL_CDN = 'Leave this field empty to disable CDN. Otherwise, it has to contain the URL of your CDN (for example <em>https://cdn.rawgit.com/bugtrackr/Nireus/master/</em>, feel free to use this one). Make sure to host all files from <em>/public</em> folder on your CDN.';
 	const F_TIP_INTRO = 'Cette introduction sera affichée sur la page d\'accueil et mise en forme avec la syntaxe Markdown. Remarque : s\'il n\'y a qu\'un seul projet nommé « %name% », la page d\'accueil est automatiquement redirigée vers le tableau de bord de ce projet, et ce texte ne sera donc jamais affiché.';
 	const F_TIP_EMAIL = 'Laissez ce champ vide si vous ne souhaitez pas activer les notifications par mail. Sinon, cette adresse sera utilisée comme expéditrice des mails envoyés.';
 	const F_TIP_PASSWORD = 'Laissez ce champ vide si vous ne souhaitez pas changer le mot de passe.';
@@ -344,17 +344,17 @@ Ceci est un message automatisé. Merci de ne pas y répondre.
 <pre><code class="blank no-highlight">Sautez au moins une ligne pour créer un nouveau paragraphe.
 Ce texte sera donc affiché à la suite de la phrase précédente : le retour à la ligne n\'est pas suffisant.
 
-Pour revenir à la ligne sans créer de nouveau paragraphe :  
+Pour revenir à la ligne sans créer de nouveau paragraphe :
 insérez deux espaces juste avant de revenir à la ligne (comme à la ligne ci-dessus).</code></pre>
 		<p>Mise en valeur :</p>
-<pre><code class="blank no-highlight">*Je suis du texte en italique...*  
-_...et moi aussi !_  
+<pre><code class="blank no-highlight">*Je suis du texte en italique...*
+_...et moi aussi !_
 
-**Je suis du texte en gras...**  
+**Je suis du texte en gras...**
 __...et moi aussi !__</code></pre>
 
 		<p>Liens :</p>
-<pre><code class="blank no-highlight">Ceci est [un exemple](http://example.com) de lien au milieu d\'une phrase.  
+<pre><code class="blank no-highlight">Ceci est [un exemple](http://example.com) de lien au milieu d\'une phrase.
 Et ceci en est un autre : &lt;http://example.com&gt;.</code></pre>
 
 		<p>Images :</p>
@@ -395,7 +395,7 @@ Et ceci en est un autre : &lt;http://example.com&gt;.</code></pre>
 	private static $permissions = array(
 		'home' => array(
 			'title' => 'Page d\'accueil :',
-			'description' => 'Peut accéder à la page d\'accueil et vue liste de toutes les questions ouvertes pour ses projets.' 
+			'description' => 'Peut accéder à la page d\'accueil et vue liste de toutes les questions ouvertes pour ses projets.'
 		),
 		'dashboard' => array(
 			'title' => 'Tableaux de bord :',
